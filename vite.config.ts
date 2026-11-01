@@ -1,0 +1,30 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// Base path configuration for GitHub Pages
+// Set to '/' for custom domains, or '/05-ghpages-gui13go/' if deploying as a repo project subpath.
+const basePath = process.env.VITE_BASE_PATH || '/'
+
+export default defineConfig({
+  base: basePath,
+  plugins: [
+    react(),
+  ],
+  css: {
+    transformer: 'lightningcss',
+  },
+  build: {
+    cssMinify: 'lightningcss',
+  },
+  server: {
+    port: 5173,
+    host: true,
+    proxy: {
+      '/ws': {
+        target: 'ws://localhost:8000',
+        ws: true,
+        changeOrigin: true
+      }
+    }
+  },
+})

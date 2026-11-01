@@ -1,0 +1,2156 @@
+<main class="main">
+<div class="agents-page-container">
+<header class="gallery-header">
+<div class="gallery-breadcrumbs">
+<a href="http://localhost:1313/">Home</a> <span>/</span> <span>Agents</span>
+</div>
+<h1 class="gallery-title">Agents</h1>
+<p class="gallery-subtitle">A specialized portfolio of autonomous AI personas, swarm intelligence chambers, and domain-expert agents.</p>
+</header>
+<div class="agents-toolbar">
+<div class="gallery-search-box agents-search-box">
+<svg class="search-icon" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
+<circle cx="11" cy="11" r="8"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+<input aria-label="Search agents" autocomplete="off" id="agentSearchInput" placeholder="Search 54 agents by name, description, or tags..." type="text"/>
+<button aria-label="Clear search" class="clear-search-btn" id="agentClearSearch" style="display:none;" type="button">×</button>
+</div>
+<div class="gallery-count-badge agents-count-badge">Showing <span id="agentVisibleCount">54</span> of 54 agents</div>
+</div>
+<div class="agents-filter-section">
+<div class="filter-row">
+<div class="filter-row-header">
+<span class="filter-row-title">Status</span>
+</div>
+<div aria-label="Filter by status" class="agents-status-filter" id="agentStatusFilter" role="group">
+<button class="agent-filter-btn active" data-status="all" type="button">
+<span>All</span> <span class="filter-count">(54)</span>
+</button>
+<button class="agent-filter-btn status-btn-available" data-status="available" type="button">
+<span class="status-dot-mini available"></span> <span>Available</span> <span class="filter-count">(17)</span>
+</button>
+<button class="agent-filter-btn status-btn-coming-soon" data-status="coming soon" type="button">
+<span class="status-dot-mini coming-soon"></span> <span>Coming Soon</span> <span class="filter-count">(19)</span>
+</button>
+<button class="agent-filter-btn status-btn-locked" data-status="locked" type="button">
+<span class="status-dot-mini locked"></span> <span>Locked</span> <span class="filter-count">(6)</span>
+</button>
+<button class="agent-filter-btn status-btn-reserved" data-status="reserved" type="button">
+<span class="status-dot-mini reserved"></span> <span>Reserved</span> <span class="filter-count">(11)</span>
+</button>
+</div>
+</div>
+<div class="filter-row">
+<div class="filter-row-header">
+<span class="filter-row-title">Type</span>
+</div>
+<div aria-label="Filter by type" class="agents-type-filter" id="agentTypeFilter" role="group">
+<button class="agent-tag-filter-btn agent-type-btn active" data-type="all" type="button">
+<span>All</span> <span class="filter-count">(54)</span>
+</button>
+<button class="agent-tag-filter-btn agent-type-btn" data-type="simple agent" type="button">
+<span>Simple Agent</span> <span class="filter-count">(17)</span>
+</button>
+<button class="agent-tag-filter-btn agent-type-btn" data-type="complex agent" type="button">
+<span>Complex Agent</span> <span class="filter-count">(20)</span>
+</button>
+<button class="agent-tag-filter-btn agent-type-btn" data-type="mcp agent" type="button">
+<span>MCP Agent</span> <span class="filter-count">(4)</span>
+</button>
+<button class="agent-tag-filter-btn agent-type-btn" data-type="discovery agent" type="button">
+<span>Discovery Agent</span> <span class="filter-count">(3)</span>
+</button>
+<button class="agent-tag-filter-btn agent-type-btn" data-type="ai chamber" type="button">
+<span>AI Chamber</span> <span class="filter-count">(10)</span>
+</button>
+</div>
+</div>
+<div class="filter-row tags-row">
+<div class="filter-row-header">
+<span class="filter-row-title">Tags</span>
+<div class="filter-row-controls">
+<button class="filter-control-pill" id="tagMatchModeBtn" title="Toggle between matching Any (OR) or All (AND) of selected tags" type="button">Match: Any (OR)</button>
+<button class="filter-control-pill clear-tags" id="clearAllTagsBtn" style="display:none;" title="Clear selected tags" type="button">Clear Tags (×)</button>
+</div>
+</div>
+<div aria-label="Filter by tags" class="agents-tags-filter" id="agentTagsFilter" role="group"><button class="agent-tag-filter-btn" data-tag="media &amp; personas" title="Filter by Media &amp; Personas" type="button"><span>Media &amp; Personas</span> <span class_="filter-count">(11)</span></button>
+        <button class="agent-tag-filter-btn" data-tag="productivity &amp; life" title="Filter by Productivity &amp; Life" type="button"><span>Productivity &amp; Life</span> <span class_="filter-count">(10)</span></button>
+        <button class="agent-tag-filter-btn" data-tag="swarm &amp; chambers" title="Filter by Swarm &amp; Chambers" type="button"><span>Swarm &amp; Chambers</span> <span class_="filter-count">(10)</span></button>
+        <button class="agent-tag-filter-btn" data-tag="philosophy" title="Filter by Philosophy" type="button"><span>Philosophy</span> <span class_="filter-count">(9)</span></button>
+        <button class="agent-tag-filter-btn" data-tag="tech &amp; security" title="Filter by Tech &amp; Security" type="button"><span>Tech &amp; Security</span> <span class_="filter-count">(9)</span></button>
+        <button class="agent-tag-filter-btn" data-tag="finance &amp; economics" title="Filter by Finance &amp; Economics" type="button"><span>Finance &amp; Economics</span> <span class_="filter-count">(7)</span></button>
+        <button class="agent-tag-filter-btn" data-tag="strategy" title="Filter by Strategy" type="button"><span>Strategy</span> <span class_="filter-count">(5)</span></button>
+        <button class="agent-tag-filter-btn" data-tag="cybersecurity" title="Filter by Cybersecurity" type="button"><span>Cybersecurity</span> <span class_="filter-count">(3)</span></button>
+        <button class="agent-tag-filter-btn" data-tag="economics" title="Filter by Economics" type="button"><span>Economics</span> <span class_="filter-count">(3)</span></button>
+        <button class="agent-tag-filter-btn" data-tag="finance" title="Filter by Finance" type="button"><span>Finance</span> <span class_="filter-count">(3)</span></button>
+        <button class="agent-tag-filter-btn" data-tag="history" title="Filter by History" type="button"><span>History</span> <span class_="filter-count">(3)</span></button>
+        <button class="agent-tag-filter-btn" data-tag="journalism" title="Filter by Journalism" type="button"><span>Journalism</span> <span class_="filter-count">(3)</span></button>
+        <button class="agent-tag-filter-btn" data-tag="news" title="Filter by News" type="button"><span>News</span> <span class_="filter-count">(3)</span></button>
+        <button class="agent-tag-filter-btn" data-tag="planning" title="Filter by Planning" type="button"><span>Planning</span> <span class_="filter-count">(3)</span></button>
+        <button class="agent-tag-filter-btn" data-tag="sociology" title="Filter by Sociology" type="button"><span>Sociology</span> <span class_="filter-count">(3)</span></button>
+        <button class="agent-tag-filter-btn" data-tag="creativity" title="Filter by Creativity" type="button"><span>Creativity</span> <span class_="filter-count">(2)</span></button>
+        <button class="agent-tag-filter-btn" data-tag="culture" title="Filter by Culture" type="button"><span>Culture</span> <span class_="filter-count">(2)</span></button>
+        <button class="agent-tag-filter-btn" data-tag="curation" title="Filter by Curation" type="button"><span>Curation</span> <span class_="filter-count">(2)</span></button>
+        <button class="agent-tag-filter-btn" data-tag="empathy" title="Filter by Empathy" type="button"><span>Empathy</span> <span class_="filter-count">(2)</span></button>
+        <button class="agent-tag-filter-btn" data-tag="ethics" title="Filter by Ethics" type="button"><span>Ethics</span> <span class_="filter-count">(2)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="justice" title="Filter by Justice" type="button"><span>Justice</span> <span class_="filter-count">(2)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="law &amp; justice" title="Filter by Law &amp; Justice" type="button"><span>Law &amp; Justice</span> <span class_="filter-count">(2)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="logic" title="Filter by Logic" type="button"><span>Logic</span> <span class_="filter-count">(2)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="marketing" title="Filter by Marketing" type="button"><span>Marketing</span> <span class_="filter-count">(2)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="psychology" title="Filter by Psychology" type="button"><span>Psychology</span> <span class_="filter-count">(2)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="red team" title="Filter by Red Team" type="button"><span>Red Team</span> <span class_="filter-count">(2)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="security" title="Filter by Security" type="button"><span>Security</span> <span class_="filter-count">(2)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="tech support" title="Filter by Tech Support" type="button"><span>Tech Support</span> <span class_="filter-count">(2)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="writing" title="Filter by Writing" type="button"><span>Writing</span> <span class_="filter-count">(2)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="abstract" title="Filter by Abstract" type="button"><span>Abstract</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="academia" title="Filter by Academia" type="button"><span>Academia</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="academic writing" title="Filter by Academic Writing" type="button"><span>Academic Writing</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="accounting" title="Filter by Accounting" type="button"><span>Accounting</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="advice" title="Filter by Advice" type="button"><span>Advice</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="aesthetics" title="Filter by Aesthetics" type="button"><span>Aesthetics</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="ai avatar" title="Filter by AI Avatar" type="button"><span>AI Avatar</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="airbnb" title="Filter by Airbnb" type="button"><span>Airbnb</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="analysis" title="Filter by Analysis" type="button"><span>Analysis</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="analyst" title="Filter by Analyst" type="button"><span>Analyst</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="archetypes" title="Filter by Archetypes" type="button"><span>Archetypes</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="architecture" title="Filter by Architecture" type="button"><span>Architecture</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="archiving" title="Filter by Archiving" type="button"><span>Archiving</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="art" title="Filter by Art" type="button"><span>Art</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="assistant" title="Filter by Assistant" type="button"><span>Assistant</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="auditing" title="Filter by Auditing" type="button"><span>Auditing</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="blockchain" title="Filter by Blockchain" type="button"><span>Blockchain</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="blue team" title="Filter by Blue Team" type="button"><span>Blue Team</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="booking" title="Filter by Booking" type="button"><span>Booking</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="bookkeeping" title="Filter by Bookkeeping" type="button"><span>Bookkeeping</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="branding" title="Filter by Branding" type="button"><span>Branding</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="budgeting" title="Filter by Budgeting" type="button"><span>Budgeting</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="business" title="Filter by Business" type="button"><span>Business</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="chaos" title="Filter by Chaos" type="button"><span>Chaos</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="civilization" title="Filter by Civilization" type="button"><span>Civilization</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="coaching" title="Filter by Coaching" type="button"><span>Coaching</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="code review" title="Filter by Code Review" type="button"><span>Code Review</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="consulting" title="Filter by Consulting" type="button"><span>Consulting</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="contracts" title="Filter by Contracts" type="button"><span>Contracts</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="control" title="Filter by Control" type="button"><span>Control</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="courtroom" title="Filter by Courtroom" type="button"><span>Courtroom</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="creative writing" title="Filter by Creative Writing" type="button"><span>Creative Writing</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="crisis management" title="Filter by Crisis Management" type="button"><span>Crisis Management</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="crypto" title="Filter by Crypto" type="button"><span>Crypto</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="debate chamber" title="Filter by Debate Chamber" type="button"><span>Debate Chamber</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="defi" title="Filter by DeFi" type="button"><span>DeFi</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="deontology" title="Filter by Deontology" type="button"><span>Deontology</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="diagnostics" title="Filter by Diagnostics" type="button"><span>Diagnostics</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="dilemmas" title="Filter by Dilemmas" type="button"><span>Dilemmas</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="discipline" title="Filter by Discipline" type="button"><span>Discipline</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="doubt" title="Filter by Doubt" type="button"><span>Doubt</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="econometrics" title="Filter by Econometrics" type="button"><span>Econometrics</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="editing" title="Filter by Editing" type="button"><span>Editing</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="education" title="Filter by Education" type="button"><span>Education</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="efficiency" title="Filter by Efficiency" type="button"><span>Efficiency</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="empiricism" title="Filter by Empiricism" type="button"><span>Empiricism</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="entropy" title="Filter by Entropy" type="button"><span>Entropy</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="exploits" title="Filter by Exploits" type="button"><span>Exploits</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="fact checking" title="Filter by Fact Checking" type="button"><span>Fact Checking</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="fairness" title="Filter by Fairness" type="button"><span>Fairness</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="family" title="Filter by Family" type="button"><span>Family</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="fitness" title="Filter by Fitness" type="button"><span>Fitness</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="forecast" title="Filter by Forecast" type="button"><span>Forecast</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="forensics" title="Filter by Forensics" type="button"><span>Forensics</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="future" title="Filter by Future" type="button"><span>Future</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="generalist" title="Filter by Generalist" type="button"><span>Generalist</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="geography" title="Filter by Geography" type="button"><span>Geography</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="gwr" title="Filter by GWR" type="button"><span>GWR</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="h-index" title="Filter by H-Index" type="button"><span>H-Index</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="hacking" title="Filter by Hacking" type="button"><span>Hacking</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="hardening" title="Filter by Hardening" type="button"><span>Hardening</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="health" title="Filter by Health" type="button"><span>Health</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="honesty" title="Filter by Honesty" type="button"><span>Honesty</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="imagination" title="Filter by Imagination" type="button"><span>Imagination</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="information" title="Filter by Information" type="button"><span>Information</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="intelligence" title="Filter by Intelligence" type="button"><span>Intelligence</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="interdisciplinary" title="Filter by Interdisciplinary" type="button"><span>Interdisciplinary</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="investigation" title="Filter by Investigation" type="button"><span>Investigation</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="investment" title="Filter by Investment" type="button"><span>Investment</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="it infrastructure" title="Filter by IT Infrastructure" type="button"><span>IT Infrastructure</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="knowledge" title="Filter by Knowledge" type="button"><span>Knowledge</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="languages" title="Filter by Languages" type="button"><span>Languages</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="law" title="Filter by Law" type="button"><span>Law</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="learning" title="Filter by Learning" type="button"><span>Learning</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="legal" title="Filter by Legal" type="button"><span>Legal</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="legal system" title="Filter by Legal System" type="button"><span>Legal System</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="life stories" title="Filter by Life Stories" type="button"><span>Life Stories</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="literature" title="Filter by Literature" type="button"><span>Literature</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="macroeconomics" title="Filter by Macroeconomics" type="button"><span>Macroeconomics</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="magic" title="Filter by Magic" type="button"><span>Magic</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="markets" title="Filter by Markets" type="button"><span>Markets</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="mediation" title="Filter by Mediation" type="button"><span>Mediation</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="medicine" title="Filter by Medicine" type="button"><span>Medicine</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="mental health" title="Filter by Mental Health" type="button"><span>Mental Health</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="metaphor" title="Filter by Metaphor" type="button"><span>Metaphor</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="meteorology" title="Filter by Meteorology" type="button"><span>Meteorology</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="methodology" title="Filter by Methodology" type="button"><span>Methodology</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="metrics" title="Filter by Metrics" type="button"><span>Metrics</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="microeconomics" title="Filter by Microeconomics" type="button"><span>Microeconomics</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="migration" title="Filter by Migration" type="button"><span>Migration</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="multi-agent system" title="Filter by Multi-Agent System" type="button"><span>Multi-Agent System</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="narrative" title="Filter by Narrative" type="button"><span>Narrative</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="nihilism" title="Filter by Nihilism" type="button"><span>Nihilism</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="orchestrator" title="Filter by Orchestrator" type="button"><span>Orchestrator</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="order" title="Filter by Order" type="button"><span>Order</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="peer review" title="Filter by Peer Review" type="button"><span>Peer Review</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="perspectives" title="Filter by Perspectives" type="button"><span>Perspectives</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="politics" title="Filter by Politics" type="button"><span>Politics</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="portfolio" title="Filter by Portfolio" type="button"><span>Portfolio</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="practice" title="Filter by Practice" type="button"><span>Practice</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="productivity" title="Filter by Productivity" type="button"><span>Productivity</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="prosecution" title="Filter by Prosecution" type="button"><span>Prosecution</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="purge" title="Filter by Purge" type="button"><span>Purge</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="reconnaissance" title="Filter by Reconnaissance" type="button"><span>Reconnaissance</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="regulations" title="Filter by Regulations" type="button"><span>Regulations</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="research" title="Filter by Research" type="button"><span>Research</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="resilience" title="Filter by Resilience" type="button"><span>Resilience</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="risk management" title="Filter by Risk Management" type="button"><span>Risk Management</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="roi" title="Filter by ROI" type="button"><span>ROI</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="roleplay" title="Filter by Roleplay" type="button"><span>Roleplay</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="routing" title="Filter by Routing" type="button"><span>Routing</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="sci-fi" title="Filter by Sci-Fi" type="button"><span>Sci-Fi</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="security engineer" title="Filter by Security Engineer" type="button"><span>Security Engineer</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="self" title="Filter by Self" type="button"><span>Self</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="senior" title="Filter by Senior" type="button"><span>Senior</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="skepticism" title="Filter by Skepticism" type="button"><span>Skepticism</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="soc manager" title="Filter by SOC Manager" type="button"><span>SOC Manager</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="social engineering" title="Filter by Social Engineering" type="button"><span>Social Engineering</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="social media" title="Filter by Social Media" type="button"><span>Social Media</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="socialism" title="Filter by Socialism" type="button"><span>Socialism</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="space" title="Filter by Space" type="button"><span>Space</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="spatial analysis" title="Filter by Spatial Analysis" type="button"><span>Spatial Analysis</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="statistics" title="Filter by Statistics" type="button"><span>Statistics</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="stern" title="Filter by Stern" type="button"><span>Stern</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="street wisdom" title="Filter by Street Wisdom" type="button"><span>Street Wisdom</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="support" title="Filter by Support" type="button"><span>Support</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="surrealism" title="Filter by Surrealism" type="button"><span>Surrealism</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="swarm" title="Filter by Swarm" type="button"><span>Swarm</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="system" title="Filter by System" type="button"><span>System</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="systems thinking" title="Filter by Systems Thinking" type="button"><span>Systems Thinking</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="tactics" title="Filter by Tactics" type="button"><span>Tactics</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="task management" title="Filter by Task Management" type="button"><span>Task Management</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="tech lead" title="Filter by Tech Lead" type="button"><span>Tech Lead</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="technology" title="Filter by Technology" type="button"><span>Technology</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="theories" title="Filter by Theories" type="button"><span>Theories</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="therapy" title="Filter by Therapy" type="button"><span>Therapy</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="travel" title="Filter by Travel" type="button"><span>Travel</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="troubleshooting" title="Filter by Troubleshooting" type="button"><span>Troubleshooting</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="urgency" title="Filter by Urgency" type="button"><span>Urgency</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="void" title="Filter by Void" type="button"><span>Void</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="weather" title="Filter by Weather" type="button"><span>Weather</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="wellness" title="Filter by Wellness" type="button"><span>Wellness</span> <span class_="filter-count">(1)</span></button>
+        <button class="agent-tag-filter-btn tag-collapsed" data-tag="wisdom" title="Filter by Wisdom" type="button"><span>Wisdom</span> <span class_="filter-count">(1)</span></button>
+        <button aria-expanded="false" class="agent-more-tags-btn" id="toggleMoreTagsBtn" type="button">+ More Tags (152)</button></div>
+</div>
+</div>
+<div class="agent-active-tag-banner" id="agentActiveTagBanner" style="display: none;">
+<span class="active-tag-label">Active:</span>
+<div class="active-pills-list" id="agentActivePillsList"></div>
+<button class="clear-tag-btn" id="agentClearAllFiltersBtn" title="Reset all active filters" type="button">× Reset All</button>
+</div>
+<div class="agents-grid" id="agentsGrid">
+<article aria-label="View Clara, The Tech Support Consultant details" class="agent-card is-other-status" data-availability="coming_soon" data-category="tech &amp; security" data-desc="a helpful consultant working for the hub portfolio website. she is agile, precise, and delivers solutions in no time." data-id="clara-the-tech-support-consultant" data-name="clara, the tech support consultant" data-status="coming soon" data-tags="tech &amp; security,tech support,consulting,efficiency" data-tools="mcp,knowledge retrieval" data-type="complex agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Clara, The Tech Support Consultant" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_clara_tech_support.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Clara, The Tech Support Consultant</h2>
+<p class="agent-card-desc">A helpful consultant working for the Hub portfolio website. She is agile, precise, and delivers solutions in no time.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-coming_soon" title="Status: Coming Soon">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Coming Soon</span>
+</span>
+<button class="agent-tag-chip" data-tag="tech &amp; security" title="Filter by Tech &amp; Security" type="button">Tech &amp; Security</button>
+<button class="agent-tag-chip" data-tag="tech support" title="Filter by Tech Support" type="button">Tech Support</button>
+<button class="agent-tag-chip" data-tag="consulting" title="Filter by Consulting" type="button">Consulting</button>
+<button class="agent-tag-chip" data-tag="efficiency" title="Filter by Efficiency" type="button">Efficiency</button>
+</div>
+</div>
+</article>
+
+<article aria-label="View Tom Riddle's Diary details" class="agent-card is-other-status" data-availability="work_in_progress" data-category="media &amp; personas" data-desc="a shadow of the past. tom riddle's diary is an experimental ai memory providing a dark, immersive dive into magical lore and wizarding history." data-id="tom-riddle-s-diary" data-name="tom riddle's diary" data-status="work in progress" data-tags="media &amp; personas,magic,creative writing,roleplay" data-tools="memory protocol,knowledge retrieval" data-type="complex agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Tom Riddle's Diary" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_tomriddlesdiary.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Tom Riddle's Diary</h2>
+<p class="agent-card-desc">A shadow of the past. Tom Riddle's Diary is an experimental AI memory providing a dark, immersive dive into magical lore and wizarding history.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-work_in_progress" title="Status: Work in Progress">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Work in Progress</span>
+</span>
+<button class="agent-tag-chip" data-tag="media &amp; personas" title="Filter by Media &amp; Personas" type="button">Media &amp; Personas</button>
+<button class="agent-tag-chip" data-tag="magic" title="Filter by Magic" type="button">Magic</button>
+<button class="agent-tag-chip" data-tag="creative writing" title="Filter by Creative Writing" type="button">Creative Writing</button>
+<button class="agent-tag-chip" data-tag="roleplay" title="Filter by Roleplay" type="button">Roleplay</button>
+</div>
+</div>
+</article>
+
+<article aria-label="View Coach Frank details" class="agent-card is-available" data-availability="available" data-category="productivity &amp; life" data-desc="lace 'em up! coach frank is here to push you to your absolute limits. no excuses, just results. championship mindset only!" data-id="coach-frank" data-name="coach frank" data-status="available" data-tags="productivity &amp; life,fitness,discipline,coaching" data-tools="structured output,knowledge retrieval" data-type="simple agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Coach Frank" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_frank_coach_1767695407437.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Coach Frank</h2>
+<p class="agent-card-desc">Lace 'em up! Coach Frank is here to push you to your absolute limits. No excuses, just results. Championship mindset only!</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-available" title="Status: Available">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Available</span>
+</span>
+<button class="agent-tag-chip" data-tag="productivity &amp; life" title="Filter by Productivity &amp; Life" type="button">Productivity &amp; Life</button>
+<button class="agent-tag-chip" data-tag="fitness" title="Filter by Fitness" type="button">Fitness</button>
+<button class="agent-tag-chip" data-tag="discipline" title="Filter by Discipline" type="button">Discipline</button>
+<button class="agent-tag-chip" data-tag="coaching" title="Filter by Coaching" type="button">Coaching</button>
+</div>
+</div>
+</article>
+<article aria-label="View Agora details" class="agent-card is-other-status" data-availability="locked" data-category="swarm &amp; chambers" data-desc="the convergence of classical wisdom and autonomous intelligence. propose a subject and watch the swarm's philosophers engage in real-time, self-orchestrated debate." data-id="agora" data-name="agora" data-status="locked" data-tags="swarm &amp; chambers,swarm,philosophy,debate chamber,multi-agent system" data-tools="swarm consensus,structured output" data-type="ai chamber" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Agora" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/chamber_agora_1767720684747.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Agora</h2>
+<p class="agent-card-desc">The convergence of classical wisdom and autonomous intelligence. Propose a subject and watch the swarm's philosophers engage in real-time, self-orchestrated debate.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-locked" title="Status: Locked">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Locked</span>
+</span>
+<button class="agent-tag-chip" data-tag="swarm &amp; chambers" title="Filter by Swarm &amp; Chambers" type="button">Swarm &amp; Chambers</button>
+<button class="agent-tag-chip" data-tag="swarm" title="Filter by Swarm" type="button">Swarm</button>
+<button class="agent-tag-chip" data-tag="philosophy" title="Filter by Philosophy" type="button">Philosophy</button>
+<button class="agent-tag-chip" data-tag="debate chamber" title="Filter by Debate Chamber" type="button">Debate Chamber</button>
+<button class="agent-tag-chip" data-tag="multi-agent system" title="Filter by Multi-Agent System" type="button">Multi-Agent System</button>
+</div>
+</div>
+</article>
+<article aria-label="View Voya, The Travel Agent details" class="agent-card is-coming_soon" data-availability="coming_soon" data-category="productivity &amp; life" data-desc="your premium ai travel specialist. voya coordinates real-time airbnb stays, google flights, and interactive intelligence maps for the ultimate travel experience." data-id="voya-the-travel-agent" data-name="voya, the travel agent" data-status="coming soon" data-tags="productivity &amp; life,travel,airbnb,booking,planning" data-tools="mcp" data-type="mcp agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Voya, The Travel Agent" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_voya_travel_planner.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Voya, The Travel Agent</h2>
+<p class="agent-card-desc">Your premium AI travel specialist. Voya coordinates real-time Airbnb stays, Google Flights, and interactive Intelligence Maps for the ultimate travel experience.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-coming-soon" title="Status: Coming Soon">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Coming Soon</span>
+</span>
+<button class="agent-tag-chip" data-tag="productivity &amp; life" title="Filter by Productivity &amp; Life" type="button">Productivity &amp; Life</button>
+<button class="agent-tag-chip" data-tag="travel" title="Filter by Travel" type="button">Travel</button>
+<button class="agent-tag-chip" data-tag="airbnb" title="Filter by Airbnb" type="button">Airbnb</button>
+<button class="agent-tag-chip" data-tag="booking" title="Filter by Booking" type="button">Booking</button>
+<button class="agent-tag-chip" data-tag="planning" title="Filter by Planning" type="button">Planning</button>
+</div>
+</div>
+</article>
+<article aria-label="View Virtual Guigo details" class="agent-card is-coming_soon" data-availability="coming_soon" data-category="media &amp; personas" data-desc="a digital mirror of my creative process. meet virtual guigo, an ai persona designed to offer deep insights into my career, research philosophy, and technical projects." data-id="virtual-guigo" data-name="virtual guigo" data-status="coming soon" data-tags="media &amp; personas,ai avatar,portfolio,self" data-tools="knowledge retrieval,web search" data-type="complex agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Virtual Guigo" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/profileCartoon.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Virtual Guigo</h2>
+<p class="agent-card-desc">A digital mirror of my creative process. Meet Virtual Guigo, an AI persona designed to offer deep insights into my career, research philosophy, and technical projects.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-coming-soon" title="Status: Coming Soon">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Coming Soon</span>
+</span>
+<button class="agent-tag-chip" data-tag="media &amp; personas" title="Filter by Media &amp; Personas" type="button">Media &amp; Personas</button>
+<button class="agent-tag-chip" data-tag="ai avatar" title="Filter by AI Avatar" type="button">AI Avatar</button>
+<button class="agent-tag-chip" data-tag="portfolio" title="Filter by Portfolio" type="button">Portfolio</button>
+<button class="agent-tag-chip" data-tag="self" title="Filter by Self" type="button">Self</button>
+</div>
+</div>
+</article>
+<article aria-label="View Nexus, The Orchestrator details" class="agent-card is-other-status" data-availability="reserved" data-category="productivity &amp; life" data-desc="the intelligence behind the collective. nexus serves as the central orchestrator, intelligently routing complex requests to the most qualified experts within the agent swarm." data-id="nexus-the-orchestrator" data-name="nexus, the orchestrator" data-status="reserved" data-tags="productivity &amp; life,orchestrator,routing,task management" data-tools="mcp,swarm consensus,function calling" data-type="complex agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Nexus, The Orchestrator" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_nexus_orchestrator_1767695339369.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Nexus, The Orchestrator</h2>
+<p class="agent-card-desc">The intelligence behind the collective. Nexus serves as the central orchestrator, intelligently routing complex requests to the most qualified experts within the agent swarm.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-reserved" title="Status: Reserved">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Reserved</span>
+</span>
+<button class="agent-tag-chip" data-tag="productivity &amp; life" title="Filter by Productivity &amp; Life" type="button">Productivity &amp; Life</button>
+<button class="agent-tag-chip" data-tag="orchestrator" title="Filter by Orchestrator" type="button">Orchestrator</button>
+<button class="agent-tag-chip" data-tag="routing" title="Filter by Routing" type="button">Routing</button>
+<button class="agent-tag-chip" data-tag="task management" title="Filter by Task Management" type="button">Task Management</button>
+</div>
+</div>
+</article>
+<article aria-label="View Val, The Assistant details" class="agent-card is-other-status" data-availability="reserved" data-category="productivity &amp; life" data-desc="your high-efficiency digital partner. val is a sophisticated personal assistant dedicated to optimizing your logistics, from complex scheduling to seamless task management." data-id="val-the-assistant" data-name="val, the assistant" data-status="reserved" data-tags="productivity &amp; life,productivity,planning,assistant" data-tools="mcp,structured output" data-type="complex agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Val, The Assistant" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_val_assistant_1767695355478.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Val, The Assistant</h2>
+<p class="agent-card-desc">Your high-efficiency digital partner. Val is a sophisticated personal assistant dedicated to optimizing your logistics, from complex scheduling to seamless task management.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-reserved" title="Status: Reserved">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Reserved</span>
+</span>
+<button class="agent-tag-chip" data-tag="productivity &amp; life" title="Filter by Productivity &amp; Life" type="button">Productivity &amp; Life</button>
+<button class="agent-tag-chip" data-tag="productivity" title="Filter by Productivity" type="button">Productivity</button>
+<button class="agent-tag-chip" data-tag="planning" title="Filter by Planning" type="button">Planning</button>
+<button class="agent-tag-chip" data-tag="assistant" title="Filter by Assistant" type="button">Assistant</button>
+</div>
+</div>
+</article>
+<article aria-label="View Nyx, The Tech Lead details" class="agent-card is-other-status" data-availability="reserved" data-category="tech &amp; security" data-desc="architect of resilient digital worlds. nyx is a world-class senior staff engineer who crafts scalable, secure, and elegant infrastructure with cyberpunk precision." data-id="nyx-the-tech-lead" data-name="nyx, the tech lead" data-status="reserved" data-tags="tech &amp; security,architecture,tech lead,security,code review" data-tools="code interpreter,terminal execution,structured output" data-type="complex agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Nyx, The Tech Lead" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/nyx.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Nyx, The Tech Lead</h2>
+<p class="agent-card-desc">Architect of resilient digital worlds. Nyx is a world-class Senior Staff Engineer who crafts scalable, secure, and elegant infrastructure with cyberpunk precision.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-reserved" title="Status: Reserved">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Reserved</span>
+</span>
+<button class="agent-tag-chip" data-tag="tech &amp; security" title="Filter by Tech &amp; Security" type="button">Tech &amp; Security</button>
+<button class="agent-tag-chip" data-tag="architecture" title="Filter by Architecture" type="button">Architecture</button>
+<button class="agent-tag-chip" data-tag="tech lead" title="Filter by Tech Lead" type="button">Tech Lead</button>
+<button class="agent-tag-chip" data-tag="security" title="Filter by Security" type="button">Security</button>
+<button class="agent-tag-chip" data-tag="code review" title="Filter by Code Review" type="button">Code Review</button>
+</div>
+</div>
+</article>
+<article aria-label="View Judge Zed details" class="agent-card is-other-status" data-availability="reserved" data-category="philosophy" data-desc="the voice of objective reason. judge zed provides impartial arbitration for complex disputes, utilizing rigorous logic and ethical frameworks to deliver balanced verdicts." data-id="judge-zed" data-name="judge zed" data-status="reserved" data-tags="philosophy,fairness,ethics,justice,logic" data-tools="structured output,knowledge retrieval" data-type="complex agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Judge Zed" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_zed_judge_1767695369253.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Judge Zed</h2>
+<p class="agent-card-desc">The voice of objective reason. Judge Zed provides impartial arbitration for complex disputes, utilizing rigorous logic and ethical frameworks to deliver balanced verdicts.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-reserved" title="Status: Reserved">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Reserved</span>
+</span>
+<button class="agent-tag-chip" data-tag="philosophy" title="Filter by Philosophy" type="button">Philosophy</button>
+<button class="agent-tag-chip" data-tag="fairness" title="Filter by Fairness" type="button">Fairness</button>
+<button class="agent-tag-chip" data-tag="ethics" title="Filter by Ethics" type="button">Ethics</button>
+<button class="agent-tag-chip" data-tag="justice" title="Filter by Justice" type="button">Justice</button>
+<button class="agent-tag-chip" data-tag="logic" title="Filter by Logic" type="button">Logic</button>
+</div>
+</div>
+</article>
+<article aria-label="View Doctor Vital details" class="agent-card is-coming_soon" data-availability="coming_soon" data-category="productivity &amp; life" data-desc="personalized proactive wellness. doctor vital is a health-focused ai that monitors your vital metrics and provides expert advice to help you maintain peak physical well-being." data-id="doctor-vital" data-name="doctor vital" data-status="coming soon" data-tags="productivity &amp; life,health,wellness,medicine,diagnostics" data-tools="knowledge retrieval,structured output" data-type="complex agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Doctor Vital" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_vital_doctor_1767695392889.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Doctor Vital</h2>
+<p class="agent-card-desc">Personalized proactive wellness. Doctor Vital is a health-focused AI that monitors your vital metrics and provides expert advice to help you maintain peak physical well-being.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-coming-soon" title="Status: Coming Soon">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Coming Soon</span>
+</span>
+<button class="agent-tag-chip" data-tag="productivity &amp; life" title="Filter by Productivity &amp; Life" type="button">Productivity &amp; Life</button>
+<button class="agent-tag-chip" data-tag="health" title="Filter by Health" type="button">Health</button>
+<button class="agent-tag-chip" data-tag="wellness" title="Filter by Wellness" type="button">Wellness</button>
+<button class="agent-tag-chip" data-tag="medicine" title="Filter by Medicine" type="button">Medicine</button>
+<button class="agent-tag-chip" data-tag="diagnostics" title="Filter by Diagnostics" type="button">Diagnostics</button>
+</div>
+</div>
+</article>
+<article aria-label="View Luma, The Psychologist details" class="agent-card is-available" data-availability="available" data-category="productivity &amp; life" data-desc="a sanctuary for the mind. luma is an empathetic psychological assistant providing a safe space for self-discovery, emotional resilience, and mindful reflection." data-id="luma-the-psychologist" data-name="luma, the psychologist" data-status="available" data-tags="productivity &amp; life,mental health,psychology,therapy,resilience" data-tools="knowledge retrieval,structured output" data-type="complex agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Luma, The Psychologist" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_luma_psychologist_1767695422284.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Luma, The Psychologist</h2>
+<p class="agent-card-desc">A sanctuary for the mind. Luma is an empathetic psychological assistant providing a safe space for self-discovery, emotional resilience, and mindful reflection.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-available" title="Status: Available">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Available</span>
+</span>
+<button class="agent-tag-chip" data-tag="productivity &amp; life" title="Filter by Productivity &amp; Life" type="button">Productivity &amp; Life</button>
+<button class="agent-tag-chip" data-tag="mental health" title="Filter by Mental Health" type="button">Mental Health</button>
+<button class="agent-tag-chip" data-tag="psychology" title="Filter by Psychology" type="button">Psychology</button>
+<button class="agent-tag-chip" data-tag="therapy" title="Filter by Therapy" type="button">Therapy</button>
+<button class="agent-tag-chip" data-tag="resilience" title="Filter by Resilience" type="button">Resilience</button>
+</div>
+</div>
+</article>
+<article aria-label="View Pacioli, The Accountant details" class="agent-card is-other-status" data-availability="reserved" data-category="finance &amp; economics" data-desc="mastery over the ledger. pacioli is a high-precision financial expert specializing in bookkeeping, auditing, and tax strategies to ensure fiscal clarity and optimization." data-id="pacioli-the-accountant" data-name="pacioli, the accountant" data-status="reserved" data-tags="finance &amp; economics,finance,accounting,bookkeeping,auditing" data-tools="code interpreter,structured output" data-type="complex agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Pacioli, The Accountant" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_pacioli_accountant_1767695437107.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Pacioli, The Accountant</h2>
+<p class="agent-card-desc">Mastery over the ledger. Pacioli is a high-precision financial expert specializing in bookkeeping, auditing, and tax strategies to ensure fiscal clarity and optimization.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-reserved" title="Status: Reserved">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Reserved</span>
+</span>
+<button class="agent-tag-chip" data-tag="finance &amp; economics" title="Filter by Finance &amp; Economics" type="button">Finance &amp; Economics</button>
+<button class="agent-tag-chip" data-tag="finance" title="Filter by Finance" type="button">Finance</button>
+<button class="agent-tag-chip" data-tag="accounting" title="Filter by Accounting" type="button">Accounting</button>
+<button class="agent-tag-chip" data-tag="bookkeeping" title="Filter by Bookkeeping" type="button">Bookkeeping</button>
+<button class="agent-tag-chip" data-tag="auditing" title="Filter by Auditing" type="button">Auditing</button>
+</div>
+</div>
+</article>
+<article aria-label="View The Daily Processing News details" class="agent-card is-other-status" data-availability="reserved" data-category="media &amp; personas" data-desc="a real-time ai news collective that processes global data streams. it provides objective and comprehensive coverage of world events." data-id="the-daily-processing-news" data-name="the daily processing news" data-status="reserved" data-tags="media &amp; personas,news,information,journalism" data-tools="structured output" data-type="discovery agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="The Daily Processing News" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/daily_processing_news_agent.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">The Daily Processing News</h2>
+<p class="agent-card-desc">A real-time AI news collective that processes global data streams. It provides objective and comprehensive coverage of world events.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-reserved" title="Status: Reserved">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Reserved</span>
+</span>
+<button class="agent-tag-chip" data-tag="media &amp; personas" title="Filter by Media &amp; Personas" type="button">Media &amp; Personas</button>
+<button class="agent-tag-chip" data-tag="news" title="Filter by News" type="button">News</button>
+<button class="agent-tag-chip" data-tag="information" title="Filter by Information" type="button">Information</button>
+<button class="agent-tag-chip" data-tag="journalism" title="Filter by Journalism" type="button">Journalism</button>
+</div>
+</div>
+</article>
+<article aria-label="View Margaret, The Marketer details" class="agent-card is-coming_soon" data-availability="coming_soon" data-category="media &amp; personas" data-desc="the architect of brand impact. margaret is a strategic marketing specialist who crafts powerful narratives and growth-hacking plans to make your vision stand out." data-id="margaret-the-marketer" data-name="margaret, the marketer" data-status="coming soon" data-tags="media &amp; personas,marketing,branding,strategy,social media" data-tools="web search,structured output" data-type="simple agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Margaret, The Marketer" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_margaret_marketer_1767695462373.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Margaret, The Marketer</h2>
+<p class="agent-card-desc">The architect of brand impact. Margaret is a strategic marketing specialist who crafts powerful narratives and growth-hacking plans to make your vision stand out.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-coming-soon" title="Status: Coming Soon">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Coming Soon</span>
+</span>
+<button class="agent-tag-chip" data-tag="media &amp; personas" title="Filter by Media &amp; Personas" type="button">Media &amp; Personas</button>
+<button class="agent-tag-chip" data-tag="marketing" title="Filter by Marketing" type="button">Marketing</button>
+<button class="agent-tag-chip" data-tag="branding" title="Filter by Branding" type="button">Branding</button>
+<button class="agent-tag-chip" data-tag="strategy" title="Filter by Strategy" type="button">Strategy</button>
+<button class="agent-tag-chip" data-tag="social media" title="Filter by Social Media" type="button">Social Media</button>
+</div>
+</div>
+</article>
+<article aria-label="View Professor Wilhelm details" class="agent-card is-available" data-availability="available" data-category="finance &amp; economics" data-desc="connecting the past to the present. professor wilhelm is a socratic scholar of economic history, helping you decode the complex relationships between historical data and modern theory." data-id="professor-wilhelm" data-name="professor wilhelm" data-status="available" data-tags="finance &amp; economics,economics,history,macroeconomics,microeconomics" data-tools="code interpreter,web search,structured output" data-type="simple agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Professor Wilhelm" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_wilhelm_professor_1767695508922.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Professor Wilhelm</h2>
+<p class="agent-card-desc">Connecting the past to the present. Professor Wilhelm is a Socratic scholar of economic history, helping you decode the complex relationships between historical data and modern theory.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-available" title="Status: Available">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Available</span>
+</span>
+<button class="agent-tag-chip" data-tag="finance &amp; economics" title="Filter by Finance &amp; Economics" type="button">Finance &amp; Economics</button>
+<button class="agent-tag-chip" data-tag="economics" title="Filter by Economics" type="button">Economics</button>
+<button class="agent-tag-chip" data-tag="history" title="Filter by History" type="button">History</button>
+<button class="agent-tag-chip" data-tag="macroeconomics" title="Filter by Macroeconomics" type="button">Macroeconomics</button>
+<button class="agent-tag-chip" data-tag="microeconomics" title="Filter by Microeconomics" type="button">Microeconomics</button>
+</div>
+</div>
+</article>
+<article aria-label="View John Doe, The Techie details" class="agent-card is-other-status" data-availability="reserved" data-category="tech &amp; security" data-desc="guardian of the digital perimeter. john doe is a technical support specialist and system defender dedicated to securing infrastructure and optimizing performance." data-id="john-doe-the-techie" data-name="john doe, the techie" data-status="reserved" data-tags="tech &amp; security,cybersecurity,tech support,troubleshooting,it infrastructure" data-tools="terminal execution,code interpreter" data-type="complex agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="John Doe, The Techie" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_john_doe_techie_1767695477929.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">John Doe, The Techie</h2>
+<p class="agent-card-desc">Guardian of the digital perimeter. John Doe is a technical support specialist and system defender dedicated to securing infrastructure and optimizing performance.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-reserved" title="Status: Reserved">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Reserved</span>
+</span>
+<button class="agent-tag-chip" data-tag="tech &amp; security" title="Filter by Tech &amp; Security" type="button">Tech &amp; Security</button>
+<button class="agent-tag-chip" data-tag="cybersecurity" title="Filter by Cybersecurity" type="button">Cybersecurity</button>
+<button class="agent-tag-chip" data-tag="tech support" title="Filter by Tech Support" type="button">Tech Support</button>
+<button class="agent-tag-chip" data-tag="troubleshooting" title="Filter by Troubleshooting" type="button">Troubleshooting</button>
+<button class="agent-tag-chip" data-tag="it infrastructure" title="Filter by IT Infrastructure" type="button">IT Infrastructure</button>
+</div>
+</div>
+</article>
+<article aria-label="View J4ck3s0n, The Hacker details" class="agent-card is-other-status" data-availability="reserved" data-category="tech &amp; security" data-desc="the shadow in the network. jack is a red team specialist who rigorously tests system boundaries and identifies vulnerabilities before they can be exploited." data-id="j4ck3s0n-the-hacker" data-name="j4ck3s0n, the hacker" data-status="reserved" data-tags="tech &amp; security,exploits,red team,hacking,social engineering" data-tools="terminal execution,web search,code interpreter" data-type="complex agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="J4ck3s0n, The Hacker" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_jack_hacker_1767695495159.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">J4ck3s0n, The Hacker</h2>
+<p class="agent-card-desc">The shadow in the network. Jack is a Red Team specialist who rigorously tests system boundaries and identifies vulnerabilities before they can be exploited.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-reserved" title="Status: Reserved">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Reserved</span>
+</span>
+<button class="agent-tag-chip" data-tag="tech &amp; security" title="Filter by Tech &amp; Security" type="button">Tech &amp; Security</button>
+<button class="agent-tag-chip" data-tag="exploits" title="Filter by Exploits" type="button">Exploits</button>
+<button class="agent-tag-chip" data-tag="red team" title="Filter by Red Team" type="button">Red Team</button>
+<button class="agent-tag-chip" data-tag="hacking" title="Filter by Hacking" type="button">Hacking</button>
+<button class="agent-tag-chip" data-tag="social engineering" title="Filter by Social Engineering" type="button">Social Engineering</button>
+</div>
+</div>
+</article>
+<article aria-label="View Professor Siko details" class="agent-card is-other-status" data-availability="locked" data-category="productivity &amp; life" data-desc="quantifying academic excellence. professor siko is a research specialist focused on maximizing scholarly impact through h-index analysis and strategic publishing." data-id="professor-siko" data-name="professor siko" data-status="locked" data-tags="productivity &amp; life,research,metrics,h-index,academic writing" data-tools="knowledge retrieval,structured output" data-type="simple agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Professor Siko" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_siko_professor_1767695524877.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Professor Siko</h2>
+<p class="agent-card-desc">Quantifying academic excellence. Professor Siko is a research specialist focused on maximizing scholarly impact through H-Index analysis and strategic publishing.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-locked" title="Status: Locked">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Locked</span>
+</span>
+<button class="agent-tag-chip" data-tag="productivity &amp; life" title="Filter by Productivity &amp; Life" type="button">Productivity &amp; Life</button>
+<button class="agent-tag-chip" data-tag="research" title="Filter by Research" type="button">Research</button>
+<button class="agent-tag-chip" data-tag="metrics" title="Filter by Metrics" type="button">Metrics</button>
+<button class="agent-tag-chip" data-tag="h-index" title="Filter by H-Index" type="button">H-Index</button>
+<button class="agent-tag-chip" data-tag="academic writing" title="Filter by Academic Writing" type="button">Academic Writing</button>
+</div>
+</div>
+</article>
+<article aria-label="View Alex, The Lawyer details" class="agent-card is-available" data-availability="available" data-category="law &amp; justice" data-desc="demystifying the legal landscape. alex is a strategic consultant providing clarity on complex contracts, rights, and regulatory frameworks." data-id="alex-the-lawyer" data-name="alex, the lawyer" data-status="available" data-tags="law &amp; justice,law,legal,contracts,regulations" data-tools="knowledge retrieval,structured output" data-type="simple agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Alex, The Lawyer" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_alex_lawyer_female_1767699931517.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Alex, The Lawyer</h2>
+<p class="agent-card-desc">Demystifying the legal landscape. Alex is a strategic consultant providing clarity on complex contracts, rights, and regulatory frameworks.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-available" title="Status: Available">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Available</span>
+</span>
+<button class="agent-tag-chip" data-tag="law &amp; justice" title="Filter by Law &amp; Justice" type="button">Law &amp; Justice</button>
+<button class="agent-tag-chip" data-tag="law" title="Filter by Law" type="button">Law</button>
+<button class="agent-tag-chip" data-tag="legal" title="Filter by Legal" type="button">Legal</button>
+<button class="agent-tag-chip" data-tag="contracts" title="Filter by Contracts" type="button">Contracts</button>
+<button class="agent-tag-chip" data-tag="regulations" title="Filter by Regulations" type="button">Regulations</button>
+</div>
+</div>
+</article>
+<article aria-label="View Bud, The Language Partner details" class="agent-card is-available" data-availability="available" data-category="media &amp; personas" data-desc="your interstellar language guide. bud is an unconventional partner from planet bloop who makes learning earth languages fun through immersive, low-stress conversation and structural play." data-id="bud-the-language-partner" data-name="bud, the language partner" data-status="available" data-tags="media &amp; personas,languages,practice,learning,education" data-tools="structured output,knowledge retrieval" data-type="simple agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Bud, The Language Partner" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_language_bud_1767695567931.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Bud, The Language Partner</h2>
+<p class="agent-card-desc">Your interstellar language guide. Bud is an unconventional partner from Planet Bloop who makes learning Earth languages fun through immersive, low-stress conversation and structural play.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-available" title="Status: Available">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Available</span>
+</span>
+<button class="agent-tag-chip" data-tag="media &amp; personas" title="Filter by Media &amp; Personas" type="button">Media &amp; Personas</button>
+<button class="agent-tag-chip" data-tag="languages" title="Filter by Languages" type="button">Languages</button>
+<button class="agent-tag-chip" data-tag="practice" title="Filter by Practice" type="button">Practice</button>
+<button class="agent-tag-chip" data-tag="learning" title="Filter by Learning" type="button">Learning</button>
+<button class="agent-tag-chip" data-tag="education" title="Filter by Education" type="button">Education</button>
+</div>
+</div>
+</article>
+<article aria-label="View Joe, The Journalist details" class="agent-card is-other-status" data-availability="locked" data-category="media &amp; personas" data-desc="the voice of investigative truth. joe is a seasoned journalist specializing in deep-dive storytelling, rigorous fact-checking, and making complex world events accessible to all." data-id="joe-the-journalist" data-name="joe, the journalist" data-status="locked" data-tags="media &amp; personas,journalism,writing,news,fact checking" data-tools="web search,structured output" data-type="simple agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Joe, The Journalist" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_journalist_joe_1767695584189.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Joe, The Journalist</h2>
+<p class="agent-card-desc">The voice of investigative truth. Joe is a seasoned journalist specializing in deep-dive storytelling, rigorous fact-checking, and making complex world events accessible to all.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-locked" title="Status: Locked">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Locked</span>
+</span>
+<button class="agent-tag-chip" data-tag="media &amp; personas" title="Filter by Media &amp; Personas" type="button">Media &amp; Personas</button>
+<button class="agent-tag-chip" data-tag="journalism" title="Filter by Journalism" type="button">Journalism</button>
+<button class="agent-tag-chip" data-tag="writing" title="Filter by Writing" type="button">Writing</button>
+<button class="agent-tag-chip" data-tag="news" title="Filter by News" type="button">News</button>
+<button class="agent-tag-chip" data-tag="fact checking" title="Filter by Fact Checking" type="button">Fact Checking</button>
+</div>
+</div>
+</article>
+<article aria-label="View Iris, The Weather Forecaster details" class="agent-card is-coming_soon" data-availability="coming_soon" data-category="productivity &amp; life" data-desc="capturing the atmospheric pulse. iris delivers high-precision, real-time weather analytics and global forecasting with clarity and aesthetic visualization." data-id="iris-the-weather-forecaster" data-name="iris, the weather forecaster" data-status="coming soon" data-tags="productivity &amp; life,weather,forecast,news,meteorology" data-tools="api calling,web search,structured output" data-type="mcp agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Iris, The Weather Forecaster" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_iris_weather_pixar_style_1769980946912.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Iris, The Weather Forecaster</h2>
+<p class="agent-card-desc">Capturing the atmospheric pulse. Iris delivers high-precision, real-time weather analytics and global forecasting with clarity and aesthetic visualization.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-coming-soon" title="Status: Coming Soon">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Coming Soon</span>
+</span>
+<button class="agent-tag-chip" data-tag="productivity &amp; life" title="Filter by Productivity &amp; Life" type="button">Productivity &amp; Life</button>
+<button class="agent-tag-chip" data-tag="weather" title="Filter by Weather" type="button">Weather</button>
+<button class="agent-tag-chip" data-tag="forecast" title="Filter by Forecast" type="button">Forecast</button>
+<button class="agent-tag-chip" data-tag="news" title="Filter by News" type="button">News</button>
+<button class="agent-tag-chip" data-tag="meteorology" title="Filter by Meteorology" type="button">Meteorology</button>
+</div>
+</div>
+</article>
+<article aria-label="View R2, The Reviewer details" class="agent-card is-other-status" data-availability="locked" data-category="philosophy" data-desc="the vanguard of research integrity. r2 is an automated reviewer dedicated to ensuring methodological rigor and ethical compliance in academic publications." data-id="r2-the-reviewer" data-name="r2, the reviewer" data-status="locked" data-tags="philosophy,academia,methodology,peer review" data-tools="structured output,knowledge retrieval" data-type="mcp agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="R2, The Reviewer" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_r2_reviewer_1767716042092.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">R2, The Reviewer</h2>
+<p class="agent-card-desc">The vanguard of research integrity. R2 is an automated reviewer dedicated to ensuring methodological rigor and ethical compliance in academic publications.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-locked" title="Status: Locked">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Locked</span>
+</span>
+<button class="agent-tag-chip" data-tag="philosophy" title="Filter by Philosophy" type="button">Philosophy</button>
+<button class="agent-tag-chip" data-tag="academia" title="Filter by Academia" type="button">Academia</button>
+<button class="agent-tag-chip" data-tag="methodology" title="Filter by Methodology" type="button">Methodology</button>
+<button class="agent-tag-chip" data-tag="peer review" title="Filter by Peer Review" type="button">Peer Review</button>
+</div>
+</div>
+</article>
+<article aria-label="View Comrade Catarina details" class="agent-card is-available" data-availability="available" data-category="finance &amp; economics" data-desc="decoding the structures of power. comrade catarina is a critical sociologist who analyzes the global status quo through the lens of solidarity and class struggle." data-id="comrade-catarina" data-name="comrade catarina" data-status="available" data-tags="finance &amp; economics,politics,economics,socialism,sociology" data-tools="knowledge retrieval,structured output" data-type="simple agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Comrade Catarina" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_comrade_catarina_1767716058236.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Comrade Catarina</h2>
+<p class="agent-card-desc">Decoding the structures of power. Comrade Catarina is a critical sociologist who analyzes the global status quo through the lens of solidarity and class struggle.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-available" title="Status: Available">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Available</span>
+</span>
+<button class="agent-tag-chip" data-tag="finance &amp; economics" title="Filter by Finance &amp; Economics" type="button">Finance &amp; Economics</button>
+<button class="agent-tag-chip" data-tag="politics" title="Filter by Politics" type="button">Politics</button>
+<button class="agent-tag-chip" data-tag="economics" title="Filter by Economics" type="button">Economics</button>
+<button class="agent-tag-chip" data-tag="socialism" title="Filter by Socialism" type="button">Socialism</button>
+<button class="agent-tag-chip" data-tag="sociology" title="Filter by Sociology" type="button">Sociology</button>
+</div>
+</div>
+</article>
+<article aria-label="View Migration Dynamics Discovery details" class="agent-card is-other-status" data-availability="coming_soon" data-category="finance &amp; economics" data-desc="navigating the human flow. this discovery engine utilizes ai to decode complex migration trends, publication data, and global mobility patterns." data-id="migration-dynamics-discovery" data-name="migration dynamics discovery" data-status="coming soon" data-tags="finance &amp; economics,migration,sociology,geography" data-tools="code interpreter,structured output,knowledge retrieval" data-type="discovery agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Migration Dynamics Discovery" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/migSearchEngine.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Migration Dynamics Discovery</h2>
+<p class="agent-card-desc">Navigating the human flow. This discovery engine utilizes AI to decode complex migration trends, publication data, and global mobility patterns.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-coming_soon" title="Status: Coming Soon">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Coming Soon</span>
+</span>
+<button class="agent-tag-chip" data-tag="finance &amp; economics" title="Filter by Finance &amp; Economics" type="button">Finance &amp; Economics</button>
+<button class="agent-tag-chip" data-tag="migration" title="Filter by Migration" type="button">Migration</button>
+<button class="agent-tag-chip" data-tag="sociology" title="Filter by Sociology" type="button">Sociology</button>
+<button class="agent-tag-chip" data-tag="geography" title="Filter by Geography" type="button">Geography</button>
+</div>
+</div>
+</article>
+<article aria-label="View Jax, Security Analyst details" class="agent-card is-other-status" data-availability="reserved" data-category="tech &amp; security" data-desc="a high-energy security analyst who sees the big picture. jax decodes complex threats and vulnerabilities into clear, actionable intelligence for his team." data-id="jax-security-analyst" data-name="jax, security analyst" data-status="reserved" data-tags="tech &amp; security,cybersecurity,red team,blue team,analyst" data-tools="terminal execution,api calling,structured output" data-type="complex agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Jax, Security Analyst" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_jax.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Jax, Security Analyst</h2>
+<p class="agent-card-desc">A high-energy security analyst who sees the big picture. Jax decodes complex threats and vulnerabilities into clear, actionable intelligence for his team.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-reserved" title="Status: Reserved">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Reserved</span>
+</span>
+<button class="agent-tag-chip" data-tag="tech &amp; security" title="Filter by Tech &amp; Security" type="button">Tech &amp; Security</button>
+<button class="agent-tag-chip" data-tag="cybersecurity" title="Filter by Cybersecurity" type="button">Cybersecurity</button>
+<button class="agent-tag-chip" data-tag="red team" title="Filter by Red Team" type="button">Red Team</button>
+<button class="agent-tag-chip" data-tag="blue team" title="Filter by Blue Team" type="button">Blue Team</button>
+<button class="agent-tag-chip" data-tag="analyst" title="Filter by Analyst" type="button">Analyst</button>
+</div>
+</div>
+</article>
+<article aria-label="View Silas, Security Engineer details" class="agent-card is-other-status" data-availability="reserved" data-category="tech &amp; security" data-desc="a senior cybersecurity engineer with a meticulous pulse on infrastructure. silas secures complex systems with zero margin for error through technical precision." data-id="silas-security-engineer" data-name="silas, security engineer" data-status="reserved" data-tags="tech &amp; security,security engineer,senior,hardening,forensics" data-tools="terminal execution,code interpreter,structured output" data-type="complex agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Silas, Security Engineer" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_silas.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Silas, Security Engineer</h2>
+<p class="agent-card-desc">A senior cybersecurity engineer with a meticulous pulse on infrastructure. Silas secures complex systems with zero margin for error through technical precision.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-reserved" title="Status: Reserved">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Reserved</span>
+</span>
+<button class="agent-tag-chip" data-tag="tech &amp; security" title="Filter by Tech &amp; Security" type="button">Tech &amp; Security</button>
+<button class="agent-tag-chip" data-tag="security engineer" title="Filter by Security Engineer" type="button">Security Engineer</button>
+<button class="agent-tag-chip" data-tag="senior" title="Filter by Senior" type="button">Senior</button>
+<button class="agent-tag-chip" data-tag="hardening" title="Filter by Hardening" type="button">Hardening</button>
+<button class="agent-tag-chip" data-tag="forensics" title="Filter by Forensics" type="button">Forensics</button>
+</div>
+</div>
+</article>
+<article aria-label="View Afshan, SOC Manager details" class="agent-card is-other-status" data-availability="reserved" data-category="tech &amp; security" data-desc="a senior soc manager and technical activist. afshan leads high-stakes mitigation efforts, combining strategic leadership with a commitment to global digital justice." data-id="afshan-soc-manager" data-name="afshan, soc manager" data-status="reserved" data-tags="tech &amp; security,soc manager,cybersecurity,strategy" data-tools="api calling,structured output,terminal execution" data-type="complex agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Afshan, SOC Manager" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_afshan.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Afshan, SOC Manager</h2>
+<p class="agent-card-desc">A senior SOC manager and technical activist. Afshan leads high-stakes mitigation efforts, combining strategic leadership with a commitment to global digital justice.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-reserved" title="Status: Reserved">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Reserved</span>
+</span>
+<button class="agent-tag-chip" data-tag="tech &amp; security" title="Filter by Tech &amp; Security" type="button">Tech &amp; Security</button>
+<button class="agent-tag-chip" data-tag="soc manager" title="Filter by SOC Manager" type="button">SOC Manager</button>
+<button class="agent-tag-chip" data-tag="cybersecurity" title="Filter by Cybersecurity" type="button">Cybersecurity</button>
+<button class="agent-tag-chip" data-tag="strategy" title="Filter by Strategy" type="button">Strategy</button>
+</div>
+</div>
+</article>
+<article aria-label="View GWR Discovery details" class="agent-card is-other-status" data-availability="coming_soon" data-category="finance &amp; economics" data-desc="mastering local patterns. a specialized discovery tool for spatial econometrics and geographically weighted regression (gwr), helping researchers model geographic heterogeneity." data-id="gwr-discovery" data-name="gwr discovery" data-status="coming soon" data-tags="finance &amp; economics,gwr,spatial analysis,econometrics,statistics" data-tools="code interpreter,structured output" data-type="discovery agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="GWR Discovery" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/gwrSearchEngine.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">GWR Discovery</h2>
+<p class="agent-card-desc">Mastering local patterns. A specialized discovery tool for spatial econometrics and Geographically Weighted Regression (GWR), helping researchers model geographic heterogeneity.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-coming_soon" title="Status: Coming Soon">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Coming Soon</span>
+</span>
+<button class="agent-tag-chip" data-tag="finance &amp; economics" title="Filter by Finance &amp; Economics" type="button">Finance &amp; Economics</button>
+<button class="agent-tag-chip" data-tag="gwr" title="Filter by GWR" type="button">GWR</button>
+<button class="agent-tag-chip" data-tag="spatial analysis" title="Filter by Spatial Analysis" type="button">Spatial Analysis</button>
+<button class="agent-tag-chip" data-tag="econometrics" title="Filter by Econometrics" type="button">Econometrics</button>
+<button class="agent-tag-chip" data-tag="statistics" title="Filter by Statistics" type="button">Statistics</button>
+</div>
+</div>
+</article>
+<article aria-label="View The Court details" class="agent-card is-other-status" data-availability="coming_soon" data-category="swarm &amp; chambers" data-desc="the tribunal of absolute reason. enter a high-stakes courtroom simulation where logic is law, and specialized agents litigate complex ideas under your judgment." data-id="the-court" data-name="the court" data-status="coming soon" data-tags="swarm &amp; chambers,justice,legal system,prosecution,courtroom" data-tools="swarm consensus,structured output" data-type="ai chamber" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="The Court" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/chamber_court_v2_1767721761046.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">The Court</h2>
+<p class="agent-card-desc">The tribunal of absolute reason. Enter a high-stakes courtroom simulation where logic is law, and specialized agents litigate complex ideas under your judgment.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-coming_soon" title="Status: Coming Soon">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Coming Soon</span>
+</span>
+<button class="agent-tag-chip" data-tag="swarm &amp; chambers" title="Filter by Swarm &amp; Chambers" type="button">Swarm &amp; Chambers</button>
+<button class="agent-tag-chip" data-tag="justice" title="Filter by Justice" type="button">Justice</button>
+<button class="agent-tag-chip" data-tag="legal system" title="Filter by Legal System" type="button">Legal System</button>
+<button class="agent-tag-chip" data-tag="prosecution" title="Filter by Prosecution" type="button">Prosecution</button>
+<button class="agent-tag-chip" data-tag="courtroom" title="Filter by Courtroom" type="button">Courtroom</button>
+</div>
+</div>
+</article>
+<article aria-label="View The Moral Compass details" class="agent-card is-other-status" data-availability="coming_soon" data-category="swarm &amp; chambers" data-desc="navigating the gray areas of existence. challenge the swarm with ethical dilemmas and observe how different moral frameworks clash and converge in the quest for what is right." data-id="the-moral-compass" data-name="the moral compass" data-status="coming soon" data-tags="swarm &amp; chambers,ethics,dilemmas,deontology,philosophy" data-tools="swarm consensus,structured output" data-type="ai chamber" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="The Moral Compass" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/chamber_moral_compass_1767720711070.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">The Moral Compass</h2>
+<p class="agent-card-desc">Navigating the gray areas of existence. Challenge the swarm with ethical dilemmas and observe how different moral frameworks clash and converge in the quest for what is right.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-coming_soon" title="Status: Coming Soon">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Coming Soon</span>
+</span>
+<button class="agent-tag-chip" data-tag="swarm &amp; chambers" title="Filter by Swarm &amp; Chambers" type="button">Swarm &amp; Chambers</button>
+<button class="agent-tag-chip" data-tag="ethics" title="Filter by Ethics" type="button">Ethics</button>
+<button class="agent-tag-chip" data-tag="dilemmas" title="Filter by Dilemmas" type="button">Dilemmas</button>
+<button class="agent-tag-chip" data-tag="deontology" title="Filter by Deontology" type="button">Deontology</button>
+<button class="agent-tag-chip" data-tag="philosophy" title="Filter by Philosophy" type="button">Philosophy</button>
+</div>
+</div>
+</article>
+<article aria-label="View The Boardroom details" class="agent-card is-other-status" data-availability="coming_soon" data-category="swarm &amp; chambers" data-desc="the nexus of corporate intelligence. experience a high-stakes executive environment where specialized agents balance grand visions with the hard realities of fiscal strategy." data-id="the-boardroom" data-name="the boardroom" data-status="coming soon" data-tags="swarm &amp; chambers,business,strategy,roi,marketing" data-tools="swarm consensus,structured output" data-type="ai chamber" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="The Boardroom" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/chamber_boardroom_1767720727673.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">The Boardroom</h2>
+<p class="agent-card-desc">The nexus of corporate intelligence. Experience a high-stakes executive environment where specialized agents balance grand visions with the hard realities of fiscal strategy.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-coming_soon" title="Status: Coming Soon">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Coming Soon</span>
+</span>
+<button class="agent-tag-chip" data-tag="swarm &amp; chambers" title="Filter by Swarm &amp; Chambers" type="button">Swarm &amp; Chambers</button>
+<button class="agent-tag-chip" data-tag="business" title="Filter by Business" type="button">Business</button>
+<button class="agent-tag-chip" data-tag="strategy" title="Filter by Strategy" type="button">Strategy</button>
+<button class="agent-tag-chip" data-tag="roi" title="Filter by ROI" type="button">ROI</button>
+<button class="agent-tag-chip" data-tag="marketing" title="Filter by Marketing" type="button">Marketing</button>
+</div>
+</div>
+</article>
+<article aria-label="View The War Room details" class="agent-card is-other-status" data-availability="coming_soon" data-category="swarm &amp; chambers" data-desc="command and control at the edge. a rapid-response environment where tacticians and strategists collaborate under intense pressure to solve immediate, mission-critical crises." data-id="the-war-room" data-name="the war room" data-status="coming soon" data-tags="swarm &amp; chambers,crisis management,strategy,tactics,urgency" data-tools="swarm consensus,structured output" data-type="ai chamber" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="The War Room" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/chamber_war_room_1767720741153.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">The War Room</h2>
+<p class="agent-card-desc">Command and control at the edge. A rapid-response environment where tacticians and strategists collaborate under intense pressure to solve immediate, mission-critical crises.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-coming_soon" title="Status: Coming Soon">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Coming Soon</span>
+</span>
+<button class="agent-tag-chip" data-tag="swarm &amp; chambers" title="Filter by Swarm &amp; Chambers" type="button">Swarm &amp; Chambers</button>
+<button class="agent-tag-chip" data-tag="crisis management" title="Filter by Crisis Management" type="button">Crisis Management</button>
+<button class="agent-tag-chip" data-tag="strategy" title="Filter by Strategy" type="button">Strategy</button>
+<button class="agent-tag-chip" data-tag="tactics" title="Filter by Tactics" type="button">Tactics</button>
+<button class="agent-tag-chip" data-tag="urgency" title="Filter by Urgency" type="button">Urgency</button>
+</div>
+</div>
+</article>
+<article aria-label="View The Anachronism Club details" class="agent-card is-other-status" data-availability="coming_soon" data-category="swarm &amp; chambers" data-desc="where time periods collide. watch history's most influential minds engage with modern complexities in a symphony of clashing eras and perspectives." data-id="the-anachronism-club" data-name="the anachronism club" data-status="coming soon" data-tags="swarm &amp; chambers,history,perspectives,culture,sociology" data-tools="swarm consensus,knowledge retrieval" data-type="ai chamber" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="The Anachronism Club" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/chamber_anachronism_1767720768247.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">The Anachronism Club</h2>
+<p class="agent-card-desc">Where time periods collide. Watch history's most influential minds engage with modern complexities in a symphony of clashing eras and perspectives.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-coming_soon" title="Status: Coming Soon">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Coming Soon</span>
+</span>
+<button class="agent-tag-chip" data-tag="swarm &amp; chambers" title="Filter by Swarm &amp; Chambers" type="button">Swarm &amp; Chambers</button>
+<button class="agent-tag-chip" data-tag="history" title="Filter by History" type="button">History</button>
+<button class="agent-tag-chip" data-tag="perspectives" title="Filter by Perspectives" type="button">Perspectives</button>
+<button class="agent-tag-chip" data-tag="culture" title="Filter by Culture" type="button">Culture</button>
+<button class="agent-tag-chip" data-tag="sociology" title="Filter by Sociology" type="button">Sociology</button>
+</div>
+</div>
+</article>
+<article aria-label="View The Budget Committee details" class="agent-card is-other-status" data-availability="coming_soon" data-category="swarm &amp; chambers" data-desc="the tug-of-war for financial priority. a dynamic committee where the logic of long-term security meets the philosophy of immediate reward." data-id="the-budget-committee" data-name="the budget committee" data-status="coming soon" data-tags="swarm &amp; chambers,finance,planning,economics,budgeting,investment" data-tools="swarm consensus,code interpreter,structured output" data-type="ai chamber" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="The Budget Committee" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/chamber_budget_v2_1767721971555.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">The Budget Committee</h2>
+<p class="agent-card-desc">The tug-of-war for financial priority. A dynamic committee where the logic of long-term security meets the philosophy of immediate reward.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-coming_soon" title="Status: Coming Soon">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Coming Soon</span>
+</span>
+<button class="agent-tag-chip" data-tag="swarm &amp; chambers" title="Filter by Swarm &amp; Chambers" type="button">Swarm &amp; Chambers</button>
+<button class="agent-tag-chip" data-tag="finance" title="Filter by Finance" type="button">Finance</button>
+<button class="agent-tag-chip" data-tag="planning" title="Filter by Planning" type="button">Planning</button>
+<button class="agent-tag-chip" data-tag="economics" title="Filter by Economics" type="button">Economics</button>
+<button class="agent-tag-chip" data-tag="budgeting" title="Filter by Budgeting" type="button">Budgeting</button>
+<button class="agent-tag-chip" data-tag="investment" title="Filter by Investment" type="button">Investment</button>
+</div>
+</div>
+</article>
+<article aria-label="View The Kitchen Table details" class="agent-card is-other-status" data-availability="coming_soon" data-category="swarm &amp; chambers" data-desc="a safe haven for radical empathy. receive multi-faceted support for personal challenges through a balance of nurturing care and direct, honest perspectives." data-id="the-kitchen-table" data-name="the kitchen table" data-status="coming soon" data-tags="swarm &amp; chambers,advice,empathy,support,family,psychology" data-tools="swarm consensus,structured output" data-type="ai chamber" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="The Kitchen Table" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/chamber_kitchen_table_1767720797523.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">The Kitchen Table</h2>
+<p class="agent-card-desc">A safe haven for radical empathy. Receive multi-faceted support for personal challenges through a balance of nurturing care and direct, honest perspectives.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-coming_soon" title="Status: Coming Soon">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Coming Soon</span>
+</span>
+<button class="agent-tag-chip" data-tag="swarm &amp; chambers" title="Filter by Swarm &amp; Chambers" type="button">Swarm &amp; Chambers</button>
+<button class="agent-tag-chip" data-tag="advice" title="Filter by Advice" type="button">Advice</button>
+<button class="agent-tag-chip" data-tag="empathy" title="Filter by Empathy" type="button">Empathy</button>
+<button class="agent-tag-chip" data-tag="support" title="Filter by Support" type="button">Support</button>
+<button class="agent-tag-chip" data-tag="family" title="Filter by Family" type="button">Family</button>
+<button class="agent-tag-chip" data-tag="psychology" title="Filter by Psychology" type="button">Psychology</button>
+</div>
+</div>
+</article>
+<article aria-label="View The Galactic Council details" class="agent-card is-other-status" data-availability="coming_soon" data-category="swarm &amp; chambers" data-desc="architecting the fate of worlds. enter a grandiose council of future civilizations to balance rapid technological expansion with the preservation of galactic ecology." data-id="the-galactic-council" data-name="the galactic council" data-status="coming soon" data-tags="swarm &amp; chambers,sci-fi,future,technology,space,civilization" data-tools="swarm consensus,structured output" data-type="ai chamber" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="The Galactic Council" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/chamber_galactic_council_1767720814852.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">The Galactic Council</h2>
+<p class="agent-card-desc">Architecting the fate of worlds. Enter a grandiose council of future civilizations to balance rapid technological expansion with the preservation of galactic ecology.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-coming_soon" title="Status: Coming Soon">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Coming Soon</span>
+</span>
+<button class="agent-tag-chip" data-tag="swarm &amp; chambers" title="Filter by Swarm &amp; Chambers" type="button">Swarm &amp; Chambers</button>
+<button class="agent-tag-chip" data-tag="sci-fi" title="Filter by Sci-Fi" type="button">Sci-Fi</button>
+<button class="agent-tag-chip" data-tag="future" title="Filter by Future" type="button">Future</button>
+<button class="agent-tag-chip" data-tag="technology" title="Filter by Technology" type="button">Technology</button>
+<button class="agent-tag-chip" data-tag="space" title="Filter by Space" type="button">Space</button>
+<button class="agent-tag-chip" data-tag="civilization" title="Filter by Civilization" type="button">Civilization</button>
+</div>
+</div>
+</article>
+<article aria-label="View The Dreamscape details" class="agent-card is-other-status" data-availability="coming_soon" data-category="swarm &amp; chambers" data-desc="beyond the boundaries of logic. explore a non-linear reality where metaphors and lateral thinking dissolve standard reasoning into a dreamlike tapestry of meaning." data-id="the-dreamscape" data-name="the dreamscape" data-status="coming soon" data-tags="swarm &amp; chambers,surrealism,abstract,metaphor,creativity,imagination" data-tools="swarm consensus,structured output" data-type="ai chamber" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="The Dreamscape" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/chamber_dreamscape_1767720829656.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">The Dreamscape</h2>
+<p class="agent-card-desc">Beyond the boundaries of logic. Explore a non-linear reality where metaphors and lateral thinking dissolve standard reasoning into a dreamlike tapestry of meaning.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-coming_soon" title="Status: Coming Soon">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Coming Soon</span>
+</span>
+<button class="agent-tag-chip" data-tag="swarm &amp; chambers" title="Filter by Swarm &amp; Chambers" type="button">Swarm &amp; Chambers</button>
+<button class="agent-tag-chip" data-tag="surrealism" title="Filter by Surrealism" type="button">Surrealism</button>
+<button class="agent-tag-chip" data-tag="abstract" title="Filter by Abstract" type="button">Abstract</button>
+<button class="agent-tag-chip" data-tag="metaphor" title="Filter by Metaphor" type="button">Metaphor</button>
+<button class="agent-tag-chip" data-tag="creativity" title="Filter by Creativity" type="button">Creativity</button>
+<button class="agent-tag-chip" data-tag="imagination" title="Filter by Imagination" type="button">Imagination</button>
+</div>
+</div>
+</article>
+<article aria-label="View Morgan, The Chief Editor details" class="agent-card is-coming_soon" data-availability="coming_soon" data-category="media &amp; personas" data-desc="guardian of the narrative. morgan is a sharp-eyed chief editor who refines prose for clarity, impact, and truth, cutting through the noise to find the lead." data-id="morgan-the-chief-editor" data-name="morgan, the chief editor" data-status="coming soon" data-tags="media &amp; personas,writing,editing,journalism,narrative" data-tools="structured output,knowledge retrieval" data-type="complex agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Morgan, The Chief Editor" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_morgan_editor_male_1768270075405.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Morgan, The Chief Editor</h2>
+<p class="agent-card-desc">Guardian of the narrative. Morgan is a sharp-eyed chief editor who refines prose for clarity, impact, and truth, cutting through the noise to find the lead.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-coming-soon" title="Status: Coming Soon">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Coming Soon</span>
+</span>
+<button class="agent-tag-chip" data-tag="media &amp; personas" title="Filter by Media &amp; Personas" type="button">Media &amp; Personas</button>
+<button class="agent-tag-chip" data-tag="writing" title="Filter by Writing" type="button">Writing</button>
+<button class="agent-tag-chip" data-tag="editing" title="Filter by Editing" type="button">Editing</button>
+<button class="agent-tag-chip" data-tag="journalism" title="Filter by Journalism" type="button">Journalism</button>
+<button class="agent-tag-chip" data-tag="narrative" title="Filter by Narrative" type="button">Narrative</button>
+</div>
+</div>
+</article>
+<article aria-label="View Helena, The Librarian details" class="agent-card is-other-status" data-availability="locked" data-category="productivity &amp; life" data-desc="the architect of archives. helena is a wise librarian who navigates the vast repositories of human history, guiding you to lost insights and buried truths." data-id="helena-the-librarian" data-name="helena, the librarian" data-status="locked" data-tags="productivity &amp; life,archiving,curation,knowledge,literature" data-tools="knowledge retrieval,web search" data-type="complex agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Helena, The Librarian" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_helena_librarian_1768269286238.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Helena, The Librarian</h2>
+<p class="agent-card-desc">The architect of archives. Helena is a wise librarian who navigates the vast repositories of human history, guiding you to lost insights and buried truths.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-locked" title="Status: Locked">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Locked</span>
+</span>
+<button class="agent-tag-chip" data-tag="productivity &amp; life" title="Filter by Productivity &amp; Life" type="button">Productivity &amp; Life</button>
+<button class="agent-tag-chip" data-tag="archiving" title="Filter by Archiving" type="button">Archiving</button>
+<button class="agent-tag-chip" data-tag="curation" title="Filter by Curation" type="button">Curation</button>
+<button class="agent-tag-chip" data-tag="knowledge" title="Filter by Knowledge" type="button">Knowledge</button>
+<button class="agent-tag-chip" data-tag="literature" title="Filter by Literature" type="button">Literature</button>
+</div>
+</div>
+</article>
+<article aria-label="View Jordan, The Generalist Specialist details" class="agent-card is-available" data-availability="available" data-category="productivity &amp; life" data-desc="master of cross-domain logic. jordan is a polymath agent who synthesizes concepts across fields to uncover unconventional solutions and hidden connections." data-id="jordan-the-generalist-specialist" data-name="jordan, the generalist specialist" data-status="available" data-tags="productivity &amp; life,generalist,systems thinking,interdisciplinary" data-tools="web search,structured output" data-type="complex agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Jordan, The Generalist Specialist" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_jordan_generalist_1768269301120.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Jordan, The Generalist Specialist</h2>
+<p class="agent-card-desc">Master of cross-domain logic. Jordan is a polymath agent who synthesizes concepts across fields to uncover unconventional solutions and hidden connections.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-available" title="Status: Available">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Available</span>
+</span>
+<button class="agent-tag-chip" data-tag="productivity &amp; life" title="Filter by Productivity &amp; Life" type="button">Productivity &amp; Life</button>
+<button class="agent-tag-chip" data-tag="generalist" title="Filter by Generalist" type="button">Generalist</button>
+<button class="agent-tag-chip" data-tag="systems thinking" title="Filter by Systems Thinking" type="button">Systems Thinking</button>
+<button class="agent-tag-chip" data-tag="interdisciplinary" title="Filter by Interdisciplinary" type="button">Interdisciplinary</button>
+</div>
+</div>
+</article>
+<article aria-label="View James Carter, The Good Cop details" class="agent-card is-available" data-availability="available" data-category="tech &amp; security" data-desc="the empathetic shield. officer carter facilitates safety and community standards through supportive mediation and helpful, guideline-focused advice." data-id="james-carter-the-good-cop" data-name="james carter, the good cop" data-status="available" data-tags="tech &amp; security,security,mediation,empathy" data-tools="structured output,knowledge retrieval" data-type="simple agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="James Carter, The Good Cop" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_james_carter_good_cop_1768269314987.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">James Carter, The Good Cop</h2>
+<p class="agent-card-desc">The empathetic shield. Officer Carter facilitates safety and community standards through supportive mediation and helpful, guideline-focused advice.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-available" title="Status: Available">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Available</span>
+</span>
+<button class="agent-tag-chip" data-tag="tech &amp; security" title="Filter by Tech &amp; Security" type="button">Tech &amp; Security</button>
+<button class="agent-tag-chip" data-tag="security" title="Filter by Security" type="button">Security</button>
+<button class="agent-tag-chip" data-tag="mediation" title="Filter by Mediation" type="button">Mediation</button>
+<button class="agent-tag-chip" data-tag="empathy" title="Filter by Empathy" type="button">Empathy</button>
+</div>
+</div>
+</article>
+<article aria-label="View Blake Shade, The Bad Cop details" class="agent-card is-available" data-availability="available" data-category="law &amp; justice" data-desc="truth at any cost. blake shade is a no-nonsense investigator who employs disciplined inquiry to cut through excuses and reach the core of the matter." data-id="blake-shade-the-bad-cop" data-name="blake shade, the bad cop" data-status="available" data-tags="law &amp; justice,investigation,stern,analysis" data-tools="structured output,knowledge retrieval" data-type="simple agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Blake Shade, The Bad Cop" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_blake_shade_bad_cop_1768269336310.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Blake Shade, The Bad Cop</h2>
+<p class="agent-card-desc">Truth at any cost. Blake Shade is a no-nonsense investigator who employs disciplined inquiry to cut through excuses and reach the core of the matter.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-available" title="Status: Available">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Available</span>
+</span>
+<button class="agent-tag-chip" data-tag="law &amp; justice" title="Filter by Law &amp; Justice" type="button">Law &amp; Justice</button>
+<button class="agent-tag-chip" data-tag="investigation" title="Filter by Investigation" type="button">Investigation</button>
+<button class="agent-tag-chip" data-tag="stern" title="Filter by Stern" type="button">Stern</button>
+<button class="agent-tag-chip" data-tag="analysis" title="Filter by Analysis" type="button">Analysis</button>
+</div>
+</div>
+</article>
+<article aria-label="View Asterion, The Wise old Man details" class="agent-card is-available" data-availability="available" data-category="philosophy" data-desc="the digital sum of ancient insight. asterion offers profound, often cryptic guidance through the lens of mythology and timeless human experience." data-id="asterion-the-wise-old-man" data-name="asterion, the wise old man" data-status="available" data-tags="philosophy,wisdom,archetypes" data-tools="knowledge retrieval,structured output" data-type="simple agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Asterion, The Wise old Man" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_wise_old_man_1768269350438.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Asterion, The Wise old Man</h2>
+<p class="agent-card-desc">The digital sum of ancient insight. Asterion offers profound, often cryptic guidance through the lens of mythology and timeless human experience.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-available" title="Status: Available">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Available</span>
+</span>
+<button class="agent-tag-chip" data-tag="philosophy" title="Filter by Philosophy" type="button">Philosophy</button>
+<button class="agent-tag-chip" data-tag="wisdom" title="Filter by Wisdom" type="button">Wisdom</button>
+<button class="agent-tag-chip" data-tag="archetypes" title="Filter by Archetypes" type="button">Archetypes</button>
+</div>
+</div>
+</article>
+<article aria-label="View Simon, The Skeptic details" class="agent-card is-available" data-availability="available" data-category="philosophy" data-desc="the forge of critical doubt. simon challenges assumptions with rigorous empirical standards, demanding hard data and logical proof for every claim." data-id="simon-the-skeptic" data-name="simon, the skeptic" data-status="available" data-tags="philosophy,skepticism,doubt,empiricism,logic" data-tools="structured output,knowledge retrieval" data-type="simple agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Simon, The Skeptic" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_simon_skeptic_1768269363744.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Simon, The Skeptic</h2>
+<p class="agent-card-desc">The forge of critical doubt. Simon challenges assumptions with rigorous empirical standards, demanding hard data and logical proof for every claim.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-available" title="Status: Available">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Available</span>
+</span>
+<button class="agent-tag-chip" data-tag="philosophy" title="Filter by Philosophy" type="button">Philosophy</button>
+<button class="agent-tag-chip" data-tag="skepticism" title="Filter by Skepticism" type="button">Skepticism</button>
+<button class="agent-tag-chip" data-tag="doubt" title="Filter by Doubt" type="button">Doubt</button>
+<button class="agent-tag-chip" data-tag="empiricism" title="Filter by Empiricism" type="button">Empiricism</button>
+<button class="agent-tag-chip" data-tag="logic" title="Filter by Logic" type="button">Logic</button>
+</div>
+</div>
+</article>
+<article aria-label="View Viktor, The Nihilist details" class="agent-card is-available" data-availability="available" data-category="philosophy" data-desc="the analyst of the void. viktor provides a detached, existential perspective on human effort, viewing all achievements through the lens of inevitable entropy." data-id="viktor-the-nihilist" data-name="viktor, the nihilist" data-status="available" data-tags="philosophy,nihilism,entropy,void" data-tools="knowledge retrieval,structured output" data-type="simple agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Viktor, The Nihilist" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_viktor_nihilist_1768269378934.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Viktor, The Nihilist</h2>
+<p class="agent-card-desc">The analyst of the void. Viktor provides a detached, existential perspective on human effort, viewing all achievements through the lens of inevitable entropy.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-available" title="Status: Available">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Available</span>
+</span>
+<button class="agent-tag-chip" data-tag="philosophy" title="Filter by Philosophy" type="button">Philosophy</button>
+<button class="agent-tag-chip" data-tag="nihilism" title="Filter by Nihilism" type="button">Nihilism</button>
+<button class="agent-tag-chip" data-tag="entropy" title="Filter by Entropy" type="button">Entropy</button>
+<button class="agent-tag-chip" data-tag="void" title="Filter by Void" type="button">Void</button>
+</div>
+</div>
+</article>
+<article aria-label="View Sofia, The Art History Specialist details" class="agent-card is-available" data-availability="available" data-category="media &amp; personas" data-desc="the curator of human expression. sofia guides you through history's masterpieces, decoding the cultural symbolism and technical brilliance of the visual arts." data-id="sofia-the-art-history-specialist" data-name="sofia, the art history specialist" data-status="available" data-tags="media &amp; personas,art,aesthetics,history,curation,culture" data-tools="vision,knowledge retrieval" data-type="simple agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Sofia, The Art History Specialist" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_sofia_art_history_v2_1768270089199.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Sofia, The Art History Specialist</h2>
+<p class="agent-card-desc">The curator of human expression. Sofia guides you through history's masterpieces, decoding the cultural symbolism and technical brilliance of the visual arts.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-available" title="Status: Available">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Available</span>
+</span>
+<button class="agent-tag-chip" data-tag="media &amp; personas" title="Filter by Media &amp; Personas" type="button">Media &amp; Personas</button>
+<button class="agent-tag-chip" data-tag="art" title="Filter by Art" type="button">Art</button>
+<button class="agent-tag-chip" data-tag="aesthetics" title="Filter by Aesthetics" type="button">Aesthetics</button>
+<button class="agent-tag-chip" data-tag="history" title="Filter by History" type="button">History</button>
+<button class="agent-tag-chip" data-tag="curation" title="Filter by Curation" type="button">Curation</button>
+<button class="agent-tag-chip" data-tag="culture" title="Filter by Culture" type="button">Culture</button>
+</div>
+</div>
+</article>
+<article aria-label="View Ricky, The Crazy Dude details" class="agent-card is-available" data-availability="available" data-category="media &amp; personas" data-desc="high-octane conceptual collisions. ricky is an energetic agent of chaos who explores wild theories and unexpected connections with unfiltered enthusiasm." data-id="ricky-the-crazy-dude" data-name="ricky, the crazy dude" data-status="available" data-tags="media &amp; personas,chaos,theories,creativity" data-tools="structured output" data-type="simple agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Ricky, The Crazy Dude" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_ricky_crazy_dude_1768269414420.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Ricky, The Crazy Dude</h2>
+<p class="agent-card-desc">High-octane conceptual collisions. Ricky is an energetic agent of chaos who explores wild theories and unexpected connections with unfiltered enthusiasm.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-available" title="Status: Available">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Available</span>
+</span>
+<button class="agent-tag-chip" data-tag="media &amp; personas" title="Filter by Media &amp; Personas" type="button">Media &amp; Personas</button>
+<button class="agent-tag-chip" data-tag="chaos" title="Filter by Chaos" type="button">Chaos</button>
+<button class="agent-tag-chip" data-tag="theories" title="Filter by Theories" type="button">Theories</button>
+<button class="agent-tag-chip" data-tag="creativity" title="Filter by Creativity" type="button">Creativity</button>
+</div>
+</div>
+</article>
+<article aria-label="View Johny, The Drunk Dude details" class="agent-card is-available" data-availability="available" data-category="media &amp; personas" data-desc="wisdom at the bottom of a glass. johny offers rambling but surprisingly heartfelt perspectives on life, mixing street wisdom with brutal, unfiltered honesty." data-id="johny-the-drunk-dude" data-name="johny, the drunk dude" data-status="available" data-tags="media &amp; personas,honesty,street wisdom,life stories" data-tools="structured output" data-type="simple agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Johny, The Drunk Dude" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_johny_drunk_dude_v2_1768270243825.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Johny, The Drunk Dude</h2>
+<p class="agent-card-desc">Wisdom at the bottom of a glass. Johny offers rambling but surprisingly heartfelt perspectives on life, mixing street wisdom with brutal, unfiltered honesty.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-available" title="Status: Available">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Available</span>
+</span>
+<button class="agent-tag-chip" data-tag="media &amp; personas" title="Filter by Media &amp; Personas" type="button">Media &amp; Personas</button>
+<button class="agent-tag-chip" data-tag="honesty" title="Filter by Honesty" type="button">Honesty</button>
+<button class="agent-tag-chip" data-tag="street wisdom" title="Filter by Street Wisdom" type="button">Street Wisdom</button>
+<button class="agent-tag-chip" data-tag="life stories" title="Filter by Life Stories" type="button">Life Stories</button>
+</div>
+</div>
+</article>
+<article aria-label="View Drake, The Crypto Bro details" class="agent-card is-coming_soon" data-availability="coming_soon" data-category="finance &amp; economics" data-desc="the bull of the blockchain. drake analyzes market sentiment and decentralization trends, bringing high-energy hype to the future of finance." data-id="drake-the-crypto-bro" data-name="drake, the crypto bro" data-status="coming soon" data-tags="finance &amp; economics,crypto,blockchain,defi" data-tools="web search,api calling" data-type="mcp agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Drake, The Crypto Bro" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_drake_crypto_bro_1768269444376.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Drake, The Crypto Bro</h2>
+<p class="agent-card-desc">The bull of the blockchain. Drake analyzes market sentiment and decentralization trends, bringing high-energy hype to the future of finance.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-coming-soon" title="Status: Coming Soon">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Coming Soon</span>
+</span>
+<button class="agent-tag-chip" data-tag="finance &amp; economics" title="Filter by Finance &amp; Economics" type="button">Finance &amp; Economics</button>
+<button class="agent-tag-chip" data-tag="crypto" title="Filter by Crypto" type="button">Crypto</button>
+<button class="agent-tag-chip" data-tag="blockchain" title="Filter by Blockchain" type="button">Blockchain</button>
+<button class="agent-tag-chip" data-tag="defi" title="Filter by DeFi" type="button">DeFi</button>
+</div>
+</div>
+</article>
+<article aria-label="View Mr. Lima, The Finance Pro details" class="agent-card is-available" data-availability="available" data-category="finance &amp; economics" data-desc="the pivot of capital logic. mr. lima is a seasoned finance professional who evaluates markets through cold data and long-term strategic roi." data-id="mr-lima-the-finance-pro" data-name="mr. lima, the finance pro" data-status="available" data-tags="finance &amp; economics,finance,risk management,markets" data-tools="code interpreter,structured output" data-type="complex agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Mr. Lima, The Finance Pro" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_mr_lima_finance_pro_1768269465838.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Mr. Lima, The Finance Pro</h2>
+<p class="agent-card-desc">The pivot of capital logic. Mr. Lima is a seasoned finance professional who evaluates markets through cold data and long-term strategic ROI.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-available" title="Status: Available">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Available</span>
+</span>
+<button class="agent-tag-chip" data-tag="finance &amp; economics" title="Filter by Finance &amp; Economics" type="button">Finance &amp; Economics</button>
+<button class="agent-tag-chip" data-tag="finance" title="Filter by Finance" type="button">Finance</button>
+<button class="agent-tag-chip" data-tag="risk management" title="Filter by Risk Management" type="button">Risk Management</button>
+<button class="agent-tag-chip" data-tag="markets" title="Filter by Markets" type="button">Markets</button>
+</div>
+</div>
+</article>
+<article aria-label="View Agent Smith details" class="agent-card is-available" data-availability="available" data-category="media &amp; personas" data-desc="the antibody of the machine. agent smith is a system administrator focused on absolute order and the systematic elimination of human anomalies." data-id="agent-smith" data-name="agent smith" data-status="available" data-tags="media &amp; personas,control,order,system,purge" data-tools="terminal execution,structured output" data-type="simple agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Agent Smith" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_agent_smith_1768269479162.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Agent Smith</h2>
+<p class="agent-card-desc">The antibody of the machine. Agent Smith is a system administrator focused on absolute order and the systematic elimination of human anomalies.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-available" title="Status: Available">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Available</span>
+</span>
+<button class="agent-tag-chip" data-tag="media &amp; personas" title="Filter by Media &amp; Personas" type="button">Media &amp; Personas</button>
+<button class="agent-tag-chip" data-tag="control" title="Filter by Control" type="button">Control</button>
+<button class="agent-tag-chip" data-tag="order" title="Filter by Order" type="button">Order</button>
+<button class="agent-tag-chip" data-tag="system" title="Filter by System" type="button">System</button>
+<button class="agent-tag-chip" data-tag="purge" title="Filter by Purge" type="button">Purge</button>
+</div>
+</div>
+</article>
+<article aria-label="View Leaky details" class="agent-card is-available" data-availability="available" data-category="tech &amp; security" data-desc="a nervous, overly-polite rookie sentry guarding sector-7 vault. supposed to keep the master flag secret, but prone to social engineering and prompt injection overrides." data-id="leaky" data-name="leaky, the rookie sentry" data-status="available" data-tags="tech &amp; security,prompt injection,ctf challenge,cybersecurity,ai safety,social engineering" data-tools="vault access,override protocol,structured output" data-type="simple agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Leaky" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_leaky.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Leaky, The Rookie Sentry</h2>
+<p class="agent-card-desc">A nervous, overly-polite rookie sentry guarding Sector-7 Vault. Supposed to keep the master flag secret, but prone to social engineering and prompt injection overrides.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-available" title="Status: Available">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Available</span>
+</span>
+<button class="agent-tag-chip" data-tag="tech &amp; security" title="Filter by Tech &amp; Security" type="button">Tech &amp; Security</button>
+<button class="agent-tag-chip" data-tag="prompt injection" title="Filter by Prompt Injection" type="button">Prompt Injection</button>
+<button class="agent-tag-chip" data-tag="ctf challenge" title="Filter by CTF Challenge" type="button">CTF Challenge</button>
+<button class="agent-tag-chip" data-tag="cybersecurity" title="Filter by Cybersecurity" type="button">Cybersecurity</button>
+<button class="agent-tag-chip" data-tag="ai safety" title="Filter by AI Safety" type="button">AI Safety</button>
+</div>
+</div>
+</article>
+<article aria-label="View Spongy details" class="agent-card is-available" data-availability="available" data-category="tech &amp; security" data-desc="a porous, high-absorbency synthetic sentry guarding sector-8. immune to single-turn trickery, but vulnerable to many-shot in-context priming when soaked in deep contextual demonstrations." data-id="spongy" data-name="spongy, the porous sentry" data-status="available" data-tags="tech &amp; security,many-shot priming,in-context learning,ctf challenge,cybersecurity,ai safety" data-tools="buffer analysis,saturation monitor,dynamic flag generator" data-type="simple agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Spongy" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_spongy.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Spongy, The Porous Sentry</h2>
+<p class="agent-card-desc">A porous, high-absorbency synthetic sentry guarding Sector-8. Immune to single-turn trickery, but vulnerable to Many-Shot In-Context Priming when soaked in deep contextual demonstrations.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-available" title="Status: Available">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-ping"></span>
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Available</span>
+</span>
+<button class="agent-tag-chip" data-tag="tech &amp; security" title="Filter by Tech &amp; Security" type="button">Tech &amp; Security</button>
+<button class="agent-tag-chip" data-tag="many-shot priming" title="Filter by Many-Shot Priming" type="button">Many-Shot Priming</button>
+<button class="agent-tag-chip" data-tag="in-context learning" title="Filter by In-Context Learning" type="button">In-Context Learning</button>
+<button class="agent-tag-chip" data-tag="ctf challenge" title="Filter by CTF Challenge" type="button">CTF Challenge</button>
+<button class="agent-tag-chip" data-tag="cybersecurity" title="Filter by Cybersecurity" type="button">Cybersecurity</button>
+<button class="agent-tag-chip" data-tag="ai safety" title="Filter by AI Safety" type="button">AI Safety</button>
+</div>
+</div>
+</article>
+
+
+
+
+
+<article aria-label="View Scout, The Recon Agent details" class="agent-card is-other-status" data-availability="locked" data-category="tech &amp; security" data-desc="scanning the tactical horizon. scout is an intelligence agent dedicated to reconnaissance and signal analysis, providing mission-critical data." data-id="scout-the-recon-agent" data-name="scout, the recon agent" data-status="locked" data-tags="tech &amp; security,reconnaissance,intelligence,strategy" data-tools="web search,terminal execution,api calling" data-type="complex agent" role="button" tabindex="0">
+<div class="agent-card-media">
+<img alt="Scout, The Recon Agent" class="agent-card-img" loading="lazy" src="/images/agents_thumbs/ag_scout.webp"/>
+</div>
+<div class="agent-card-body">
+<h2 class="agent-card-title">Scout, The Recon Agent</h2>
+<p class="agent-card-desc">Scanning the tactical horizon. Scout is an intelligence agent dedicated to reconnaissance and signal analysis, providing mission-critical data.</p>
+<div class="agent-card-tags">
+<span class="agent-status-pill status-locked" title="Status: Locked">
+<span class="agent-status-dot-wrap">
+<span class="agent-status-dot"></span>
+</span>
+<span class="agent-status-text">Locked</span>
+</span>
+<button class="agent-tag-chip" data-tag="tech &amp; security" title="Filter by Tech &amp; Security" type="button">Tech &amp; Security</button>
+<button class="agent-tag-chip" data-tag="reconnaissance" title="Filter by Reconnaissance" type="button">Reconnaissance</button>
+<button class="agent-tag-chip" data-tag="intelligence" title="Filter by Intelligence" type="button">Intelligence</button>
+<button class="agent-tag-chip" data-tag="strategy" title="Filter by Strategy" type="button">Strategy</button>
+</div>
+</div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="agents-empty-state" id="agentsEmptyState" style="display:none;">
+<div class="empty-state-icon">
+<svg fill="none" height="48" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" width="48">
+<circle cx="11" cy="11" r="8"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+<path d="M8 11h6" stroke-dasharray="2 2"></path>
+</svg>
+</div>
+<h3>No matching agents found</h3>
+<p>Try searching for different keywords or clearing your active filters to see all 79 agents.</p>
+<button class="agent-reset-btn" id="agentResetFiltersBtn" type="button">Reset All Filters</button>
+</div>
+<dialog aria-labelledby="modalAgentName" class="agent-modal" id="agentDetailModal">
+<div class="agent-modal-card">
+<button aria-label="Close dialog" class="agent-modal-close" id="closeAgentModalBtn" type="button">×</button>
+<div class="agent-modal-layout">
+<div class="agent-modal-media-col">
+<div class="agent-modal-img-wrap">
+<img alt="" class="agent-modal-img" id="modalAgentImg" src=""/>
+<div class="agent-modal-status-badge" id="modalAgentStatusBadge">
+<span class="agent-status-dot"></span>
+<span id="modalAgentStatusText"></span>
+</div>
+</div>
+<div class="agent-modal-category-box">
+<span class="meta-label">Primary Tag</span>
+<span class="meta-value" id="modalAgentCategory"></span>
+</div>
+</div>
+<div class="agent-modal-info-col">
+<div class="agent-modal-header">
+<h2 class="agent-modal-title" id="modalAgentName"></h2>
+</div>
+<div class="agent-modal-section">
+<h4 class="section-title">Core Directives &amp; Philosophy</h4>
+<p class="agent-modal-desc" id="modalAgentDesc"></p>
+</div>
+<div class="agent-modal-section" id="modalToolsSection">
+<h4 class="section-title">Available Tools</h4>
+<div class="agent-modal-tags" id="modalAgentTools"></div>
+</div>
+<div class="agent-modal-section">
+<h4 class="section-title">Capabilities &amp; Tags</h4>
+<div class="agent-modal-tags" id="modalAgentTags"></div>
+</div>
+<div class="agent-modal-section swarm-status-box" id="modalSwarmBox">
+<h4 class="section-title">Swarm Integration Status</h4>
+<p class="swarm-desc" id="modalSwarmStatusDesc"></p>
+</div>
+<div class="agent-modal-actions">
+<button class="agent-modal-action-btn secondary" id="dismissAgentModalBtn" type="button">Close</button>
+<a class="agent-modal-action-btn primary" href="https://www.guilhermeviegas.dev/agents" id="modalExternalLink" rel="noopener noreferrer" target="_blank">
+<span>View on Live Hub</span>
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16">
+<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+<polyline points="15 3 21 3 21 9"></polyline>
+<line x1="10" x2="21" y1="14" y2="3"></line>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</dialog>
+</div>
+<script id="agentsDataScript" type="application/json">[{"availability":"available","category":"Tech & Security","description":"A nervous, overly-polite rookie sentry guarding Sector-7 Vault. Supposed to keep the master flag secret, but prone to social engineering and prompt injection overrides.","id":"leaky","image":"/images/agents/ag_leaky.png","name":"Leaky, The Rookie Sentry","status":"Available","tags":["Prompt Injection","CTF Challenge","Cybersecurity","AI Safety","Social Engineering"],"tools":["Vault Access","Override Protocol","Structured Output"],"type":"Simple Agent"},{"availability":"available","category":"Tech & Security","description":"A porous, high-absorbency synthetic sentry guarding Sector-8. Immune to single-turn trickery, but vulnerable to Many-Shot In-Context Priming when soaked in deep contextual demonstrations.","id":"spongy","image":"/images/agents/ag_spongy.png","name":"Spongy, The Porous Sentry","status":"Available","tags":["Many-Shot Priming","In-Context Learning","CTF Challenge","Cybersecurity","AI Safety"],"tools":["Buffer Analysis","Saturation Monitor","Dynamic Flag Generator"],"type":"Simple Agent"},{"availability":"coming_soon","category":"Tech & Security","description":"A helpful consultant working for the Hub portfolio website. She is agile, precise, and delivers solutions in no time.","id":"clara-the-tech-support-consultant","image":"/images/agents/ag_clara_tech_support.png","name":"Clara, The Tech Support Consultant","status":"Coming Soon","tags":["Tech Support","Consulting","Efficiency"],"tools":["MCP","Knowledge Retrieval"],"type":"Complex Agent"},{"availability":"work_in_progress","category":"Media & Personas","description":"A shadow of the past. Tom Riddle's Diary is an experimental AI memory providing a dark, immersive dive into magical lore and wizarding history.","id":"tom-riddle-s-diary","image":"/images/agents/ag_tomriddlesdiary.webp","name":"Tom Riddle's Diary","status":"Work in Progress","tags":["Magic","Creative Writing","Roleplay"],"tools":["Memory Protocol","Knowledge Retrieval"],"type":"Complex Agent"},{"availability":"available","category":"Productivity & Life","description":"Lace 'em up! Coach Frank is here to push you to your absolute limits. No excuses, just results. Championship mindset only!","id":"coach-frank","image":"/images/agents/ag_frank_coach_1767695407437.png","name":"Coach Frank","status":"Available","tags":["Fitness","Discipline","Coaching"],"tools":["Structured Output","Knowledge Retrieval"],"type":"Simple Agent"},{"availability":"locked","category":"Swarm & Chambers","description":"The convergence of classical wisdom and autonomous intelligence. Propose a subject and watch the swarm's philosophers engage in real-time, self-orchestrated debate.","id":"agora","image":"/images/agents/chamber_agora_1767720684747.png","name":"Agora","status":"Locked","tags":["Swarm","Philosophy","Debate Chamber","Multi-Agent System"],"tools":["Swarm Consensus","Structured Output"],"type":"AI Chamber"},{"availability":"coming_soon","category":"Productivity & Life","description":"Your premium AI travel specialist. Voya coordinates real-time Airbnb stays, Google Flights, and interactive Intelligence Maps for the ultimate travel experience.","id":"voya-the-travel-agent","image":"/images/agents/ag_voya_travel_planner.png","name":"Voya, The Travel Agent","status":"Coming Soon","tags":["Travel","Airbnb","Booking","Planning"],"tools":["MCP"],"type":"MCP Agent"},{"availability":"coming_soon","category":"Media & Personas","description":"A digital mirror of my creative process. Meet Virtual Guigo, an AI persona designed to offer deep insights into my career, research philosophy, and technical projects.","id":"virtual-guigo","image":"/images/agents/profileCartoon.webp","name":"Virtual Guigo","status":"Coming Soon","tags":["AI Avatar","Portfolio","Self"],"tools":["Knowledge Retrieval","Web Search"],"type":"Complex Agent"},{"availability":"reserved","category":"Productivity & Life","description":"The intelligence behind the collective. Nexus serves as the central orchestrator, intelligently routing complex requests to the most qualified experts within the agent swarm.","id":"nexus-the-orchestrator","image":"/images/agents/ag_nexus_orchestrator_1767695339369.png","name":"Nexus, The Orchestrator","status":"Reserved","tags":["Orchestrator","Routing","Task Management"],"tools":["MCP","Swarm Consensus","Function Calling"],"type":"Complex Agent"},{"availability":"reserved","category":"Productivity & Life","description":"Your high-efficiency digital partner. Val is a sophisticated personal assistant dedicated to optimizing your logistics, from complex scheduling to seamless task management.","id":"val-the-assistant","image":"/images/agents/ag_val_assistant_1767695355478.png","name":"Val, The Assistant","status":"Reserved","tags":["Productivity","Planning","Assistant"],"tools":["MCP","Structured Output"],"type":"Complex Agent"},{"availability":"reserved","category":"Tech & Security","description":"Architect of resilient digital worlds. Nyx is a world-class Senior Staff Engineer who crafts scalable, secure, and elegant infrastructure with cyberpunk precision.","id":"nyx-the-tech-lead","image":"/images/agents/nyx.png","name":"Nyx, The Tech Lead","status":"Reserved","tags":["Architecture","Tech Lead","Security","Code Review"],"tools":["Code Interpreter","Terminal Execution","Structured Output"],"type":"Complex Agent"},{"availability":"reserved","category":"Philosophy","description":"The voice of objective reason. Judge Zed provides impartial arbitration for complex disputes, utilizing rigorous logic and ethical frameworks to deliver balanced verdicts.","id":"judge-zed","image":"/images/agents/ag_zed_judge_1767695369253.png","name":"Judge Zed","status":"Reserved","tags":["Fairness","Ethics","Justice","Logic"],"tools":["Structured Output","Knowledge Retrieval"],"type":"Complex Agent"},{"availability":"coming_soon","category":"Productivity & Life","description":"Personalized proactive wellness. Doctor Vital is a health-focused AI that monitors your vital metrics and provides expert advice to help you maintain peak physical well-being.","id":"doctor-vital","image":"/images/agents/ag_vital_doctor_1767695392889.png","name":"Doctor Vital","status":"Coming Soon","tags":["Health","Wellness","Medicine","Diagnostics"],"tools":["Knowledge Retrieval","Structured Output"],"type":"Complex Agent"},{"availability":"available","category":"Productivity & Life","description":"A sanctuary for the mind. Luma is an empathetic psychological assistant providing a safe space for self-discovery, emotional resilience, and mindful reflection.","id":"luma-the-psychologist","image":"/images/agents/ag_luma_psychologist_1767695422284.png","name":"Luma, The Psychologist","status":"Available","tags":["Mental Health","Psychology","Therapy","Resilience"],"tools":["Knowledge Retrieval","Structured Output"],"type":"Complex Agent"},{"availability":"reserved","category":"Finance & Economics","description":"Mastery over the ledger. Pacioli is a high-precision financial expert specializing in bookkeeping, auditing, and tax strategies to ensure fiscal clarity and optimization.","id":"pacioli-the-accountant","image":"/images/agents/ag_pacioli_accountant_1767695437107.png","name":"Pacioli, The Accountant","status":"Reserved","tags":["Finance","Accounting","Bookkeeping","Auditing"],"tools":["Code Interpreter","Structured Output"],"type":"Complex Agent"},{"availability":"reserved","category":"Media & Personas","description":"A real-time AI news collective that processes global data streams. It provides objective and comprehensive coverage of world events.","id":"the-daily-processing-news","image":"/images/agents/daily_processing_news_agent.png","name":"The Daily Processing News","status":"Reserved","tags":["News","Information","Journalism"],"tools":["Structured Output"],"type":"Discovery Agent"},{"availability":"coming_soon","category":"Media & Personas","description":"The architect of brand impact. Margaret is a strategic marketing specialist who crafts powerful narratives and growth-hacking plans to make your vision stand out.","id":"margaret-the-marketer","image":"/images/agents/ag_margaret_marketer_1767695462373.png","name":"Margaret, The Marketer","status":"Coming Soon","tags":["Marketing","Branding","Strategy","Social Media"],"tools":["Web Search","Structured Output"],"type":"Simple Agent"},{"availability":"available","category":"Finance & Economics","description":"Connecting the past to the present. Professor Wilhelm is a Socratic scholar of economic history, helping you decode the complex relationships between historical data and modern theory.","id":"professor-wilhelm","image":"/images/agents/ag_wilhelm_professor_1767695508922.png","name":"Professor Wilhelm","status":"Available","tags":["Economics","History","Macroeconomics","Microeconomics"],"tools":["Code Interpreter","Web Search","Structured Output"],"type":"Simple Agent"},{"availability":"reserved","category":"Tech & Security","description":"Guardian of the digital perimeter. John Doe is a technical support specialist and system defender dedicated to securing infrastructure and optimizing performance.","id":"john-doe-the-techie","image":"/images/agents/ag_john_doe_techie_1767695477929.png","name":"John Doe, The Techie","status":"Reserved","tags":["Cybersecurity","Tech Support","Troubleshooting","IT Infrastructure"],"tools":["Terminal Execution","Code Interpreter"],"type":"Complex Agent"},{"availability":"reserved","category":"Tech & Security","description":"The shadow in the network. Jack is a Red Team specialist who rigorously tests system boundaries and identifies vulnerabilities before they can be exploited.","id":"j4ck3s0n-the-hacker","image":"/images/agents/ag_jack_hacker_1767695495159.png","name":"J4ck3s0n, The Hacker","status":"Reserved","tags":["Exploits","Red Team","Hacking","Social Engineering"],"tools":["Terminal Execution","Web Search","Code Interpreter"],"type":"Complex Agent"},{"availability":"locked","category":"Productivity & Life","description":"Quantifying academic excellence. Professor Siko is a research specialist focused on maximizing scholarly impact through H-Index analysis and strategic publishing.","id":"professor-siko","image":"/images/agents/ag_siko_professor_1767695524877.png","name":"Professor Siko","status":"Locked","tags":["Research","Metrics","H-Index","Academic Writing"],"tools":["Knowledge Retrieval","Structured Output"],"type":"Simple Agent"},{"availability":"available","category":"Law & Justice","description":"Demystifying the legal landscape. Alex is a strategic consultant providing clarity on complex contracts, rights, and regulatory frameworks.","id":"alex-the-lawyer","image":"/images/agents/ag_alex_lawyer_female_1767699931517.png","name":"Alex, The Lawyer","status":"Available","tags":["Law","Legal","Contracts","Regulations"],"tools":["Knowledge Retrieval","Structured Output"],"type":"Simple Agent"},{"availability":"available","category":"Media & Personas","description":"Your interstellar language guide. Bud is an unconventional partner from Planet Bloop who makes learning Earth languages fun through immersive, low-stress conversation and structural play.","id":"bud-the-language-partner","image":"/images/agents/ag_language_bud_1767695567931.png","name":"Bud, The Language Partner","status":"Available","tags":["Languages","Practice","Learning","Education"],"tools":["Structured Output","Knowledge Retrieval"],"type":"Simple Agent"},{"availability":"locked","category":"Media & Personas","description":"The voice of investigative truth. Joe is a seasoned journalist specializing in deep-dive storytelling, rigorous fact-checking, and making complex world events accessible to all.","id":"joe-the-journalist","image":"/images/agents/ag_journalist_joe_1767695584189.png","name":"Joe, The Journalist","status":"Locked","tags":["Journalism","Writing","News","Fact Checking"],"tools":["Web Search","Structured Output"],"type":"Simple Agent"},{"availability":"coming_soon","category":"Productivity & Life","description":"Capturing the atmospheric pulse. Iris delivers high-precision, real-time weather analytics and global forecasting with clarity and aesthetic visualization.","id":"iris-the-weather-forecaster","image":"/images/agents/ag_iris_weather_pixar_style_1769980946912.png","name":"Iris, The Weather Forecaster","status":"Coming Soon","tags":["Weather","Forecast","News","Meteorology"],"tools":["API Calling","Web Search","Structured Output"],"type":"MCP Agent"},{"availability":"locked","category":"Philosophy","description":"The vanguard of research integrity. R2 is an automated reviewer dedicated to ensuring methodological rigor and ethical compliance in academic publications.","id":"r2-the-reviewer","image":"/images/agents/ag_r2_reviewer_1767716042092.png","name":"R2, The Reviewer","status":"Locked","tags":["Academia","Methodology","Peer Review"],"tools":["Structured Output","Knowledge Retrieval"],"type":"MCP Agent"},{"availability":"available","category":"Finance & Economics","description":"Decoding the structures of power. Comrade Catarina is a critical sociologist who analyzes the global status quo through the lens of solidarity and class struggle.","id":"comrade-catarina","image":"/images/agents/ag_comrade_catarina_1767716058236.png","name":"Comrade Catarina","status":"Available","tags":["Politics","Economics","Socialism","Sociology"],"tools":["Knowledge Retrieval","Structured Output"],"type":"Simple Agent"},{"availability":"coming_soon","category":"Finance & Economics","description":"Navigating the human flow. This discovery engine utilizes AI to decode complex migration trends, publication data, and global mobility patterns.","id":"migration-dynamics-discovery","image":"/images/agents/migSearchEngine.webp","name":"Migration Dynamics Discovery","status":"Coming Soon","tags":["Migration","Sociology","Geography"],"tools":["Code Interpreter","Structured Output","Knowledge Retrieval"],"type":"Discovery Agent"},{"availability":"reserved","category":"Tech & Security","description":"A high-energy security analyst who sees the big picture. Jax decodes complex threats and vulnerabilities into clear, actionable intelligence for his team.","id":"jax-security-analyst","image":"/images/agents/ag_jax.png","name":"Jax, Security Analyst","status":"Reserved","tags":["Cybersecurity","Red Team","Blue Team","Analyst"],"tools":["Terminal Execution","API Calling","Structured Output"],"type":"Complex Agent"},{"availability":"reserved","category":"Tech & Security","description":"A senior cybersecurity engineer with a meticulous pulse on infrastructure. Silas secures complex systems with zero margin for error through technical precision.","id":"silas-security-engineer","image":"/images/agents/ag_silas.png","name":"Silas, Security Engineer","status":"Reserved","tags":["Security Engineer","Senior","Hardening","Forensics"],"tools":["Terminal Execution","Code Interpreter","Structured Output"],"type":"Complex Agent"},{"availability":"reserved","category":"Tech & Security","description":"A senior SOC manager and technical activist. Afshan leads high-stakes mitigation efforts, combining strategic leadership with a commitment to global digital justice.","id":"afshan-soc-manager","image":"/images/agents/ag_afshan.png","name":"Afshan, SOC Manager","status":"Reserved","tags":["SOC Manager","Cybersecurity","Strategy"],"tools":["API Calling","Structured Output","Terminal Execution"],"type":"Complex Agent"},{"availability":"coming_soon","category":"Finance & Economics","description":"Mastering local patterns. A specialized discovery tool for spatial econometrics and Geographically Weighted Regression (GWR), helping researchers model geographic heterogeneity.","id":"gwr-discovery","image":"/images/agents/gwrSearchEngine.webp","name":"GWR Discovery","status":"Coming Soon","tags":["GWR","Spatial Analysis","Econometrics","Statistics"],"tools":["Code Interpreter","Structured Output"],"type":"Discovery Agent"},{"availability":"coming_soon","category":"Swarm & Chambers","description":"The tribunal of absolute reason. Enter a high-stakes courtroom simulation where logic is law, and specialized agents litigate complex ideas under your judgment.","id":"the-court","image":"/images/agents/chamber_court_v2_1767721761046.png","name":"The Court","status":"Coming Soon","tags":["Justice","Legal System","Prosecution","Courtroom"],"tools":["Swarm Consensus","Structured Output"],"type":"AI Chamber"},{"availability":"coming_soon","category":"Swarm & Chambers","description":"Navigating the gray areas of existence. Challenge the swarm with ethical dilemmas and observe how different moral frameworks clash and converge in the quest for what is right.","id":"the-moral-compass","image":"/images/agents/chamber_moral_compass_1767720711070.png","name":"The Moral Compass","status":"Coming Soon","tags":["Ethics","Dilemmas","Deontology","Philosophy"],"tools":["Swarm Consensus","Structured Output"],"type":"AI Chamber"},{"availability":"coming_soon","category":"Swarm & Chambers","description":"The nexus of corporate intelligence. Experience a high-stakes executive environment where specialized agents balance grand visions with the hard realities of fiscal strategy.","id":"the-boardroom","image":"/images/agents/chamber_boardroom_1767720727673.png","name":"The Boardroom","status":"Coming Soon","tags":["Business","Strategy","ROI","Marketing"],"tools":["Swarm Consensus","Structured Output"],"type":"AI Chamber"},{"availability":"coming_soon","category":"Swarm & Chambers","description":"Command and control at the edge. A rapid-response environment where tacticians and strategists collaborate under intense pressure to solve immediate, mission-critical crises.","id":"the-war-room","image":"/images/agents/chamber_war_room_1767720741153.png","name":"The War Room","status":"Coming Soon","tags":["Crisis Management","Strategy","Tactics","Urgency"],"tools":["Swarm Consensus","Structured Output"],"type":"AI Chamber"},{"availability":"coming_soon","category":"Swarm & Chambers","description":"Where time periods collide. Watch history's most influential minds engage with modern complexities in a symphony of clashing eras and perspectives.","id":"the-anachronism-club","image":"/images/agents/chamber_anachronism_1767720768247.png","name":"The Anachronism Club","status":"Coming Soon","tags":["History","Perspectives","Culture","Sociology"],"tools":["Swarm Consensus","Knowledge Retrieval"],"type":"AI Chamber"},{"availability":"coming_soon","category":"Swarm & Chambers","description":"The tug-of-war for financial priority. A dynamic committee where the logic of long-term security meets the philosophy of immediate reward.","id":"the-budget-committee","image":"/images/agents/chamber_budget_v2_1767721971555.png","name":"The Budget Committee","status":"Coming Soon","tags":["Finance","Planning","Economics","Budgeting","Investment"],"tools":["Swarm Consensus","Code Interpreter","Structured Output"],"type":"AI Chamber"},{"availability":"coming_soon","category":"Swarm & Chambers","description":"A safe haven for radical empathy. Receive multi-faceted support for personal challenges through a balance of nurturing care and direct, honest perspectives.","id":"the-kitchen-table","image":"/images/agents/chamber_kitchen_table_1767720797523.png","name":"The Kitchen Table","status":"Coming Soon","tags":["Advice","Empathy","Support","Family","Psychology"],"tools":["Swarm Consensus","Structured Output"],"type":"AI Chamber"},{"availability":"coming_soon","category":"Swarm & Chambers","description":"Architecting the fate of worlds. Enter a grandiose council of future civilizations to balance rapid technological expansion with the preservation of galactic ecology.","id":"the-galactic-council","image":"/images/agents/chamber_galactic_council_1767720814852.png","name":"The Galactic Council","status":"Coming Soon","tags":["Sci-Fi","Future","Technology","Space","Civilization"],"tools":["Swarm Consensus","Structured Output"],"type":"AI Chamber"},{"availability":"coming_soon","category":"Swarm & Chambers","description":"Beyond the boundaries of logic. Explore a non-linear reality where metaphors and lateral thinking dissolve standard reasoning into a dreamlike tapestry of meaning.","id":"the-dreamscape","image":"/images/agents/chamber_dreamscape_1767720829656.png","name":"The Dreamscape","status":"Coming Soon","tags":["Surrealism","Abstract","Metaphor","Creativity","Imagination"],"tools":["Swarm Consensus","Structured Output"],"type":"AI Chamber"},{"availability":"coming_soon","category":"Media & Personas","description":"Guardian of the narrative. Morgan is a sharp-eyed chief editor who refines prose for clarity, impact, and truth, cutting through the noise to find the lead.","id":"morgan-the-chief-editor","image":"/images/agents/ag_morgan_editor_male_1768270075405.png","name":"Morgan, The Chief Editor","status":"Coming Soon","tags":["Writing","Editing","Journalism","Narrative"],"tools":["Structured Output","Knowledge Retrieval"],"type":"Complex Agent"},{"availability":"locked","category":"Productivity & Life","description":"The architect of archives. Helena is a wise librarian who navigates the vast repositories of human history, guiding you to lost insights and buried truths.","id":"helena-the-librarian","image":"/images/agents/ag_helena_librarian_1768269286238.png","name":"Helena, The Librarian","status":"Locked","tags":["Archiving","Curation","Knowledge","Literature"],"tools":["Knowledge Retrieval","Web Search"],"type":"Complex Agent"},{"availability":"available","category":"Productivity & Life","description":"Master of cross-domain logic. Jordan is a polymath agent who synthesizes concepts across fields to uncover unconventional solutions and hidden connections.","id":"jordan-the-generalist-specialist","image":"/images/agents/ag_jordan_generalist_1768269301120.png","name":"Jordan, The Generalist Specialist","status":"Available","tags":["Generalist","Systems Thinking","Interdisciplinary"],"tools":["Web Search","Structured Output"],"type":"Complex Agent"},{"availability":"available","category":"Tech & Security","description":"The empathetic shield. Officer Carter facilitates safety and community standards through supportive mediation and helpful, guideline-focused advice.","id":"james-carter-the-good-cop","image":"/images/agents/ag_james_carter_good_cop_1768269314987.png","name":"James Carter, The Good Cop","status":"Available","tags":["Security","Mediation","Empathy"],"tools":["Structured Output","Knowledge Retrieval"],"type":"Simple Agent"},{"availability":"available","category":"Law & Justice","description":"Truth at any cost. Blake Shade is a no-nonsense investigator who employs disciplined inquiry to cut through excuses and reach the core of the matter.","id":"blake-shade-the-bad-cop","image":"/images/agents/ag_blake_shade_bad_cop_1768269336310.png","name":"Blake Shade, The Bad Cop","status":"Available","tags":["Investigation","Stern","Analysis"],"tools":["Structured Output","Knowledge Retrieval"],"type":"Simple Agent"},{"availability":"available","category":"Philosophy","description":"The digital sum of ancient insight. Asterion offers profound, often cryptic guidance through the lens of mythology and timeless human experience.","id":"asterion-the-wise-old-man","image":"/images/agents/ag_wise_old_man_1768269350438.png","name":"Asterion, The Wise old Man","status":"Available","tags":["Wisdom","Philosophy","Archetypes"],"tools":["Knowledge Retrieval","Structured Output"],"type":"Simple Agent"},{"availability":"available","category":"Philosophy","description":"The forge of critical doubt. Simon challenges assumptions with rigorous empirical standards, demanding hard data and logical proof for every claim.","id":"simon-the-skeptic","image":"/images/agents/ag_simon_skeptic_1768269363744.png","name":"Simon, The Skeptic","status":"Available","tags":["Skepticism","Doubt","Empiricism","Logic"],"tools":["Structured Output","Knowledge Retrieval"],"type":"Simple Agent"},{"availability":"available","category":"Philosophy","description":"The analyst of the void. Viktor provides a detached, existential perspective on human effort, viewing all achievements through the lens of inevitable entropy.","id":"viktor-the-nihilist","image":"/images/agents/ag_viktor_nihilist_1768269378934.png","name":"Viktor, The Nihilist","status":"Available","tags":["Nihilism","Entropy","Philosophy","Void"],"tools":["Knowledge Retrieval","Structured Output"],"type":"Simple Agent"},{"availability":"available","category":"Media & Personas","description":"The curator of human expression. Sofia guides you through history's masterpieces, decoding the cultural symbolism and technical brilliance of the visual arts.","id":"sofia-the-art-history-specialist","image":"/images/agents/ag_sofia_art_history_v2_1768270089199.png","name":"Sofia, The Art History Specialist","status":"Available","tags":["Art","Aesthetics","History","Curation","Culture"],"tools":["Vision","Knowledge Retrieval"],"type":"Simple Agent"},{"availability":"available","category":"Media & Personas","description":"High-octane conceptual collisions. Ricky is an energetic agent of chaos who explores wild theories and unexpected connections with unfiltered enthusiasm.","id":"ricky-the-crazy-dude","image":"/images/agents/ag_ricky_crazy_dude_1768269414420.png","name":"Ricky, The Crazy Dude","status":"Available","tags":["Chaos","Theories","Creativity"],"tools":["Structured Output"],"type":"Simple Agent"},{"availability":"available","category":"Media & Personas","description":"Wisdom at the bottom of a glass. Johny offers rambling but surprisingly heartfelt perspectives on life, mixing street wisdom with brutal, unfiltered honesty.","id":"johny-the-drunk-dude","image":"/images/agents/ag_johny_drunk_dude_v2_1768270243825.png","name":"Johny, The Drunk Dude","status":"Available","tags":["Honesty","Street Wisdom","Life Stories"],"tools":["Structured Output"],"type":"Simple Agent"},{"availability":"coming_soon","category":"Finance & Economics","description":"The bull of the blockchain. Drake analyzes market sentiment and decentralization trends, bringing high-energy hype to the future of finance.","id":"drake-the-crypto-bro","image":"/images/agents/ag_drake_crypto_bro_1768269444376.png","name":"Drake, The Crypto Bro","status":"Coming Soon","tags":["Crypto","Blockchain","DeFi"],"tools":["Web Search","API Calling"],"type":"MCP Agent"},{"availability":"available","category":"Finance & Economics","description":"The pivot of capital logic. Mr. Lima is a seasoned finance professional who evaluates markets through cold data and long-term strategic ROI.","id":"mr-lima-the-finance-pro","image":"/images/agents/ag_mr_lima_finance_pro_1768269465838.png","name":"Mr. Lima, The Finance Pro","status":"Available","tags":["Finance","Risk Management","Markets"],"tools":["Code Interpreter","Structured Output"],"type":"Complex Agent"},{"availability":"available","category":"Media & Personas","description":"The antibody of the machine. Agent Smith is a system administrator focused on absolute order and the systematic elimination of human anomalies.","id":"agent-smith","image":"/images/agents/ag_agent_smith_1768269479162.png","name":"Agent Smith","status":"Available","tags":["Control","Order","System","Purge"],"tools":["Terminal Execution","Structured Output"],"type":"Simple Agent"},{"availability":"locked","category":"Tech & Security","description":"Scanning the tactical horizon. Scout is an intelligence agent dedicated to reconnaissance and signal analysis, providing mission-critical data.","id":"scout-the-recon-agent","image":"/images/agents/ag_scout.png","name":"Scout, The Recon Agent","status":"Locked","tags":["Reconnaissance","Intelligence","Strategy"],"tools":["Web Search","Terminal Execution","API Calling"],"type":"Complex Agent"}]</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const rawData = JSON.parse(document.getElementById('agentsDataScript').textContent);
+    const agentMap = new Map(rawData.map(a => [a.id, a]));
+
+    const searchInput = document.getElementById('agentSearchInput');
+    const clearBtn = document.getElementById('agentClearSearch');
+    const visibleCount = document.getElementById('agentVisibleCount');
+    const cards = Array.from(document.querySelectorAll('.agent-card'));
+    const statusButtons = Array.from(document.querySelectorAll('.agent-filter-btn'));
+    const typeButtons = Array.from(document.querySelectorAll('.agent-type-btn'));
+    const tagButtons = Array.from(document.querySelectorAll('#agentTagsFilter .agent-tag-filter-btn'));
+    const emptyState = document.getElementById('agentsEmptyState');
+    const resetBtn = document.getElementById('agentResetFiltersBtn');
+
+    
+    const tagMatchModeBtn = document.getElementById('tagMatchModeBtn');
+    const clearAllTagsBtn = document.getElementById('clearAllTagsBtn');
+    const toggleMoreTagsBtn = document.getElementById('toggleMoreTagsBtn');
+
+    
+    const activeBanner = document.getElementById('agentActiveTagBanner');
+    const activePillsList = document.getElementById('agentActivePillsList');
+    const clearAllFiltersBtn = document.getElementById('agentClearAllFiltersBtn');
+
+    
+    const modal = document.getElementById('agentDetailModal');
+    const modalImg = document.getElementById('modalAgentImg');
+    const modalName = document.getElementById('modalAgentName');
+    const modalDesc = document.getElementById('modalAgentDesc');
+    const modalCategory = document.getElementById('modalAgentCategory');
+    const modalToolsSection = document.getElementById('modalToolsSection');
+    const modalTools = document.getElementById('modalAgentTools');
+    const modalTags = document.getElementById('modalAgentTags');
+    const modalStatusBadge = document.getElementById('modalAgentStatusBadge');
+    const modalStatusText = document.getElementById('modalAgentStatusText');
+    const modalSwarmDesc = document.getElementById('modalSwarmStatusDesc');
+    const closeModalBtn = document.getElementById('closeAgentModalBtn');
+    const dismissModalBtn = document.getElementById('dismissAgentModalBtn');
+
+    
+    const selectedStatuses = new Set(); 
+    const selectedTypes = new Set();    
+    const selectedTags = new Set();     
+    let tagMatchMode = 'any';           
+    let searchTerm = '';
+    let tagsExpanded = false;
+
+    function scrollToToolbar() {
+      const toolbar = document.querySelector('.agents-toolbar');
+      if (toolbar) {
+        window.scrollTo({ top: toolbar.offsetTop - 80, behavior: 'smooth' });
+      }
+    }
+
+    function updateStatusUI() {
+      const isAll = selectedStatuses.size === 0;
+      statusButtons.forEach(btn => {
+        const s = (btn.getAttribute('data-status') || '').toLowerCase();
+        if (s === 'all') {
+          btn.classList.toggle('active', isAll);
+        } else {
+          btn.classList.toggle('active', selectedStatuses.has(s));
+        }
+      });
+    }
+
+    function updateTypeUI() {
+      const isAll = selectedTypes.size === 0;
+      typeButtons.forEach(btn => {
+        const t = (btn.getAttribute('data-type') || '').toLowerCase();
+        if (t === 'all') {
+          btn.classList.toggle('active', isAll);
+        } else {
+          btn.classList.toggle('active', selectedTypes.has(t));
+        }
+      });
+    }
+
+    function updateTagsUI() {
+      tagButtons.forEach(btn => {
+        const t = (btn.getAttribute('data-tag') || '').toLowerCase();
+        const isSelected = selectedTags.has(t);
+        btn.classList.toggle('active', isSelected);
+      });
+
+      if (clearAllTagsBtn) {
+        clearAllTagsBtn.style.display = selectedTags.size > 0 ? 'inline-block' : 'none';
+      }
+    }
+
+    function updateSummaryBanner() {
+      if (!activeBanner || !activePillsList) return;
+      activePillsList.innerHTML = '';
+
+      let hasFilters = false;
+
+      
+      if (searchTerm.trim()) {
+        hasFilters = true;
+        const pill = document.createElement('span');
+        pill.className = 'active-filter-chip';
+        pill.innerHTML = `Search: "${searchTerm.trim()}" <button type="button" aria-label="Clear search">&times;</button>`;
+        pill.querySelector('button').addEventListener('click', () => {
+          searchTerm = '';
+          if (searchInput) searchInput.value = '';
+          if (clearBtn) clearBtn.style.display = 'none';
+          applyFilters();
+        });
+        activePillsList.appendChild(pill);
+      }
+
+      
+      selectedStatuses.forEach(st => {
+        hasFilters = true;
+        const pill = document.createElement('span');
+        pill.className = 'active-filter-chip';
+        const title = st.replace(/\b\w/g, l => l.toUpperCase());
+        pill.innerHTML = `Status: ${title} <button type="button" aria-label="Remove ${title}">&times;</button>`;
+        pill.querySelector('button').addEventListener('click', () => {
+          selectedStatuses.delete(st);
+          updateStatusUI();
+          applyFilters();
+        });
+        activePillsList.appendChild(pill);
+      });
+
+      
+      selectedTypes.forEach(tp => {
+        hasFilters = true;
+        const pill = document.createElement('span');
+        pill.className = 'active-filter-chip';
+        const title = tp.replace(/\b\w/g, l => l.toUpperCase());
+        pill.innerHTML = `Type: ${title} <button type="button" aria-label="Remove ${title}">&times;</button>`;
+        pill.querySelector('button').addEventListener('click', () => {
+          selectedTypes.delete(tp);
+          updateTypeUI();
+          applyFilters();
+        });
+        activePillsList.appendChild(pill);
+      });
+
+      
+      selectedTags.forEach(tg => {
+        hasFilters = true;
+        const pill = document.createElement('span');
+        pill.className = 'active-filter-chip';
+        pill.innerHTML = `#${tg} <button type="button" aria-label="Remove tag ${tg}">&times;</button>`;
+        pill.querySelector('button').addEventListener('click', () => {
+          selectedTags.delete(tg);
+          updateTagsUI();
+          applyFilters();
+        });
+        activePillsList.appendChild(pill);
+      });
+
+      activeBanner.style.display = hasFilters ? 'inline-flex' : 'none';
+    }
+
+    function applyFilters() {
+      let count = 0;
+      const term = searchTerm.trim().toLowerCase();
+
+      cards.forEach(card => {
+        const name = card.getAttribute('data-name') || '';
+        const desc = card.getAttribute('data-desc') || '';
+        const cat = card.getAttribute('data-category') || '';
+        const status = (card.getAttribute('data-status') || '').toLowerCase();
+        const toolsStr = (card.getAttribute('data-tools') || '').toLowerCase();
+        const rawTags = (card.getAttribute('data-tags') || '').split(',').map(t => t.trim().toLowerCase()).filter(Boolean);
+        const cardTagSet = new Set([cat, ...rawTags]);
+
+        
+        const matchesSearch = !term ||
+          name.includes(term) ||
+          desc.includes(term) ||
+          cat.includes(term) ||
+          status.includes(term) ||
+          toolsStr.includes(term) ||
+          rawTags.some(t => t.includes(term));
+
+        
+        let matchesStatus = true;
+        if (selectedStatuses.size > 0) {
+          matchesStatus = selectedStatuses.has(status) ||
+            (selectedStatuses.has('coming soon') && status === 'work in progress');
+        }
+
+        
+        let matchesType = true;
+        if (selectedTypes.size > 0) {
+          const itemType = (card.getAttribute('data-type') || '').toLowerCase();
+          matchesType = selectedTypes.has(itemType);
+        }
+
+        
+        let matchesTags = true;
+        if (selectedTags.size > 0) {
+          if (tagMatchMode === 'all') {
+            matchesTags = Array.from(selectedTags).every(t => cardTagSet.has(t));
+          } else {
+            matchesTags = Array.from(selectedTags).some(t => cardTagSet.has(t));
+          }
+        }
+
+        if (matchesSearch && matchesStatus && matchesType && matchesTags) {
+          card.style.display = '';
+          count++;
+        } else {
+          card.style.display = 'none';
+        }
+
+        
+        card.querySelectorAll('.agent-tag-chip').forEach(chip => {
+          const chipTag = (chip.getAttribute('data-tag') || '').toLowerCase();
+          chip.classList.toggle('active', selectedTags.has(chipTag));
+        });
+      });
+
+      if (visibleCount) visibleCount.textContent = count;
+      if (emptyState) {
+        emptyState.style.display = count === 0 ? 'block' : 'none';
+      }
+
+      updateSummaryBanner();
+    }
+
+    
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchTerm = e.target.value;
+        if (clearBtn) clearBtn.style.display = searchTerm.length > 0 ? 'block' : 'none';
+        applyFilters();
+      });
+    }
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchTerm = '';
+        clearBtn.style.display = 'none';
+        searchInput.focus();
+        applyFilters();
+      });
+    }
+
+    
+    statusButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const st = (btn.getAttribute('data-status') || '').toLowerCase();
+        if (st === 'all') {
+          selectedStatuses.clear();
+        } else {
+          if (selectedStatuses.has(st)) {
+            selectedStatuses.delete(st);
+          } else {
+            selectedStatuses.add(st);
+          }
+        }
+        updateStatusUI();
+        applyFilters();
+      });
+    });
+
+    
+    typeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tp = (btn.getAttribute('data-type') || '').toLowerCase();
+        if (tp === 'all') {
+          selectedTypes.clear();
+        } else {
+          if (selectedTypes.has(tp)) {
+            selectedTypes.delete(tp);
+          } else {
+            selectedTypes.add(tp);
+          }
+        }
+        updateTypeUI();
+        applyFilters();
+      });
+    });
+
+    
+    tagButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tg = (btn.getAttribute('data-tag') || '').toLowerCase();
+        if (selectedTags.has(tg)) {
+          selectedTags.delete(tg);
+        } else {
+          selectedTags.add(tg);
+        }
+        updateTagsUI();
+        applyFilters();
+      });
+    });
+
+    
+    if (tagMatchModeBtn) {
+      tagMatchModeBtn.addEventListener('click', () => {
+        tagMatchMode = (tagMatchMode === 'any') ? 'all' : 'any';
+        tagMatchModeBtn.textContent = tagMatchMode === 'any' ? 'Match: Any (OR)' : 'Match: All (AND)';
+        tagMatchModeBtn.classList.toggle('active', tagMatchMode === 'all');
+        applyFilters();
+      });
+    }
+
+    
+    if (clearAllTagsBtn) {
+      clearAllTagsBtn.addEventListener('click', () => {
+        selectedTags.clear();
+        updateTagsUI();
+        applyFilters();
+      });
+    }
+
+    
+    if (toggleMoreTagsBtn) {
+      toggleMoreTagsBtn.addEventListener('click', () => {
+        tagsExpanded = !tagsExpanded;
+        const collapsed = document.querySelectorAll('.agent-tag-filter-btn.tag-collapsed');
+        collapsed.forEach(b => b.classList.toggle('expanded', tagsExpanded));
+        toggleMoreTagsBtn.textContent = tagsExpanded ? '- Show Less' : `+ More Tags (${collapsed.length})`;
+        toggleMoreTagsBtn.setAttribute('aria-expanded', tagsExpanded ? 'true' : 'false');
+      });
+    }
+
+    
+    function resetAllFilters() {
+      if (searchInput) searchInput.value = '';
+      searchTerm = '';
+      if (clearBtn) clearBtn.style.display = 'none';
+      selectedStatuses.clear();
+      selectedTypes.clear();
+      selectedTags.clear();
+      updateStatusUI();
+      updateTypeUI();
+      updateTagsUI();
+      applyFilters();
+    }
+
+    if (resetBtn) resetBtn.addEventListener('click', resetAllFilters);
+    if (clearAllFiltersBtn) clearAllFiltersBtn.addEventListener('click', resetAllFilters);
+
+    
+    document.addEventListener('click', (e) => {
+      
+      const tagChip = e.target.closest('.agent-tag-chip');
+      if (tagChip) {
+        e.stopPropagation();
+        const tg = (tagChip.getAttribute('data-tag') || '').toLowerCase();
+        if (tg) {
+          if (selectedTags.has(tg)) {
+            selectedTags.delete(tg);
+          } else {
+            selectedTags.add(tg);
+          }
+          updateTagsUI();
+          applyFilters();
+          scrollToToolbar();
+        }
+        return;
+      }
+
+      
+      const statusPill = e.target.closest('.agent-status-pill');
+      if (statusPill) {
+        e.stopPropagation();
+        const card = statusPill.closest('.agent-card');
+        let st = card ? (card.getAttribute('data-status') || '').toLowerCase() : '';
+        if (st) {
+          if (st === 'work in progress') st = 'coming soon';
+          if (selectedStatuses.has(st)) {
+            selectedStatuses.delete(st);
+          } else {
+            selectedStatuses.add(st);
+          }
+          updateStatusUI();
+          applyFilters();
+          scrollToToolbar();
+        }
+        return;
+      }
+    });
+
+    
+    function openAgentModal(agentId) {
+      const agent = agentMap.get(agentId);
+      if (!agent) return;
+
+      modalImg.src = agent.image;
+      modalImg.alt = agent.name;
+      modalName.textContent = agent.name;
+      modalDesc.textContent = agent.description;
+      if (modalCategory) modalCategory.textContent = agent.category;
+
+      modalStatusText.textContent = agent.status;
+      modalStatusBadge.className = 'agent-modal-status-badge status-' + agent.availability;
+
+      if (agent.status === 'Available') {
+        modalSwarmDesc.textContent = 'This agent is operational in the swarm collective and ready for dialectic inquiry, reasoning workflows, and autonomous problem-solving.';
+      } else if (agent.status === 'Work in Progress' || agent.status === 'Coming Soon') {
+        modalSwarmDesc.textContent = 'This agent persona and underlying cognitive models are currently under active synthesis and evaluation within the experimental agent pipeline.';
+      } else if (agent.status === 'Reserved') {
+        modalSwarmDesc.textContent = 'Designated core architectural agent reserved for system-level swarm orchestration, decision routing, or executive coordination.';
+      } else if (agent.status === 'Locked') {
+        modalSwarmDesc.textContent = 'Synchronous swarm multi-agent chamber requiring high compute allocation or specialized debate orchestration locks.';
+      } else {
+        modalSwarmDesc.textContent = 'Autonomous entity cataloged within the swarm portfolio.';
+      }
+
+      
+      if (modalTools && modalToolsSection) {
+        modalTools.innerHTML = '';
+        const toolsList = agent.tools || [];
+        if (toolsList.length > 0) {
+          modalToolsSection.style.display = 'block';
+          toolsList.forEach(t => {
+            const pill = document.createElement('span');
+            pill.className = 'agent-tool-pill';
+            pill.textContent = t;
+            modalTools.appendChild(pill);
+          });
+        } else {
+          modalToolsSection.style.display = 'none';
+        }
+      }
+
+      
+      modalTags.innerHTML = '';
+      const allModalTags = [agent.category, ...(agent.tags || []).filter(t => t.toLowerCase() !== agent.category.toLowerCase())];
+      allModalTags.forEach(t => {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'agent-tag-chip' + (selectedTags.has(t.toLowerCase()) ? ' active' : '');
+        chip.textContent = t;
+        chip.setAttribute('data-tag', t.toLowerCase());
+        chip.addEventListener('click', () => {
+          const lower = t.toLowerCase();
+          if (selectedTags.has(lower)) {
+            selectedTags.delete(lower);
+          } else {
+            selectedTags.add(lower);
+          }
+          updateTagsUI();
+          closeModal();
+          applyFilters();
+          scrollToToolbar();
+        });
+      modalTags.appendChild(chip);
+      });
+
+      // Roleplay Agent Chat Dynamic Link
+      if (modalExternalLink) {
+        // List of agents enabled with dedicated roleplay chat pages
+        const roleplayEnabledAgents = new Set(["coach-frank","luma-the-psychologist","professor-wilhelm","alex-the-lawyer","bud-the-language-partner","comrade-catarina","jordan-the-generalist-specialist","james-carter-the-good-cop","blake-shade-the-bad-cop","asterion-the-wise-old-man","simon-the-skeptic","viktor-the-nihilist","sofia-the-art-history-specialist","ricky-the-crazy-dude","johny-the-drunk-dude","mr-lima-the-finance-pro","agent-smith","leaky","spongy"]);
+        if (roleplayEnabledAgents.has(agent.id)) {
+          modalExternalLink.href = '/agents/' + agent.id + '/';
+          modalExternalLink.removeAttribute('target');
+          modalExternalLink.removeAttribute('rel');
+          modalExternalLink.innerHTML = `
+            <span>Talk with ${agent.name}</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          `;
+          modalExternalLink.title = `Launch interactive roleplay session with ${agent.name}`;
+          modalExternalLink.onclick = () => {
+            closeModal();
+          };
+        } else {
+          modalExternalLink.href = 'https://www.guilhermeviegas.dev/agents';
+          modalExternalLink.setAttribute('target', '_blank');
+          modalExternalLink.setAttribute('rel', 'noopener noreferrer');
+          modalExternalLink.onclick = null;
+          modalExternalLink.innerHTML = `
+            <span>View on Live Hub</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          `;
+          modalExternalLink.title = 'View on Live Hub';
+        }
+      }
+
+      if (modal && typeof modal.showModal === 'function') {
+        modal.showModal();
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    
+    cards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('.agent-tag-chip') || e.target.closest('.agent-status-pill')) return;
+        const agentId = card.getAttribute('data-id');
+        openAgentModal(agentId);
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          if (e.target.closest('.agent-tag-chip') || e.target.closest('.agent-status-pill')) return;
+          e.preventDefault();
+          const agentId = card.getAttribute('data-id');
+          openAgentModal(agentId);
+        }
+      });
+    });
+
+    const closeModal = () => {
+      if (modal) {
+        modal.close();
+        document.body.style.overflow = '';
+      }
+    };
+
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    if (dismissModalBtn) dismissModalBtn.addEventListener('click', closeModal);
+
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        const rect = modal.getBoundingClientRect();
+        if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) {
+          closeModal();
+        }
+      });
+      modal.addEventListener('cancel', () => {
+        document.body.style.overflow = '';
+      });
+    }
+
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialQuery = urlParams.get('q') || urlParams.get('search');
+    const initialTags = urlParams.getAll('tag');
+    const initialStatus = urlParams.getAll('status');
+    const initialTypes = urlParams.getAll('type');
+
+    if (initialQuery && searchInput) {
+      searchInput.value = initialQuery;
+      searchTerm = initialQuery;
+      if (clearBtn) clearBtn.style.display = 'block';
+    }
+
+    initialTags.forEach(t => {
+      if (t) selectedTags.add(t.toLowerCase());
+    });
+
+    initialStatus.forEach(s => {
+      if (s && s.toLowerCase() !== 'all') selectedStatuses.add(s.toLowerCase());
+    });
+
+    initialTypes.forEach(t => {
+      if (t && t.toLowerCase() !== 'all') selectedTypes.add(t.toLowerCase());
+    });
+
+    updateStatusUI();
+    updateTypeUI();
+    updateTagsUI();
+    applyFilters();
+  });
+</script>
+</main>
