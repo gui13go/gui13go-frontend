@@ -47,18 +47,6 @@ const FEATURED_ITEMS: HighlightedItem[] = [
     tags: ['Versus', 'Architecture', 'History', 'Debate'],
   },
   {
-    id: 'osint-top-10',
-    title: 'The OSINT Top 10: Key Concepts to Demystify Open-Source Intelligence',
-    url: '/blogs/the-osint-top10/',
-    badge: 'Blog',
-    metaLeft: 'Sep 21, 2026',
-    metaRight: '18 min read',
-    image: '/images/blogs/osint-top-10-demystifying-intelligence.jpg',
-    summary:
-      'A comprehensive architectural guide demystifying Open-Source Intelligence (OSINT). Exploring intelligence lifecycles, reconnaissance taxonomy, pivotal tooling, strict operational security (OPSEC), sock puppet tradecraft, and legal boundaries for security analysts.',
-    tags: ['OSINT', 'Security', 'Intelligence'],
-  },
-  {
     id: 'revolution-os-timeline',
     title: 'Revolution OS: 50-Year Historical Computing Timeline',
     url: '/tools/revolution-os-timeline/',
@@ -69,18 +57,6 @@ const FEATURED_ITEMS: HighlightedItem[] = [
     summary:
       'An interactive, chronological roadmap and simulator tracing the evolution of Unix, GNU, the Linux kernel, open-source licensing wars, and the ideological clash between the hacker movement and corporate monopolies.',
     tags: ['Linux', 'History', 'Open Source', 'Tool'],
-  },
-  {
-    id: 'autonomous-agents',
-    title: 'Autonomous AI Personas & Swarm Intelligence Chambers',
-    url: '/agents/',
-    badge: 'Agents',
-    metaLeft: '79 Personas',
-    metaRight: 'Multi-Agent Swarm',
-    image: '/images/agents/chamber_boardroom_1767720727673.webp',
-    summary:
-      'A specialized portfolio of 79 autonomous AI personas, multi-agent coordination chambers (Agora, Boardroom, War Room), domain-expert reasoning workflows, and live LLM telemetry.',
-    tags: ['AI', 'Agents', 'Multi-Agent', 'LLM'],
   },
   {
     id: 'cities-visited',
@@ -117,18 +93,6 @@ const FEATURED_ITEMS: HighlightedItem[] = [
     summary:
       'An exhaustive technical dissection of automated dictionary attacks, distributed password spraying, and offline hash cracking against authentication endpoints with resilient Linux defense architectures.',
     tags: ['Security', 'Linux', 'Authentication'],
-  },
-  {
-    id: 'computer-languages',
-    title: 'Computer Languages: Evolution, Compilers & Typing Systems',
-    url: '/gallery/computer-languages/',
-    badge: 'Gallery',
-    metaLeft: '39 Languages',
-    metaRight: 'Execution Paradigms',
-    image: '/images/versus/compiled_vs_interpreted_versus.webp',
-    summary:
-      'In-depth comparative analysis of 39 programming languages, ahead-of-time compilation, JIT runtimes, memory models, typing paradigms, and the historical lineage from C and Lisp to Rust and Go.',
-    tags: ['Languages', 'Compilers', 'Computer Science'],
   },
 ]
 
