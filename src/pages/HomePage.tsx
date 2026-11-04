@@ -60,6 +60,18 @@ const FEATURED_ITEMS: HighlightedItem[] = [
     tags: ['Personalities', 'Culture', 'History', 'AIChat'],
   },
   {
+    id: 'nobel-prizes',
+    title: 'Nobel Prizes: Laureates & Discoveries',
+    url: '/gallery/nobel-prizes/',
+    badge: 'Gallery',
+    metaLeft: '116 Laureates',
+    metaRight: 'Breakthroughs & Lore',
+    image: '/images/personalities/personalities_over_the_ages.webp',
+    summary:
+      'The breakthroughs that reshaped human knowledge, the eccentric minds who cracked nature’s codes, the double laureates, famous snubs, and historic controversies across Physics, Chemistry, Medicine, Literature, Peace, and Economics.',
+    tags: ['Nobel', 'Science', 'History', 'Laureates'],
+  },
+  {
     id: 'cities-visited',
     title: 'Cities I Have Visited: Geospatial Travel Intelligence',
     url: '/geolayers/cities-i-have-visited/',

@@ -1374,5 +1374,11 @@
     "category": "Data Formats",
     "summary": "EPUB is the universal open standard for digital e-books, adopted across Apple Books, Kobo, Google Play Books, and Amazon Kindle. Rather than imposing static pap...",
     "keywords": "epub .epub application/epub+zip archive Semantic Reflowable Digital Typography & Structured E-Books Strict Open Packaging Format (OPF) + W3C EPUB 3 Schemas"
+  },
+  {
+    "title": "Nobel Prizes | Historical Lore, Breakthroughs & Laureates",
+    "permalink": "https://gui13go.github.io/gallery/nobel-prizes/",
+    "summary": "<p>The breakthroughs that reshaped human knowledge, the eccentric minds who cracked nature's codes, the famous snubs, and the awards that history judged harshly. Explore 116 Nobel laureates across Physics, Chemistry, Medicine, Literature, Peace, and Economic Sciences.</p>",
+    "content": "Nobel Prizes interactive gallery. Discover 116 Nobel Prize winners across Physics, Chemistry, Physiology or Medicine, Literature, Peace, and Economic Sciences. Features historical trivia, double laureates like Marie Curie, Linus Pauling, John Bardeen, and Frederick Sanger, controversial awards, famous snubs like Jocelyn Bell Burnell and Lise Meitner, and direct interactive AI chat with Nobel personalities."
   }
 ]
