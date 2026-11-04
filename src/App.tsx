@@ -67,6 +67,10 @@ export function App() {
             <Route path="gallery/personalities/:slug" element={<DynamicItemPage section="rendered_personalities" />} />
             <Route path="gallery/personalities/:slug/" element={<DynamicItemPage section="rendered_personalities" />} />
 
+            {/* Timelines Gallery Sub-Routes */}
+            <Route path="gallery/timelines/:slug" element={<DynamicItemPage section="rendered_timelines" />} />
+            <Route path="gallery/timelines/:slug/" element={<DynamicItemPage section="rendered_timelines" />} />
+
             {/* Individual Interactive Items and Articles */}
             <Route path="agents/:slug" element={<DynamicItemPage section="rendered_agents" />} />
             <Route path="agents/:slug/" element={<DynamicItemPage section="rendered_agents" />} />

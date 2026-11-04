@@ -1003,6 +1003,10 @@
               </div>
             </div>
 
+            <p style="font-size: 0.86rem; color: var(--secondary); margin: 0 0 12px 0; font-style: italic; line-height: 1.5;">
+              Temporary appointment dedicated specifically to the national decennial census research and field data collection operation.
+            </p>
+
             <ul class="timeline-bullets">
               <li>Support Census Research in Assigned Areas/Regions;</li>
               <li>Reviewing Field Sites and Research Reports;</li>
@@ -1151,37 +1155,50 @@
 
     <section class="about-section about-education-section" id="education">
       <div class="about-section-header">
-        <h2 class="about-section-title"><span class="title-accent-bar"></span>Education & Academic Honors</h2>
+        <h2 class="about-section-title"><span class="title-accent-bar"></span>Education</h2>
       </div>
 
-      <div class="about-edu-grid">
-        <div class="about-edu-card">
+      <div class="about-edu-rows" style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="about-edu-card" style="width: 100%; box-sizing: border-box;">
           <div class="edu-card-icon">🎓</div>
-          <div class="edu-card-content">
-            <h3 class="edu-degree">Master of Science in GeoSpatial Technologies</h3>
-            <div class="edu-institution">University of Münster</div>
-            <div class="edu-period">2023 - 2025</div>
-            <p class="edu-note">Erasmus Mundus Joint Master Degree (WWU Münster, Germany; UJI, Spain; NOVA IMS,
-              Portugal).</p>
+          <div class="edu-card-content" style="flex: 1;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+              <h3 class="edu-degree" style="margin: 0;">Master of Science in GeoSpatial Technologies</h3>
+              <span class="edu-period" style="margin: 0; font-weight: 600;">2023 - 2025</span>
+            </div>
+            <div class="edu-institution" style="margin: 4px 0 6px 0;">University of Münster</div>
+            <p class="edu-note">Erasmus Mundus Joint Master Degree (WWU Münster, Germany; UJI, Spain; NOVA IMS, Portugal).</p>
           </div>
         </div>
-        <div class="about-edu-card">
+        <div class="about-edu-card" style="width: 100%; box-sizing: border-box;">
           <div class="edu-card-icon">🎓</div>
-          <div class="edu-card-content">
-            <h3 class="edu-degree">Bachelor of Science in Economics</h3>
-            <div class="edu-institution">Federal University of Santa Catarina</div>
-            <div class="edu-period">2018 - 2022</div>
-            <p class="edu-note">Focus on quantitative economics, econometrics, regional economics, and complexity
-              science.</p>
+          <div class="edu-card-content" style="flex: 1;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+              <h3 class="edu-degree" style="margin: 0;">Bachelor of Science in Economics</h3>
+              <span class="edu-period" style="margin: 0; font-weight: 600;">2018 - 2022</span>
+            </div>
+            <div class="edu-institution" style="margin: 4px 0 6px 0;">Federal University of Santa Catarina</div>
+            <p class="edu-note">Focus on quantitative economics, econometrics, regional economics, and complexity science.</p>
           </div>
         </div>
-        <div class="about-award-card">
+      </div>
+    </section>
+
+    <section class="about-section about-honors-section" id="academic-honors">
+      <div class="about-section-header">
+        <h2 class="about-section-title"><span class="title-accent-bar"></span>Academic Honors</h2>
+      </div>
+
+      <div class="about-honors-rows" style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="about-award-card" style="width: 100%; box-sizing: border-box;">
           <div class="award-card-icon">🏆</div>
-          <div class="award-card-content">
-            <span class="award-badge">Honors & Recognition</span>
-            <h3 class="award-title">Merit-based Fellowship</h3>
-            <p class="award-desc">Awarded for outstanding academic and research performance in the Master of Science in
-              GeoSpatial Technologies program.</p>
+          <div class="award-card-content" style="flex: 1;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 4px;">
+              <span class="award-badge" style="margin: 0;">Honors & Recognition</span>
+              <span style="font-size: 0.8rem; color: var(--secondary); font-weight: 600;">WWU Münster &bull; 2023 - 2025</span>
+            </div>
+            <h3 class="award-title" style="margin: 4px 0 6px 0;">Merit-based Fellowship</h3>
+            <p class="award-desc" style="margin: 0;">Awarded for outstanding academic and research performance in the Master of Science in GeoSpatial Technologies program.</p>
           </div>
         </div>
       </div>
@@ -1416,9 +1433,7 @@
           error handling over opaque complexity. To guarantee that every insight stands up to rigorous scrutiny, I
           enforce a culture of radical reproducibility—leveraging containerized environments, comprehensive
           documentation, and version-controlled infrastructure—to ensure that every result is traceable, auditable, and
-          scientifically valid. The lifecycle concludes not with deployment, but with active stewardship, utilizing
-          automated monitoring and continuous feedback loops to refine the system as market conditions evolve, thereby
-          securing long-term reliability and sustainable business value.</p>
+          scientifically valid, thereby securing long-term reliability and sustainable business value.</p>
       </div>
 
       <div class="about-pillars-grid">
@@ -1441,11 +1456,6 @@
           <div class="pillar-bullet-num">✦</div>
           <h3 class="pillar-title">Radical Reproducibility</h3>
           <p class="pillar-desc">Containerized, version-controlled environments for verifiable results.</p>
-        </div>
-        <div class="about-pillar-card">
-          <div class="pillar-bullet-num">✦</div>
-          <h3 class="pillar-title">Active Stewardship</h3>
-          <p class="pillar-desc">Continuous feedback loops and monitoring for enduring reliability.</p>
         </div>
       </div>
     </section>
@@ -1481,7 +1491,7 @@
             </svg>
             <span>Substack</span>
           </a>
-          <a href="mailto:gui.viegas19@gmail.com" target="_blank" rel="noopener noreferrer" class="about-connect-btn">
+          <a href="mailto:guilhermeviegas1993@gmail.com" target="_blank" rel="noopener noreferrer" class="about-connect-btn">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
               <polyline points="22,6 12,13 2,6"></polyline>

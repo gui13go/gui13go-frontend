@@ -100,6 +100,7 @@ const ALIASES = {
   'turing-test': 'turing-eva-test',
   'eva-test': 'turing-eva-test',
   'turing-eva': 'turing-eva-test',
+  'revolution-os-timeline': 'revolution-os',
 }
 
 function escapeHtml(str) {
@@ -444,6 +445,7 @@ export async function prerenderAll() {
     { dir: 'rendered_publications', prefix: '/publications/' },
     { dir: 'rendered_versus', prefix: '/gallery/versus/' },
     { dir: 'rendered_personalities', prefix: '/gallery/personalities/' },
+    { dir: 'rendered_timelines', prefix: '/gallery/timelines/' },
   ]
 
   for (const { dir, prefix } of sectionConfigs) {
@@ -471,6 +473,7 @@ export async function prerenderAll() {
       { prefix: '/tools/', dir: 'rendered_tools' },
       { prefix: '/geolayers/', dir: 'rendered_geolayers' },
       { prefix: '/blogs/', dir: 'rendered_blogs' },
+      { prefix: '/gallery/timelines/', dir: 'rendered_timelines' },
     ]
     for (const { prefix, dir } of candidateSections) {
       const targetFile = path.join(PUBLIC_DIR, dir, `${targetSlug}.html`)

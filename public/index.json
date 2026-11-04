@@ -769,9 +769,27 @@
   },
   {
     "content": "",
-    "permalink": "https://gui13go.github.io/tools/revolution-os-timeline/",
-    "summary": "",
+    "permalink": "https://gui13go.github.io/gallery/timelines/revolution-os/",
+    "summary": "An interactive, chronological timeline exploring the evolution of Unix, GNU, the Linux kernel, open-source licensing wars, and the triumph of the hacker movement.",
     "title": "Revolution OS: Historical Evolution Timeline"
+  },
+  {
+    "content": "",
+    "permalink": "https://gui13go.github.io/gallery/timelines/chinese-history/",
+    "summary": "Five millennia of Chinese history: from the Xia dynasty and oracle bone script to imperial unifications, the Silk Road, and modern resurgence.",
+    "title": "Chinese History: Five Millennia of Dynasties & Transformation"
+  },
+  {
+    "content": "",
+    "permalink": "https://gui13go.github.io/gallery/timelines/brazilian-history/",
+    "summary": "From indigenous Pindorama and Portuguese landfall to sugar cycles, gold rushes, imperial monarchies, and democratic awakening.",
+    "title": "Brazilian History: Pindorama to Modern Democracy"
+  },
+  {
+    "content": "",
+    "permalink": "https://gui13go.github.io/gallery/timelines/portuguese-history/",
+    "summary": "From Afonso Henriques and the medieval Reconquista to oceanic navigations, the Age of Discoveries, the 1755 earthquake, and the Carnation Revolution.",
+    "title": "Portuguese History: Nationhood & Discoveries"
   },
   {
     "content": "",

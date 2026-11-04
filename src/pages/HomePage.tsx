@@ -13,13 +13,14 @@ import {
   Bot,
   Compass,
   Sparkles,
+  History,
 } from 'lucide-react'
 import { useBackendHealth } from '../hooks/useBackendHealth'
 import { API_BASE_URL } from '../config/api'
 import { useDocumentMeta } from '../hooks/useDocumentMeta'
 import { Picture } from '../components/Picture'
 
-type HighlightBadge = 'Versus' | 'Blog' | 'Tool' | 'Agents' | 'GeoLayer' | 'Gallery'
+type HighlightBadge = 'Versus' | 'Blog' | 'Tool' | 'Agents' | 'GeoLayer' | 'Gallery' | 'Timeline'
 
 interface HighlightedItem {
   id: string
@@ -47,16 +48,16 @@ const FEATURED_ITEMS: HighlightedItem[] = [
     tags: ['Versus', 'Architecture', 'History', 'Debate'],
   },
   {
-    id: 'revolution-os-timeline',
-    title: 'Revolution OS: 50-Year Historical Computing Timeline',
-    url: '/tools/revolution-os-timeline/',
-    badge: 'Tool',
-    metaLeft: '35 Milestones',
-    metaRight: 'Chronological Roadmap',
-    image: '/images/blogs/revolution-os-timeline.webp',
+    id: 'thinkers-gallery',
+    title: 'Personalities Gallery',
+    url: '/gallery/personalities/',
+    badge: 'Gallery',
+    metaLeft: '1,479 Personalities',
+    metaRight: 'Interactive AI Chat',
+    image: '/images/personalities/personalities_pantheon_9.jpg',
     summary:
-      'An interactive, chronological roadmap and simulator tracing the evolution of Unix, GNU, the Linux kernel, open-source licensing wars, and the ideological clash between the hacker movement and corporate monopolies.',
-    tags: ['Linux', 'History', 'Open Source', 'Tool'],
+      'Embark on an intellectual odyssey across three millennia. Explore 738 iconic thinkers, philosophers, scientists, athletes, and cultural visionaries who shaped human civilization — featuring masterwork portraits, verified quotes, and real-time interactive AI chat with every historical persona.',
+    tags: ['Personalities', 'Culture', 'History', 'AIChat'],
   },
   {
     id: 'cities-visited',
@@ -71,16 +72,16 @@ const FEATURED_ITEMS: HighlightedItem[] = [
     tags: ['GeoLayers', 'Geospatial', 'Travel', 'Interactive'],
   },
   {
-    id: 'thinkers-gallery',
-    title: 'Thinkers, Scientists & Philosophers Gallery',
-    url: '/gallery/personalities/',
-    badge: 'Gallery',
-    metaLeft: '266 Thinkers',
-    metaRight: 'Biographical Archive',
-    image: '/images/personalities/alan_turing_portrait_1769882603197.webp',
+    id: 'revolution-os',
+    title: 'Revolution OS: 50-Year Historical Computing Timeline',
+    url: '/gallery/timelines/revolution-os/',
+    badge: 'Timeline',
+    metaLeft: '35 Milestones',
+    metaRight: 'Chronological Roadmap',
+    image: '/images/blogs/revolution-os-timeline.webp',
     summary:
-      'A curated visual and intellectual archive of 266 thinkers, scientists, philosophers, and hackers who shaped human history, complete with verified quotes, notable treatises, and chronological timelines.',
-    tags: ['Philosophy', 'Science', 'History', 'Personalities'],
+      'An interactive, chronological roadmap and simulator tracing the evolution of Unix, GNU, the Linux kernel, open-source licensing wars, and the ideological clash between the hacker movement and corporate monopolies.',
+    tags: ['Linux', 'History', 'Open Source', 'Timeline'],
   },
   {
     id: 'weaponizing-wordlist',
@@ -141,6 +142,13 @@ const getBadgeConfig = (
         text: '#ec4899',
         border: 'rgba(236, 72, 153, 0.25)',
         icon: <Sparkles size={12} />,
+      }
+    case 'Timeline':
+      return {
+        bg: 'rgba(59, 130, 246, 0.12)',
+        text: '#3b82f6',
+        border: 'rgba(59, 130, 246, 0.25)',
+        icon: <History size={12} />,
       }
   }
 }

@@ -15,10 +15,11 @@ import {
 import { useSearchIndex, type SearchItem } from '../hooks/useSearchIndex'
 import { useDocumentMeta } from '../hooks/useDocumentMeta'
 
-type ContentCategory = 'All' | 'Blogs' | 'Tools' | 'GeoLayers' | 'Gallery' | 'Versus' | 'Publications'
+type ContentCategory = 'All' | 'Agents' | 'Blogs' | 'Tools' | 'GeoLayers' | 'Gallery' | 'Versus' | 'Publications'
 
 const CATEGORIES: ContentCategory[] = [
   'All',
+  'Agents',
   'Blogs',
   'Tools',
   'GeoLayers',
@@ -93,19 +94,23 @@ export const SearchPage: React.FC = () => {
     inputRef.current?.focus()
   }
 
-  // Categorize item from permalink
-  const getItemCategory = (permalink: string): ContentCategory => {
-    if (permalink.includes('/gallery/versus/')) return 'Versus'
-    if (permalink.includes('/blogs/')) return 'Blogs'
-    if (permalink.includes('/tools/')) return 'Tools'
-    if (permalink.includes('/geolayers/')) return 'GeoLayers'
-    if (permalink.includes('/publications/')) return 'Publications'
-    if (permalink.includes('/gallery/')) return 'Gallery'
+  // Categorize item from permalink or url
+  const getItemCategory = (targetUrl: string): ContentCategory => {
+    if (!targetUrl) return 'All'
+    if (targetUrl.includes('/agents/')) return 'Agents'
+    if (targetUrl.includes('/gallery/versus/')) return 'Versus'
+    if (targetUrl.includes('/blogs/')) return 'Blogs'
+    if (targetUrl.includes('/tools/')) return 'Tools'
+    if (targetUrl.includes('/geolayers/')) return 'GeoLayers'
+    if (targetUrl.includes('/publications/')) return 'Publications'
+    if (targetUrl.includes('/gallery/')) return 'Gallery'
     return 'All'
   }
 
   const getCategoryIcon = (cat: ContentCategory) => {
     switch (cat) {
+      case 'Agents':
+        return <Compass style={{ width: '13px', height: '13px' }} />
       case 'Blogs':
         return <BookOpen style={{ width: '13px', height: '13px' }} />
       case 'Tools':
@@ -125,6 +130,8 @@ export const SearchPage: React.FC = () => {
 
   const getCategoryBadgeColor = (cat: ContentCategory) => {
     switch (cat) {
+      case 'Agents':
+        return { bg: 'rgba(99, 102, 241, 0.12)', text: '#818cf8', border: 'rgba(99, 102, 241, 0.25)' }
       case 'Blogs':
         return { bg: 'rgba(96, 165, 250, 0.12)', text: '#60a5fa', border: 'rgba(96, 165, 250, 0.25)' }
       case 'Tools':
@@ -142,6 +149,12 @@ export const SearchPage: React.FC = () => {
     }
   }
 
+  // Convert full URL or relative URL to relative SPA path
+  const formatUrl = (permalink?: string) => {
+    if (!permalink) return '#'
+    return permalink.replace(/^https?:\/\/[^/]+/, '')
+  }
+
   // Filtered and scored results
   const filteredResults = useMemo(() => {
     if (!items || items.length === 0) return []
@@ -150,10 +163,11 @@ export const SearchPage: React.FC = () => {
     const t = activeTag.trim().toLowerCase()
     const tokens = q ? q.split(/\s+/).filter(Boolean) : []
 
-    const matched: { item: SearchItem; score: number; cat: ContentCategory }[] = []
+    const matched: { item: SearchItem; score: number; cat: ContentCategory; targetUrl: string }[] = []
 
     for (const item of items) {
-      const cat = getItemCategory(item.permalink)
+      const targetUrl = item.permalink || item.url || ''
+      const cat = getItemCategory(targetUrl)
 
       // Category filter
       if (selectedCategory !== 'All' && cat !== selectedCategory) {
@@ -163,14 +177,17 @@ export const SearchPage: React.FC = () => {
       const title = (item.title || '').toLowerCase()
       const summary = (item.summary || '').toLowerCase()
       const content = (item.content || '').toLowerCase()
+      const keywords = (item.keywords || '').toLowerCase()
       const itemTags = (item.tags || []).map((x) => x.toLowerCase())
 
-      // Tag filter
+      // Tag filter: check explicit tags, title, permalink, summary, or keywords
       if (t) {
         const matchesTag =
           itemTags.some((tagStr) => tagStr.includes(t)) ||
           title.includes(t) ||
-          item.permalink.toLowerCase().includes(t)
+          targetUrl.toLowerCase().includes(t) ||
+          summary.includes(t) ||
+          keywords.includes(t)
         if (!matchesTag) continue
       }
 
@@ -190,12 +207,20 @@ export const SearchPage: React.FC = () => {
             tokenScore += 8
             found = true
           }
+          if (keywords.includes(token)) {
+            tokenScore += 10
+            found = true
+          }
           if (content.includes(token)) {
             tokenScore += 2
             found = true
           }
           if (itemTags.some((tagStr) => tagStr.includes(token))) {
             tokenScore += 12
+            found = true
+          }
+          if (targetUrl.toLowerCase().includes(token)) {
+            tokenScore += 6
             found = true
           }
 
@@ -209,18 +234,13 @@ export const SearchPage: React.FC = () => {
         score += tokenScore
       }
 
-      matched.push({ item, score, cat })
+      matched.push({ item, score, cat, targetUrl })
     }
 
     // Sort by score descending
     matched.sort((a, b) => b.score - a.score)
     return matched
   }, [items, query, activeTag, selectedCategory])
-
-  // Convert full URL to relative SPA path
-  const formatUrl = (permalink: string) => {
-    return permalink.replace(/^https?:\/\/[^/]+/, '')
-  }
 
   // Helper for text highlighting
   const highlightMatch = (text: string, searchStr: string) => {
@@ -476,36 +496,19 @@ export const SearchPage: React.FC = () => {
             </button>
           </div>
         ) : (
-          filteredResults.map(({ item, cat }, idx) => {
+          filteredResults.map(({ item, cat, targetUrl }, idx) => {
             const badgeStyle = getCategoryBadgeColor(cat)
-            const cleanUrl = formatUrl(item.permalink)
+            const cleanUrl = formatUrl(targetUrl)
             const cleanSummary = (item.summary || item.content || '')
               .replace(/<[^>]*>?/gm, '')
               .slice(0, 180)
 
             return (
-              <article
-                key={idx}
-                style={{
-                  background: 'var(--entry)',
-                  border: '1px solid var(--theme-border)',
-                  borderRadius: 'var(--theme-card-radius)',
-                  padding: '20px 24px',
-                  transition: 'transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease',
-                  position: 'relative',
-                }}
-                className="featured-card"
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+              <article key={idx} className="search-result-card">
+                <div className="search-card-meta">
                   <span
+                    className="search-card-badge"
                     style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '5px',
-                      padding: '2px 8px',
-                      borderRadius: '6px',
-                      fontSize: '0.72rem',
-                      fontWeight: 700,
                       background: badgeStyle.bg,
                       color: badgeStyle.text,
                       border: `1px solid ${badgeStyle.border}`,
@@ -514,50 +517,31 @@ export const SearchPage: React.FC = () => {
                     {getCategoryIcon(cat)}
                     <span>{cat}</span>
                   </span>
-                  <span style={{ fontSize: '0.75rem', color: 'var(--secondary)', fontFamily: 'var(--code-font)' }}>
-                    {cleanUrl}
-                  </span>
+                  <span className="search-card-url">{cleanUrl}</span>
                 </div>
 
-                <h3 style={{ margin: '0 0 8px', fontSize: '1.2rem', fontWeight: 700 }}>
-                  <Link
-                    to={cleanUrl}
-                    style={{ color: 'var(--primary)', textDecoration: 'none' }}
-                  >
+                <h3 className="search-card-title">
+                  <Link to={cleanUrl}>
                     {highlightMatch(item.title, query)}
                   </Link>
                 </h3>
 
                 {cleanSummary && (
-                  <p
-                    style={{
-                      margin: '0 0 14px',
-                      color: 'var(--secondary)',
-                      fontSize: '0.88rem',
-                      lineHeight: 1.55,
-                    }}
-                  >
+                  <p className="search-card-summary">
                     {highlightMatch(cleanSummary, query)}...
                   </p>
                 )}
 
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                <div className="search-card-footer">
+                  <div className="search-card-tags">
                     {(item.tags || []).slice(0, 4).map((tag) => (
                       <button
                         key={tag}
+                        type="button"
+                        className="search-tag-pill"
                         onClick={(e) => {
                           e.preventDefault()
                           handleTagClick(tag)
-                        }}
-                        style={{
-                          background: 'var(--tertiary)',
-                          border: '1px solid var(--theme-border)',
-                          borderRadius: '4px',
-                          padding: '2px 8px',
-                          fontSize: '0.72rem',
-                          color: 'var(--secondary)',
-                          cursor: 'pointer',
                         }}
                       >
                         #{tag}
@@ -565,18 +549,7 @@ export const SearchPage: React.FC = () => {
                     ))}
                   </div>
 
-                  <Link
-                    to={cleanUrl}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '4px',
-                      fontSize: '0.82rem',
-                      fontWeight: 600,
-                      color: 'var(--theme-accent)',
-                      textDecoration: 'none',
-                    }}
-                  >
+                  <Link to={cleanUrl} className="search-card-action">
                     <span>Open</span>
                     <ArrowRight style={{ width: '13px', height: '13px' }} />
                   </Link>

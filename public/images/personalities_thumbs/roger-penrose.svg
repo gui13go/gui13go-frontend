@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="bg_roger-penrose" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#2e1065"/>
+      <stop offset="60%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </radialGradient>
+    <linearGradient id="border_roger-penrose" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" rx="40" fill="url(#bg_roger-penrose)"/>
+  <rect x="3" y="3" width="194" height="194" rx="37" fill="none" stroke="url(#border_roger-penrose)" stroke-width="2.5"/>
+
+  <!-- Subtle Ambient Orbits -->
+  <circle cx="100" cy="88" r="62" fill="none" stroke="#a855f7" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="4 6"/>
+  <circle cx="100" cy="88" r="44" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.35"/>
+  <circle cx="100" cy="88" r="26" fill="none" stroke="#a855f7" stroke-width="2" stroke-opacity="0.6"/>
+
+  <!-- Central Field Core -->
+  <circle cx="100" cy="88" r="12" fill="#a855f7" fill-opacity="0.35"/>
+  <circle cx="100" cy="88" r="5" fill="#ffffff"/>
+
+  <!-- Monogram Plaque -->
+  <rect x="45" y="146" width="110" height="32" rx="10" fill="rgba(15, 23, 42, 0.88)" stroke="#a855f7" stroke-width="1.2"/>
+  <text x="100" y="168" fill="#f8fafc" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="14" font-weight="800" letter-spacing="2" text-anchor="middle">R.P.</text>
+</svg>

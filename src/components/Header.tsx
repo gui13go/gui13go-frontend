@@ -90,11 +90,12 @@ export const Header: React.FC = () => {
     }
   }
 
-  const handleResultClick = (permalink: string) => {
+  const handleResultClick = (targetUrl?: string) => {
     setIsSearching(false)
     setSearchQuery('')
+    if (!targetUrl) return
     // Convert full URL or relative URL to React Router path
-    const path = permalink.replace(/^https?:\/\/[^/]+/, '')
+    const path = targetUrl.replace(/^https?:\/\/[^/]+/, '')
     navigate(path)
   }
 
@@ -160,7 +161,8 @@ export const Header: React.FC = () => {
     } else if (e.key === 'Enter') {
       if (selectedIndex >= 0 && searchResults[selectedIndex]) {
         e.preventDefault()
-        handleResultClick(searchResults[selectedIndex].permalink)
+        const selected = searchResults[selectedIndex]
+        handleResultClick(selected.permalink || selected.url)
       }
     }
   }
@@ -176,7 +178,9 @@ export const Header: React.FC = () => {
     { to: '/search/', label: 'Search' },
   ]
 
-  const getItemType = (url: string) => {
+  const getItemType = (url?: string) => {
+    if (!url) return 'Page'
+    if (url.includes('/agents/')) return 'Agent'
     if (url.includes('/blogs/')) return 'Blog'
     if (url.includes('/tools/')) return 'Tool'
     if (url.includes('/geolayers/')) return 'GeoLayer'
@@ -321,12 +325,13 @@ export const Header: React.FC = () => {
                   </li>
                 ) : (
                   searchResults.map((item, idx) => {
-                    const tagType = getItemType(item.permalink)
+                    const targetUrl = item.permalink || item.url
+                    const tagType = getItemType(targetUrl)
                     return (
                       <li
                         key={idx}
                         className={`header-search-item ${selectedIndex === idx ? 'active' : ''}`}
-                        onClick={() => handleResultClick(item.permalink)}
+                        onClick={() => handleResultClick(targetUrl)}
                       >
                         <div>
                           <div className="header-search-item-title">

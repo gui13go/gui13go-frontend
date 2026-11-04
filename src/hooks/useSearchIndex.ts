@@ -2,10 +2,13 @@ import { useQuery } from '@tanstack/react-query'
 
 export interface SearchItem {
   title: string
-  permalink: string
+  permalink?: string
+  url?: string
   summary?: string
   content?: string
   tags?: string[]
+  keywords?: string
+  category?: string
 }
 
 export function useSearchIndex() {

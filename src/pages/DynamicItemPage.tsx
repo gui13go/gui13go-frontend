@@ -14,6 +14,7 @@ interface DynamicItemProps {
     | 'rendered_publications'
     | 'rendered_versus'
     | 'rendered_personalities'
+    | 'rendered_timelines'
 }
 
 const ALIASES: Record<string, string> = {
@@ -34,6 +35,7 @@ const ALIASES: Record<string, string> = {
   'soren-kierkegaard': 's-ren-kierkegaard',
   'lech-walesa': 'lech-wa-esa',
   'lech-waesa': 'lech-wa-esa',
+  'revolution-os-timeline': 'revolution-os',
 }
 
 export const DynamicItemPage: React.FC<DynamicItemProps> = ({ section }) => {
