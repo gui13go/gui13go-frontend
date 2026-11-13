@@ -1280,7 +1280,7 @@
     "birthYear": -460,
     "summary": "Athenian general and historian known as the father of scientific history and political realism for his impartial, evidence-based History of the Peloponnesian War.",
     "image": "/images/personalities/thucydides_portrait.jpg",
-    "zoomSrc": "/images/personalities/thucydides_portrait.jpg",
+    "zoomSrc": "/images/personalities/thucydides_portrait.webp",
     "zoomTitle": "Thucydides",
     "zoomCaption": "c. 460–c. 400 BC • Athenian general and historian known as the father of scientific history and political realism for his impartial, evidence-based History of the Peloponnesian War.",
     "quote": {
@@ -1429,7 +1429,7 @@
     "birthYear": -375,
     "summary": "Ancient Indian philosopher, jurist, and prime minister who engineered the rise of the Maurya Empire under Chandragupta Maurya and authored the foundational treatise Arthashastra.",
     "image": "/images/personalities/chanakya_kautilya_portrait.jpg",
-    "zoomSrc": "/images/personalities/chanakya_kautilya_portrait.jpg",
+    "zoomSrc": "/images/personalities/chanakya_kautilya_portrait.webp",
     "zoomTitle": "Chanakya (Kautilya)",
     "zoomCaption": "c. 375–283 BC • Ancient Indian philosopher, jurist, and prime minister who engineered the rise of the Maurya Empire under Chandragupta Maurya and authored the foundational treatise Arthashastra.",
     "quote": {
@@ -1746,7 +1746,7 @@
     "birthYear": -276,
     "summary": "Greek polymath and chief librarian of the Library of Alexandria who accurately calculated the Earth's circumference using solar shadows, invented the term geography, and created the Sieve of Eratosthenes.",
     "image": "/images/personalities/eratosthenes_portrait.jpg",
-    "zoomSrc": "/images/personalities/eratosthenes_portrait.jpg",
+    "zoomSrc": "/images/personalities/eratosthenes_portrait.webp",
     "zoomTitle": "Eratosthenes",
     "zoomCaption": "c. 276–c. 195 BC • Greek polymath and chief librarian of the Library of Alexandria who accurately calculated the Earth's circumference using solar shadows, invented the term geography, and created the Sieve of Eratosthenes.",
     "quote": {
@@ -1882,7 +1882,7 @@
     "birthYear": -145,
     "summary": "Han Dynasty Chinese court official and scholar revered as the 'Grand Historian' (Taishigong), who chose castration over execution to finish the Records of the Grand Historian (Shiji).",
     "image": "/images/personalities/sima_qian_portrait.jpg",
-    "zoomSrc": "/images/personalities/sima_qian_portrait.jpg",
+    "zoomSrc": "/images/personalities/sima_qian_portrait.webp",
     "zoomTitle": "Sima Qian",
     "zoomCaption": "c. 145–c. 86 BC • Han Dynasty Chinese court official and scholar revered as the 'Grand Historian' (Taishigong), who chose castration over execution to finish the Records of the Grand Historian (Shiji).",
     "quote": {
@@ -6469,7 +6469,7 @@
     "birthYear": 1210,
     "summary": "Major Persian poet and prose writer celebrated for the lyrical elegance and profound moral humanism of his classics Gulistan (The Rose Garden) and Bustan (The Orchard).",
     "image": "/images/personalities/saadi_shirazi_portrait.jpg",
-    "zoomSrc": "/images/personalities/saadi_shirazi_portrait.jpg",
+    "zoomSrc": "/images/personalities/saadi_shirazi_portrait.webp",
     "zoomTitle": "Saadi Shirazi",
     "zoomCaption": "c. 1210–1291 • Major Persian poet and prose writer celebrated for the lyrical elegance and profound moral humanism of his classics Gulistan (The Rose Garden) and Bustan (The Orchard).",
     "quote": {
@@ -6575,7 +6575,7 @@
     "birthYear": 1220,
     "summary": "English Franciscan friar and philosopher known as 'Doctor Mirabilis', an early pioneer of the scientific method and empirical experimentation in optics and nature.",
     "image": "/images/personalities/roger_bacon_portrait.jpg",
-    "zoomSrc": "/images/personalities/roger_bacon_portrait.jpg",
+    "zoomSrc": "/images/personalities/roger_bacon_portrait.webp",
     "zoomTitle": "Roger Bacon",
     "zoomCaption": "c. 1220–1292 • English Franciscan friar and philosopher known as 'Doctor Mirabilis', an early pioneer of the scientific method and empirical experimentation in optics and nature.",
     "quote": {
@@ -7512,7 +7512,7 @@
     "birthYear": 1315,
     "summary": "Revered Persian lyric poet whose Divan of Hafez represents the pinnacle of Persian ghazal poetry, celebrated across Iran for sublime themes of divine love, ecstasy, and hypocrisy.",
     "image": "/images/personalities/hafez_portrait.jpg",
-    "zoomSrc": "/images/personalities/hafez_portrait.jpg",
+    "zoomSrc": "/images/personalities/hafez_portrait.webp",
     "zoomTitle": "Hafez",
     "zoomCaption": "c. 1315–1390 • Revered Persian lyric poet whose Divan of Hafez represents the pinnacle of Persian ghazal poetry, celebrated across Iran for sublime themes of divine love, ecstasy, and hypocrisy.",
     "quote": {
@@ -7762,7 +7762,7 @@
     "birthYear": 1340,
     "summary": "Author, poet, and courtier acclaimed as the 'Father of English Literature', whose Canterbury Tales legitimized Middle English as a rich literary language equal to French and Latin.",
     "image": "/images/personalities/geoffrey_chaucer_portrait.jpg",
-    "zoomSrc": "/images/personalities/geoffrey_chaucer_portrait.jpg",
+    "zoomSrc": "/images/personalities/geoffrey_chaucer_portrait.webp",
     "zoomTitle": "Geoffrey Chaucer",
     "zoomCaption": "c. 1340–1400 • Author, poet, and courtier acclaimed as the 'Father of English Literature', whose Canterbury Tales legitimized Middle English as a rich literary language equal to French and Latin.",
     "quote": {
@@ -7913,7 +7913,7 @@
     "birthYear": 1364,
     "summary": "Italian-French late medieval author acclaimed as Europe's first professional female writer, whose Book of the City of Ladies defended women against misogynistic slander.",
     "image": "/images/personalities/christine_de_pizan_portrait.jpg",
-    "zoomSrc": "/images/personalities/christine_de_pizan_portrait.jpg",
+    "zoomSrc": "/images/personalities/christine_de_pizan_portrait.webp",
     "zoomTitle": "Christine de Pizan",
     "zoomCaption": "1364–c. 1430 • Italian-French late medieval author acclaimed as Europe's first professional female writer, whose Book of the City of Ladies defended women against misogynistic slander.",
     "quote": {
@@ -9969,8 +9969,8 @@
     "dates": "1483–1546",
     "birthYear": 1483,
     "summary": "German priest, theologian, and seminal figure of the Protestant Reformation whose 95 Theses attacked the sale of indulgences and catalyzed a permanent transformation of Western Christianity.",
-    "image": "/images/personalities/martin_luther_king_jr_portrait.webp",
-    "zoomSrc": "/images/personalities/martin_luther_king_jr_portrait.webp",
+    "image": "/images/personalities/martin_luther_portrait.jpg",
+    "zoomSrc": "/images/personalities/martin_luther_portrait.webp",
     "zoomTitle": "Martin Luther",
     "zoomCaption": "1483–1546 • German priest, theologian, and seminal figure of the Protestant Reformation whose 95 Theses attacked the sale of indulgences and catalyzed a permanent transformation of Western Christianity.",
     "quote": {
@@ -13205,7 +13205,7 @@
     "birthYear": 1593,
     "summary": "Italian Baroque painter, the first woman admitted to Florence's Accademia delle Arti del Disegno, celebrated for dramatic, visceral depictions of strong biblical and mythical women.",
     "image": "/images/personalities/artemisia_gentileschi_portrait.jpg",
-    "zoomSrc": "/images/personalities/artemisia_gentileschi_portrait.jpg",
+    "zoomSrc": "/images/personalities/artemisia_gentileschi_portrait.webp",
     "zoomTitle": "Artemisia Gentileschi",
     "zoomCaption": "1593–1656 • Italian Baroque painter, the first woman admitted to Florence's Accademia delle Arti del Disegno, celebrated for dramatic, visceral depictions of strong biblical and mythical women.",
     "quote": {
@@ -19504,7 +19504,7 @@
     "birthYear": 1775,
     "summary": "English novelist whose masterworks of romantic fiction, psychological realism, and brilliant social satire made her one of the most enduring writers in world literature.",
     "image": "/images/personalities/jane_austen_portrait.jpg",
-    "zoomSrc": "/images/personalities/jane_austen_portrait.jpg",
+    "zoomSrc": "/images/personalities/jane_austen_portrait.webp",
     "zoomTitle": "Jane Austen",
     "zoomCaption": "1775–1817 • English novelist whose masterworks of romantic fiction, psychological realism, and brilliant social satire made her one of the most enduring writers in world literature.",
     "quote": {
@@ -25935,7 +25935,7 @@
     "birthYear": 1830,
     "summary": "Distinctive American poet of Amherst, Massachusetts, whose reclusive life yielded nearly 1,800 intensely compressed, slant-rhymed masterpieces on mortality, faith, and nature.",
     "image": "/images/personalities/emily_dickinson_portrait.jpg",
-    "zoomSrc": "/images/personalities/emily_dickinson_portrait.jpg",
+    "zoomSrc": "/images/personalities/emily_dickinson_portrait.webp",
     "zoomTitle": "Emily Dickinson",
     "zoomCaption": "1830–1886 • Distinctive American poet of Amherst, Massachusetts, whose reclusive life yielded nearly 1,800 intensely compressed, slant-rhymed masterpieces on mortality, faith, and nature.",
     "quote": {
@@ -41375,7 +41375,7 @@
     "birthYear": 1905,
     "summary": "Brazilian psychiatrist and Jungian pioneer who revolutionized psychiatric treatment by rejecting aggressive therapies like electroshock and lobotomy in favor of art therapy and humanization.",
     "image": "/images/personalities/nise_da_silveira_portrait.jpg",
-    "zoomSrc": "/images/personalities/nise_da_silveira_portrait.jpg",
+    "zoomSrc": "/images/personalities/nise_da_silveira_portrait.webp",
     "zoomTitle": "Nise da Silveira",
     "zoomCaption": "1905–1999 • Brazilian psychiatrist and Jungian pioneer who revolutionized psychiatric treatment by rejecting aggressive therapies like electroshock and lobotomy in favor of art therapy and humanization.",
     "quote": {
@@ -48440,7 +48440,7 @@
     "birthYear": 1934,
     "summary": "Brazilian pediatrician, public health expert, and humanitarian who founded Pastoral da Criança, drastically reducing child mortality across Brazil and Latin America through community health education.",
     "image": "/images/personalities/zilda_arns_portrait.jpg",
-    "zoomSrc": "/images/personalities/zilda_arns_portrait.jpg",
+    "zoomSrc": "/images/personalities/zilda_arns_portrait.webp",
     "zoomTitle": "Zilda Arns",
     "zoomCaption": "1934–2010 • Brazilian pediatrician, public health expert, and humanitarian who founded Pastoral da Criança, drastically reducing child mortality across Brazil and Latin America through community health education.",
     "quote": {

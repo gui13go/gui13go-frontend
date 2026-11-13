@@ -66,7 +66,7 @@ const FEATURED_ITEMS: HighlightedItem[] = [
     badge: 'Gallery',
     metaLeft: '116 Laureates',
     metaRight: 'Breakthroughs & Lore',
-    image: '/images/personalities/personalities_over_the_ages.webp',
+    image: '/images/gallery/nobel-prize-medals.webp',
     summary:
       'The breakthroughs that reshaped human knowledge, the eccentric minds who cracked nature’s codes, the double laureates, famous snubs, and historic controversies across Physics, Chemistry, Medicine, Literature, Peace, and Economics.',
     tags: ['Nobel', 'Science', 'History', 'Laureates'],

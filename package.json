@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "images": "node -e 'console.log(\"images ready\")'",
+    "images:thumbnails": "python3 scripts/generate_thumbnails.py",
+    "images:nextgen": "python3 scripts/generate_nextgen_images.py",
     "prerender": "node scripts/prerender.mjs",
     "build": "tsc -b && vite build && npm run prerender",
     "lint": "oxlint",
