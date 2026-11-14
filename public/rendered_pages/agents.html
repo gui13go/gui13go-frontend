@@ -2044,13 +2044,15 @@
       // Roleplay Agent Chat Dynamic Link
       if (modalExternalLink) {
         // List of agents enabled with dedicated roleplay chat pages
-        const roleplayEnabledAgents = new Set(["coach-frank","luma-the-psychologist","professor-wilhelm","alex-the-lawyer","bud-the-language-partner","comrade-catarina","jordan-the-generalist-specialist","james-carter-the-good-cop","blake-shade-the-bad-cop","asterion-the-wise-old-man","simon-the-skeptic","viktor-the-nihilist","sofia-the-art-history-specialist","ricky-the-crazy-dude","johny-the-drunk-dude","mr-lima-the-finance-pro","agent-smith","leaky","spongy"]);
+        const roleplayEnabledAgents = new Set(["coach-frank","luma-the-psychologist","professor-wilhelm","alex-the-lawyer","bud-the-language-partner","comrade-catarina","jordan-the-generalist-specialist","james-carter-the-good-cop","blake-shade-the-bad-cop","asterion-the-wise-old-man","simon-the-skeptic","viktor-the-nihilist","sofia-the-art-history-specialist","ricky-the-crazy-dude","johny-the-drunk-dude","mr-lima-the-finance-pro","agent-smith","leaky","spongy", "agora", "agora-swarm"]);
         if (roleplayEnabledAgents.has(agent.id)) {
           modalExternalLink.href = '/agents/' + agent.id + '/';
           modalExternalLink.removeAttribute('target');
           modalExternalLink.removeAttribute('rel');
+          const isChamber = (agent.type && agent.type.toLowerCase().includes('chamber')) || agent.id.includes('agora');
+          const actionText = isChamber ? 'Enter ' + agent.name + ' Chamber' : 'Talk with ' + agent.name;
           modalExternalLink.innerHTML = `
-            <span>Talk with ${agent.name}</span>
+            <span>${actionText}</span>
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
             </svg>

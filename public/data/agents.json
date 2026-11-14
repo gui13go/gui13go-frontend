@@ -101,13 +101,13 @@
     "type": "Simple Agent"
   },
   {
-    "availability": "locked",
+    "availability": "public",
     "category": "Swarm & Chambers",
     "description": "The convergence of classical wisdom and autonomous intelligence. Propose a subject and watch the swarm's philosophers engage in real-time, self-orchestrated debate.",
     "id": "agora",
     "image": "/images/agents/chamber_agora_1767720684747.png",
     "name": "Agora",
-    "status": "Locked",
+    "status": "Available",
     "tags": [
       "Swarm",
       "Philosophy",
@@ -118,7 +118,44 @@
       "Swarm Consensus",
       "Structured Output"
     ],
-    "type": "AI Chamber"
+    "type": "swarm",
+    "swarmConfig": {
+      "theme": "ancient_agora",
+      "allowedAgentIds": [
+        "immanuel-kant",
+        "socrates",
+        "kierkegaard",
+        "nietzsche",
+        "heidegger",
+        "sartre",
+        "camus",
+        "aristotle",
+        "plato",
+        "diogenes",
+        "simonedebeauvoir",
+        "jeremybentham",
+        "renedescartes",
+        "nickbostrom",
+        "zygmuntbauman",
+        "marywollstonecraft",
+        "hannaharendt",
+        "confucius",
+        "jeanbaudrillard",
+        "davidhume",
+        "arthurschopenhauer",
+        "niccolomachiavelli",
+        "baruchspinoza",
+        "thomashobbes",
+        "slavojzizek"
+      ],
+      "initialAgentIds": [
+        "camus",
+        "diogenes",
+        "immanuel-kant"
+      ],
+      "nexusName": "The Oracle",
+      "nexusIcon": "\u03a9"
+    }
   },
   {
     "availability": "coming_soon",

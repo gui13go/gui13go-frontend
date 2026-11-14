@@ -16,6 +16,9 @@ const SearchPage = lazy(() =>
 const NotFoundPage = lazy(() =>
   import('./pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage }))
 )
+const SwarmRoom = lazy(() =>
+  import('./pages/SwarmRoom').then((m) => ({ default: m.SwarmRoom }))
+)
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -70,6 +73,12 @@ export function App() {
             {/* Timelines Gallery Sub-Routes */}
             <Route path="gallery/timelines/:slug" element={<DynamicItemPage section="rendered_timelines" />} />
             <Route path="gallery/timelines/:slug/" element={<DynamicItemPage section="rendered_timelines" />} />
+
+            {/* Dedicated Agora Swarm Chamber */}
+            <Route path="agents/agora" element={<SwarmRoom />} />
+            <Route path="agents/agora/" element={<SwarmRoom />} />
+            <Route path="agents/agora-swarm" element={<SwarmRoom />} />
+            <Route path="agents/agora-swarm/" element={<SwarmRoom />} />
 
             {/* Individual Interactive Items and Articles */}
             <Route path="agents/:slug" element={<DynamicItemPage section="rendered_agents" />} />

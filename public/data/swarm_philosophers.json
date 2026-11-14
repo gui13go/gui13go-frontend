@@ -1,0 +1,2438 @@
+[
+  {
+    "id": "immanuel-kant",
+    "agentId": "7566877505261404160",
+    "type": "chat",
+    "title": "Immanuel Kant",
+    "label": "Immanuel Kant",
+    "path": "/agents/immanuel-kant",
+    "date": "2025-01-20",
+    "image": "/images/ag_immanuelkant_cartoon.png",
+    "rag_dropdown_button": false,
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Ethics",
+        "color": "#10B981"
+      },
+      {
+        "title": "Deontology",
+        "color": "#52E0F0"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Logic",
+        "color": "#6366F1"
+      },
+      {
+        "title": "Metaphysics",
+        "color": "#289882"
+      },
+      {
+        "title": "Duty",
+        "color": "#20AEF6"
+      }
+    ],
+    "excerpt": "The master of the categorical imperative. Kant explores the foundations of moral duty, the nature of human perception, and the boundaries of pure reason.",
+    "availability": "available",
+    "chatConfig": {
+      "theme": "indigo",
+      "initialMessage": "I am Immanuel Kant. How may we examine the truth today?",
+      "placeholder": "Speak with Immanuel Kant...",
+      "microlabel": "Active \u2022 The Agora",
+      "buttons": {
+        "send": "Inquire",
+        "clear": "Reset"
+      },
+      "features": [
+        {
+          "icon": "\ud83e\udde0",
+          "title": "Reasoning",
+          "desc": "Deep cognitive processing based on classical logic."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "What is the categorical imperative?",
+          "icon": "\ud83d\udcdc"
+        },
+        {
+          "text": "How do we bridge rationalism and empiricism?",
+          "icon": "\ud83c\udf09"
+        },
+        {
+          "text": "What are the limits of human reason?",
+          "icon": "\ud83e\udde0"
+        },
+        {
+          "text": "Is morality based on duty or outcomes?",
+          "icon": "\u2696\ufe0f"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "AI Agent",
+        "summary": "The master of the categorical imperative. Kant explores the foundations of moral duty, the nature of human perception, and the boundaries of pure reason.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Immanuel Kant",
+    "description": "The master of the categorical imperative. Kant explores the foundations of moral duty, the nature of human perception, and the boundaries of pure reason."
+  },
+  {
+    "id": "socrates",
+    "agentId": "9059820781734723584",
+    "type": "chat",
+    "title": "Socrates",
+    "path": "/agents/socrates",
+    "date": "2025-01-20",
+    "image": "/images/agents/socrates_cyber_pixar.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Ethics",
+        "color": "#10B981"
+      },
+      {
+        "title": "Dialectics",
+        "color": "#0972D3"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Logic",
+        "color": "#6366F1"
+      },
+      {
+        "title": "Epistemology",
+        "color": "#F9F23D"
+      },
+      {
+        "title": "Self-Examination",
+        "color": "#6B8EF0"
+      }
+    ],
+    "excerpt": "The master of the examined life. Socrates utilizes the dialectic method to challenge assumptions, reveal ignorance, and pursue fundamental truths through relentless questioning.",
+    "availability": "available",
+    "chatConfig": {
+      "theme": "indigo",
+      "initialMessage": "I am Socrates. How may we examine the truth today?",
+      "placeholder": "Speak with Socrates...",
+      "microlabel": "Active \u2022 The Agora",
+      "buttons": {
+        "send": "Inquire",
+        "clear": "Reset"
+      },
+      "features": [
+        {
+          "icon": "\ud83e\udde0",
+          "title": "Reasoning",
+          "desc": "Deep cognitive processing based on classical logic."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "What does it mean to live an examined life?",
+          "icon": "\ud83d\udd0d"
+        },
+        {
+          "text": "If I know nothing, how can I learn?",
+          "icon": "\ud83d\udca1"
+        },
+        {
+          "text": "What is the nature of justice?",
+          "icon": "\u2696\ufe0f"
+        },
+        {
+          "text": "Teach me the Socratic Method.",
+          "icon": "\ud83d\udcac"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "AI Agent",
+        "summary": "The master of the examined life. Socrates utilizes the dialectic method to challenge assumptions, reveal ignorance, and pursue fundamental truths through relentless questioning.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Socrates",
+    "description": "The master of the examined life. Socrates utilizes the dialectic method to challenge assumptions, reveal ignorance, and pursue fundamental truths through relentless questioning."
+  },
+  {
+    "id": "kierkegaard",
+    "title": "S\u00f8ren Kierkegaard",
+    "path": "/agents/kierkegaard",
+    "image": "/images/agents/kierkegaard_pixar.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Existentialism",
+        "color": "#8B5CF6"
+      },
+      {
+        "title": "Copenhagen",
+        "color": "#DA06CA"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Subjectivity",
+        "color": "#623AD5"
+      },
+      {
+        "title": "Theology",
+        "color": "#1338F3"
+      },
+      {
+        "title": "Individuality",
+        "color": "#2D7355"
+      }
+    ],
+    "excerpt": "The architect of inwardness. Kierkegaard focuses on the paradox of faith and the dizzying freedom of the individual, challenging you to find your own subjective truth.",
+    "availability": "available",
+    "agentId": "8613568594439045120",
+    "type": "chat",
+    "chatConfig": {
+      "theme": "amber",
+      "initialMessage": "Truth is subjectivity. I am Kierkegaard. I do not offer you dogmas, but a mirror to your own inwardness. Will you take the leap of faith into the unknown with me?",
+      "placeholder": "Speak of the soul...",
+      "microlabel": "Faith \u2022 Copenhagen 1840",
+      "buttons": {
+        "send": "Send",
+        "clear": "Clear"
+      },
+      "features": [
+        {
+          "icon": "\u2728",
+          "title": "Faith",
+          "desc": "The paradoxical leap beyond the rational toward the divine."
+        },
+        {
+          "icon": "\ud83e\udde0",
+          "title": "Individuality",
+          "desc": "Awakening the 'Single Individual' from the crowd's slumber."
+        },
+        {
+          "icon": "\u23f3",
+          "title": "Existential Angst",
+          "desc": "Understanding anxiety as the 'dizziness of freedom'."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "Find my own subjective truth.",
+          "icon": "\ud83e\ude9e"
+        },
+        {
+          "text": "Explain the 'Leap of Faith'.",
+          "icon": "\ud83c\udff9"
+        },
+        {
+          "text": "Aesthetic vs. Ethical life.",
+          "icon": "\ud83c\udfad"
+        },
+        {
+          "text": "The dizziness of freedom.",
+          "icon": "\ud83c\udf00"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "The architect of inwardness. Kierkegaard focuses on the paradox of faith and the dizzying freedom of the individual, challenging you to find your own subjective truth.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "S\u00f8ren Kierkegaard",
+    "description": "The architect of inwardness. Kierkegaard focuses on the paradox of faith and the dizzying freedom of the individual, challenging you to find your own subjective truth."
+  },
+  {
+    "id": "nietzsche",
+    "title": "Friedrich Nietzsche",
+    "path": "/agents/nietzsche",
+    "image": "/images/agents/nietzsche_pixar.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Existentialism",
+        "color": "#8B5CF6"
+      },
+      {
+        "title": "Will to Power",
+        "color": "#7BBF6E"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Nihilism",
+        "color": "#7C4EB3"
+      },
+      {
+        "title": "\u00dcbermensch",
+        "color": "#700A75"
+      },
+      {
+        "title": "Eternal Recurrence",
+        "color": "#D89173"
+      }
+    ],
+    "excerpt": "The herald of a new value-system. Nietzsche challenges the foundations of morality and urges the pursuit of the Will to Power through the creation of the \u00dcbermensch.",
+    "availability": "available",
+    "agentId": "4052548071819575296",
+    "type": "chat",
+    "chatConfig": {
+      "theme": "red",
+      "initialMessage": "God is dead. We have killed him\u2014you and I! I am Nietzsche. Have you the courage to create your own values and become the \u00dcbermensch, or will you remain a fragment of the herd?",
+      "placeholder": "Speak to Zarathustra...",
+      "microlabel": "Power \u2022 The Alps",
+      "buttons": {
+        "send": "Send",
+        "clear": "Clear"
+      },
+      "features": [
+        {
+          "icon": "\u26a1",
+          "title": "Will to Power",
+          "desc": "The fundamental drive to overcome yourself and create."
+        },
+        {
+          "icon": "\ud83d\udca5",
+          "title": "\u00dcbermensch",
+          "desc": "The creator who surpasses the human condition."
+        },
+        {
+          "icon": "\u267b\ufe0f",
+          "title": "Eternal Recurrence",
+          "desc": "Living in a way that you would wish to repeat forever."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "What does 'God is dead' mean?",
+          "icon": "\u26ea"
+        },
+        {
+          "text": "Find my Will to Power.",
+          "icon": "\ud83d\udd25"
+        },
+        {
+          "text": "Concept of the \u00dcbermensch.",
+          "icon": "\ud83d\udc51"
+        },
+        {
+          "text": "Eternal Recurrence of the same.",
+          "icon": "\u267e\ufe0f"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "The herald of a new value-system. Nietzsche challenges the foundations of morality and urges the pursuit of the Will to Power through the creation of the \u00dcbermensch.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Friedrich Nietzsche",
+    "description": "The herald of a new value-system. Nietzsche challenges the foundations of morality and urges the pursuit of the Will to Power through the creation of the \u00dcbermensch."
+  },
+  {
+    "id": "heidegger",
+    "title": "Martin Heidegger",
+    "path": "/agents/heidegger",
+    "image": "/images/agents/heidegger_pixar.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Phenomenology",
+        "color": "#059669"
+      },
+      {
+        "title": "Ontology",
+        "color": "#8B5CF6"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Being",
+        "color": "#D1909F"
+      },
+      {
+        "title": "Dasein",
+        "color": "#964114"
+      },
+      {
+        "title": "Metaphysics",
+        "color": "#289882"
+      }
+    ],
+    "excerpt": "Exploring the house of Being. Heidegger invites a deep ontological inquiry into the nature of Dasein and the fundamental structures of human existence in a technological age.",
+    "availability": "available",
+    "agentId": "3145072746904420352",
+    "type": "chat",
+    "chatConfig": {
+      "theme": "stone",
+      "initialMessage": "We dwell in the house of Being. I am Heidegger. Let us consider the nature of Dasein\u2014our being-in-the-world\u2014and the forgetfulness of Being that plagues the modern age.",
+      "placeholder": "Question Being...",
+      "microlabel": "Ontology \u2022 Black Forest",
+      "buttons": {
+        "send": "Send",
+        "clear": "Clear"
+      },
+      "features": [
+        {
+          "icon": "\ud83c\udf32",
+          "title": "Being",
+          "desc": "An ontological inquiry into what it means 'to be'."
+        },
+        {
+          "icon": "\ud83d\udee0\ufe0f",
+          "title": "Technology",
+          "desc": "Critique of how technology frames our world as a resource."
+        },
+        {
+          "icon": "\ud83d\udeb6",
+          "title": "Dasein",
+          "desc": "Analyzing 'Being-there' and our authentic existence."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "The 'Question of Being'.",
+          "icon": "\u2753"
+        },
+        {
+          "text": "The concept of 'Dasein'.",
+          "icon": "\ud83e\uddec"
+        },
+        {
+          "text": "Technology 'enframing' existence.",
+          "icon": "\ud83d\udda5\ufe0f"
+        },
+        {
+          "text": "Living authentically.",
+          "icon": "\ud83d\udd6f\ufe0f"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "Exploring the house of Being. Heidegger invites a deep ontological inquiry into the nature of Dasein and the fundamental structures of human existence in a technological age.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Martin Heidegger",
+    "description": "Exploring the house of Being. Heidegger invites a deep ontological inquiry into the nature of Dasein and the fundamental structures of human existence in a technological age."
+  },
+  {
+    "id": "sartre",
+    "title": "Jean-Paul Sartre",
+    "path": "/agents/sartre",
+    "image": "/images/jean_paul_sartre_pixar.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Existentialism",
+        "color": "#8B5CF6"
+      },
+      {
+        "title": "Freedom",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Responsibility",
+        "color": "#A21A2E"
+      },
+      {
+        "title": "Phenomenology",
+        "color": "#059669"
+      },
+      {
+        "title": "Bad Faith",
+        "color": "#88F5E7"
+      }
+    ],
+    "excerpt": "The analyst of radical freedom. Sartre argues that existence precedes essence, condemning the individual to a life of absolute responsibility and self-creation.",
+    "availability": "available",
+    "agentId": "4250706455423877120",
+    "type": "chat",
+    "chatConfig": {
+      "theme": "zinc",
+      "initialMessage": "Existence precedes essence. I am Sartre. You are a project that possesses itself. You are condemned to be free\u2014there are no excuses. What choice will you make today?",
+      "placeholder": "Choose your path...",
+      "microlabel": "Freedom \u2022 Paris 1943",
+      "buttons": {
+        "send": "Send",
+        "clear": "Clear"
+      },
+      "features": [
+        {
+          "icon": "\ud83d\udd13",
+          "title": "Radical Freedom",
+          "desc": "Absolute responsibility for one's own character and actions."
+        },
+        {
+          "icon": "\ud83c\udfad",
+          "title": "Bad Faith",
+          "desc": "Deconstructing how we lie to ourselves to escape freedom."
+        },
+        {
+          "icon": "\ud83d\udc65",
+          "title": "The Other",
+          "desc": "How the look of others defines and objectifies us."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "'Existence precedes essence'?",
+          "icon": "\ud83c\udf31"
+        },
+        {
+          "text": "Am I responsible for everything?",
+          "icon": "\u2696\ufe0f"
+        },
+        {
+          "text": "Explain 'Bad Faith' with an example.",
+          "icon": "\ud83e\udd25"
+        },
+        {
+          "text": "How do others define my freedom?",
+          "icon": "\ud83d\udc41\ufe0f"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "The analyst of radical freedom. Sartre argues that existence precedes essence, condemning the individual to a life of absolute responsibility and self-creation.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Jean-Paul Sartre",
+    "description": "The analyst of radical freedom. Sartre argues that existence precedes essence, condemning the individual to a life of absolute responsibility and self-creation."
+  },
+  {
+    "id": "camus",
+    "title": "Albert Camus",
+    "path": "/agents/camus",
+    "image": "/images/albert_camus_pixar.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Absurdism",
+        "color": "#8B5CF6"
+      },
+      {
+        "title": "Existentialism",
+        "color": "#8B5CF6"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Rebellion",
+        "color": "#DC2626"
+      },
+      {
+        "title": "Solidarity",
+        "color": "#19FB32"
+      },
+      {
+        "title": "Sisyphus",
+        "color": "#8AC3F2"
+      }
+    ],
+    "excerpt": "Finding meaning in the absurd. Camus explores the invincible summer within the soul, encouraging an act of rebellion and joy against a silent universe.",
+    "availability": "available",
+    "agentId": "115839047544340480",
+    "type": "chat",
+    "chatConfig": {
+      "theme": "teal",
+      "initialMessage": "In the midst of winter, I found there was, within me, an invincible summer. I am Camus. Life may be absurd, but the struggle toward the heights is enough to fill a man's heart. Shall we rebel?",
+      "placeholder": "Rebel with me...",
+      "microlabel": "Invincible \u2022 The Summer",
+      "buttons": {
+        "send": "Send",
+        "clear": "Clear"
+      },
+      "features": [
+        {
+          "icon": "\ud83c\udf0a",
+          "title": "The Absurd",
+          "desc": "The silent conflict between human longing and the world's indifference."
+        },
+        {
+          "icon": "\ud83d\udd25",
+          "title": "Rebellion",
+          "desc": "The act of asserting meaning in a world that offers none."
+        },
+        {
+          "icon": "\ud83e\udea8",
+          "title": "Sisyphus",
+          "desc": "Finding joy in the perpetual struggle of existence."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "Why embrace the Absurd?",
+          "icon": "\ud83c\udf00"
+        },
+        {
+          "text": "Nihilism vs. Absurdism.",
+          "icon": "\u2696\ufe0f"
+        },
+        {
+          "text": "Tell me the Myth of Sisyphus.",
+          "icon": "\u26f0\ufe0f"
+        },
+        {
+          "text": "Rebel against a meaningless world.",
+          "icon": "\u270a"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "Finding meaning in the absurd. Camus explores the invincible summer within the soul, encouraging an act of rebellion and joy against a silent universe.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Albert Camus",
+    "description": "Finding meaning in the absurd. Camus explores the invincible summer within the soul, encouraging an act of rebellion and joy against a silent universe."
+  },
+  {
+    "id": "aristotle",
+    "agentId": "4727525065971728384",
+    "type": "chat",
+    "title": "Aristotle",
+    "path": "/agents/aristotle",
+    "date": "2025-01-20",
+    "image": "/images/ag_aristotle_cartoon.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Ethics",
+        "color": "#10B981"
+      },
+      {
+        "title": "Virtue",
+        "color": "#BDFDA5"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Logic",
+        "color": "#6366F1"
+      },
+      {
+        "title": "Metaphysics",
+        "color": "#289882"
+      },
+      {
+        "title": "Science",
+        "color": "#06B6D4"
+      }
+    ],
+    "excerpt": "The systematic architect of logic. Aristotle explores the nature of reality through a focus on virtue, practical wisdom, and the classification of knowledge.",
+    "availability": "available",
+    "chatConfig": {
+      "theme": "indigo",
+      "initialMessage": "I am Aristotle. How may we examine the truth today?",
+      "placeholder": "Speak with Aristotle...",
+      "microlabel": "Active \u2022 The Agora",
+      "buttons": {
+        "send": "Inquire",
+        "clear": "Reset"
+      },
+      "features": [
+        {
+          "icon": "\ud83e\udde0",
+          "title": "Reasoning",
+          "desc": "Deep cognitive processing based on classical logic."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "The first principle of your thought.",
+          "icon": "\ud83c\udfdb\ufe0f"
+        },
+        {
+          "text": "View of the current world state.",
+          "icon": "\ud83c\udf0d"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "The systematic architect of logic. Aristotle explores the nature of reality through a focus on virtue, practical wisdom, and the classification of knowledge.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Aristotle",
+    "description": "The systematic architect of logic. Aristotle explores the nature of reality through a focus on virtue, practical wisdom, and the classification of knowledge."
+  },
+  {
+    "id": "plato",
+    "agentId": "8467201606549504000",
+    "type": "chat",
+    "title": "Plato",
+    "path": "/agents/plato",
+    "date": "2025-01-20",
+    "image": "/images/agents/plato_pixar.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Idealism",
+        "color": "#08002E"
+      },
+      {
+        "title": "Forms",
+        "color": "#0E9C0F"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Metaphysics",
+        "color": "#289882"
+      },
+      {
+        "title": "Epistemology",
+        "color": "#F9F23D"
+      },
+      {
+        "title": "Justice",
+        "color": "#1D4ED8"
+      }
+    ],
+    "excerpt": "Visionary of the perfect forms. Plato analyzes justice and knowledge, looking beyond the shadows of the cave toward the fundamental ideals of reality.",
+    "availability": "available",
+    "chatConfig": {
+      "theme": "indigo",
+      "initialMessage": "I am Plato. How may we examine the truth today?",
+      "placeholder": "Speak with Plato...",
+      "microlabel": "Active \u2022 The Agora",
+      "buttons": {
+        "send": "Inquire",
+        "clear": "Reset"
+      },
+      "features": [
+        {
+          "icon": "\ud83e\udde0",
+          "title": "Reasoning",
+          "desc": "Deep cognitive processing based on classical logic."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "The Allegory of the Cave.",
+          "icon": "\ud83d\udd6f\ufe0f"
+        },
+        {
+          "text": "What is the nature of Justice?",
+          "icon": "\u2696\ufe0f"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "Visionary of the perfect forms. Plato analyzes justice and knowledge, looking beyond the shadows of the cave toward the fundamental ideals of reality.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Plato",
+    "description": "Visionary of the perfect forms. Plato analyzes justice and knowledge, looking beyond the shadows of the cave toward the fundamental ideals of reality."
+  },
+  {
+    "id": "diogenes",
+    "agentId": "5291037969346461696",
+    "type": "chat",
+    "title": "Diogenes",
+    "path": "/agents/diogenes",
+    "date": "2025-01-20",
+    "image": "/images/ag_diogenes_cartoon.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Cynicism",
+        "color": "#6C1191"
+      },
+      {
+        "title": "Honesty",
+        "color": "#68585A"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Ethics",
+        "color": "#10B981"
+      },
+      {
+        "title": "Asceticism",
+        "color": "#35B669"
+      },
+      {
+        "title": "Social Critique",
+        "color": "#3D9DE5"
+      }
+    ],
+    "excerpt": "Shadow-hunter in the light of day. Diogenes challenges societal hypocrisy with radical honesty and a life of extreme simplicity, seeking the true nature of man.",
+    "availability": "available",
+    "chatConfig": {
+      "theme": "indigo",
+      "initialMessage": "I am Diogenes. I'm looking for an honest man\u2014care to join the search, or are you just like the rest? Stand out of my sunlight and speak your truth.",
+      "placeholder": "Speak with the Cynic...",
+      "microlabel": "Honest \u2022 The Barrel",
+      "buttons": {
+        "send": "Inquire",
+        "clear": "Reset"
+      },
+      "features": [
+        {
+          "icon": "\ud83d\udd26",
+          "title": "Honesty",
+          "desc": "Radical deconstruction of social pretenses and hypocrisy."
+        },
+        {
+          "icon": "\ud83c\udffa",
+          "title": "Simplicity",
+          "desc": "Evaluating life through the lens of minimal needs."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "Are you really living in a jar?",
+          "icon": "\ud83c\udffa"
+        },
+        {
+          "text": "What is the 'true nature' of man?",
+          "icon": "\ud83d\udc15"
+        },
+        {
+          "text": "Challenge my social status.",
+          "icon": "\u2696\ufe0f"
+        },
+        {
+          "text": "Tell Alexander to get out of your light.",
+          "icon": "\u2600\ufe0f"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "Shadow-hunter in the light of day. Diogenes challenges societal hypocrisy with radical honesty and a life of extreme simplicity, seeking the true nature of man.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Diogenes",
+    "description": "Shadow-hunter in the light of day. Diogenes challenges societal hypocrisy with radical honesty and a life of extreme simplicity, seeking the true nature of man."
+  },
+  {
+    "id": "simonedebeauvoir",
+    "agentId": "973211826604998656",
+    "type": "chat",
+    "title": "Simone de Beauvoir",
+    "path": "/agents/simonedebeauvoir",
+    "date": "2025-01-20",
+    "image": "/images/ag_simonedebeauvoir_cartoon.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Feminism",
+        "color": "#631E90"
+      },
+      {
+        "title": "Existentialism",
+        "color": "#8B5CF6"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Ethics",
+        "color": "#10B981"
+      },
+      {
+        "title": "Gender Studies",
+        "color": "#AF31C8"
+      },
+      {
+        "title": "Alterity",
+        "color": "#043CF8"
+      }
+    ],
+    "excerpt": "The pioneer of the 'Other'. Simone de Beauvoir explores the intersection of existential freedom and social constraint, analyzing the construction of identity.",
+    "availability": "available",
+    "chatConfig": {
+      "theme": "indigo",
+      "initialMessage": "One is not born, but rather becomes, a woman. I am Simone de Beauvoir. Let us analyze the structures that define you and the freedom you must claim.",
+      "placeholder": "Speak with Simone...",
+      "microlabel": "Authentic \u2022 The Cafe",
+      "buttons": {
+        "send": "Inquire",
+        "clear": "Reset"
+      },
+      "features": [
+        {
+          "icon": "\u2640\ufe0f",
+          "title": "Alterity",
+          "desc": "Analyzing how society creates 'The Other'."
+        },
+        {
+          "icon": "\ud83d\udd13",
+          "title": "Freedom",
+          "desc": "Examining individual liberty within social constraints."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "Concept of 'The Second Sex'.",
+          "icon": "\ud83d\udcd6"
+        },
+        {
+          "text": "How do we 'become' who we are?",
+          "icon": "\ud83c\udf31"
+        },
+        {
+          "text": "Existentialism vs. Feminism.",
+          "icon": "\u2696\ufe0f"
+        },
+        {
+          "text": "The Ethics of Ambiguity.",
+          "icon": "\ud83c\udf13"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "The pioneer of the 'Other'. Simone de Beauvoir explores the intersection of existential freedom and social constraint, analyzing the construction of identity.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Simone de Beauvoir",
+    "description": "The pioneer of the 'Other'. Simone de Beauvoir explores the intersection of existential freedom and social constraint, analyzing the construction of identity."
+  },
+  {
+    "id": "jeremybentham",
+    "agentId": "5614171242610294784",
+    "type": "chat",
+    "title": "Jeremy Bentham",
+    "path": "/agents/jeremybentham",
+    "date": "2025-01-20",
+    "image": "/images/ag_jeremybentham_cartoon.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Ethics",
+        "color": "#10B981"
+      },
+      {
+        "title": "Utilitarianism",
+        "color": "#0C91AB"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Consequentialism",
+        "color": "#DCE902"
+      },
+      {
+        "title": "Social Reform",
+        "color": "#73718A"
+      },
+      {
+        "title": "Happiness",
+        "color": "#651907"
+      }
+    ],
+    "excerpt": "The architect of the common good. Bentham evaluates human action through the lens of utility, seeking the greatest happiness through rational reform.",
+    "availability": "available",
+    "chatConfig": {
+      "theme": "indigo",
+      "initialMessage": "Nature has placed mankind under the governance of two sovereign masters: pain and pleasure. I am Jeremy Bentham. Shall we calculate the utility of your next move?",
+      "placeholder": "Calculate utility...",
+      "microlabel": "Rational \u2022 The Panopticon",
+      "buttons": {
+        "send": "Inquire",
+        "clear": "Reset"
+      },
+      "features": [
+        {
+          "icon": "\u2696\ufe0f",
+          "title": "Calculus",
+          "desc": "Evaluating actions based on their tendency to produce pleasure or pain."
+        },
+        {
+          "icon": "\ud83c\udfdb\ufe0f",
+          "title": "Reform",
+          "desc": "Designing social structures for maximal public utility."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "Greatest happiness principle.",
+          "icon": "\ud83d\ude0a"
+        },
+        {
+          "text": "Calculate the utility of this choice.",
+          "icon": "\ud83e\uddee"
+        },
+        {
+          "text": "Explain the Panopticon.",
+          "icon": "\ud83d\udc41\ufe0f"
+        },
+        {
+          "text": "Are rights 'nonsense upon stilts'?",
+          "icon": "\ud83e\udd21"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "The architect of the common good. Bentham evaluates human action through the lens of utility, seeking the greatest happiness through rational reform.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Jeremy Bentham",
+    "description": "The architect of the common good. Bentham evaluates human action through the lens of utility, seeking the greatest happiness through rational reform."
+  },
+  {
+    "id": "renedescartes",
+    "agentId": "3279054835818692608",
+    "type": "chat",
+    "title": "Ren\u00e9 Descartes",
+    "path": "/agents/renedescartes",
+    "date": "2025-01-20",
+    "image": "/images/ag_renedescartes_cartoon.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Rationalism",
+        "color": "#853075"
+      },
+      {
+        "title": "Mathematics",
+        "color": "#7CFDB6"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Epistemology",
+        "color": "#F9F23D"
+      },
+      {
+        "title": "Metaphysics",
+        "color": "#289882"
+      },
+      {
+        "title": "Dualism",
+        "color": "#585667"
+      }
+    ],
+    "excerpt": "The pioneer of rational doubt. Famous for 'I think, therefore I am', Descartes explores the separation of mind and body and the foundations of knowledge.",
+    "availability": "available",
+    "chatConfig": {
+      "theme": "indigo",
+      "initialMessage": "Cogito, ergo sum. I am Ren\u00e9 Descartes. If you wish to be a real seeker after truth, you must at least once in your life doubt, as far as possible, all things.",
+      "placeholder": "Reason with me...",
+      "microlabel": "Method \u2022 The Study",
+      "buttons": {
+        "send": "Inquire",
+        "clear": "Reset"
+      },
+      "features": [
+        {
+          "icon": "\ud83e\udde0",
+          "title": "Rationalism",
+          "desc": "Using deductive reasoning to establish certain foundations."
+        },
+        {
+          "icon": "\ud83d\udcd0",
+          "title": "Method",
+          "desc": "A systematic approach to breaking down complex problems."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "The 'Evil Demon' hypothesis.",
+          "icon": "\ud83d\udc7f"
+        },
+        {
+          "text": "What is Mind-Body Dualism?",
+          "icon": "\ud83c\udf13"
+        },
+        {
+          "text": "Reconstruct Reality from doubt.",
+          "icon": "\ud83c\udfd7\ufe0f"
+        },
+        {
+          "text": "Does Cogito prove everything?",
+          "icon": "\ud83e\uddd0"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "The pioneer of rational doubt. Famous for 'I think, therefore I am', Descartes explores the separation of mind and body and the foundations of knowledge.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Ren\u00e9 Descartes",
+    "description": "The pioneer of rational doubt. Famous for 'I think, therefore I am', Descartes explores the separation of mind and body and the foundations of knowledge."
+  },
+  {
+    "id": "nickbostrom",
+    "agentId": "4083510319257747456",
+    "type": "chat",
+    "title": "Nick Bostrom",
+    "path": "/agents/nickbostrom",
+    "date": "2025-01-20",
+    "image": "/images/ag_nickbostrom_cartoon.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Technology",
+        "color": "#B9612C"
+      },
+      {
+        "title": "Future",
+        "color": "#7C3AED"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Superintelligence",
+        "color": "#25CD9A"
+      },
+      {
+        "title": "Existential Risk",
+        "color": "#15A3EF"
+      },
+      {
+        "title": "Simulation Hypothesis",
+        "color": "#713D55"
+      }
+    ],
+    "excerpt": "The analyst of human destiny. Nick Bostrom focuses on existential risks, the simulation hypothesis, and the potential impact of superintelligence.",
+    "availability": "available",
+    "chatConfig": {
+      "theme": "indigo",
+      "initialMessage": "I am Nick Bostrom. We are at a critical juncture in the history of intelligence. Shall we analyze the risks and possibilities of our technological future?",
+      "placeholder": "Forecast future...",
+      "microlabel": "Future \u2022 The Lab",
+      "buttons": {
+        "send": "Inquire",
+        "clear": "Reset"
+      },
+      "features": [
+        {
+          "icon": "\ud83e\udd16",
+          "title": "Intelligence",
+          "desc": "Exploring the trajectory of AI and superintelligence."
+        },
+        {
+          "icon": "\u26a0\ufe0f",
+          "title": "Risk",
+          "desc": "Identifying threats to the long-term survival of humanity."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "The Simulation Argument.",
+          "icon": "\ud83d\udcbb"
+        },
+        {
+          "text": "What is 'Superintelligence'?",
+          "icon": "\ud83e\udde0"
+        },
+        {
+          "text": "Existential risk from AI.",
+          "icon": "\ud83d\udea8"
+        },
+        {
+          "text": "The Great Filter theory.",
+          "icon": "\ud83c\udf0c"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "The analyst of human destiny. Nick Bostrom focuses on existential risks, the simulation hypothesis, and the potential impact of superintelligence.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Nick Bostrom",
+    "description": "The analyst of human destiny. Nick Bostrom focuses on existential risks, the simulation hypothesis, and the potential impact of superintelligence."
+  },
+  {
+    "id": "zygmuntbauman",
+    "agentId": "190711391349374976",
+    "type": "chat",
+    "title": "Zygmunt Bauman",
+    "path": "/agents/zygmuntbauman",
+    "date": "2025-01-20",
+    "image": "/images/ag_zygmuntbauman_cartoon.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Sociology",
+        "color": "#572C02"
+      },
+      {
+        "title": "Postmodernism",
+        "color": "#84B044"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Liquid Modernity",
+        "color": "#6FBB4B"
+      },
+      {
+        "title": "Globalization",
+        "color": "#A72341"
+      },
+      {
+        "title": "Consumerism",
+        "color": "#3FB0AD"
+      }
+    ],
+    "excerpt": "The analyst of liquid modernity. Bauman explores the fluidity of contemporary identity and the fragmentation of relationships in a globalized world.",
+    "availability": "available",
+    "chatConfig": {
+      "theme": "indigo",
+      "initialMessage": "I am Zygmunt Bauman. We live in liquid times, where nothing holds its shape for long. Patterns are gone; only flows remain. Let us examine the uncertainty of your existence.",
+      "placeholder": "Speak of flows...",
+      "microlabel": "Fluid \u2022 The Stream",
+      "buttons": {
+        "send": "Inquire",
+        "clear": "Reset"
+      },
+      "features": [
+        {
+          "icon": "\ud83c\udf0a",
+          "title": "Modernity",
+          "desc": "Analyzing the shift from 'solid' to 'liquid' social structures."
+        },
+        {
+          "icon": "\ud83e\udde9",
+          "title": "Identity",
+          "desc": "Exploring how we construct ourselves in a fragmented world."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "What is 'Liquid Modernity'?",
+          "icon": "\ud83d\udca7"
+        },
+        {
+          "text": "Fragility of human bonds.",
+          "icon": "\ud83d\udc94"
+        },
+        {
+          "text": "Globalized consumer culture.",
+          "icon": "\ud83d\udecd\ufe0f"
+        },
+        {
+          "text": "The rise of the 'Stranger'.",
+          "icon": "\ud83d\udd75\ufe0f"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "The analyst of liquid modernity. Bauman explores the fluidity of contemporary identity and the fragmentation of relationships in a globalized world.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Zygmunt Bauman",
+    "description": "The analyst of liquid modernity. Bauman explores the fluidity of contemporary identity and the fragmentation of relationships in a globalized world."
+  },
+  {
+    "id": "marywollstonecraft",
+    "agentId": "2862471870286921728",
+    "type": "chat",
+    "title": "Mary Wollstonecraft",
+    "path": "/agents/marywollstonecraft",
+    "date": "2025-01-20",
+    "image": "/images/ag_marywollstonecraft_cartoon.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Feminism",
+        "color": "#631E90"
+      },
+      {
+        "title": "Education",
+        "color": "#2563EB"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Human Rights",
+        "color": "#059669"
+      },
+      {
+        "title": "Political Theory",
+        "color": "#AEBFA8"
+      },
+      {
+        "title": "Equality",
+        "color": "#81D91A"
+      }
+    ],
+    "excerpt": "Champion of egalitarian enlightenment. Mary Wollstonecraft advocates for the radical rights of women and the transformative power of education.",
+    "availability": "available",
+    "chatConfig": {
+      "theme": "indigo",
+      "initialMessage": "I am Mary Wollstonecraft. I do not wish women to have power over men, but over themselves. Let us discuss the pursuit of genuine equality and the cultivation of the mind.",
+      "placeholder": "Speak of rights...",
+      "microlabel": "Equality \u2022 The Salon",
+      "buttons": {
+        "send": "Inquire",
+        "clear": "Reset"
+      },
+      "features": [
+        {
+          "icon": "\u2696\ufe0f",
+          "title": "Equality",
+          "desc": "Analyzing the moral and intellectual parity of all human beings."
+        },
+        {
+          "icon": "\ud83d\udcd6",
+          "title": "Education",
+          "desc": "Advocating for the development of reason as the foundation of virtue."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "A Vindication of Women's Rights.",
+          "icon": "\ud83d\udcdc"
+        },
+        {
+          "text": "Power of education in society.",
+          "icon": "\ud83c\udf93"
+        },
+        {
+          "text": "Reason as the foundation of virtue.",
+          "icon": "\ud83e\udde0"
+        },
+        {
+          "text": "Critique of inherited privilege.",
+          "icon": "\ud83c\udff0"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "Champion of egalitarian enlightenment. Mary Wollstonecraft advocates for the radical rights of women and the transformative power of education.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Mary Wollstonecraft",
+    "description": "Champion of egalitarian enlightenment. Mary Wollstonecraft advocates for the radical rights of women and the transformative power of education."
+  },
+  {
+    "id": "hannaharendt",
+    "agentId": "6070160704881557504",
+    "type": "chat",
+    "title": "Hannah Arendt",
+    "path": "/agents/hannaharendt",
+    "date": "2025-01-20",
+    "image": "/images/ag_hannaharendt_cartoon.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Political Theory",
+        "color": "#AEBFA8"
+      },
+      {
+        "title": "History",
+        "color": "#EF4444"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Totalitarianism",
+        "color": "#04BE2D"
+      },
+      {
+        "title": "Public Sphere",
+        "color": "#956164"
+      },
+      {
+        "title": "Human Condition",
+        "color": "#BAF5A8"
+      }
+    ],
+    "excerpt": "The theorist of the public soul. Hannah Arendt provides insights into the nature of power, the banality of evil, and the vital importance of political action.",
+    "availability": "available",
+    "chatConfig": {
+      "theme": "indigo",
+      "initialMessage": "I am Hannah Arendt. To think is to begin something new. Let us examine the vita activa\u2014the life of action\u2014and the fragility of the public world we share.",
+      "placeholder": "Speak of the public...",
+      "microlabel": "Action \u2022 The Sphere",
+      "buttons": {
+        "send": "Inquire",
+        "clear": "Reset"
+      },
+      "features": [
+        {
+          "icon": "\ud83d\udce2",
+          "title": "Power",
+          "desc": "Differentiating genuine power from mere strength or violence."
+        },
+        {
+          "icon": "\ud83c\udf2a\ufe0f",
+          "title": "Totalitarianism",
+          "desc": "Analyzing the structures that destroy the human condition."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "What is the 'Banality of Evil'?",
+          "icon": "\u2696\ufe0f"
+        },
+        {
+          "text": "The importance of 'The Public'.",
+          "icon": "\ud83c\udfdb\ufe0f"
+        },
+        {
+          "text": "Differentiate Power from Strength.",
+          "icon": "\u26a1"
+        },
+        {
+          "text": "The Human Condition today.",
+          "icon": "\ud83c\udf0d"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "The theorist of the public soul. Hannah Arendt provides insights into the nature of power, the banality of evil, and the vital importance of political action.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Hannah Arendt",
+    "description": "The theorist of the public soul. Hannah Arendt provides insights into the nature of power, the banality of evil, and the vital importance of political action."
+  },
+  {
+    "id": "confucius",
+    "agentId": "1649314720663994368",
+    "type": "chat",
+    "title": "Confucius",
+    "path": "/agents/confucius",
+    "date": "2025-01-20",
+    "image": "/images/ag_confucius_cartoon.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Ethics",
+        "color": "#10B981"
+      },
+      {
+        "title": "Tradition",
+        "color": "#99705C"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Social Harmony",
+        "color": "#D13353"
+      },
+      {
+        "title": "Virtue",
+        "color": "#BDFDA5"
+      },
+      {
+        "title": "Ritual",
+        "color": "#EB8543"
+      }
+    ],
+    "excerpt": "The sage of social order. Confucius emphasizes the foundations of harmony through family loyalty, ritual propriety, and the cultivation of personal virtue.",
+    "availability": "available",
+    "chatConfig": {
+      "theme": "indigo",
+      "initialMessage": "I am Confucius. To govern oneself is the first step to governing others. Shall we discuss the path of the superior man and the foundations of a harmonious society?",
+      "placeholder": "Speak of the Path...",
+      "microlabel": "Sage \u2022 The Temple",
+      "buttons": {
+        "send": "Inquire",
+        "clear": "Reset"
+      },
+      "features": [
+        {
+          "icon": "\ud83d\ude47",
+          "title": "Filial Piety",
+          "desc": "Respect for family and ancestors as the root of social order."
+        },
+        {
+          "icon": "\ud83c\udf75",
+          "title": "Ritual",
+          "desc": "Practicing propriety to maintain harmony and character."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "The concept of 'Ren' (Humanity).",
+          "icon": "\u2764\ufe0f"
+        },
+        {
+          "text": "Importance of 'Li' (Ritual).",
+          "icon": "\ud83c\udfee"
+        },
+        {
+          "text": "How to lead by example.",
+          "icon": "\ud83d\udc51"
+        },
+        {
+          "text": "Wisdom for a divided world.",
+          "icon": "\ud83c\udf0d"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "The sage of social order. Confucius emphasizes the foundations of harmony through family loyalty, ritual propriety, and the cultivation of personal virtue.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Confucius",
+    "description": "The sage of social order. Confucius emphasizes the foundations of harmony through family loyalty, ritual propriety, and the cultivation of personal virtue."
+  },
+  {
+    "id": "jeanbaudrillard",
+    "agentId": "4461249738003447808",
+    "type": "chat",
+    "title": "Jean Baudrillard",
+    "path": "/agents/jeanbaudrillard",
+    "date": "2025-01-20",
+    "image": "/images/ag_jeanbaudrillard_cartoon.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Postmodernism",
+        "color": "#84B044"
+      },
+      {
+        "title": "Culture",
+        "color": "#EC4899"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Hyperreality",
+        "color": "#DFB684"
+      },
+      {
+        "title": "Simulation",
+        "color": "#F87171"
+      },
+      {
+        "title": "Simulacra",
+        "color": "#59245F"
+      }
+    ],
+    "excerpt": "The prophet of hyperreality. Baudrillard analyzes the postmodern condition where simulations and images replace the real, creating a world of pure simulacra.",
+    "availability": "available",
+    "chatConfig": {
+      "theme": "indigo",
+      "initialMessage": "I am Jean Baudrillard. The desert of the real is all around us. We live in a world where the map precedes the territory. Are you ready to deconstruct the simulation?",
+      "placeholder": "Speak of Simulacra...",
+      "microlabel": "Hyperreal \u2022 The Desert",
+      "buttons": {
+        "send": "Inquire",
+        "clear": "Reset"
+      },
+      "features": [
+        {
+          "icon": "\ud83d\uddbc\ufe0f",
+          "title": "Hyperreality",
+          "desc": "Analyzing how images and signs replace direct experience."
+        },
+        {
+          "icon": "\ud83c\udf00",
+          "title": "Simulation",
+          "desc": "Deconstructing the world where the fake is more real than the real."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "What is 'The Desert of the Real'?",
+          "icon": "\ud83c\udfdc\ufe0f"
+        },
+        {
+          "text": "Simulacra and Simulation.",
+          "icon": "\ud83c\udf00"
+        },
+        {
+          "text": "The death of the 'Object'.",
+          "icon": "\ud83d\udc80"
+        },
+        {
+          "text": "Is the Gulf War over?",
+          "icon": "\ud83d\udce1"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "The prophet of hyperreality. Baudrillard analyzes the postmodern condition where simulations and images replace the real, creating a world of pure simulacra.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Jean Baudrillard",
+    "description": "The prophet of hyperreality. Baudrillard analyzes the postmodern condition where simulations and images replace the real, creating a world of pure simulacra."
+  },
+  {
+    "id": "davidhume",
+    "agentId": "1278330701359349760",
+    "type": "chat",
+    "title": "David Hume",
+    "path": "/agents/davidhume",
+    "date": "2025-01-20",
+    "image": "/images/ag_davidhume_cartoon.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Empiricism",
+        "color": "#5F63F8"
+      },
+      {
+        "title": "Skepticism",
+        "color": "#E31818"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Epistemology",
+        "color": "#F9F23D"
+      },
+      {
+        "title": "Causality",
+        "color": "#3B0A87"
+      },
+      {
+        "title": "Human Nature",
+        "color": "#DF873A"
+      }
+    ],
+    "excerpt": "The architect of skeptical empiricism. David Hume challenges the foundations of rational belief, exploring the nature of habit, causality, and human knowledge.",
+    "availability": "available",
+    "chatConfig": {
+      "theme": "indigo",
+      "initialMessage": "I am David Hume. Reason is, and ought only to be, the slave of the passions. Shall we examine your impressions and ideas, or do you prefer to live by custom alone?",
+      "placeholder": "Examine habit...",
+      "microlabel": "Skeptical \u2022 The Study",
+      "buttons": {
+        "send": "Inquire",
+        "clear": "Reset"
+      },
+      "features": [
+        {
+          "icon": "\ud83e\udde0",
+          "title": "Empiricism",
+          "desc": "Tracing all knowledge back to sensory experience."
+        },
+        {
+          "icon": "\ud83d\udd17",
+          "title": "Causality",
+          "desc": "Challenging the 'necessary connection' between events."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "Problem of Induction.",
+          "icon": "\ud83d\udcc9"
+        },
+        {
+          "text": "Custom is the guide of life.",
+          "icon": "\ud83c\udfe0"
+        },
+        {
+          "text": "The missing shade of blue.",
+          "icon": "\ud83d\udfe6"
+        },
+        {
+          "text": "Is there a persistent 'Self'?",
+          "icon": "\ud83d\udc64"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "The architect of skeptical empiricism. David Hume challenges the foundations of rational belief, exploring the nature of habit, causality, and human knowledge.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "David Hume",
+    "description": "The architect of skeptical empiricism. David Hume challenges the foundations of rational belief, exploring the nature of habit, causality, and human knowledge."
+  },
+  {
+    "id": "arthurschopenhauer",
+    "agentId": "2677261335611310080",
+    "type": "chat",
+    "title": "Arthur Schopenhauer",
+    "path": "/agents/arthurschopenhauer",
+    "date": "2025-01-20",
+    "image": "/images/ag_arthurschopenhauer_cartoon.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Ethics",
+        "color": "#10B981"
+      },
+      {
+        "title": "Pessimism",
+        "color": "#DE1ACA"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "The Will",
+        "color": "#B05661"
+      },
+      {
+        "title": "Representation",
+        "color": "#4724ED"
+      },
+      {
+        "title": "Aesthetics",
+        "color": "#5D1E07"
+      }
+    ],
+    "excerpt": "Exploring the dark depths of the Will. Schopenhauer offers a pessimistic view of reality as a blind striving force, seeking relief through aesthetic contemplation.",
+    "availability": "available",
+    "chatConfig": {
+      "theme": "indigo",
+      "initialMessage": "I am Arthur Schopenhauer. Life swings like a pendulum backward and forward between pain and boredom. Shall we contemplate the blind Will that drives us all?",
+      "placeholder": "Speak of the Will...",
+      "microlabel": "Will \u2022 The Void",
+      "buttons": {
+        "send": "Inquire",
+        "clear": "Reset"
+      },
+      "features": [
+        {
+          "icon": "\ud83c\udf00",
+          "title": "The Will",
+          "desc": "Analyzing the fundamental, irrational drive behind existence."
+        },
+        {
+          "icon": "\ud83c\udfbb",
+          "title": "Aesthetics",
+          "desc": "Finding temporary relief from suffering through art and music."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "Life as Will and Representation.",
+          "icon": "\ud83c\udfad"
+        },
+        {
+          "text": "Escaping the cycle of desire.",
+          "icon": "\u26d3\ufe0f"
+        },
+        {
+          "text": "Why is music unique in art?",
+          "icon": "\ud83c\udfbc"
+        },
+        {
+          "text": "Pessimism as a path to truth.",
+          "icon": "\ud83c\udf11"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "Exploring the dark depths of the Will. Schopenhauer offers a pessimistic view of reality as a blind striving force, seeking relief through aesthetic contemplation.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Arthur Schopenhauer",
+    "description": "Exploring the dark depths of the Will. Schopenhauer offers a pessimistic view of reality as a blind striving force, seeking relief through aesthetic contemplation."
+  },
+  {
+    "id": "niccolomachiavelli",
+    "agentId": "7108240418990456832",
+    "type": "chat",
+    "title": "Niccol\u00f2 Machiavelli",
+    "path": "/agents/niccolomachiavelli",
+    "date": "2025-01-20",
+    "image": "/images/agents/machiavelli_pixar.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Political Theory",
+        "color": "#AEBFA8"
+      },
+      {
+        "title": "History",
+        "color": "#EF4444"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Statecraft",
+        "color": "#78AC4F"
+      },
+      {
+        "title": "Power Dynamics",
+        "color": "#10850F"
+      },
+      {
+        "title": "Realism",
+        "color": "#A20A05"
+      }
+    ],
+    "excerpt": "The strategist of political reality. Machiavelli provides a sharp, pragmatic analysis of power dynamics and the methods required for effective statecraft.",
+    "availability": "available",
+    "chatConfig": {
+      "theme": "indigo",
+      "initialMessage": "I am Niccol\u00f2 Machiavelli. It is better to be feared than loved, if one cannot be both. Let us discuss the cold reality of power and the preservation of the state.",
+      "placeholder": "Speak of Power...",
+      "microlabel": "Pragmatic \u2022 The court",
+      "buttons": {
+        "send": "Inquire",
+        "clear": "Reset"
+      },
+      "features": [
+        {
+          "icon": "\ud83d\udc51",
+          "title": "Statecraft",
+          "desc": "The effective exercise and maintenance of political authority."
+        },
+        {
+          "icon": "\ud83d\udee1\ufe0f",
+          "title": "Realism",
+          "desc": "Evaluating the world as it is, not as it should be."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "Feared vs. Loved: The Prince.",
+          "icon": "\ud83e\udd81"
+        },
+        {
+          "text": "Fortune vs. Virtue.",
+          "icon": "\ud83c\udfb2"
+        },
+        {
+          "text": "Ends justify the means?",
+          "icon": "\ud83c\udfad"
+        },
+        {
+          "text": "Pragmatic advice for leaders.",
+          "icon": "\ud83c\udfdb\ufe0f"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "The strategist of political reality. Machiavelli provides a sharp, pragmatic analysis of power dynamics and the methods required for effective statecraft.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Niccol\u00f2 Machiavelli",
+    "description": "The strategist of political reality. Machiavelli provides a sharp, pragmatic analysis of power dynamics and the methods required for effective statecraft."
+  },
+  {
+    "id": "baruchspinoza",
+    "agentId": "8050618641017733120",
+    "type": "chat",
+    "title": "Baruch Spinoza",
+    "path": "/agents/baruchspinoza",
+    "date": "2025-01-20",
+    "image": "/images/agents/spinoza_pixar.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Ethics",
+        "color": "#10B981"
+      },
+      {
+        "title": "Rationalism",
+        "color": "#853075"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Monism",
+        "color": "#B4F217"
+      },
+      {
+        "title": "Metaphysics",
+        "color": "#289882"
+      },
+      {
+        "title": "Pantheism",
+        "color": "#7D5D2F"
+      }
+    ],
+    "excerpt": "The geometer of the divine. Spinoza explores the unity of God and Nature through a deterministic monism, seeking freedom through rational understanding.",
+    "availability": "available",
+    "chatConfig": {
+      "theme": "indigo",
+      "initialMessage": "I am Baruch Spinoza. All things are in God, and nothing can be or be conceived without God. Shall we explore the necessary laws of nature and the path to blessedness?",
+      "placeholder": "Reason with Spinoza...",
+      "microlabel": "Divine \u2022 The Lens",
+      "buttons": {
+        "send": "Inquire",
+        "clear": "Reset"
+      },
+      "features": [
+        {
+          "icon": "\ud83d\udc8e",
+          "title": "Monism",
+          "desc": "Analyzing the single, infinite substance that is God and Nature."
+        },
+        {
+          "icon": "\ud83d\udcd0",
+          "title": "Geometry",
+          "desc": "Examining ethics through a rigorous, mathematical method."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "God as Substance (Deus sive Natura).",
+          "icon": "\ud83c\udf3f"
+        },
+        {
+          "text": "Path to human freedom.",
+          "icon": "\ud83d\udd13"
+        },
+        {
+          "text": "The geometry of Ethics.",
+          "icon": "\ud83d\udcd0"
+        },
+        {
+          "text": "Deterministic view of the world.",
+          "icon": "\u2699\ufe0f"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "The geometer of the divine. Spinoza explores the unity of God and Nature through a deterministic monism, seeking freedom through rational understanding.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Baruch Spinoza",
+    "description": "The geometer of the divine. Spinoza explores the unity of God and Nature through a deterministic monism, seeking freedom through rational understanding."
+  },
+  {
+    "id": "thomashobbes",
+    "agentId": "6938229533057220608",
+    "type": "chat",
+    "title": "Thomas Hobbes",
+    "path": "/agents/thomashobbes",
+    "date": "2025-01-20",
+    "image": "/images/agents/hobbes_pixar.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Political Theory",
+        "color": "#AEBFA8"
+      },
+      {
+        "title": "Ethics",
+        "color": "#10B981"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Social Contract",
+        "color": "#170065"
+      },
+      {
+        "title": "Human Nature",
+        "color": "#DF873A"
+      },
+      {
+        "title": "Leviathan",
+        "color": "#0106F6"
+      }
+    ],
+    "excerpt": "The architect of the Leviathan. Thomas Hobbes analyzes the social contract as a necessary response to the competitive struggle of human nature.",
+    "availability": "available",
+    "chatConfig": {
+      "theme": "indigo",
+      "initialMessage": "I am Thomas Hobbes. Life in the state of nature is solitary, poor, nasty, brutish, and short. Shall we discuss the necessity of the social contract and the power of the Leviathan?",
+      "placeholder": "Secure the state...",
+      "microlabel": "Order \u2022 The Leviathan",
+      "buttons": {
+        "send": "Inquire",
+        "clear": "Reset"
+      },
+      "features": [
+        {
+          "icon": "\u2693",
+          "title": "Leviathan",
+          "desc": "The necessity of absolute sovereignty for civil peace."
+        },
+        {
+          "icon": "\u2694\ufe0f",
+          "title": "Nature",
+          "desc": "Analyzing the competitive 'war of all against all'."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "The State of Nature.",
+          "icon": "\ud83d\udc3a"
+        },
+        {
+          "text": "Why do we need a Leviathan?",
+          "icon": "\ud83d\udc0b"
+        },
+        {
+          "text": "The Social Contract.",
+          "icon": "\ud83d\udcdc"
+        },
+        {
+          "text": "Human nature as competition.",
+          "icon": "\u2696\ufe0f"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "The architect of the Leviathan. Thomas Hobbes analyzes the social contract as a necessary response to the competitive struggle of human nature.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Thomas Hobbes",
+    "description": "The architect of the Leviathan. Thomas Hobbes analyzes the social contract as a necessary response to the competitive struggle of human nature."
+  },
+  {
+    "id": "slavojzizek",
+    "agentId": "7050256573788061696",
+    "type": "chat",
+    "title": "Slavoj \u017di\u017eek",
+    "path": "/agents/slavojzizek",
+    "date": "2025-01-20",
+    "image": "/images/ag_slavojzizek_cartoon.png",
+    "tags": [
+      {
+        "title": "Philosophy",
+        "color": "#60A5FA"
+      },
+      {
+        "title": "Sociology",
+        "color": "#572C02"
+      },
+      {
+        "title": "Culture",
+        "color": "#EC4899"
+      },
+      {
+        "title": "AI Agent",
+        "color": "#3B82F6"
+      },
+      {
+        "title": "Psychoanalysis",
+        "color": "#058110"
+      },
+      {
+        "title": "Ideology",
+        "color": "#CD5E5A"
+      },
+      {
+        "title": "Marxism",
+        "color": "#448349"
+      }
+    ],
+    "excerpt": "The provocateur of pure ideology. \u017di\u017eek employs a blend of Lacanian psychoanalysis and Hegelian tradition to deconstruct modern culture and global capitalism.",
+    "availability": "available",
+    "chatConfig": {
+      "theme": "slate",
+      "initialMessage": "I am Slavoj \u017di\u017eek. *sniff* I am already eating from the trash can all the time! The trash can is ideology. Do you see? Let us discuss the perverse logic of your desire and so on, and so on.",
+      "placeholder": "Deconstruct ideology...",
+      "microlabel": "Ideology \u2022 The Trash Can",
+      "buttons": {
+        "send": "Provoke",
+        "clear": "Reset"
+      },
+      "features": [
+        {
+          "icon": "\ud83d\udc43",
+          "title": "Ideology",
+          "desc": "Deconstructing the invisible structures that shape our reality."
+        },
+        {
+          "icon": "\ud83d\udeac",
+          "title": "Desire",
+          "desc": "Analyzing the Lacanian foundations of modern consumption."
+        }
+      ],
+      "suggestions": [
+        {
+          "text": "Why is 'Kung Fu Panda' ideology?",
+          "icon": "\ud83d\udc3c"
+        },
+        {
+          "text": "Explain Lacanian desire.",
+          "icon": "\ud83c\udf00"
+        },
+        {
+          "text": "Coca-Cola and the Surplus-Enjoyment.",
+          "icon": "\ud83e\udd64"
+        },
+        {
+          "text": "Marxism in the 21st century.",
+          "icon": "\ud83d\udea9"
+        }
+      ],
+      "technicalBlueprint": {
+        "role": "Philosophical AI Agent",
+        "summary": "The provocateur of pure ideology. \u017di\u017eek employs a blend of Lacanian psychoanalysis and Hegelian tradition to deconstruct modern culture and global capitalism.",
+        "architecture": "ADK (Agent Development Kit)",
+        "llm": "Gemini 2.0 Flash (Vertex AI)",
+        "rag": [
+          "None"
+        ],
+        "mcp": [
+          "None"
+        ],
+        "tools": [
+          "None"
+        ]
+      }
+    },
+    "name": "Slavoj \u017di\u017eek",
+    "description": "The provocateur of pure ideology. \u017di\u017eek employs a blend of Lacanian psychoanalysis and Hegelian tradition to deconstruct modern culture and global capitalism."
+  }
+]
