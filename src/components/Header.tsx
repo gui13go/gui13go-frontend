@@ -384,54 +384,6 @@ export const Header: React.FC = () => {
           )}
         </div>
 
-        {/* Mobile menu toggle */}
-        <button
-          id="menu-toggle"
-          ref={menuToggleRef}
-          className="menu-toggle theme-toggle"
-          aria-label="Toggle Menu"
-          aria-expanded={mobileMenuOpen}
-          onClick={(e) => {
-            e.stopPropagation()
-            toggleMobileMenu()
-          }}
-        >
-          {mobileMenuOpen ? (
-            <svg
-              className="close-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          ) : (
-            <svg
-              className="menu-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-          )}
-        </button>
-
         {/* Primary navigation menu */}
         <ul
           id="menu"
@@ -450,10 +402,59 @@ export const Header: React.FC = () => {
               </li>
             )
           })}
-          <li style={{ display: 'flex', alignItems: 'center', marginLeft: '6px' }}>
-            <UserMenu />
-          </li>
         </ul>
+
+        {/* Right Action Cluster: User Auth & Mobile Menu Toggle */}
+        <div className="header-actions">
+          <UserMenu />
+
+          <button
+            id="menu-toggle"
+            ref={menuToggleRef}
+            className="menu-toggle theme-toggle"
+            aria-label="Toggle Menu"
+            aria-expanded={mobileMenuOpen}
+            onClick={(e) => {
+              e.stopPropagation()
+              toggleMobileMenu()
+            }}
+          >
+            {mobileMenuOpen ? (
+              <svg
+                className="close-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            ) : (
+              <svg
+                className="menu-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            )}
+          </button>
+        </div>
       </nav>
     </header>
   )

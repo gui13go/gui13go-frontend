@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import { Lock, KeyRound, ShieldAlert, Sparkles } from 'lucide-react'
 import { AGENT_PERSONAS, type AgentPersonaConfig } from '../config/agentPersonas'
 import { useDocumentMeta } from '../hooks/useDocumentMeta'
 import { useSession } from '../lib/auth-client'
@@ -456,61 +457,88 @@ export const SimpleAgent: React.FC = () => {
           {isAccessDenied ? (
             <div
               style={{
-                margin: '16px 20px 20px',
-                padding: '24px',
-                borderRadius: '16px',
-                backgroundColor: 'rgba(99, 102, 241, 0.08)',
+                margin: '16px 20px 24px',
+                padding: '32px 24px',
+                borderRadius: '20px',
+                background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, rgba(59, 130, 246, 0.03) 100%)',
                 border: '1px dashed var(--theme-border)',
                 textAlign: 'center',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                gap: '12px',
+                gap: '14px',
+                position: 'relative',
+                overflow: 'hidden',
               }}
             >
               <div
                 style={{
                   display: 'inline-flex',
-                  padding: '10px',
-                  borderRadius: '50%',
-                  backgroundColor: isAgentReserved ? 'rgba(239, 68, 68, 0.15)' : 'rgba(99, 102, 241, 0.15)',
-                  color: isAgentReserved ? '#ef4444' : 'var(--theme-accent)',
+                  padding: '14px',
+                  borderRadius: '16px',
+                  background: isAgentReserved
+                    ? 'linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(244, 63, 94, 0.1) 100%)'
+                    : 'linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)',
+                  color: isAgentReserved ? '#ef4444' : '#818cf8',
+                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.12)',
+                  border: isAgentReserved
+                    ? '1px solid rgba(239, 68, 68, 0.25)'
+                    : '1px solid rgba(99, 102, 241, 0.25)',
                 }}
               >
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                </svg>
+                {isAgentReserved ? (
+                  <ShieldAlert size={28} />
+                ) : (
+                  <KeyRound size={28} />
+                )}
               </div>
               <div>
-                <h4 style={{ margin: '0 0 4px', fontSize: '1.05rem', color: 'var(--primary)' }}>
-                  {isAgentReserved ? 'Reserved Model Pipeline' : 'Authentication Required'}
+                <h4 style={{ margin: '0 0 6px', fontSize: '1.2rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '-0.01em' }}>
+                  {isAgentReserved ? 'Reserved Model Pipeline' : `Access Required for ${persona.name}`}
                 </h4>
-                <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--secondary)', maxWidth: '420px' }}>
+                <p style={{ margin: 0, fontSize: '0.86rem', color: 'var(--secondary)', maxWidth: '440px', lineHeight: 1.5 }}>
                   {isAgentReserved
                     ? 'This agent is designated for system-level swarm orchestration and requires an administrative account.'
-                    : `To chat with ${persona.name}, please sign in with your GitHub, Google, or email account.`}
+                    : `To start an interactive dialogue session with ${persona.name}, sign in with your GitHub, Google, or email account.`}
                 </p>
               </div>
-              {!user && (
+              {!user ? (
                 <button
                   type="button"
                   onClick={() => setAuthModalOpen(true)}
                   style={{
-                    padding: '8px 18px',
-                    borderRadius: '8px',
-                    backgroundColor: 'var(--theme-accent)',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    padding: '10px 22px',
+                    borderRadius: '9999px',
+                    background: 'linear-gradient(135deg, #4f46e5 0%, #3b82f6 50%, #06b6d4 100%)',
                     color: '#ffffff',
                     border: 'none',
-                    fontWeight: 600,
-                    fontSize: '0.88rem',
+                    fontWeight: 700,
+                    fontSize: '0.9rem',
                     cursor: 'pointer',
-                    boxShadow: '0 4px 12px rgba(99, 102, 241, 0.25)',
+                    boxShadow: '0 4px 18px rgba(79, 70, 229, 0.35)',
+                    transition: 'all 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-1px)'
+                    e.currentTarget.style.boxShadow = '0 6px 24px rgba(79, 70, 229, 0.5)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)'
+                    e.currentTarget.style.boxShadow = '0 4px 18px rgba(79, 70, 229, 0.35)'
                   }}
                 >
-                  Sign In to Unlock
+                  <Sparkles size={16} />
+                  <span>Sign In to Unlock Model</span>
                 </button>
-              )}
+              ) : isAgentReserved ? (
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#ef4444', fontWeight: 600 }}>
+                  <Lock size={14} />
+                  <span>Admin credentials required for orchestrator tier</span>
+                </div>
+              ) : null}
             </div>
           ) : (
             <div className="agent-input-container">

@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
+import { Sparkles, ChevronDown, LogOut, Bot, Activity, Shield } from 'lucide-react'
 import { useSession, signOut } from '../lib/auth-client'
 import { AuthModal } from './AuthModal'
 
@@ -6,47 +8,57 @@ export const UserMenu: React.FC = () => {
   const { data: session, isPending } = useSession()
   const [authModalOpen, setAuthModalOpen] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
+  const menuContainerRef = useRef<HTMLDivElement>(null)
 
+  // Close dropdown on click outside or Escape
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (menuContainerRef.current && !menuContainerRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false)
+      }
+    }
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setDropdownOpen(false)
+    }
+
+    if (dropdownOpen) {
+      document.addEventListener('mousedown', handleOutsideClick)
+      document.addEventListener('keydown', handleKeyDown)
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [dropdownOpen])
+
+  // Skeleton shimmer while session is loading
   if (isPending) {
     return (
       <div
         style={{
-          width: '32px',
+          width: '78px',
           height: '32px',
-          borderRadius: '50%',
-          backgroundColor: 'var(--tertiary)',
-          opacity: 0.5,
+          borderRadius: '9999px',
+          background: 'var(--tertiary)',
+          opacity: 0.6,
+          animation: 'pulse 1.5s ease-in-out infinite',
         }}
       />
     )
   }
 
+  // Guest State: High-tech "Sign In" button with spark icon
   if (!session?.user) {
     return (
       <>
         <button
           type="button"
           onClick={() => setAuthModalOpen(true)}
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-            padding: '5px 12px',
-            fontSize: '0.82rem',
-            fontWeight: 600,
-            borderRadius: '8px',
-            border: '1px solid var(--theme-border)',
-            backgroundColor: 'var(--tertiary)',
-            color: 'var(--primary)',
-            cursor: 'pointer',
-            transition: 'all 0.2s ease',
-          }}
-          title="Sign in to unlock reserved agents and personal history"
+          className="user-nav-signin-btn"
+          aria-label="Sign in to your account"
+          title="Sign in with GitHub, Google, or email to unlock reserved agents and personal history"
         >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-            <circle cx="12" cy="7" r="4" />
-          </svg>
+          <Sparkles size={14} className="signin-icon-sparkle" />
           <span>Sign In</span>
         </button>
 
@@ -57,138 +69,92 @@ export const UserMenu: React.FC = () => {
 
   const user = session.user
   const userInitial = (user.name || user.email || 'U').charAt(0).toUpperCase()
-  const role = (user as unknown as { role?: string })?.role || 'user'
+  const role = user.role || 'user'
   const isAdmin = role === 'admin'
+  const firstName = user.name ? user.name.split(' ')[0] : user.email?.split('@')[0] || 'User'
 
   return (
-    <div style={{ position: 'relative' }}>
+    <div ref={menuContainerRef} style={{ position: 'relative' }}>
       <button
         type="button"
         onClick={() => setDropdownOpen((prev) => !prev)}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-          padding: '3px 8px 3px 4px',
-          borderRadius: '999px',
-          border: '1px solid var(--theme-border)',
-          backgroundColor: 'var(--tertiary)',
-          color: 'var(--primary)',
-          cursor: 'pointer',
-        }}
+        className="user-nav-profile-btn"
         aria-label="User profile menu"
+        aria-expanded={dropdownOpen}
       >
-        {user.image ? (
-          <img
-            src={user.image}
-            alt={user.name || 'User'}
-            style={{ width: '24px', height: '24px', borderRadius: '50%', objectFit: 'cover' }}
-          />
-        ) : (
-          <div
-            style={{
-              width: '24px',
-              height: '24px',
-              borderRadius: '50%',
-              backgroundColor: 'var(--theme-accent)',
-              color: '#ffffff',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '0.75rem',
-              fontWeight: 700,
-            }}
-          >
-            {userInitial}
-          </div>
-        )}
-        <span style={{ fontSize: '0.8rem', fontWeight: 600, maxWidth: '100px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-          {user.name?.split(' ')[0] || user.email?.split('@')[0]}
+        <div className="user-nav-avatar-wrap">
+          {user.image ? (
+            <img src={user.image} alt={user.name || 'User Avatar'} className="user-nav-avatar-img" />
+          ) : (
+            <div className="user-nav-avatar-placeholder">{userInitial}</div>
+          )}
+          <span className="user-nav-status-dot" title="Active authenticated session" />
+        </div>
+
+        <span className="user-nav-name">{firstName}</span>
+
+        <span className={`user-nav-badge ${isAdmin ? 'admin' : 'member'}`}>
+          {isAdmin ? 'Admin' : 'Pro'}
         </span>
-        {isAdmin && (
-          <span
-            style={{
-              fontSize: '0.65rem',
-              fontWeight: 700,
-              padding: '1px 5px',
-              borderRadius: '4px',
-              backgroundColor: 'rgba(239, 68, 68, 0.15)',
-              color: '#ef4444',
-              textTransform: 'uppercase',
-            }}
-          >
-            Admin
-          </span>
-        )}
+
+        <ChevronDown size={14} className={`user-nav-chevron ${dropdownOpen ? 'open' : ''}`} />
       </button>
 
       {dropdownOpen && (
-        <>
-          <div
-            style={{ position: 'fixed', inset: 0, zIndex: 999 }}
+        <div className="user-nav-dropdown" role="menu">
+          <div className="user-nav-dropdown-header">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+              <div className="user-nav-dropdown-name">{user.name || 'User'}</div>
+              <span className={`user-nav-badge ${isAdmin ? 'admin' : 'member'}`}>
+                {isAdmin ? 'System Admin' : 'Authenticated'}
+              </span>
+            </div>
+            <div className="user-nav-dropdown-email">{user.email}</div>
+          </div>
+
+          <Link
+            to="/agents/"
+            className="user-nav-dropdown-item"
             onClick={() => setDropdownOpen(false)}
-          />
-          <div
-            style={{
-              position: 'absolute',
-              top: 'calc(100% + 8px)',
-              right: 0,
-              width: '200px',
-              backgroundColor: 'var(--entry)',
-              border: '1px solid var(--theme-border)',
-              borderRadius: '12px',
-              padding: '8px',
-              boxShadow: '0 10px 25px rgba(0, 0, 0, 0.25)',
-              zIndex: 1000,
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '4px',
+          >
+            <Bot size={15} style={{ color: '#818cf8' }} />
+            <span>Agent Portfolio</span>
+          </Link>
+
+          <Link
+            to="/status/"
+            className="user-nav-dropdown-item"
+            onClick={() => setDropdownOpen(false)}
+          >
+            <Activity size={15} style={{ color: '#34d399' }} />
+            <span>Ollama Cluster Status</span>
+          </Link>
+
+          {isAdmin && (
+            <div
+              className="user-nav-dropdown-item"
+              style={{ cursor: 'default', opacity: 0.9, fontSize: '0.78rem' }}
+            >
+              <Shield size={14} style={{ color: '#ef4444' }} />
+              <span style={{ color: '#ef4444', fontWeight: 600 }}>Unrestricted Swarm Access</span>
+            </div>
+          )}
+
+          <div style={{ height: '1px', background: 'var(--theme-border)', margin: '4px 0' }} />
+
+          <button
+            type="button"
+            className="user-nav-dropdown-item danger"
+            onClick={async () => {
+              setDropdownOpen(false)
+              await signOut()
             }}
           >
-            <div style={{ padding: '8px', borderBottom: '1px solid var(--theme-border)', marginBottom: '4px' }}>
-              <div style={{ fontSize: '0.84rem', fontWeight: 600, color: 'var(--primary)' }}>
-                {user.name || 'User'}
-              </div>
-              <div style={{ fontSize: '0.74rem', color: 'var(--secondary)', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                {user.email}
-              </div>
-              <div style={{ marginTop: '4px', fontSize: '0.72rem', color: isAdmin ? '#ef4444' : '#10b981', fontWeight: 600 }}>
-                {isAdmin ? '★ System Administrator' : '✓ Authenticated Tier'}
-              </div>
-            </div>
-
-            <button
-              type="button"
-              onClick={async () => {
-                setDropdownOpen(false)
-                await signOut()
-              }}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '8px 10px',
-                borderRadius: '6px',
-                border: 'none',
-                background: 'none',
-                color: '#ef4444',
-                fontSize: '0.82rem',
-                fontWeight: 600,
-                cursor: 'pointer',
-                textAlign: 'left',
-              }}
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-                <polyline points="16 17 21 12 16 7" />
-                <line x1="21" y1="12" x2="9" y2="12" />
-              </svg>
-              <span>Sign Out</span>
-            </button>
-          </div>
-        </>
+            <LogOut size={15} />
+            <span>Sign Out</span>
+          </button>
+        </div>
       )}
     </div>
   )
 }
-

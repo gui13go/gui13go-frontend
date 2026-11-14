@@ -1,4 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
+import {
+  X,
+  Mail,
+  Lock,
+  User,
+  Eye,
+  EyeOff,
+  Sparkles,
+  KeyRound,
+  ShieldAlert,
+  AlertCircle,
+  Loader2,
+} from 'lucide-react'
 import { signIn, signUp } from '../lib/auth-client'
 
 interface AuthModalProps {
@@ -18,8 +32,26 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
   const [errorMsg, setErrorMsg] = useState<string | null>(null)
+
+  // Close on Escape key press
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose()
+      }
+    }
+    if (isOpen) {
+      document.addEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = 'hidden'
+    }
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = ''
+    }
+  }, [isOpen, onClose])
 
   if (!isOpen) return null
 
@@ -32,9 +64,8 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         callbackURL: window.location.href,
       })
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : 'Authentication failed'
+      const msg = err instanceof Error ? err.message : 'Social authentication failed'
       setErrorMsg(msg)
-    } finally {
       setLoading(false)
     }
   }
@@ -61,135 +92,109 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       }
       onClose()
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : 'Authentication failed'
+      const msg = err instanceof Error ? err.message : 'Authentication failed. Please verify credentials.'
       setErrorMsg(msg)
     } finally {
       setLoading(false)
     }
   }
 
-  return (
+  if (!isOpen || typeof document === 'undefined') return null
+
+  return createPortal(
     <div
       className="auth-modal-overlay"
-      style={{
-        position: 'fixed',
-        inset: 0,
-        backgroundColor: 'rgba(0, 0, 0, 0.65)',
-        backdropFilter: 'blur(5px)',
-        zIndex: 9999,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '16px',
-      }}
       onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="auth-modal-title"
     >
       <div
         className="auth-modal-card"
-        style={{
-          width: '100%',
-          maxWidth: '420px',
-          backgroundColor: 'var(--entry)',
-          border: '1px solid var(--theme-border)',
-          borderRadius: '16px',
-          padding: '28px',
-          boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4)',
-          position: 'relative',
-        }}
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Close Button */}
         <button
           type="button"
           onClick={onClose}
-          aria-label="Close authentication modal"
-          style={{
-            position: 'absolute',
-            top: '16px',
-            right: '16px',
-            background: 'none',
-            border: 'none',
-            color: 'var(--secondary)',
-            fontSize: '1.25rem',
-            cursor: 'pointer',
-            padding: '4px 8px',
-            borderRadius: '6px',
-          }}
+          className="auth-modal-close-btn"
+          aria-label="Close dialog"
         >
-          &times;
+          <X size={16} />
         </button>
 
-        <div style={{ textAlign: 'center', marginBottom: '22px' }}>
+        {/* Header Section */}
+        <div className="auth-modal-header">
           <div
-            style={{
-              display: 'inline-flex',
-              padding: '10px',
-              borderRadius: '12px',
-              backgroundColor: agentStatus === 'reserved' ? 'rgba(239, 68, 68, 0.12)' : 'rgba(99, 102, 241, 0.12)',
-              color: agentStatus === 'reserved' ? '#ef4444' : '#6366f1',
-              marginBottom: '12px',
-            }}
+            className={`auth-modal-icon-shield ${
+              agentStatus === 'reserved' ? 'reserved' : agentName ? 'locked' : 'general'
+            }`}
           >
             {agentStatus === 'reserved' ? (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-              </svg>
+              <ShieldAlert size={28} />
+            ) : agentName ? (
+              <KeyRound size={28} />
             ) : (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
+              <Sparkles size={28} />
             )}
           </div>
 
-          <h2 style={{ margin: '0 0 6px', fontSize: '1.35rem', fontWeight: 700, color: 'var(--primary)' }}>
-            {agentName ? `Access ${agentName}` : 'Sign in to Gui13go'}
+          <h2 id="auth-modal-title" className="auth-modal-title">
+            {agentName ? `Unlock ${agentName}` : mode === 'signin' ? 'Welcome Back' : 'Create Account'}
           </h2>
-          <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--secondary)', lineHeight: 1.5 }}>
+
+          <p className="auth-modal-subtitle">
             {agentStatus === 'reserved'
-              ? 'This agent is reserved for administrative pipelines and orchestrator workloads.'
+              ? 'This orchestrator is reserved for system-level swarm consensus and administrative pipelines.'
               : agentName
-              ? `Unlock ${agentName} and authenticated agent chambers with your account.`
-              : 'Sign in to access locked models, custom neural personas, and personal quotas.'}
+              ? `Sign in to activate real-time dialogue and inference sessions with ${agentName}.`
+              : 'Access locked neural models, sync conversation history, and unlock sovereign AI agents.'}
           </p>
         </div>
 
-        {errorMsg && (
-          <div
-            style={{
-              padding: '10px 14px',
-              marginBottom: '16px',
-              borderRadius: '8px',
-              backgroundColor: 'rgba(239, 68, 68, 0.12)',
-              color: '#ef4444',
-              fontSize: '0.82rem',
-              border: '1px solid rgba(239, 68, 68, 0.25)',
+        {/* Tab Segmented Control */}
+        <div className="auth-segmented-control" role="tablist">
+          <button
+            type="button"
+            role="tab"
+            aria-selected={mode === 'signin'}
+            className={`auth-segmented-btn ${mode === 'signin' ? 'active' : ''}`}
+            onClick={() => {
+              setMode('signin')
+              setErrorMsg(null)
             }}
           >
-            {errorMsg}
+            Sign In
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={mode === 'signup'}
+            className={`auth-segmented-btn ${mode === 'signup' ? 'active' : ''}`}
+            onClick={() => {
+              setMode('signup')
+              setErrorMsg(null)
+            }}
+          >
+            Create Account
+          </button>
+        </div>
+
+        {/* Error Alert Pill */}
+        {errorMsg && (
+          <div className="auth-error-alert" role="alert">
+            <AlertCircle size={16} style={{ flexShrink: 0 }} />
+            <span>{errorMsg}</span>
           </div>
         )}
 
-        {/* Social Auth Providers */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '18px' }}>
+        {/* Social Authentication Providers */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           <button
             type="button"
             disabled={loading}
             onClick={() => handleOAuthSignIn('github')}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '10px',
-              padding: '10px 16px',
-              borderRadius: '8px',
-              border: '1px solid var(--theme-border)',
-              backgroundColor: 'var(--tertiary)',
-              color: 'var(--primary)',
-              fontWeight: 600,
-              fontSize: '0.88rem',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
-            }}
+            className="auth-social-btn"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
@@ -201,21 +206,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             type="button"
             disabled={loading}
             onClick={() => handleOAuthSignIn('google')}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '10px',
-              padding: '10px 16px',
-              borderRadius: '8px',
-              border: '1px solid var(--theme-border)',
-              backgroundColor: 'var(--tertiary)',
-              color: 'var(--primary)',
-              fontWeight: 600,
-              fontSize: '0.88rem',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
-            }}
+            className="auth-social-btn"
           >
             <svg width="18" height="18" viewBox="0 0 24 24">
               <path
@@ -239,147 +230,87 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           </button>
         </div>
 
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '12px',
-            margin: '18px 0',
-            color: 'var(--secondary)',
-            fontSize: '0.78rem',
-            textTransform: 'uppercase',
-            letterSpacing: '0.05em',
-          }}
-        >
-          <div style={{ flex: 1, height: '1px', backgroundColor: 'var(--theme-border)' }} />
-          <span>or email</span>
-          <div style={{ flex: 1, height: '1px', backgroundColor: 'var(--theme-border)' }} />
+        {/* Divider */}
+        <div className="auth-divider">
+          <span>or email credentials</span>
         </div>
 
-        <form onSubmit={handleEmailAuth} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        {/* Email & Password Form */}
+        <form onSubmit={handleEmailAuth} className="auth-input-group">
           {mode === 'signup' && (
-            <div>
+            <div className="auth-input-wrapper">
+              <User size={16} className="auth-input-icon" />
               <input
                 type="text"
-                placeholder="Full name (optional)"
+                placeholder="Your Name (optional)"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                style={{
-                  width: '100%',
-                  padding: '10px 14px',
-                  borderRadius: '8px',
-                  border: '1px solid var(--theme-border)',
-                  backgroundColor: 'var(--theme)',
-                  color: 'var(--primary)',
-                  fontSize: '0.88rem',
-                  outline: 'none',
-                }}
+                className="auth-input-field"
+                autoComplete="name"
               />
             </div>
           )}
 
-          <div>
+          <div className="auth-input-wrapper">
+            <Mail size={16} className="auth-input-icon" />
             <input
               type="email"
               required
-              placeholder="name@example.com"
+              placeholder="you@domain.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              style={{
-                width: '100%',
-                padding: '10px 14px',
-                borderRadius: '8px',
-                border: '1px solid var(--theme-border)',
-                backgroundColor: 'var(--theme)',
-                color: 'var(--primary)',
-                fontSize: '0.88rem',
-                outline: 'none',
-              }}
+              className="auth-input-field"
+              autoComplete="email"
             />
           </div>
 
-          <div>
+          <div className="auth-input-wrapper">
+            <Lock size={16} className="auth-input-icon" />
             <input
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               required
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              style={{
-                width: '100%',
-                padding: '10px 14px',
-                borderRadius: '8px',
-                border: '1px solid var(--theme-border)',
-                backgroundColor: 'var(--theme)',
-                color: 'var(--primary)',
-                fontSize: '0.88rem',
-                outline: 'none',
-              }}
+              className="auth-input-field"
+              autoComplete={mode === 'signup' ? 'new-password' : 'current-password'}
             />
+            <button
+              type="button"
+              className="auth-input-toggle-btn"
+              onClick={() => setShowPassword((prev) => !prev)}
+              aria-label={showPassword ? 'Hide password' : 'Show password'}
+            >
+              {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+            </button>
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            style={{
-              padding: '11px',
-              borderRadius: '8px',
-              border: 'none',
-              backgroundColor: 'var(--theme-accent)',
-              color: '#ffffff',
-              fontWeight: 600,
-              fontSize: '0.9rem',
-              cursor: 'pointer',
-              marginTop: '4px',
-              transition: 'opacity 0.2s',
-              opacity: loading ? 0.7 : 1,
-            }}
+            className="auth-submit-btn"
           >
-            {loading ? 'Authenticating...' : mode === 'signin' ? 'Sign In' : 'Create Account'}
+            {loading ? (
+              <>
+                <Loader2 size={17} className="spinner" />
+                <span>Processing...</span>
+              </>
+            ) : mode === 'signin' ? (
+              <span>Sign In with Email</span>
+            ) : (
+              <span>Create Account</span>
+            )}
           </button>
         </form>
 
-        <div style={{ marginTop: '16px', textAlign: 'center', fontSize: '0.82rem', color: 'var(--secondary)' }}>
-          {mode === 'signin' ? (
-            <span>
-              Don&apos;t have an account?{' '}
-              <button
-                type="button"
-                onClick={() => setMode('signup')}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  color: 'var(--theme-accent)',
-                  fontWeight: 600,
-                  cursor: 'pointer',
-                  padding: 0,
-                }}
-              >
-                Sign up
-              </button>
-            </span>
-          ) : (
-            <span>
-              Already have an account?{' '}
-              <button
-                type="button"
-                onClick={() => setMode('signin')}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  color: 'var(--theme-accent)',
-                  fontWeight: 600,
-                  cursor: 'pointer',
-                  padding: 0,
-                }}
-              >
-                Sign in
-              </button>
-            </span>
-          )}
+        {/* Trust & Encryption Badge */}
+        <div className="auth-trust-footer">
+          <Lock size={12} style={{ color: 'var(--secondary)' }} />
+          <span>Encrypted with Better Auth & Cloudflare Tunnel</span>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
-
+export default AuthModal
