@@ -152,11 +152,11 @@ function renderLayoutShell({ currentPath, contentHtml }) {
   const navLinks = [
     { to: '/about/', label: 'About' },
     { to: '/agents/', label: 'Agents' },
-    { to: '/publications/', label: 'Publications' },
     { to: '/geolayers/', label: 'GeoLayers' },
     { to: '/tools/', label: 'Tools' },
     { to: '/gallery/', label: 'Gallery' },
     { to: '/blogs/', label: 'Blogs' },
+    { to: '/publications/', label: 'Publications' },
     { to: '/search/', label: 'Search' },
   ]
 
