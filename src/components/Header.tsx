@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useSearchIndex, type SearchItem } from '../hooks/useSearchIndex'
+import { UserMenu } from './UserMenu'
 
 export const Header: React.FC = () => {
   const location = useLocation()
@@ -449,6 +450,9 @@ export const Header: React.FC = () => {
               </li>
             )
           })}
+          <li style={{ display: 'flex', alignItems: 'center', marginLeft: '6px' }}>
+            <UserMenu />
+          </li>
         </ul>
       </nav>
     </header>

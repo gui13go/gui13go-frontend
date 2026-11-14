@@ -12,6 +12,7 @@ export interface AgentPersonaConfig {
   greetingMessage: string
   quickPrompts: string[]
   placeholder: string
+  tier?: 'public' | 'locked' | 'reserved'
 }
 
 export const AGENT_PERSONAS: Record<string, AgentPersonaConfig> = {

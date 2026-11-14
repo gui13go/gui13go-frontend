@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { AGENT_PERSONAS, type AgentPersonaConfig } from '../config/agentPersonas'
 import { useDocumentMeta } from '../hooks/useDocumentMeta'
+import { useSession } from '../lib/auth-client'
+import { AuthModal } from '../components/AuthModal'
 
 interface ChatMessage {
   id: string
@@ -34,6 +36,14 @@ export const SimpleAgent: React.FC = () => {
   const [isStreaming, setIsStreaming] = useState(false)
   const [statusText, setStatusText] = useState('Operational')
   const [connectionStatus, setConnectionStatus] = useState<'idle' | 'streaming' | 'error'>('idle')
+  const [authModalOpen, setAuthModalOpen] = useState(false)
+
+  const { data: session } = useSession()
+  const user = session?.user
+  const userRole = user?.role || 'user'
+  const isAgentLocked = persona?.tier === 'locked'
+  const isAgentReserved = persona?.tier === 'reserved'
+  const isAccessDenied = Boolean((isAgentLocked && !user) || (isAgentReserved && userRole !== 'admin'))
 
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
@@ -443,46 +453,114 @@ export const SimpleAgent: React.FC = () => {
           </div>
 
           {/* Input Controller Bar */}
-          <div className="agent-input-container">
-            <form
-              className="agent-input-form"
-              onSubmit={(e) => {
-                e.preventDefault()
-                sendMessage(inputText)
+          {isAccessDenied ? (
+            <div
+              style={{
+                margin: '16px 20px 20px',
+                padding: '24px',
+                borderRadius: '16px',
+                backgroundColor: 'rgba(99, 102, 241, 0.08)',
+                border: '1px dashed var(--theme-border)',
+                textAlign: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '12px',
               }}
             >
-              <textarea
-                ref={textareaRef}
-                className="agent-textarea"
-                placeholder={persona.placeholder}
-                rows={1}
-                value={inputText}
-                onChange={handleInputChange}
-                onKeyDown={handleKeyDown}
-                disabled={isStreaming}
-                aria-label={`Your message to ${persona.name}`}
-              />
-              <button
-                type="submit"
-                className="agent-send-btn"
-                disabled={!inputText.trim() || isStreaming}
-                aria-label="Send Message"
-                title="Send (Enter)"
+              <div
+                style={{
+                  display: 'inline-flex',
+                  padding: '10px',
+                  borderRadius: '50%',
+                  backgroundColor: isAgentReserved ? 'rgba(239, 68, 68, 0.15)' : 'rgba(99, 102, 241, 0.15)',
+                  color: isAgentReserved ? '#ef4444' : 'var(--theme-accent)',
+                }}
               >
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
-                  <line x1="22" y1="2" x2="11" y2="13" />
-                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                 </svg>
-              </button>
-            </form>
-            <div className="agent-input-footer">
-              <span>
-                Press <kbd>Enter</kbd> to send, <kbd>Shift + Enter</kbd> for new line.
-              </span>
+              </div>
+              <div>
+                <h4 style={{ margin: '0 0 4px', fontSize: '1.05rem', color: 'var(--primary)' }}>
+                  {isAgentReserved ? 'Reserved Model Pipeline' : 'Authentication Required'}
+                </h4>
+                <p style={{ margin: 0, fontSize: '0.85rem', color: 'var(--secondary)', maxWidth: '420px' }}>
+                  {isAgentReserved
+                    ? 'This agent is designated for system-level swarm orchestration and requires an administrative account.'
+                    : `To chat with ${persona.name}, please sign in with your GitHub, Google, or email account.`}
+                </p>
+              </div>
+              {!user && (
+                <button
+                  type="button"
+                  onClick={() => setAuthModalOpen(true)}
+                  style={{
+                    padding: '8px 18px',
+                    borderRadius: '8px',
+                    backgroundColor: 'var(--theme-accent)',
+                    color: '#ffffff',
+                    border: 'none',
+                    fontWeight: 600,
+                    fontSize: '0.88rem',
+                    cursor: 'pointer',
+                    boxShadow: '0 4px 12px rgba(99, 102, 241, 0.25)',
+                  }}
+                >
+                  Sign In to Unlock
+                </button>
+              )}
             </div>
-          </div>
+          ) : (
+            <div className="agent-input-container">
+              <form
+                className="agent-input-form"
+                onSubmit={(e) => {
+                  e.preventDefault()
+                  sendMessage(inputText)
+                }}
+              >
+                <textarea
+                  ref={textareaRef}
+                  className="agent-textarea"
+                  placeholder={persona.placeholder}
+                  rows={1}
+                  value={inputText}
+                  onChange={handleInputChange}
+                  onKeyDown={handleKeyDown}
+                  disabled={isStreaming}
+                  aria-label={`Your message to ${persona.name}`}
+                />
+                <button
+                  type="submit"
+                  className="agent-send-btn"
+                  disabled={!inputText.trim() || isStreaming}
+                  aria-label="Send Message"
+                  title="Send (Enter)"
+                >
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
+                    <line x1="22" y1="2" x2="11" y2="13" />
+                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                  </svg>
+                </button>
+              </form>
+              <div className="agent-input-footer">
+                <span>
+                  Press <kbd>Enter</kbd> to send, <kbd>Shift + Enter</kbd> for new line.
+                </span>
+              </div>
+            </div>
+          )}
         </section>
       </div>
+
+      <AuthModal
+        isOpen={authModalOpen}
+        onClose={() => setAuthModalOpen(false)}
+        agentName={persona.name}
+        agentStatus={persona.tier === 'reserved' ? 'reserved' : 'locked'}
+      />
     </main>
   )
 }
