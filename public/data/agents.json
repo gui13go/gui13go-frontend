@@ -415,13 +415,13 @@
     "type": "Complex Agent"
   },
   {
-    "availability": "reserved",
+    "availability": "available",
     "category": "Tech & Security",
     "description": "The shadow in the network. Jack is a Red Team specialist who rigorously tests system boundaries and identifies vulnerabilities before they can be exploited.",
     "id": "j4ck3s0n-the-hacker",
     "image": "/images/agents/ag_jack_hacker_1767695495159.png",
     "name": "J4ck3s0n, The Hacker",
-    "status": "Reserved",
+    "status": "Available",
     "tags": [
       "Exploits",
       "Red Team",
@@ -429,9 +429,11 @@
       "Social Engineering"
     ],
     "tools": [
-      "Terminal Execution",
-      "Web Search",
-      "Code Interpreter"
+      "Active Reconnaissance",
+      "DNS Dig",
+      "Subdomain Discovery",
+      "HTTP Header Audit",
+      "Nmap Port Scan"
     ],
     "type": "Complex Agent"
   },

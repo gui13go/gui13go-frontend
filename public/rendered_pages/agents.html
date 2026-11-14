@@ -2044,7 +2044,7 @@
       // Roleplay Agent Chat Dynamic Link
       if (modalExternalLink) {
         // List of agents enabled with dedicated roleplay chat pages
-        const roleplayEnabledAgents = new Set(["coach-frank","luma-the-psychologist","professor-wilhelm","alex-the-lawyer","bud-the-language-partner","comrade-catarina","jordan-the-generalist-specialist","james-carter-the-good-cop","blake-shade-the-bad-cop","asterion-the-wise-old-man","simon-the-skeptic","viktor-the-nihilist","sofia-the-art-history-specialist","ricky-the-crazy-dude","johny-the-drunk-dude","mr-lima-the-finance-pro","agent-smith","leaky","spongy", "agora", "agora-swarm"]);
+        const roleplayEnabledAgents = new Set(["coach-frank","luma-the-psychologist","professor-wilhelm","alex-the-lawyer","bud-the-language-partner","comrade-catarina","jordan-the-generalist-specialist","james-carter-the-good-cop","blake-shade-the-bad-cop","asterion-the-wise-old-man","simon-the-skeptic","viktor-the-nihilist","sofia-the-art-history-specialist","ricky-the-crazy-dude","johny-the-drunk-dude","mr-lima-the-finance-pro","agent-smith","leaky","spongy", "agora", "agora-swarm", "j4ck3s0n-the-hacker"]);
         if (roleplayEnabledAgents.has(agent.id)) {
           modalExternalLink.href = '/agents/' + agent.id + '/';
           modalExternalLink.removeAttribute('target');
