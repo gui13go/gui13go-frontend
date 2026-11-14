@@ -45,7 +45,7 @@ const MAX_SESSION_TOKENS = 50000
 
 export const SwarmRoom: React.FC = () => {
   useDocumentMeta({
-    title: 'Agora Swarm Chamber | Autonomous Philosophical Debate Forum',
+    title: 'Agora | Autonomous Philosophical Debate Forum',
     description:
       'The convergence of classical wisdom and autonomous multi-agent intelligence. Propose any inquiry and watch the council of philosophers debate in real time.',
     image: '/images/agents/chamber_agora_1767720684747.png',
@@ -63,7 +63,8 @@ export const SwarmRoom: React.FC = () => {
   ])
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
-  const [isConfigOpen, setIsConfigOpen] = useState(false)
+  const [activeSpeaker, setActiveSpeaker] = useState<string | null>(null)
+  const [isConfigOpen, setIsConfigOpen] = useState(true)
   const [detectedLanguage, setDetectedLanguage] = useState<string | null>(null)
   const [tokenUsage, setTokenUsage] = useState({ prompt: 0, candidates: 0, total: 0 })
   const [authModalOpen, setAuthModalOpen] = useState(false)
@@ -244,6 +245,8 @@ You MUST respond strictly with a valid JSON object matching this schema:
 
       // 1. Oracle framing
       if (data.nexus_analysis) {
+        setActiveSpeaker(NEXUS_NAME)
+        await new Promise((r) => setTimeout(r, 600))
         setMessages((prev) => [
           ...prev,
           {
@@ -252,9 +255,10 @@ You MUST respond strictly with a valid JSON object matching this schema:
             role: 'nexus',
           },
         ])
+        await new Promise((r) => setTimeout(r, 1400))
       }
 
-      // 2. Sequential philosopher responses
+      // 2. Sequential philosopher responses, one by one with active speaker highlighting
       if (Array.isArray(data.swarm_turns) && data.swarm_turns.length > 0) {
         for (const turn of data.swarm_turns) {
           const matchedAgent = activeAgents.find(
@@ -262,20 +266,28 @@ You MUST respond strictly with a valid JSON object matching this schema:
               a.title.toLowerCase().includes(turn.agent.toLowerCase()) ||
               turn.agent.toLowerCase().includes(a.title.split(',')[0].toLowerCase())
           )
+          const speakerName = turn.agent
+          setActiveSpeaker(speakerName)
+          // Brief pacing pause simulating the philosopher considering their thesis
+          await new Promise((r) => setTimeout(r, 800))
           setMessages((prev) => [
             ...prev,
             {
-              agent: turn.agent,
+              agent: speakerName,
               content: turn.content,
               role: 'swarm',
               avatar: matchedAgent?.image,
             },
           ])
+          // Dialogue pause so the user can read before next philosopher counters or responds
+          await new Promise((r) => setTimeout(r, 1600))
         }
       }
 
       // 3. Oracle synthesis
       if (data.nexus_summary) {
+        setActiveSpeaker(NEXUS_NAME)
+        await new Promise((r) => setTimeout(r, 800))
         setMessages((prev) => [
           ...prev,
           {
@@ -284,6 +296,7 @@ You MUST respond strictly with a valid JSON object matching this schema:
             role: 'nexus',
           },
         ])
+        await new Promise((r) => setTimeout(r, 500))
       }
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : 'Swarm failed to coordinate dialogue.'
@@ -296,6 +309,7 @@ You MUST respond strictly with a valid JSON object matching this schema:
         },
       ])
     } finally {
+      setActiveSpeaker(null)
       setLoading(false)
     }
   }
@@ -308,7 +322,7 @@ You MUST respond strictly with a valid JSON object matching this schema:
         <span>/</span>
         <Link to="/agents/" style={{ color: 'var(--secondary)', textDecoration: 'none' }}>Agents</Link>
         <span>/</span>
-        <span style={{ color: '#c5b358', fontWeight: 600 }}>Agora Swarm Chamber</span>
+        <span style={{ color: '#c5b358', fontWeight: 600 }}>Agora</span>
       </div>
 
       {/* Hero Forum Banner */}
@@ -346,7 +360,7 @@ You MUST respond strictly with a valid JSON object matching this schema:
             </div>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px' }}>
-                <h1 style={{ fontSize: '1.75rem', fontWeight: 800, margin: 0, color: '#ffffff' }}>The Agora</h1>
+                <h1 style={{ fontSize: '1.75rem', fontWeight: 800, margin: 0, color: '#ffffff' }}>Agora</h1>
                 <span
                   style={{
                     background: 'rgba(197, 179, 88, 0.15)',
@@ -678,9 +692,26 @@ You MUST respond strictly with a valid JSON object matching this schema:
             })}
 
             {loading && (
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#c5b358', fontSize: '0.85rem' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  color: '#c5b358',
+                  fontSize: '0.88rem',
+                  padding: '10px 16px',
+                  borderRadius: '12px',
+                  background: 'rgba(197, 179, 88, 0.08)',
+                  border: '1px solid rgba(197, 179, 88, 0.2)',
+                  width: 'fit-content',
+                }}
+              >
                 <span className="loading-spinner" />
-                <span>The Oracle is orchestrating council discourse...</span>
+                <span>
+                  {activeSpeaker
+                    ? `${activeSpeaker} is addressing the council...`
+                    : 'The Oracle is orchestrating council discourse...'}
+                </span>
               </div>
             )}
 
