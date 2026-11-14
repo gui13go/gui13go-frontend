@@ -155,8 +155,8 @@ function renderLayoutShell({ currentPath, contentHtml }) {
     { to: '/geolayers/', label: 'GeoLayers' },
     { to: '/tools/', label: 'Tools' },
     { to: '/gallery/', label: 'Gallery' },
-    { to: '/blogs/', label: 'Blogs' },
     { to: '/publications/', label: 'Publications' },
+    { to: '/blogs/', label: 'Blogs' },
     { to: '/search/', label: 'Search' },
   ]
 
