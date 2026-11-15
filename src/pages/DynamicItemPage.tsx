@@ -41,6 +41,10 @@ const ALIASES: Record<string, string> = {
   'jack-the-hacker': 'j4ck3s0n-the-hacker',
   'jack': 'j4ck3s0n-the-hacker',
   'j4ck': 'j4ck3s0n-the-hacker',
+  'robots': 'humanoids',
+  'robot': 'humanoids',
+  'humanoid': 'humanoids',
+  'humanoid-robots': 'humanoids',
 }
 
 export const DynamicItemPage: React.FC<DynamicItemProps> = ({ section }) => {

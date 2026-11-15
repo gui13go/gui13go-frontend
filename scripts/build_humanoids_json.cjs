@@ -1,0 +1,397 @@
+const fs = require('fs');
+const path = require('path');
+
+const humanoids = [
+  {
+    id: "humanoid-tesla-optimus-gen2",
+    name: "tesla optimus gen 2",
+    title: "Tesla Optimus Gen 2",
+    developer: "Tesla, Inc.",
+    year: 2023,
+    status: "Active Prototype / Factory Deployment",
+    category: "commercial",
+    height: "173 cm (5 ft 8 in)",
+    weight: "57 kg (126 lbs)",
+    speed: "8 km/h (5 mph)",
+    payload: "20 kg (44 lbs)",
+    battery: "2.3 kWh (full workday)",
+    dof: "28 structural + 11-DoF tactile hand",
+    actuation: "Custom Tesla-designed electromechanical actuators & sensors",
+    vision: "Tesla Full Self-Driving (FSD) computer vision system",
+    compute: "Tesla AI SoC (custom inference hardware)",
+    description: "Tesla Optimus Gen 2 is an end-to-end neural network controlled general-purpose bipedal humanoid robot. Engineered for high-volume manufacturing lines and hazardous tasks, Gen 2 boasts a 10 kg weight reduction, 30% speed increase, 11-DoF tactile-sensing hands, and direct transfer of Tesla's self-driving neural net vision models directly to physical manipulation.",
+    features: [
+      "End-to-End Neural Networks: Vision in, joint motor torque out with zero heuristic hand-crafted rules.",
+      "11-DoF Tactile Hands: Sensitive strain-gauge fingertips capable of delicately handling raw eggs without cracking.",
+      "Whole-Body Center-of-Mass Control: Real-time balance adaptation and articulated 2-DoF neck actuation.",
+      "In-House High Torque Actuators: Custom integrated planetary gearboxes and force sensors."
+    ],
+    useCases: [
+      "Automotive battery cell handling and assembly line logistics",
+      "Repetitive machine tending and parts sorting",
+      "Future domestic home assistance and eldercare support"
+    ],
+    tags: ["tesla", "fsd", "bipedal", "tactile-hands", "end-to-end-ai", "commercial"],
+    image: "/images/humanoids/humanoid_tesla-optimus-gen2.svg"
+  },
+  {
+    id: "humanoid-figure-02",
+    name: "figure 02",
+    title: "Figure 02",
+    developer: "Figure AI",
+    year: 2024,
+    status: "Active Commercial Pilot (BMW)",
+    category: "commercial",
+    height: "168 cm (5 ft 6 in)",
+    weight: "70 kg (154 lbs)",
+    speed: "4.3 km/h (2.7 mph)",
+    payload: "20 kg (44 lbs)",
+    battery: "2.25 kWh (+50% capacity, ~5 hours runtime)",
+    dof: "16-DoF 4th-gen hands, whole-body closed-loop",
+    actuation: "Custom electric rotary motors with integrated wiring in skeletal chassis",
+    vision: "6 onboard RGB cameras powering 360° Vision-Language Models (VLM)",
+    compute: "Dual onboard NVIDIA Drive Thor systems (3x AI compute vs Gen 1)",
+    description: "Figure 02 represents the cutting edge of commercially deployed AI humanoids, engineered from the ground up for industrial production. Featuring onboard custom speech-to-speech AI powered by OpenAI collaboration, fully concealed in-skeleton wiring, and human-scale 16-DoF dexterity, Figure 02 is actively tested in BMW manufacturing facilities for precision sheet metal placement.",
+    features: [
+      "Onboard Speech-to-Speech VLM: Real-time conversational grounding with human workers via OpenAI neural audio.",
+      "Exoskeleton Wire Routing: Zero exposed exterior cables or harnesses, maximizing industrial safety.",
+      "Sub-millimeter Grasp Precision: Tactile palm and finger sensors integrated with fast eye-in-hand cameras.",
+      "NVIDIA Drive Thor Engine: High-bandwidth inference running multi-modal vision-action policies directly on robot."
+    ],
+    useCases: [
+      "Automotive sheet metal positioning in assembly fixtures",
+      "Warehouse palletizing, depalletizing, and parcel transfer",
+      "High-mix precision manufacturing and quality control"
+    ],
+    tags: ["figure", "openai", "nvidia", "bmw", "vlm", "speech-ai"],
+    image: "/images/humanoids/humanoid_figure-02.svg"
+  },
+  {
+    id: "humanoid-boston-dynamics-atlas",
+    name: "all-electric atlas",
+    title: "All-Electric Atlas",
+    developer: "Boston Dynamics (Hyundai)",
+    year: 2024,
+    status: "Industrial Prototype & R&D",
+    category: "industrial",
+    height: "150 cm (4 ft 11 in)",
+    weight: "89 kg (196 lbs)",
+    speed: "Dynamic omnidirectional gait",
+    payload: "Up to 25 kg dynamic lifting",
+    battery: "High-discharge modular battery pack",
+    dof: "Full-body 360° continuous rotational joints",
+    actuation: "Custom high-torque electric rotary actuators with harmonic drives",
+    vision: "Head-ring stereoscopic depth cameras & RGB environmental awareness",
+    compute: "Real-time deterministic dynamic balance engine + AI behavior planner",
+    description: "Retiring its iconic hydraulic predecessor, the new All-Electric Atlas represents a radical leap in kinematic agility. Designed without biological joint limits, Atlas can spin its head, torso, and hips a continuous 360 degrees, allowing it to stand up from supine or prone poses instantly and transition between workstations without turning around.",
+    features: [
+      "Superhuman Range of Motion: Infinite 360° continuous rotation on primary joints eliminates awkward turning radiuses.",
+      "All-Electric High Torque Density: Compact, clean, oil-free electric rotary actuators with extreme torque response.",
+      "Adaptive Gripper Platform: Modular tool-changing end-effectors tailored to automotive parts and totes.",
+      "Autonomous Mobile Manipulation: Perception pipeline that identifies and grasps unordered automotive components."
+    ],
+    useCases: [
+      "Heavy automotive component lifting and sequence staging",
+      "Machine loading in harsh industrial plant environments",
+      "Advanced embodied athletic dynamic research and gymnastics"
+    ],
+    tags: ["boston-dynamics", "electric-atlas", "360-rotation", "superhuman-agility", "hyundai"],
+    image: "/images/humanoids/humanoid_boston-dynamics-atlas.svg"
+  },
+  {
+    id: "humanoid-unitree-g1",
+    name: "unitree g1",
+    title: "Unitree G1 Humanoid Agent",
+    developer: "Unitree Robotics",
+    year: 2024,
+    status: "Commercial Mass Production ($16k)",
+    category: "research",
+    height: "132 cm (4 ft 4 in)",
+    weight: "35 kg (77 lbs)",
+    speed: "7.2 km/h (4.5 mph)",
+    payload: "3 kg per arm continuous",
+    battery: "9000 mAh quick-release lithium pack (~2h)",
+    dof: "23 to 43 DoF (depending on modular hand configuration)",
+    actuation: "Max 120 N·m high-speed proprietary joint motors",
+    vision: "Intel RealSense D435i Depth Camera + Livox 3D LiDAR",
+    compute: "8-core high-performance CPU + optional NVIDIA Jetson Orin",
+    description: "The Unitree G1 has disrupted the humanoid landscape by breaking the price barrier at approximately $16,000 USD. Boasting agile dynamic balance, kung-fu kick recovery, and optional three-finger force-controlled hands, the G1 is widely adopted by robotics research labs, universities, and commercial developers worldwide.",
+    features: [
+      "Extreme Affordability: Sub-$20k production model lowering the threshold for advanced robotics development.",
+      "Ultra-High Joint Velocity: 120 N·m peak joint torque enables backflips, side-steps, and dynamic recovery.",
+      "Force-Controlled Dexterous Hands: Optional multi-DoF hand attachments with tactile feedback arrays.",
+      "Reinforcement Learning Native: Ships with comprehensive simulation-to-reality (Sim2Real) gym training pipelines."
+    ],
+    useCases: [
+      "Academic and university embodied AI research labs",
+      "Algorithm benchmarking and reinforcement learning validation",
+      "Light industrial sorting and automated inspection"
+    ],
+    tags: ["unitree", "affordable", "sim2real", "acrobatics", "research", "lidar"],
+    image: "/images/humanoids/humanoid_unitree-g1.svg"
+  },
+  {
+    id: "humanoid-sanctuary-phoenix-gen7",
+    name: "phoenix gen 7",
+    title: "Sanctuary AI Phoenix Gen 7",
+    developer: "Sanctuary AI",
+    year: 2024,
+    status: "Commercial Pilots (Magna International)",
+    category: "commercial",
+    height: "170 cm (5 ft 7 in)",
+    weight: "70 kg (155 lbs)",
+    speed: "5 km/h (3.1 mph)",
+    payload: "25 kg (55 lbs)",
+    battery: "Industrial tethered or quick-swap DC pack",
+    dof: "Industry-leading 20-DoF hands with haptic touch",
+    actuation: "Hydraulic/Electric hybrid micro-actuation systems",
+    vision: "Carbon omnidirectional sensory perception suite",
+    compute: "Carbon AI cognitive platform (hierarchical task execution)",
+    description: "Sanctuary AI's Phoenix Gen 7 focuses aggressively on human-like fine manipulation through its patented Carbon AI cognitive architecture. Unlike robots centered purely on bipedal walking, Phoenix prioritizes hand speed, fine motor control, and haptic sensitivity, allowing it to perform intricate retail packing, bagging, and industrial assembly tasks.",
+    features: [
+      "Industry-Leading Hand Dexterity: 20 degrees of freedom with tactile haptic sensors matching human palm feedback.",
+      "Carbon Cognitive Architecture: Translates natural language instructions into concrete motor control primitive sequences.",
+      "Teleoperation Learning (HIL): Telepresence rig enabling human demonstrations that train automated behavioral clones in hours.",
+      "Industrial Magna Collaboration: Tested directly in tier-one automotive supplier stamping facilities."
+    ],
+    useCases: [
+      "Automotive parts sorting, clip insertion, and sub-assembly",
+      "Retail goods picking, packing, and checkout bagging",
+      "Hazardous materials inspection and precision maintenance"
+    ],
+    tags: ["sanctuary-ai", "phoenix", "haptics", "carbon-ai", "teleoperation", "magna"],
+    image: "/images/humanoids/humanoid_sanctuary-phoenix-gen7.svg"
+  },
+  {
+    id: "humanoid-1x-neo-beta",
+    name: "1x neo beta",
+    title: "1X NEO Beta",
+    developer: "1X Technologies (backed by OpenAI & SoftBank)",
+    year: 2024,
+    status: "Consumer Home Beta Trials",
+    category: "domestic",
+    height: "165 cm (5 ft 5 in)",
+    weight: "30 kg (66 lbs)",
+    speed: "4 km/h walking / 12 km/h running",
+    payload: "20 kg (44 lbs)",
+    battery: "2 to 4 hours operating runtime",
+    dof: "Bio-inspired tendon-driven silent joint mechanisms",
+    actuation: "Non-backdrivable low-friction tendon motors with soft padding",
+    vision: "Dual wide-angle stereo head vision + depth",
+    compute: "Onboard neural speech and spatial reasoning engine",
+    description: "1X NEO Beta is designed specifically as a gentle, safe humanoid assistant for consumer domestic homes. Weighing a remarkably light 30 kg and clothed in a soft fabric suit, NEO avoids dangerous exposed metal pinch points. Supported by OpenAI, NEO leverages vision-language-action policies to perform household cleaning, laundry handling, and organizing.",
+    features: [
+      "Consumer-Safe Soft Exterior: Knit fabric exterior and low mass make accidental physical collisions safe for humans and pets.",
+      "Silent Tendon-Driven Actuation: Operates quietly without the mechanical whine of conventional high-ratio industrial gearboxes.",
+      "Natural Humanoid Proportions: Slender aesthetic designed to blend harmoniously into living rooms and kitchens.",
+      "Embodied Home Foundation Model: Understands natural conversational commands like 'Put the shoes in the closet'."
+    ],
+    useCases: [
+      "In-home tidying, laundry sorting, and kitchen assistance",
+      "Companion eldercare support and physical object retrieval",
+      "Light commercial hospitality and concierge greeting"
+    ],
+    tags: ["1x", "neo", "domestic", "home-robot", "openai", "tendon-driven", "safe"],
+    image: "/images/humanoids/humanoid_1x-neo-beta.svg"
+  },
+  {
+    id: "humanoid-agility-digit",
+    name: "agility digit",
+    title: "Agility Robotics Digit",
+    developer: "Agility Robotics (Amazon Partner)",
+    year: 2023,
+    status: "Commercial Deployment in Amazon Fulfillment",
+    category: "industrial",
+    height: "175 cm (5 ft 9 in)",
+    weight: "65 kg (143 lbs)",
+    speed: "5.4 km/h (3.4 mph)",
+    payload: "16 kg (35 lbs) totes and cartons",
+    battery: "Lithium-ion with automated autonomous docking",
+    dof: "30-DoF digitigrade leg and torso architecture",
+    actuation: "High-efficiency brushless electric motors with four-bar linkage legs",
+    vision: "Multi-camera stereo perception + Velodyne 3D depth LiDAR",
+    compute: "Agility Arc cloud fleet management + onboard dual Linux nodes",
+    description: "Digit is the world's first commercially deployed humanoid warehouse robot, currently moving standard yellow tote boxes in Amazon fulfillment centers. With backward-curving digitigrade legs inspired by ostriches, Digit maneuvers up curbs, navigates stairs, and steps around industrial clutter with exceptional energy efficiency.",
+    features: [
+      "Digitigrade Leg Architecture: Backward-curving knees provide superior shock absorption and compact folding geometry.",
+      "Tote Manipulation Clamps: High-durability paddle end-effectors optimized for millions of repetitive bin transfers.",
+      "Agility Arc Fleet Integration: Manages fleets of Digits alongside existing conveyor belts and AMRs via standard APIs.",
+      "Autonomous Battery Recharging: Automatically identifies and docks with floor charging stations when depleted."
+    ],
+    useCases: [
+      "Empty tote recycling and container moving in Amazon logistics hubs",
+      "Trailer unloading, pallet replenishment, and cross-docking",
+      "Stair climbing and mixed human-robot shared warehouse aisles"
+    ],
+    tags: ["agility-robotics", "digit", "amazon", "logistics", "warehouse", "digitigrade"],
+    image: "/images/humanoids/humanoid_agility-digit.svg"
+  },
+  {
+    id: "humanoid-apptronik-apollo",
+    name: "apptronik apollo",
+    title: "Apptronik Apollo",
+    developer: "Apptronik (Mercedes-Benz Partner)",
+    year: 2023,
+    status: "Commercial Pilot (Mercedes-Benz)",
+    category: "industrial",
+    height: "173 cm (5 ft 8 in)",
+    weight: "73 kg (160 lbs)",
+    speed: "5 km/h",
+    payload: "25 kg (55 lbs)",
+    battery: "Hot-swappable 4-hour battery packs",
+    dof: "Gross and fine motor modular articulation",
+    actuation: "Proprietary linear electric actuators with force control",
+    vision: "Perception mast with depth stereoscopic cameras and wide RGB",
+    compute: "Industrial onboard edge computer running real-time control stacks",
+    description: "Developed by Austin-based Apptronik (spun out of the UT Human Centered Robotics Lab), Apollo is built for modular factory work. Tested at Mercedes-Benz manufacturing sites, Apollo features an illuminated digital face display that indicates emotional state, intentions, and battery status to nearby human workers.",
+    features: [
+      "Hot-Swappable Batteries: Uninterrupted 24/7 industrial uptime via rapid manual or automated battery module swapping.",
+      "Human-Friendly Digital Face: OLED chest and facial panels show operational status and movement intent to co-workers.",
+      "Linear Actuation Efficiency: Specialized linear push-rod motors provide exceptional mechanical leverage for heavy lifting.",
+      "Modular Torso Mounting: Torso can detach from legs and bolt to stationary assembly stations or wheeled mobile bases."
+    ],
+    useCases: [
+      "Mercedes-Benz automotive parts delivery to assembly lines",
+      "Heavy crate loading and pallet consolidation",
+      "Manufacturing kit assembly and component kitting"
+    ],
+    tags: ["apptronik", "apollo", "mercedes-benz", "hot-swap-battery", "industrial", "modular"],
+    image: "/images/humanoids/humanoid_apptronik-apollo.svg"
+  },
+  {
+    id: "humanoid-xiaomi-cyberone",
+    name: "xiaomi cyberone",
+    title: "Xiaomi CyberOne",
+    developer: "Xiaomi Robotics Lab",
+    year: 2022,
+    status: "Corporate R&D Prototype",
+    category: "research",
+    height: "177 cm (5 ft 10 in)",
+    weight: "52 kg (115 lbs)",
+    speed: "3.6 km/h",
+    payload: "1.5 kg per hand",
+    battery: "Integrated lithium-ion battery system",
+    dof: "21 degrees of freedom with 5 joint types",
+    actuation: "High-torque motors with peak output of 300 N·m",
+    vision: "Mi-Sense 3D depth perception & semantic scene reconstruction",
+    compute: "MiAI environment semantics and 85 vocal tone classification",
+    description: "Nicknamed 'Metal Bro', CyberOne is Xiaomi's flagship full-size humanoid robot. Equipped with the Mi-Sense 3D vision algorithm and MiAI environment acoustics engine, CyberOne can recognize 85 types of environmental sounds and detect 45 classifications of human emotional sentiment from vocal intonation.",
+    features: [
+      "Vocal Emotion Recognition: Detects human happiness, grief, excitement, and anger directly from spoken audio.",
+      "Mi-Sense 3D Vision: Perceives 3D depth coordinates across indoor rooms with millimeter-level obstacle mapping.",
+      "Lightweight High-Torque Motors: In-house motor engineering delivering up to 300 N·m in a sleek 52 kg chassis.",
+      "OLED Curved Screen Face: Interactive facial animation screen displaying expressive emotive feedback."
+    ],
+    useCases: [
+      "Human-robot interaction (HRI) and affective computing research",
+      "Consumer electronics smart ecosystem integration",
+      "Stage presentations and technology showcase exhibitions"
+    ],
+    tags: ["xiaomi", "cyberone", "emotion-ai", "hri", "miai", "smart-ecosystem"],
+    image: "/images/humanoids/humanoid_xiaomi-cyberone.svg"
+  },
+  {
+    id: "humanoid-fourier-gr-2",
+    name: "fourier gr-2",
+    title: "Fourier Intelligence GR-2",
+    developer: "Fourier Intelligence",
+    year: 2024,
+    status: "Commercial & Medical R&D",
+    category: "medical",
+    height: "175 cm (5 ft 9 in)",
+    weight: "63 kg (139 lbs)",
+    speed: "5 km/h",
+    payload: "15 kg",
+    battery: "Detachable 53.2V high-capacity pack",
+    dof: "53 full-body degrees of freedom (12-DoF dexterous hands)",
+    actuation: "FSA high-performance integrated smart actuators",
+    vision: "6 RGB cameras, 2 depth sensors, and dual tactile array palms",
+    compute: "Dual Edge AI compute modules with ROS2 and ISAAC Sim support",
+    description: "Building on Fourier's deep medical rehabilitation background, the GR-2 humanoid robot features an astonishing 53 degrees of freedom. Its highly articulated hands and force-feedback control allow it to provide physical therapy rehabilitation assistance, patient transfer, and elderly assistance alongside traditional industrial chores.",
+    features: [
+      "53 Full-Body Degrees of Freedom: Unprecedented articulation with 12 DoF in each dexterous hand.",
+      "Rehabilitation Compliant Control: Inherits Fourier's medical exoskeleton torque-control algorithms for safe physical contact.",
+      "Force-Torque Palm Feedback: Detects tactile weight shifts and material slippage during human touch.",
+      "ROS2 & Isaac Sim Native: Fully supported in NVIDIA robotics simulation environments for rapid policy training."
+    ],
+    useCases: [
+      "Physical therapy rehabilitation assistance and mobility training",
+      "Elderly home care support and patient assistance",
+      "Educational robotics and university collaborative research"
+    ],
+    tags: ["fourier", "gr-2", "rehabilitation", "medical", "53-dof", "tactile-palms"],
+    image: "/images/humanoids/humanoid_fourier-gr-2.svg"
+  },
+  {
+    id: "humanoid-engine-arts-ameca",
+    name: "engineered arts ameca",
+    title: "Engineered Arts Ameca",
+    developer: "Engineered Arts (UK)",
+    year: 2022,
+    status: "Commercial Exhibition & R&D ($100k+)",
+    category: "social",
+    height: "187 cm (6 ft 2 in)",
+    weight: "60 kg (132 lbs)",
+    speed: "Upper-body expressive articulation",
+    payload: "Social interaction / gesture demonstration",
+    battery: "AC power tethered or modular DC cart",
+    dof: "Over 30 DoF dedicated solely to facial expressions and neck",
+    actuation: "Silent precision micro-steppers, brushless DC, and pneumatic hybrid",
+    vision: "Binocular high-framerate eye cameras with gaze and pupil tracking",
+    compute: "Tritium OS cloud robotics framework integrated with GPT-4o / Claude",
+    description: "Ameca is widely heralded as the world's most lifelike expressive humanoid robot. Engineered not for bipedal warehouse hauling, but for hyper-realistic face-to-face social communication, Ameca synchronizes subtle facial muscle contractions (eyebrow raises, smirks, blinks) with cutting-edge Large Language Models for jaw-dropping conversational realism.",
+    features: [
+      "Hyper-Realistic Facial Mimicry: 30+ precision facial actuators replicate human expressions of surprise, curiosity, and disgust.",
+      "Gaze & Person Tracking: Binocular eye cameras maintain natural human eye contact and respond to social cues.",
+      "Real-Time Multimodal LLM Integration: Seamlessly converses, tells jokes, and answers technical inquiries via GPT-4o.",
+      "Tritium Browser OS: Cloud-managed platform enabling remote telepresence control and automated script programming."
+    ],
+    useCases: [
+      "Museum, science center, and university public science communication",
+      "Human-Robot Interaction (HRI) psychological and linguistic research",
+      "Executive keynote presentations, film production, and hospitality"
+    ],
+    tags: ["ameca", "engineered-arts", "facial-expressions", "gpt-4o", "hri", "social-robot"],
+    image: "/images/humanoids/humanoid_engine-arts-ameca.svg"
+  },
+  {
+    id: "humanoid-honda-asimo-tribute",
+    name: "honda asimo tribute",
+    title: "Honda ASIMO (Pioneer Tribute)",
+    developer: "Honda Motor Co.",
+    year: 2000,
+    status: "Historical Milestone (Retired 2022)",
+    category: "research",
+    height: "130 cm (4 ft 3 in)",
+    weight: "48 kg (106 lbs)",
+    speed: "9 km/h (5.6 mph) running",
+    payload: "0.5 kg per hand",
+    battery: "51.8V lithium-ion pack (~40 min)",
+    dof: "57 degrees of freedom (Final 2011 Version)",
+    actuation: "Precision harmonic drive servo motors with ground reaction sensors",
+    vision: "Dual stereo optical camera eyes, ultrasonic sensors, and floor laser",
+    compute: "Honda Autonomous Behavior Control System with posture stabilization",
+    description: "The legendary pioneer that proved humanoid walking was possible. Launched in 2000 after decades of secret research (E-series and P-series), ASIMO was the world's first humanoid capable of smooth dynamic walking (ZMP control), stair climbing, hopping on one leg, opening thermos bottles, and serving tea, paving the path for the entire modern humanoid revolution.",
+    features: [
+      "Zero Moment Point (ZMP) Gait Control: Groundbreaking dynamic walking mathematics developed by Honda engineers.",
+      "Bipedal Running & Hopping: Could run at 9 km/h with both feet temporarily airborne in mid-stride.",
+      "Five-Fingered Mechanical Hands: Actuators in palm allowed opening screw-caps and pouring tea into cups.",
+      "Pedestrian Path Prediction: Detected approaching humans and proactively adjusted walking trajectory to avoid collisions."
+    ],
+    useCases: [
+      "Pioneered all foundational humanoid balance, gait, and ZMP control theory",
+      "Global scientific ambassadorship and STEM education inspiration",
+      "Foundational research that directly catalyzed modern autonomous walking robotics"
+    ],
+    tags: ["honda", "asimo", "pioneer", "zmp-control", "legend", "history", "running"],
+    image: "/images/humanoids/humanoid_honda-asimo-tribute.svg"
+  }
+];
+
+fs.writeFileSync(
+  path.join(__dirname, '../public/data/humanoids.json'),
+  JSON.stringify(humanoids, null, 2)
+);
+
+console.log(`Generated public/data/humanoids.json with ${humanoids.length} humanoid robots!`);
+

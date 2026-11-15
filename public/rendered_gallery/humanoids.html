@@ -1,0 +1,1996 @@
+<main class="main"><div class="gallery-page-container humanoids-page-container"><header class="gallery-header"><div class="gallery-breadcrumbs"><a href="https://gui13go.github.io/">Home</a> <span>/</span> <a href="/gallery/">Gallery</a> <span>/</span> <span>Humanoids</span></div><h1 class="gallery-title">Humanoid Robots</h1><p class="gallery-subtitle">An architectural catalogue of the leading bipedal humanoid robots, embodied AI systems, dexterous manipulators, and autonomous kinetic agents shaping the physical AI revolution.</p><nav aria-label="Gallery Sections" class="gallery-nav-pills">
+<a class="gallery-pill" href="/gallery/personalities/">Personalities</a>
+<a class="gallery-pill" href="/gallery/quotes/">Quotes</a>
+<a class="gallery-pill" href="/gallery/arts/">Arts</a>
+<a class="gallery-pill" href="/gallery/books/">Books</a>
+<a class="gallery-pill" href="/gallery/computer-languages/">Languages</a>
+<a class="gallery-pill" href="/gallery/operating-systems/">Operating Systems</a>
+<a class="gallery-pill" href="/gallery/network-protocols/">Protocols</a>
+<a class="gallery-pill" href="/gallery/databases/">Databases</a>
+<a class="gallery-pill" href="/gallery/data-formats/">Data Formats</a>
+<a class="gallery-pill active" href="/gallery/humanoids/">Humanoids</a>
+<a class="gallery-pill" href="/gallery/facts/">Facts</a>
+<a class="gallery-pill" href="/gallery/laws/">Laws</a>
+<a class="gallery-pill" href="/gallery/jokes/">Jokes</a>
+<a class="gallery-pill" href="/gallery/versus/">Versus</a>
+<a class="gallery-pill" href="/gallery/dictionary/">Dictionary</a>
+<a class="gallery-pill" href="/gallery/gadgets/">Gadgets</a>
+<a class="gallery-pill" href="/gallery/timelines/">Timelines</a>
+<a class="gallery-pill" href="/gallery/nobel-prizes/">Nobel Prizes</a>
+</nav></header>
+
+<div aria-label="Filter humanoids by category" class="humanoids-category-bar">
+  <div class="humanoids-chips-scroll">
+    <button class="humanoid-chip active" data-category="ALL" type="button">All Humanoids</button>
+    <button class="humanoid-chip" data-category="commercial" type="button">Commercial</button>
+    <button class="humanoid-chip" data-category="industrial" type="button">Industrial & Logistics</button>
+    <button class="humanoid-chip" data-category="domestic" type="button">Domestic & Home</button>
+    <button class="humanoid-chip" data-category="research" type="button">Research & Agile</button>
+    <button class="humanoid-chip" data-category="social" type="button">Social & Expressive</button>
+  </div>
+</div>
+
+<div class="active-tag-banner" id="activeTagFilterBanner" style="display:none">
+  <span>Filtering by tag: <strong id="activeFilterName"></strong></span>
+  <button aria-label="Clear tag filter" class="clear-tag-btn" id="clearActiveFilterBtn" type="button">✕ Clear</button>
+</div>
+
+<div class="gallery-toolbar humanoids-toolbar">
+  <div class="gallery-search-box humanoids-search-box">
+    <svg class="search-icon" fill="none" height="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" x2="16.65" y1="21" x2="16.65"></line>
+    </svg>
+    <input autocomplete="off" id="humanoidSearch" placeholder="Search humanoids by name, developer, vision, compute, or actuators... (Press / to focus)" type="text"/>
+    <button aria-label="Clear search" class="clear-search-btn" id="clearHumanoidSearch" style="display:none" type="button">×</button>
+  </div>
+
+  <div class="humanoids-toolbar-controls">
+    <div class="gallery-sort-box humanoids-sort-box">
+      <label class="gallery-sort-label" for="humanoidSort">
+        <svg fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="15">
+          <line x1="12" x2="12" y1="5" y2="19"></line>
+          <polyline points="19 12 12 19 5 12"></polyline>
+        </svg>
+        <span>Sort:</span>
+      </label>
+      <select aria-label="Sort humanoid robots" class="gallery-sort-select" id="humanoidSort">
+        <option selected="" value="relevance">Relevance / Importance</option>
+        <option value="year-desc">Newest to Oldest</option>
+        <option value="year-asc">Oldest to Newest</option>
+        <option value="name-asc">Name (A → Z)</option>
+        <option value="name-desc">Name (Z → A)</option>
+      </select>
+    </div>
+
+    <button class="humanoid-action-btn" id="randomHumanoidBtn" title="Jump to a random humanoid" type="button">
+      <svg fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="15">
+        <polyline points="16 3 21 3 21 8"></polyline>
+        <line x1="4" x2="21" y1="20" y2="3"></line>
+        <polyline points="21 16 21 21 16 21"></polyline>
+        <line x1="15" x2="21" y1="15" y2="21"></line>
+        <line x1="4" x2="9" y1="4" y2="9"></line>
+      </svg>
+      <span>Random</span>
+    </button>
+
+    <div class="gallery-count-badge humanoids-count-badge">Showing <span id="visibleCount">12</span> of 12 robots</div>
+  </div>
+</div>
+
+<div class="humanoids-grid" id="humanoidsGrid">
+
+    <article class="humanoid-card" id="humanoid-tesla-optimus-gen2"
+      data-name="tesla optimus gen 2"
+      data-developer="tesla, inc."
+      data-year="2023"
+      data-category="commercial"
+      data-status="active prototype / factory deployment"
+      data-height="173 cm (5 ft 8 in)"
+      data-weight="57 kg (126 lbs)"
+      data-dof="28 structural + 11-dof tactile hand"
+      data-compute="tesla ai soc (custom inference hardware)"
+      data-actuation="custom tesla-designed electromechanical actuators & sensors"
+      data-vision="tesla full self-driving (fsd) computer vision system"
+      data-description="tesla optimus gen 2 is an end-to-end neural network controlled general-purpose bipedal humanoid robot. engineered for high-volume manufacturing lines and hazardous tasks, gen 2 boasts a 10 kg weight reduction, 30% speed increase, 11-dof tactile-sensing hands, and direct transfer of tesla's self-driving neural net vision models directly to physical manipulation."
+      data-keywords="tesla fsd bipedal tactile-hands end-to-end-ai commercial">
+
+      <div class="humanoid-media-col">
+        <div class="humanoid-img-wrapper gallery-zoomable"
+          data-zoom-src="/images/humanoids/humanoid_tesla-optimus-gen2.webp"
+          data-zoom-title="Tesla Optimus Gen 2"
+          data-zoom-meta="Developed by Tesla, Inc. • Unveiled: 2023 • Category: COMMERCIAL"
+          data-zoom-caption="Tesla Optimus Gen 2 is an end-to-end neural network controlled general-purpose bipedal humanoid robot. Engineered for high-volume manufacturing lines and hazardous tasks, Gen 2 boasts a 10 kg weight reduction, 30% speed increase, 11-DoF tactile-sensing hands, and direct transfer of Tesla's self-driving neural net vision models directly to physical manipulation."
+          title="Click to view humanoid technical blueprint">
+          <img alt="Tesla Optimus Gen 2 Blueprint" loading="lazy" src="/images/humanoids/humanoid_tesla-optimus-gen2.webp" />
+          <div class="humanoid-type-badge">COMMERCIAL</div>
+          <div class="humanoid-img-overlay">
+            <svg class="zoom-indicator-icon" fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" x2="16.65" y1="21" x2="16.65"></line>
+              <line x1="11" x2="11" y1="8" y2="14"></line>
+              <line x1="8" x2="14" y1="11" y2="11"></line>
+            </svg>
+          </div>
+        </div>
+
+        <div class="humanoid-tags-row">
+          
+      <button class="humanoid-tag-pill" data-tag="tesla" title="Filter by #tesla" type="button">
+        <span class="tag-hash">#</span>tesla
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="fsd" title="Filter by #fsd" type="button">
+        <span class="tag-hash">#</span>fsd
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="bipedal" title="Filter by #bipedal" type="button">
+        <span class="tag-hash">#</span>bipedal
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="tactile-hands" title="Filter by #tactile-hands" type="button">
+        <span class="tag-hash">#</span>tactile-hands
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="end-to-end-ai" title="Filter by #end-to-end-ai" type="button">
+        <span class="tag-hash">#</span>end-to-end-ai
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="commercial" title="Filter by #commercial" type="button">
+        <span class="tag-hash">#</span>commercial
+      </button>
+    
+        </div>
+      </div>
+
+      <div class="humanoid-info-col">
+        <div class="humanoid-card-header">
+          <div class="humanoid-title-group">
+            <h2 class="humanoid-name">Tesla Optimus Gen 2</h2>
+            <div class="humanoid-meta">
+              Developed by <span class="humanoid-dev-name">Tesla, Inc.</span>
+              <span class="humanoid-meta-sep">•</span>
+              Unveiled <span class="humanoid-year-badge">2023</span>
+            </div>
+          </div>
+          <div class="humanoid-status-badge status-commercial">
+            Active Prototype / Factory Deployment
+          </div>
+        </div>
+
+        <p class="humanoid-desc">Tesla Optimus Gen 2 is an end-to-end neural network controlled general-purpose bipedal humanoid robot. Engineered for high-volume manufacturing lines and hazardous tasks, Gen 2 boasts a 10 kg weight reduction, 30% speed increase, 11-DoF tactile-sensing hands, and direct transfer of Tesla's self-driving neural net vision models directly to physical manipulation.</p>
+
+        <div class="humanoid-features-box">
+          <div class="humanoid-box-title">
+            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="16">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Core Innovations & Capabilities</span>
+          </div>
+          <ul class="humanoid-features-list">
+            <li><strong>End-to-End Neural Networks:</strong> Vision in, joint motor torque out with zero heuristic hand-crafted rules.</li>
+<li><strong>11-DoF Tactile Hands:</strong> Sensitive strain-gauge fingertips capable of delicately handling raw eggs without cracking.</li>
+<li><strong>Whole-Body Center-of-Mass Control:</strong> Real-time balance adaptation and articulated 2-DoF neck actuation.</li>
+<li><strong>In-House High Torque Actuators:</strong> Custom integrated planetary gearboxes and force sensors.</li>
+          </ul>
+        </div>
+
+        <div class="humanoid-specs-grid">
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Degrees of Freedom (DoF):</span>
+            <span class="spec-value highlight-value">28 structural + 11-DoF tactile hand</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Physical Dimensions:</span>
+            <span class="spec-value">173 cm (5 ft 8 in) • 57 kg (126 lbs)</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Payload & Speed:</span>
+            <span class="spec-value">20 kg (44 lbs) • 8 km/h (5 mph)</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Onboard Brain / AI Stack:</span>
+            <span class="spec-value code-value">Tesla AI SoC (custom inference hardware)</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Actuation Architecture:</span>
+            <span class="spec-value">Custom Tesla-designed electromechanical actuators & sensors</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Perception & Sensory Suite:</span>
+            <span class="spec-value">Tesla Full Self-Driving (FSD) computer vision system</span>
+          </div>
+        </div>
+
+        <div class="humanoid-usecases-box">
+          <span class="usecases-label">Primary Target Applications:</span>
+          <ul class="humanoid-usecases-list">
+            <li>Automotive battery cell handling and assembly line logistics</li>
+<li>Repetitive machine tending and parts sorting</li>
+<li>Future domestic home assistance and eldercare support</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="humanoid-card" id="humanoid-boston-dynamics-atlas"
+      data-name="all-electric atlas"
+      data-developer="boston dynamics (hyundai)"
+      data-year="2024"
+      data-category="industrial"
+      data-status="industrial prototype & r&d"
+      data-height="150 cm (4 ft 11 in)"
+      data-weight="89 kg (196 lbs)"
+      data-dof="full-body 360° continuous rotational joints"
+      data-compute="real-time deterministic dynamic balance engine + ai behavior planner"
+      data-actuation="custom high-torque electric rotary actuators with harmonic drives"
+      data-vision="head-ring stereoscopic depth cameras & rgb environmental awareness"
+      data-description="retiring its iconic hydraulic predecessor, the new all-electric atlas represents a radical leap in kinematic agility. designed without biological joint limits, atlas can spin its head, torso, and hips a continuous 360 degrees, allowing it to stand up from supine or prone poses instantly and transition between workstations without turning around."
+      data-keywords="boston-dynamics electric-atlas 360-rotation superhuman-agility hyundai">
+
+      <div class="humanoid-media-col">
+        <div class="humanoid-img-wrapper gallery-zoomable"
+          data-zoom-src="/images/humanoids/humanoid_boston-dynamics-atlas.webp"
+          data-zoom-title="All-Electric Atlas"
+          data-zoom-meta="Developed by Boston Dynamics (Hyundai) • Unveiled: 2024 • Category: INDUSTRIAL"
+          data-zoom-caption="Retiring its iconic hydraulic predecessor, the new All-Electric Atlas represents a radical leap in kinematic agility. Designed without biological joint limits, Atlas can spin its head, torso, and hips a continuous 360 degrees, allowing it to stand up from supine or prone poses instantly and transition between workstations without turning around."
+          title="Click to view humanoid technical blueprint">
+          <img alt="All-Electric Atlas Blueprint" loading="lazy" src="/images/humanoids/humanoid_boston-dynamics-atlas.webp" />
+          <div class="humanoid-type-badge">INDUSTRIAL</div>
+          <div class="humanoid-img-overlay">
+            <svg class="zoom-indicator-icon" fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" x2="16.65" y1="21" x2="16.65"></line>
+              <line x1="11" x2="11" y1="8" y2="14"></line>
+              <line x1="8" x2="14" y1="11" y2="11"></line>
+            </svg>
+          </div>
+        </div>
+
+        <div class="humanoid-tags-row">
+          
+      <button class="humanoid-tag-pill" data-tag="boston-dynamics" title="Filter by #boston-dynamics" type="button">
+        <span class="tag-hash">#</span>boston-dynamics
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="electric-atlas" title="Filter by #electric-atlas" type="button">
+        <span class="tag-hash">#</span>electric-atlas
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="360-rotation" title="Filter by #360-rotation" type="button">
+        <span class="tag-hash">#</span>360-rotation
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="superhuman-agility" title="Filter by #superhuman-agility" type="button">
+        <span class="tag-hash">#</span>superhuman-agility
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="hyundai" title="Filter by #hyundai" type="button">
+        <span class="tag-hash">#</span>hyundai
+      </button>
+    
+        </div>
+      </div>
+
+      <div class="humanoid-info-col">
+        <div class="humanoid-card-header">
+          <div class="humanoid-title-group">
+            <h2 class="humanoid-name">All-Electric Atlas</h2>
+            <div class="humanoid-meta">
+              Developed by <span class="humanoid-dev-name">Boston Dynamics (Hyundai)</span>
+              <span class="humanoid-meta-sep">•</span>
+              Unveiled <span class="humanoid-year-badge">2024</span>
+            </div>
+          </div>
+          <div class="humanoid-status-badge status-industrial">
+            Industrial Prototype & R&D
+          </div>
+        </div>
+
+        <p class="humanoid-desc">Retiring its iconic hydraulic predecessor, the new All-Electric Atlas represents a radical leap in kinematic agility. Designed without biological joint limits, Atlas can spin its head, torso, and hips a continuous 360 degrees, allowing it to stand up from supine or prone poses instantly and transition between workstations without turning around.</p>
+
+        <div class="humanoid-features-box">
+          <div class="humanoid-box-title">
+            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="16">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Core Innovations & Capabilities</span>
+          </div>
+          <ul class="humanoid-features-list">
+            <li><strong>Superhuman Range of Motion:</strong> Infinite 360° continuous rotation on primary joints eliminates awkward turning radiuses.</li>
+<li><strong>All-Electric High Torque Density:</strong> Compact, clean, oil-free electric rotary actuators with extreme torque response.</li>
+<li><strong>Adaptive Gripper Platform:</strong> Modular tool-changing end-effectors tailored to automotive parts and totes.</li>
+<li><strong>Autonomous Mobile Manipulation:</strong> Perception pipeline that identifies and grasps unordered automotive components.</li>
+          </ul>
+        </div>
+
+        <div class="humanoid-specs-grid">
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Degrees of Freedom (DoF):</span>
+            <span class="spec-value highlight-value">Full-body 360° continuous rotational joints</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Physical Dimensions:</span>
+            <span class="spec-value">150 cm (4 ft 11 in) • 89 kg (196 lbs)</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Payload & Speed:</span>
+            <span class="spec-value">Up to 25 kg dynamic lifting • Dynamic omnidirectional gait</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Onboard Brain / AI Stack:</span>
+            <span class="spec-value code-value">Real-time deterministic dynamic balance engine + AI behavior planner</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Actuation Architecture:</span>
+            <span class="spec-value">Custom high-torque electric rotary actuators with harmonic drives</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Perception & Sensory Suite:</span>
+            <span class="spec-value">Head-ring stereoscopic depth cameras & RGB environmental awareness</span>
+          </div>
+        </div>
+
+        <div class="humanoid-usecases-box">
+          <span class="usecases-label">Primary Target Applications:</span>
+          <ul class="humanoid-usecases-list">
+            <li>Heavy automotive component lifting and sequence staging</li>
+<li>Machine loading in harsh industrial plant environments</li>
+<li>Advanced embodied athletic dynamic research and gymnastics</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="humanoid-card" id="humanoid-figure-02"
+      data-name="figure 02"
+      data-developer="figure ai"
+      data-year="2024"
+      data-category="commercial"
+      data-status="active commercial pilot (bmw)"
+      data-height="168 cm (5 ft 6 in)"
+      data-weight="70 kg (154 lbs)"
+      data-dof="16-dof 4th-gen hands, whole-body closed-loop"
+      data-compute="dual onboard nvidia drive thor systems (3x ai compute vs gen 1)"
+      data-actuation="custom electric rotary motors with integrated wiring in skeletal chassis"
+      data-vision="6 onboard rgb cameras powering 360° vision-language models (vlm)"
+      data-description="figure 02 represents the cutting edge of commercially deployed ai humanoids, engineered from the ground up for industrial production. featuring onboard custom speech-to-speech ai powered by openai collaboration, fully concealed in-skeleton wiring, and human-scale 16-dof dexterity, figure 02 is actively tested in bmw manufacturing facilities for precision sheet metal placement."
+      data-keywords="figure openai nvidia bmw vlm speech-ai">
+
+      <div class="humanoid-media-col">
+        <div class="humanoid-img-wrapper gallery-zoomable"
+          data-zoom-src="/images/humanoids/humanoid_figure-02.webp"
+          data-zoom-title="Figure 02"
+          data-zoom-meta="Developed by Figure AI • Unveiled: 2024 • Category: COMMERCIAL"
+          data-zoom-caption="Figure 02 represents the cutting edge of commercially deployed AI humanoids, engineered from the ground up for industrial production. Featuring onboard custom speech-to-speech AI powered by OpenAI collaboration, fully concealed in-skeleton wiring, and human-scale 16-DoF dexterity, Figure 02 is actively tested in BMW manufacturing facilities for precision sheet metal placement."
+          title="Click to view humanoid technical blueprint">
+          <img alt="Figure 02 Blueprint" loading="lazy" src="/images/humanoids/humanoid_figure-02.webp" />
+          <div class="humanoid-type-badge">COMMERCIAL</div>
+          <div class="humanoid-img-overlay">
+            <svg class="zoom-indicator-icon" fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" x2="16.65" y1="21" x2="16.65"></line>
+              <line x1="11" x2="11" y1="8" y2="14"></line>
+              <line x1="8" x2="14" y1="11" y2="11"></line>
+            </svg>
+          </div>
+        </div>
+
+        <div class="humanoid-tags-row">
+          
+      <button class="humanoid-tag-pill" data-tag="figure" title="Filter by #figure" type="button">
+        <span class="tag-hash">#</span>figure
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="openai" title="Filter by #openai" type="button">
+        <span class="tag-hash">#</span>openai
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="nvidia" title="Filter by #nvidia" type="button">
+        <span class="tag-hash">#</span>nvidia
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="bmw" title="Filter by #bmw" type="button">
+        <span class="tag-hash">#</span>bmw
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="vlm" title="Filter by #vlm" type="button">
+        <span class="tag-hash">#</span>vlm
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="speech-ai" title="Filter by #speech-ai" type="button">
+        <span class="tag-hash">#</span>speech-ai
+      </button>
+    
+        </div>
+      </div>
+
+      <div class="humanoid-info-col">
+        <div class="humanoid-card-header">
+          <div class="humanoid-title-group">
+            <h2 class="humanoid-name">Figure 02</h2>
+            <div class="humanoid-meta">
+              Developed by <span class="humanoid-dev-name">Figure AI</span>
+              <span class="humanoid-meta-sep">•</span>
+              Unveiled <span class="humanoid-year-badge">2024</span>
+            </div>
+          </div>
+          <div class="humanoid-status-badge status-commercial">
+            Active Commercial Pilot (BMW)
+          </div>
+        </div>
+
+        <p class="humanoid-desc">Figure 02 represents the cutting edge of commercially deployed AI humanoids, engineered from the ground up for industrial production. Featuring onboard custom speech-to-speech AI powered by OpenAI collaboration, fully concealed in-skeleton wiring, and human-scale 16-DoF dexterity, Figure 02 is actively tested in BMW manufacturing facilities for precision sheet metal placement.</p>
+
+        <div class="humanoid-features-box">
+          <div class="humanoid-box-title">
+            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="16">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Core Innovations & Capabilities</span>
+          </div>
+          <ul class="humanoid-features-list">
+            <li><strong>Onboard Speech-to-Speech VLM:</strong> Real-time conversational grounding with human workers via OpenAI neural audio.</li>
+<li><strong>Exoskeleton Wire Routing:</strong> Zero exposed exterior cables or harnesses, maximizing industrial safety.</li>
+<li><strong>Sub-millimeter Grasp Precision:</strong> Tactile palm and finger sensors integrated with fast eye-in-hand cameras.</li>
+<li><strong>NVIDIA Drive Thor Engine:</strong> High-bandwidth inference running multi-modal vision-action policies directly on robot.</li>
+          </ul>
+        </div>
+
+        <div class="humanoid-specs-grid">
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Degrees of Freedom (DoF):</span>
+            <span class="spec-value highlight-value">16-DoF 4th-gen hands, whole-body closed-loop</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Physical Dimensions:</span>
+            <span class="spec-value">168 cm (5 ft 6 in) • 70 kg (154 lbs)</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Payload & Speed:</span>
+            <span class="spec-value">20 kg (44 lbs) • 4.3 km/h (2.7 mph)</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Onboard Brain / AI Stack:</span>
+            <span class="spec-value code-value">Dual onboard NVIDIA Drive Thor systems (3x AI compute vs Gen 1)</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Actuation Architecture:</span>
+            <span class="spec-value">Custom electric rotary motors with integrated wiring in skeletal chassis</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Perception & Sensory Suite:</span>
+            <span class="spec-value">6 onboard RGB cameras powering 360° Vision-Language Models (VLM)</span>
+          </div>
+        </div>
+
+        <div class="humanoid-usecases-box">
+          <span class="usecases-label">Primary Target Applications:</span>
+          <ul class="humanoid-usecases-list">
+            <li>Automotive sheet metal positioning in assembly fixtures</li>
+<li>Warehouse palletizing, depalletizing, and parcel transfer</li>
+<li>High-mix precision manufacturing and quality control</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="humanoid-card" id="humanoid-agility-digit"
+      data-name="agility digit"
+      data-developer="agility robotics (amazon partner)"
+      data-year="2023"
+      data-category="industrial"
+      data-status="commercial deployment in amazon fulfillment"
+      data-height="175 cm (5 ft 9 in)"
+      data-weight="65 kg (143 lbs)"
+      data-dof="30-dof digitigrade leg and torso architecture"
+      data-compute="agility arc cloud fleet management + onboard dual linux nodes"
+      data-actuation="high-efficiency brushless electric motors with four-bar linkage legs"
+      data-vision="multi-camera stereo perception + velodyne 3d depth lidar"
+      data-description="digit is the world's first commercially deployed humanoid warehouse robot, currently moving standard yellow tote boxes in amazon fulfillment centers. with backward-curving digitigrade legs inspired by ostriches, digit maneuvers up curbs, navigates stairs, and steps around industrial clutter with exceptional energy efficiency."
+      data-keywords="agility-robotics digit amazon logistics warehouse digitigrade">
+
+      <div class="humanoid-media-col">
+        <div class="humanoid-img-wrapper gallery-zoomable"
+          data-zoom-src="/images/humanoids/humanoid_agility-digit.webp"
+          data-zoom-title="Agility Robotics Digit"
+          data-zoom-meta="Developed by Agility Robotics (Amazon Partner) • Unveiled: 2023 • Category: INDUSTRIAL"
+          data-zoom-caption="Digit is the world's first commercially deployed humanoid warehouse robot, currently moving standard yellow tote boxes in Amazon fulfillment centers. With backward-curving digitigrade legs inspired by ostriches, Digit maneuvers up curbs, navigates stairs, and steps around industrial clutter with exceptional energy efficiency."
+          title="Click to view humanoid technical blueprint">
+          <img alt="Agility Robotics Digit Blueprint" loading="lazy" src="/images/humanoids/humanoid_agility-digit.webp" />
+          <div class="humanoid-type-badge">INDUSTRIAL</div>
+          <div class="humanoid-img-overlay">
+            <svg class="zoom-indicator-icon" fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" x2="16.65" y1="21" x2="16.65"></line>
+              <line x1="11" x2="11" y1="8" y2="14"></line>
+              <line x1="8" x2="14" y1="11" y2="11"></line>
+            </svg>
+          </div>
+        </div>
+
+        <div class="humanoid-tags-row">
+          
+      <button class="humanoid-tag-pill" data-tag="agility-robotics" title="Filter by #agility-robotics" type="button">
+        <span class="tag-hash">#</span>agility-robotics
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="digit" title="Filter by #digit" type="button">
+        <span class="tag-hash">#</span>digit
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="amazon" title="Filter by #amazon" type="button">
+        <span class="tag-hash">#</span>amazon
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="logistics" title="Filter by #logistics" type="button">
+        <span class="tag-hash">#</span>logistics
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="warehouse" title="Filter by #warehouse" type="button">
+        <span class="tag-hash">#</span>warehouse
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="digitigrade" title="Filter by #digitigrade" type="button">
+        <span class="tag-hash">#</span>digitigrade
+      </button>
+    
+        </div>
+      </div>
+
+      <div class="humanoid-info-col">
+        <div class="humanoid-card-header">
+          <div class="humanoid-title-group">
+            <h2 class="humanoid-name">Agility Robotics Digit</h2>
+            <div class="humanoid-meta">
+              Developed by <span class="humanoid-dev-name">Agility Robotics (Amazon Partner)</span>
+              <span class="humanoid-meta-sep">•</span>
+              Unveiled <span class="humanoid-year-badge">2023</span>
+            </div>
+          </div>
+          <div class="humanoid-status-badge status-industrial">
+            Commercial Deployment in Amazon Fulfillment
+          </div>
+        </div>
+
+        <p class="humanoid-desc">Digit is the world's first commercially deployed humanoid warehouse robot, currently moving standard yellow tote boxes in Amazon fulfillment centers. With backward-curving digitigrade legs inspired by ostriches, Digit maneuvers up curbs, navigates stairs, and steps around industrial clutter with exceptional energy efficiency.</p>
+
+        <div class="humanoid-features-box">
+          <div class="humanoid-box-title">
+            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="16">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Core Innovations & Capabilities</span>
+          </div>
+          <ul class="humanoid-features-list">
+            <li><strong>Digitigrade Leg Architecture:</strong> Backward-curving knees provide superior shock absorption and compact folding geometry.</li>
+<li><strong>Tote Manipulation Clamps:</strong> High-durability paddle end-effectors optimized for millions of repetitive bin transfers.</li>
+<li><strong>Agility Arc Fleet Integration:</strong> Manages fleets of Digits alongside existing conveyor belts and AMRs via standard APIs.</li>
+<li><strong>Autonomous Battery Recharging:</strong> Automatically identifies and docks with floor charging stations when depleted.</li>
+          </ul>
+        </div>
+
+        <div class="humanoid-specs-grid">
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Degrees of Freedom (DoF):</span>
+            <span class="spec-value highlight-value">30-DoF digitigrade leg and torso architecture</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Physical Dimensions:</span>
+            <span class="spec-value">175 cm (5 ft 9 in) • 65 kg (143 lbs)</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Payload & Speed:</span>
+            <span class="spec-value">16 kg (35 lbs) totes and cartons • 5.4 km/h (3.4 mph)</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Onboard Brain / AI Stack:</span>
+            <span class="spec-value code-value">Agility Arc cloud fleet management + onboard dual Linux nodes</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Actuation Architecture:</span>
+            <span class="spec-value">High-efficiency brushless electric motors with four-bar linkage legs</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Perception & Sensory Suite:</span>
+            <span class="spec-value">Multi-camera stereo perception + Velodyne 3D depth LiDAR</span>
+          </div>
+        </div>
+
+        <div class="humanoid-usecases-box">
+          <span class="usecases-label">Primary Target Applications:</span>
+          <ul class="humanoid-usecases-list">
+            <li>Empty tote recycling and container moving in Amazon logistics hubs</li>
+<li>Trailer unloading, pallet replenishment, and cross-docking</li>
+<li>Stair climbing and mixed human-robot shared warehouse aisles</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="humanoid-card" id="humanoid-unitree-g1"
+      data-name="unitree g1"
+      data-developer="unitree robotics"
+      data-year="2024"
+      data-category="research"
+      data-status="commercial mass production ($16k)"
+      data-height="132 cm (4 ft 4 in)"
+      data-weight="35 kg (77 lbs)"
+      data-dof="23 to 43 dof (depending on modular hand configuration)"
+      data-compute="8-core high-performance cpu + optional nvidia jetson orin"
+      data-actuation="max 120 n·m high-speed proprietary joint motors"
+      data-vision="intel realsense d435i depth camera + livox 3d lidar"
+      data-description="the unitree g1 has disrupted the humanoid landscape by breaking the price barrier at approximately $16,000 usd. boasting agile dynamic balance, kung-fu kick recovery, and optional three-finger force-controlled hands, the g1 is widely adopted by robotics research labs, universities, and commercial developers worldwide."
+      data-keywords="unitree affordable sim2real acrobatics research lidar">
+
+      <div class="humanoid-media-col">
+        <div class="humanoid-img-wrapper gallery-zoomable"
+          data-zoom-src="/images/humanoids/humanoid_unitree-g1.webp"
+          data-zoom-title="Unitree G1 Humanoid Agent"
+          data-zoom-meta="Developed by Unitree Robotics • Unveiled: 2024 • Category: RESEARCH"
+          data-zoom-caption="The Unitree G1 has disrupted the humanoid landscape by breaking the price barrier at approximately $16,000 USD. Boasting agile dynamic balance, kung-fu kick recovery, and optional three-finger force-controlled hands, the G1 is widely adopted by robotics research labs, universities, and commercial developers worldwide."
+          title="Click to view humanoid technical blueprint">
+          <img alt="Unitree G1 Humanoid Agent Blueprint" loading="lazy" src="/images/humanoids/humanoid_unitree-g1.webp" />
+          <div class="humanoid-type-badge">RESEARCH</div>
+          <div class="humanoid-img-overlay">
+            <svg class="zoom-indicator-icon" fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" x2="16.65" y1="21" x2="16.65"></line>
+              <line x1="11" x2="11" y1="8" y2="14"></line>
+              <line x1="8" x2="14" y1="11" y2="11"></line>
+            </svg>
+          </div>
+        </div>
+
+        <div class="humanoid-tags-row">
+          
+      <button class="humanoid-tag-pill" data-tag="unitree" title="Filter by #unitree" type="button">
+        <span class="tag-hash">#</span>unitree
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="affordable" title="Filter by #affordable" type="button">
+        <span class="tag-hash">#</span>affordable
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="sim2real" title="Filter by #sim2real" type="button">
+        <span class="tag-hash">#</span>sim2real
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="acrobatics" title="Filter by #acrobatics" type="button">
+        <span class="tag-hash">#</span>acrobatics
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="research" title="Filter by #research" type="button">
+        <span class="tag-hash">#</span>research
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="lidar" title="Filter by #lidar" type="button">
+        <span class="tag-hash">#</span>lidar
+      </button>
+    
+        </div>
+      </div>
+
+      <div class="humanoid-info-col">
+        <div class="humanoid-card-header">
+          <div class="humanoid-title-group">
+            <h2 class="humanoid-name">Unitree G1 Humanoid Agent</h2>
+            <div class="humanoid-meta">
+              Developed by <span class="humanoid-dev-name">Unitree Robotics</span>
+              <span class="humanoid-meta-sep">•</span>
+              Unveiled <span class="humanoid-year-badge">2024</span>
+            </div>
+          </div>
+          <div class="humanoid-status-badge status-research">
+            Commercial Mass Production ($16k)
+          </div>
+        </div>
+
+        <p class="humanoid-desc">The Unitree G1 has disrupted the humanoid landscape by breaking the price barrier at approximately $16,000 USD. Boasting agile dynamic balance, kung-fu kick recovery, and optional three-finger force-controlled hands, the G1 is widely adopted by robotics research labs, universities, and commercial developers worldwide.</p>
+
+        <div class="humanoid-features-box">
+          <div class="humanoid-box-title">
+            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="16">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Core Innovations & Capabilities</span>
+          </div>
+          <ul class="humanoid-features-list">
+            <li><strong>Extreme Affordability:</strong> Sub-$20k production model lowering the threshold for advanced robotics development.</li>
+<li><strong>Ultra-High Joint Velocity:</strong> 120 N·m peak joint torque enables backflips, side-steps, and dynamic recovery.</li>
+<li><strong>Force-Controlled Dexterous Hands:</strong> Optional multi-DoF hand attachments with tactile feedback arrays.</li>
+<li><strong>Reinforcement Learning Native:</strong> Ships with comprehensive simulation-to-reality (Sim2Real) gym training pipelines.</li>
+          </ul>
+        </div>
+
+        <div class="humanoid-specs-grid">
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Degrees of Freedom (DoF):</span>
+            <span class="spec-value highlight-value">23 to 43 DoF (depending on modular hand configuration)</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Physical Dimensions:</span>
+            <span class="spec-value">132 cm (4 ft 4 in) • 35 kg (77 lbs)</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Payload & Speed:</span>
+            <span class="spec-value">3 kg per arm continuous • 7.2 km/h (4.5 mph)</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Onboard Brain / AI Stack:</span>
+            <span class="spec-value code-value">8-core high-performance CPU + optional NVIDIA Jetson Orin</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Actuation Architecture:</span>
+            <span class="spec-value">Max 120 N·m high-speed proprietary joint motors</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Perception & Sensory Suite:</span>
+            <span class="spec-value">Intel RealSense D435i Depth Camera + Livox 3D LiDAR</span>
+          </div>
+        </div>
+
+        <div class="humanoid-usecases-box">
+          <span class="usecases-label">Primary Target Applications:</span>
+          <ul class="humanoid-usecases-list">
+            <li>Academic and university embodied AI research labs</li>
+<li>Algorithm benchmarking and reinforcement learning validation</li>
+<li>Light industrial sorting and automated inspection</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="humanoid-card" id="humanoid-engine-arts-ameca"
+      data-name="engineered arts ameca"
+      data-developer="engineered arts (uk)"
+      data-year="2022"
+      data-category="social"
+      data-status="commercial exhibition & r&d ($100k+)"
+      data-height="187 cm (6 ft 2 in)"
+      data-weight="60 kg (132 lbs)"
+      data-dof="over 30 dof dedicated solely to facial expressions and neck"
+      data-compute="tritium os cloud robotics framework integrated with gpt-4o / claude"
+      data-actuation="silent precision micro-steppers, brushless dc, and pneumatic hybrid"
+      data-vision="binocular high-framerate eye cameras with gaze and pupil tracking"
+      data-description="ameca is widely heralded as the world's most lifelike expressive humanoid robot. engineered not for bipedal warehouse hauling, but for hyper-realistic face-to-face social communication, ameca synchronizes subtle facial muscle contractions (eyebrow raises, smirks, blinks) with cutting-edge large language models for jaw-dropping conversational realism."
+      data-keywords="ameca engineered-arts facial-expressions gpt-4o hri social-robot">
+
+      <div class="humanoid-media-col">
+        <div class="humanoid-img-wrapper gallery-zoomable"
+          data-zoom-src="/images/humanoids/humanoid_engine-arts-ameca.webp"
+          data-zoom-title="Engineered Arts Ameca"
+          data-zoom-meta="Developed by Engineered Arts (UK) • Unveiled: 2022 • Category: SOCIAL"
+          data-zoom-caption="Ameca is widely heralded as the world's most lifelike expressive humanoid robot. Engineered not for bipedal warehouse hauling, but for hyper-realistic face-to-face social communication, Ameca synchronizes subtle facial muscle contractions (eyebrow raises, smirks, blinks) with cutting-edge Large Language Models for jaw-dropping conversational realism."
+          title="Click to view humanoid technical blueprint">
+          <img alt="Engineered Arts Ameca Blueprint" loading="lazy" src="/images/humanoids/humanoid_engine-arts-ameca.webp" />
+          <div class="humanoid-type-badge">SOCIAL</div>
+          <div class="humanoid-img-overlay">
+            <svg class="zoom-indicator-icon" fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" x2="16.65" y1="21" x2="16.65"></line>
+              <line x1="11" x2="11" y1="8" y2="14"></line>
+              <line x1="8" x2="14" y1="11" y2="11"></line>
+            </svg>
+          </div>
+        </div>
+
+        <div class="humanoid-tags-row">
+          
+      <button class="humanoid-tag-pill" data-tag="ameca" title="Filter by #ameca" type="button">
+        <span class="tag-hash">#</span>ameca
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="engineered-arts" title="Filter by #engineered-arts" type="button">
+        <span class="tag-hash">#</span>engineered-arts
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="facial-expressions" title="Filter by #facial-expressions" type="button">
+        <span class="tag-hash">#</span>facial-expressions
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="gpt-4o" title="Filter by #gpt-4o" type="button">
+        <span class="tag-hash">#</span>gpt-4o
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="hri" title="Filter by #hri" type="button">
+        <span class="tag-hash">#</span>hri
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="social-robot" title="Filter by #social-robot" type="button">
+        <span class="tag-hash">#</span>social-robot
+      </button>
+    
+        </div>
+      </div>
+
+      <div class="humanoid-info-col">
+        <div class="humanoid-card-header">
+          <div class="humanoid-title-group">
+            <h2 class="humanoid-name">Engineered Arts Ameca</h2>
+            <div class="humanoid-meta">
+              Developed by <span class="humanoid-dev-name">Engineered Arts (UK)</span>
+              <span class="humanoid-meta-sep">•</span>
+              Unveiled <span class="humanoid-year-badge">2022</span>
+            </div>
+          </div>
+          <div class="humanoid-status-badge status-research">
+            Commercial Exhibition & R&D ($100k+)
+          </div>
+        </div>
+
+        <p class="humanoid-desc">Ameca is widely heralded as the world's most lifelike expressive humanoid robot. Engineered not for bipedal warehouse hauling, but for hyper-realistic face-to-face social communication, Ameca synchronizes subtle facial muscle contractions (eyebrow raises, smirks, blinks) with cutting-edge Large Language Models for jaw-dropping conversational realism.</p>
+
+        <div class="humanoid-features-box">
+          <div class="humanoid-box-title">
+            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="16">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Core Innovations & Capabilities</span>
+          </div>
+          <ul class="humanoid-features-list">
+            <li><strong>Hyper-Realistic Facial Mimicry:</strong> 30+ precision facial actuators replicate human expressions of surprise, curiosity, and disgust.</li>
+<li><strong>Gaze & Person Tracking:</strong> Binocular eye cameras maintain natural human eye contact and respond to social cues.</li>
+<li><strong>Real-Time Multimodal LLM Integration:</strong> Seamlessly converses, tells jokes, and answers technical inquiries via GPT-4o.</li>
+<li><strong>Tritium Browser OS:</strong> Cloud-managed platform enabling remote telepresence control and automated script programming.</li>
+          </ul>
+        </div>
+
+        <div class="humanoid-specs-grid">
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Degrees of Freedom (DoF):</span>
+            <span class="spec-value highlight-value">Over 30 DoF dedicated solely to facial expressions and neck</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Physical Dimensions:</span>
+            <span class="spec-value">187 cm (6 ft 2 in) • 60 kg (132 lbs)</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Payload & Speed:</span>
+            <span class="spec-value">Social interaction / gesture demonstration • Upper-body expressive articulation</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Onboard Brain / AI Stack:</span>
+            <span class="spec-value code-value">Tritium OS cloud robotics framework integrated with GPT-4o / Claude</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Actuation Architecture:</span>
+            <span class="spec-value">Silent precision micro-steppers, brushless DC, and pneumatic hybrid</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Perception & Sensory Suite:</span>
+            <span class="spec-value">Binocular high-framerate eye cameras with gaze and pupil tracking</span>
+          </div>
+        </div>
+
+        <div class="humanoid-usecases-box">
+          <span class="usecases-label">Primary Target Applications:</span>
+          <ul class="humanoid-usecases-list">
+            <li>Museum, science center, and university public science communication</li>
+<li>Human-Robot Interaction (HRI) psychological and linguistic research</li>
+<li>Executive keynote presentations, film production, and hospitality</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="humanoid-card" id="humanoid-1x-neo-beta"
+      data-name="1x neo beta"
+      data-developer="1x technologies (backed by openai & softbank)"
+      data-year="2024"
+      data-category="domestic"
+      data-status="consumer home beta trials"
+      data-height="165 cm (5 ft 5 in)"
+      data-weight="30 kg (66 lbs)"
+      data-dof="bio-inspired tendon-driven silent joint mechanisms"
+      data-compute="onboard neural speech and spatial reasoning engine"
+      data-actuation="non-backdrivable low-friction tendon motors with soft padding"
+      data-vision="dual wide-angle stereo head vision + depth"
+      data-description="1x neo beta is designed specifically as a gentle, safe humanoid assistant for consumer domestic homes. weighing a remarkably light 30 kg and clothed in a soft fabric suit, neo avoids dangerous exposed metal pinch points. supported by openai, neo leverages vision-language-action policies to perform household cleaning, laundry handling, and organizing."
+      data-keywords="1x neo domestic home-robot openai tendon-driven safe">
+
+      <div class="humanoid-media-col">
+        <div class="humanoid-img-wrapper gallery-zoomable"
+          data-zoom-src="/images/humanoids/humanoid_1x-neo-beta.webp"
+          data-zoom-title="1X NEO Beta"
+          data-zoom-meta="Developed by 1X Technologies (backed by OpenAI & SoftBank) • Unveiled: 2024 • Category: DOMESTIC"
+          data-zoom-caption="1X NEO Beta is designed specifically as a gentle, safe humanoid assistant for consumer domestic homes. Weighing a remarkably light 30 kg and clothed in a soft fabric suit, NEO avoids dangerous exposed metal pinch points. Supported by OpenAI, NEO leverages vision-language-action policies to perform household cleaning, laundry handling, and organizing."
+          title="Click to view humanoid technical blueprint">
+          <img alt="1X NEO Beta Blueprint" loading="lazy" src="/images/humanoids/humanoid_1x-neo-beta.webp" />
+          <div class="humanoid-type-badge">DOMESTIC</div>
+          <div class="humanoid-img-overlay">
+            <svg class="zoom-indicator-icon" fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" x2="16.65" y1="21" x2="16.65"></line>
+              <line x1="11" x2="11" y1="8" y2="14"></line>
+              <line x1="8" x2="14" y1="11" y2="11"></line>
+            </svg>
+          </div>
+        </div>
+
+        <div class="humanoid-tags-row">
+          
+      <button class="humanoid-tag-pill" data-tag="1x" title="Filter by #1x" type="button">
+        <span class="tag-hash">#</span>1x
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="neo" title="Filter by #neo" type="button">
+        <span class="tag-hash">#</span>neo
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="domestic" title="Filter by #domestic" type="button">
+        <span class="tag-hash">#</span>domestic
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="home-robot" title="Filter by #home-robot" type="button">
+        <span class="tag-hash">#</span>home-robot
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="openai" title="Filter by #openai" type="button">
+        <span class="tag-hash">#</span>openai
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="tendon-driven" title="Filter by #tendon-driven" type="button">
+        <span class="tag-hash">#</span>tendon-driven
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="safe" title="Filter by #safe" type="button">
+        <span class="tag-hash">#</span>safe
+      </button>
+    
+        </div>
+      </div>
+
+      <div class="humanoid-info-col">
+        <div class="humanoid-card-header">
+          <div class="humanoid-title-group">
+            <h2 class="humanoid-name">1X NEO Beta</h2>
+            <div class="humanoid-meta">
+              Developed by <span class="humanoid-dev-name">1X Technologies (backed by OpenAI & SoftBank)</span>
+              <span class="humanoid-meta-sep">•</span>
+              Unveiled <span class="humanoid-year-badge">2024</span>
+            </div>
+          </div>
+          <div class="humanoid-status-badge status-research">
+            Consumer Home Beta Trials
+          </div>
+        </div>
+
+        <p class="humanoid-desc">1X NEO Beta is designed specifically as a gentle, safe humanoid assistant for consumer domestic homes. Weighing a remarkably light 30 kg and clothed in a soft fabric suit, NEO avoids dangerous exposed metal pinch points. Supported by OpenAI, NEO leverages vision-language-action policies to perform household cleaning, laundry handling, and organizing.</p>
+
+        <div class="humanoid-features-box">
+          <div class="humanoid-box-title">
+            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="16">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Core Innovations & Capabilities</span>
+          </div>
+          <ul class="humanoid-features-list">
+            <li><strong>Consumer-Safe Soft Exterior:</strong> Knit fabric exterior and low mass make accidental physical collisions safe for humans and pets.</li>
+<li><strong>Silent Tendon-Driven Actuation:</strong> Operates quietly without the mechanical whine of conventional high-ratio industrial gearboxes.</li>
+<li><strong>Natural Humanoid Proportions:</strong> Slender aesthetic designed to blend harmoniously into living rooms and kitchens.</li>
+<li><strong>Embodied Home Foundation Model:</strong> Understands natural conversational commands like 'Put the shoes in the closet'.</li>
+          </ul>
+        </div>
+
+        <div class="humanoid-specs-grid">
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Degrees of Freedom (DoF):</span>
+            <span class="spec-value highlight-value">Bio-inspired tendon-driven silent joint mechanisms</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Physical Dimensions:</span>
+            <span class="spec-value">165 cm (5 ft 5 in) • 30 kg (66 lbs)</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Payload & Speed:</span>
+            <span class="spec-value">20 kg (44 lbs) • 4 km/h walking / 12 km/h running</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Onboard Brain / AI Stack:</span>
+            <span class="spec-value code-value">Onboard neural speech and spatial reasoning engine</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Actuation Architecture:</span>
+            <span class="spec-value">Non-backdrivable low-friction tendon motors with soft padding</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Perception & Sensory Suite:</span>
+            <span class="spec-value">Dual wide-angle stereo head vision + depth</span>
+          </div>
+        </div>
+
+        <div class="humanoid-usecases-box">
+          <span class="usecases-label">Primary Target Applications:</span>
+          <ul class="humanoid-usecases-list">
+            <li>In-home tidying, laundry sorting, and kitchen assistance</li>
+<li>Companion eldercare support and physical object retrieval</li>
+<li>Light commercial hospitality and concierge greeting</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="humanoid-card" id="humanoid-apptronik-apollo"
+      data-name="apptronik apollo"
+      data-developer="apptronik (mercedes-benz partner)"
+      data-year="2023"
+      data-category="industrial"
+      data-status="commercial pilot (mercedes-benz)"
+      data-height="173 cm (5 ft 8 in)"
+      data-weight="73 kg (160 lbs)"
+      data-dof="gross and fine motor modular articulation"
+      data-compute="industrial onboard edge computer running real-time control stacks"
+      data-actuation="proprietary linear electric actuators with force control"
+      data-vision="perception mast with depth stereoscopic cameras and wide rgb"
+      data-description="developed by austin-based apptronik (spun out of the ut human centered robotics lab), apollo is built for modular factory work. tested at mercedes-benz manufacturing sites, apollo features an illuminated digital face display that indicates emotional state, intentions, and battery status to nearby human workers."
+      data-keywords="apptronik apollo mercedes-benz hot-swap-battery industrial modular">
+
+      <div class="humanoid-media-col">
+        <div class="humanoid-img-wrapper gallery-zoomable"
+          data-zoom-src="/images/humanoids/humanoid_apptronik-apollo.webp"
+          data-zoom-title="Apptronik Apollo"
+          data-zoom-meta="Developed by Apptronik (Mercedes-Benz Partner) • Unveiled: 2023 • Category: INDUSTRIAL"
+          data-zoom-caption="Developed by Austin-based Apptronik (spun out of the UT Human Centered Robotics Lab), Apollo is built for modular factory work. Tested at Mercedes-Benz manufacturing sites, Apollo features an illuminated digital face display that indicates emotional state, intentions, and battery status to nearby human workers."
+          title="Click to view humanoid technical blueprint">
+          <img alt="Apptronik Apollo Blueprint" loading="lazy" src="/images/humanoids/humanoid_apptronik-apollo.webp" />
+          <div class="humanoid-type-badge">INDUSTRIAL</div>
+          <div class="humanoid-img-overlay">
+            <svg class="zoom-indicator-icon" fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" x2="16.65" y1="21" x2="16.65"></line>
+              <line x1="11" x2="11" y1="8" y2="14"></line>
+              <line x1="8" x2="14" y1="11" y2="11"></line>
+            </svg>
+          </div>
+        </div>
+
+        <div class="humanoid-tags-row">
+          
+      <button class="humanoid-tag-pill" data-tag="apptronik" title="Filter by #apptronik" type="button">
+        <span class="tag-hash">#</span>apptronik
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="apollo" title="Filter by #apollo" type="button">
+        <span class="tag-hash">#</span>apollo
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="mercedes-benz" title="Filter by #mercedes-benz" type="button">
+        <span class="tag-hash">#</span>mercedes-benz
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="hot-swap-battery" title="Filter by #hot-swap-battery" type="button">
+        <span class="tag-hash">#</span>hot-swap-battery
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="industrial" title="Filter by #industrial" type="button">
+        <span class="tag-hash">#</span>industrial
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="modular" title="Filter by #modular" type="button">
+        <span class="tag-hash">#</span>modular
+      </button>
+    
+        </div>
+      </div>
+
+      <div class="humanoid-info-col">
+        <div class="humanoid-card-header">
+          <div class="humanoid-title-group">
+            <h2 class="humanoid-name">Apptronik Apollo</h2>
+            <div class="humanoid-meta">
+              Developed by <span class="humanoid-dev-name">Apptronik (Mercedes-Benz Partner)</span>
+              <span class="humanoid-meta-sep">•</span>
+              Unveiled <span class="humanoid-year-badge">2023</span>
+            </div>
+          </div>
+          <div class="humanoid-status-badge status-industrial">
+            Commercial Pilot (Mercedes-Benz)
+          </div>
+        </div>
+
+        <p class="humanoid-desc">Developed by Austin-based Apptronik (spun out of the UT Human Centered Robotics Lab), Apollo is built for modular factory work. Tested at Mercedes-Benz manufacturing sites, Apollo features an illuminated digital face display that indicates emotional state, intentions, and battery status to nearby human workers.</p>
+
+        <div class="humanoid-features-box">
+          <div class="humanoid-box-title">
+            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="16">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Core Innovations & Capabilities</span>
+          </div>
+          <ul class="humanoid-features-list">
+            <li><strong>Hot-Swappable Batteries:</strong> Uninterrupted 24/7 industrial uptime via rapid manual or automated battery module swapping.</li>
+<li><strong>Human-Friendly Digital Face:</strong> OLED chest and facial panels show operational status and movement intent to co-workers.</li>
+<li><strong>Linear Actuation Efficiency:</strong> Specialized linear push-rod motors provide exceptional mechanical leverage for heavy lifting.</li>
+<li><strong>Modular Torso Mounting:</strong> Torso can detach from legs and bolt to stationary assembly stations or wheeled mobile bases.</li>
+          </ul>
+        </div>
+
+        <div class="humanoid-specs-grid">
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Degrees of Freedom (DoF):</span>
+            <span class="spec-value highlight-value">Gross and fine motor modular articulation</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Physical Dimensions:</span>
+            <span class="spec-value">173 cm (5 ft 8 in) • 73 kg (160 lbs)</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Payload & Speed:</span>
+            <span class="spec-value">25 kg (55 lbs) • 5 km/h</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Onboard Brain / AI Stack:</span>
+            <span class="spec-value code-value">Industrial onboard edge computer running real-time control stacks</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Actuation Architecture:</span>
+            <span class="spec-value">Proprietary linear electric actuators with force control</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Perception & Sensory Suite:</span>
+            <span class="spec-value">Perception mast with depth stereoscopic cameras and wide RGB</span>
+          </div>
+        </div>
+
+        <div class="humanoid-usecases-box">
+          <span class="usecases-label">Primary Target Applications:</span>
+          <ul class="humanoid-usecases-list">
+            <li>Mercedes-Benz automotive parts delivery to assembly lines</li>
+<li>Heavy crate loading and pallet consolidation</li>
+<li>Manufacturing kit assembly and component kitting</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="humanoid-card" id="humanoid-sanctuary-phoenix-gen7"
+      data-name="phoenix gen 7"
+      data-developer="sanctuary ai"
+      data-year="2024"
+      data-category="commercial"
+      data-status="commercial pilots (magna international)"
+      data-height="170 cm (5 ft 7 in)"
+      data-weight="70 kg (155 lbs)"
+      data-dof="industry-leading 20-dof hands with haptic touch"
+      data-compute="carbon ai cognitive platform (hierarchical task execution)"
+      data-actuation="hydraulic/electric hybrid micro-actuation systems"
+      data-vision="carbon omnidirectional sensory perception suite"
+      data-description="sanctuary ai's phoenix gen 7 focuses aggressively on human-like fine manipulation through its patented carbon ai cognitive architecture. unlike robots centered purely on bipedal walking, phoenix prioritizes hand speed, fine motor control, and haptic sensitivity, allowing it to perform intricate retail packing, bagging, and industrial assembly tasks."
+      data-keywords="sanctuary-ai phoenix haptics carbon-ai teleoperation magna">
+
+      <div class="humanoid-media-col">
+        <div class="humanoid-img-wrapper gallery-zoomable"
+          data-zoom-src="/images/humanoids/humanoid_sanctuary-phoenix-gen7.webp"
+          data-zoom-title="Sanctuary AI Phoenix Gen 7"
+          data-zoom-meta="Developed by Sanctuary AI • Unveiled: 2024 • Category: COMMERCIAL"
+          data-zoom-caption="Sanctuary AI's Phoenix Gen 7 focuses aggressively on human-like fine manipulation through its patented Carbon AI cognitive architecture. Unlike robots centered purely on bipedal walking, Phoenix prioritizes hand speed, fine motor control, and haptic sensitivity, allowing it to perform intricate retail packing, bagging, and industrial assembly tasks."
+          title="Click to view humanoid technical blueprint">
+          <img alt="Sanctuary AI Phoenix Gen 7 Blueprint" loading="lazy" src="/images/humanoids/humanoid_sanctuary-phoenix-gen7.webp" />
+          <div class="humanoid-type-badge">COMMERCIAL</div>
+          <div class="humanoid-img-overlay">
+            <svg class="zoom-indicator-icon" fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" x2="16.65" y1="21" x2="16.65"></line>
+              <line x1="11" x2="11" y1="8" y2="14"></line>
+              <line x1="8" x2="14" y1="11" y2="11"></line>
+            </svg>
+          </div>
+        </div>
+
+        <div class="humanoid-tags-row">
+          
+      <button class="humanoid-tag-pill" data-tag="sanctuary-ai" title="Filter by #sanctuary-ai" type="button">
+        <span class="tag-hash">#</span>sanctuary-ai
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="phoenix" title="Filter by #phoenix" type="button">
+        <span class="tag-hash">#</span>phoenix
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="haptics" title="Filter by #haptics" type="button">
+        <span class="tag-hash">#</span>haptics
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="carbon-ai" title="Filter by #carbon-ai" type="button">
+        <span class="tag-hash">#</span>carbon-ai
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="teleoperation" title="Filter by #teleoperation" type="button">
+        <span class="tag-hash">#</span>teleoperation
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="magna" title="Filter by #magna" type="button">
+        <span class="tag-hash">#</span>magna
+      </button>
+    
+        </div>
+      </div>
+
+      <div class="humanoid-info-col">
+        <div class="humanoid-card-header">
+          <div class="humanoid-title-group">
+            <h2 class="humanoid-name">Sanctuary AI Phoenix Gen 7</h2>
+            <div class="humanoid-meta">
+              Developed by <span class="humanoid-dev-name">Sanctuary AI</span>
+              <span class="humanoid-meta-sep">•</span>
+              Unveiled <span class="humanoid-year-badge">2024</span>
+            </div>
+          </div>
+          <div class="humanoid-status-badge status-commercial">
+            Commercial Pilots (Magna International)
+          </div>
+        </div>
+
+        <p class="humanoid-desc">Sanctuary AI's Phoenix Gen 7 focuses aggressively on human-like fine manipulation through its patented Carbon AI cognitive architecture. Unlike robots centered purely on bipedal walking, Phoenix prioritizes hand speed, fine motor control, and haptic sensitivity, allowing it to perform intricate retail packing, bagging, and industrial assembly tasks.</p>
+
+        <div class="humanoid-features-box">
+          <div class="humanoid-box-title">
+            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="16">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Core Innovations & Capabilities</span>
+          </div>
+          <ul class="humanoid-features-list">
+            <li><strong>Industry-Leading Hand Dexterity:</strong> 20 degrees of freedom with tactile haptic sensors matching human palm feedback.</li>
+<li><strong>Carbon Cognitive Architecture:</strong> Translates natural language instructions into concrete motor control primitive sequences.</li>
+<li><strong>Teleoperation Learning (HIL):</strong> Telepresence rig enabling human demonstrations that train automated behavioral clones in hours.</li>
+<li><strong>Industrial Magna Collaboration:</strong> Tested directly in tier-one automotive supplier stamping facilities.</li>
+          </ul>
+        </div>
+
+        <div class="humanoid-specs-grid">
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Degrees of Freedom (DoF):</span>
+            <span class="spec-value highlight-value">Industry-leading 20-DoF hands with haptic touch</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Physical Dimensions:</span>
+            <span class="spec-value">170 cm (5 ft 7 in) • 70 kg (155 lbs)</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Payload & Speed:</span>
+            <span class="spec-value">25 kg (55 lbs) • 5 km/h (3.1 mph)</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Onboard Brain / AI Stack:</span>
+            <span class="spec-value code-value">Carbon AI cognitive platform (hierarchical task execution)</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Actuation Architecture:</span>
+            <span class="spec-value">Hydraulic/Electric hybrid micro-actuation systems</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Perception & Sensory Suite:</span>
+            <span class="spec-value">Carbon omnidirectional sensory perception suite</span>
+          </div>
+        </div>
+
+        <div class="humanoid-usecases-box">
+          <span class="usecases-label">Primary Target Applications:</span>
+          <ul class="humanoid-usecases-list">
+            <li>Automotive parts sorting, clip insertion, and sub-assembly</li>
+<li>Retail goods picking, packing, and checkout bagging</li>
+<li>Hazardous materials inspection and precision maintenance</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="humanoid-card" id="humanoid-xiaomi-cyberone"
+      data-name="xiaomi cyberone"
+      data-developer="xiaomi robotics lab"
+      data-year="2022"
+      data-category="research"
+      data-status="corporate r&d prototype"
+      data-height="177 cm (5 ft 10 in)"
+      data-weight="52 kg (115 lbs)"
+      data-dof="21 degrees of freedom with 5 joint types"
+      data-compute="miai environment semantics and 85 vocal tone classification"
+      data-actuation="high-torque motors with peak output of 300 n·m"
+      data-vision="mi-sense 3d depth perception & semantic scene reconstruction"
+      data-description="nicknamed 'metal bro', cyberone is xiaomi's flagship full-size humanoid robot. equipped with the mi-sense 3d vision algorithm and miai environment acoustics engine, cyberone can recognize 85 types of environmental sounds and detect 45 classifications of human emotional sentiment from vocal intonation."
+      data-keywords="xiaomi cyberone emotion-ai hri miai smart-ecosystem">
+
+      <div class="humanoid-media-col">
+        <div class="humanoid-img-wrapper gallery-zoomable"
+          data-zoom-src="/images/humanoids/humanoid_xiaomi-cyberone.webp"
+          data-zoom-title="Xiaomi CyberOne"
+          data-zoom-meta="Developed by Xiaomi Robotics Lab • Unveiled: 2022 • Category: RESEARCH"
+          data-zoom-caption="Nicknamed 'Metal Bro', CyberOne is Xiaomi's flagship full-size humanoid robot. Equipped with the Mi-Sense 3D vision algorithm and MiAI environment acoustics engine, CyberOne can recognize 85 types of environmental sounds and detect 45 classifications of human emotional sentiment from vocal intonation."
+          title="Click to view humanoid technical blueprint">
+          <img alt="Xiaomi CyberOne Blueprint" loading="lazy" src="/images/humanoids/humanoid_xiaomi-cyberone.webp" />
+          <div class="humanoid-type-badge">RESEARCH</div>
+          <div class="humanoid-img-overlay">
+            <svg class="zoom-indicator-icon" fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" x2="16.65" y1="21" x2="16.65"></line>
+              <line x1="11" x2="11" y1="8" y2="14"></line>
+              <line x1="8" x2="14" y1="11" y2="11"></line>
+            </svg>
+          </div>
+        </div>
+
+        <div class="humanoid-tags-row">
+          
+      <button class="humanoid-tag-pill" data-tag="xiaomi" title="Filter by #xiaomi" type="button">
+        <span class="tag-hash">#</span>xiaomi
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="cyberone" title="Filter by #cyberone" type="button">
+        <span class="tag-hash">#</span>cyberone
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="emotion-ai" title="Filter by #emotion-ai" type="button">
+        <span class="tag-hash">#</span>emotion-ai
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="hri" title="Filter by #hri" type="button">
+        <span class="tag-hash">#</span>hri
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="miai" title="Filter by #miai" type="button">
+        <span class="tag-hash">#</span>miai
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="smart-ecosystem" title="Filter by #smart-ecosystem" type="button">
+        <span class="tag-hash">#</span>smart-ecosystem
+      </button>
+    
+        </div>
+      </div>
+
+      <div class="humanoid-info-col">
+        <div class="humanoid-card-header">
+          <div class="humanoid-title-group">
+            <h2 class="humanoid-name">Xiaomi CyberOne</h2>
+            <div class="humanoid-meta">
+              Developed by <span class="humanoid-dev-name">Xiaomi Robotics Lab</span>
+              <span class="humanoid-meta-sep">•</span>
+              Unveiled <span class="humanoid-year-badge">2022</span>
+            </div>
+          </div>
+          <div class="humanoid-status-badge status-research">
+            Corporate R&D Prototype
+          </div>
+        </div>
+
+        <p class="humanoid-desc">Nicknamed 'Metal Bro', CyberOne is Xiaomi's flagship full-size humanoid robot. Equipped with the Mi-Sense 3D vision algorithm and MiAI environment acoustics engine, CyberOne can recognize 85 types of environmental sounds and detect 45 classifications of human emotional sentiment from vocal intonation.</p>
+
+        <div class="humanoid-features-box">
+          <div class="humanoid-box-title">
+            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="16">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Core Innovations & Capabilities</span>
+          </div>
+          <ul class="humanoid-features-list">
+            <li><strong>Vocal Emotion Recognition:</strong> Detects human happiness, grief, excitement, and anger directly from spoken audio.</li>
+<li><strong>Mi-Sense 3D Vision:</strong> Perceives 3D depth coordinates across indoor rooms with millimeter-level obstacle mapping.</li>
+<li><strong>Lightweight High-Torque Motors:</strong> In-house motor engineering delivering up to 300 N·m in a sleek 52 kg chassis.</li>
+<li><strong>OLED Curved Screen Face:</strong> Interactive facial animation screen displaying expressive emotive feedback.</li>
+          </ul>
+        </div>
+
+        <div class="humanoid-specs-grid">
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Degrees of Freedom (DoF):</span>
+            <span class="spec-value highlight-value">21 degrees of freedom with 5 joint types</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Physical Dimensions:</span>
+            <span class="spec-value">177 cm (5 ft 10 in) • 52 kg (115 lbs)</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Payload & Speed:</span>
+            <span class="spec-value">1.5 kg per hand • 3.6 km/h</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Onboard Brain / AI Stack:</span>
+            <span class="spec-value code-value">MiAI environment semantics and 85 vocal tone classification</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Actuation Architecture:</span>
+            <span class="spec-value">High-torque motors with peak output of 300 N·m</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Perception & Sensory Suite:</span>
+            <span class="spec-value">Mi-Sense 3D depth perception & semantic scene reconstruction</span>
+          </div>
+        </div>
+
+        <div class="humanoid-usecases-box">
+          <span class="usecases-label">Primary Target Applications:</span>
+          <ul class="humanoid-usecases-list">
+            <li>Human-robot interaction (HRI) and affective computing research</li>
+<li>Consumer electronics smart ecosystem integration</li>
+<li>Stage presentations and technology showcase exhibitions</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="humanoid-card" id="humanoid-fourier-gr-2"
+      data-name="fourier gr-2"
+      data-developer="fourier intelligence"
+      data-year="2024"
+      data-category="medical"
+      data-status="commercial & medical r&d"
+      data-height="175 cm (5 ft 9 in)"
+      data-weight="63 kg (139 lbs)"
+      data-dof="53 full-body degrees of freedom (12-dof dexterous hands)"
+      data-compute="dual edge ai compute modules with ros2 and isaac sim support"
+      data-actuation="fsa high-performance integrated smart actuators"
+      data-vision="6 rgb cameras, 2 depth sensors, and dual tactile array palms"
+      data-description="building on fourier's deep medical rehabilitation background, the gr-2 humanoid robot features an astonishing 53 degrees of freedom. its highly articulated hands and force-feedback control allow it to provide physical therapy rehabilitation assistance, patient transfer, and elderly assistance alongside traditional industrial chores."
+      data-keywords="fourier gr-2 rehabilitation medical 53-dof tactile-palms">
+
+      <div class="humanoid-media-col">
+        <div class="humanoid-img-wrapper gallery-zoomable"
+          data-zoom-src="/images/humanoids/humanoid_fourier-gr-2.webp"
+          data-zoom-title="Fourier Intelligence GR-2"
+          data-zoom-meta="Developed by Fourier Intelligence • Unveiled: 2024 • Category: MEDICAL"
+          data-zoom-caption="Building on Fourier's deep medical rehabilitation background, the GR-2 humanoid robot features an astonishing 53 degrees of freedom. Its highly articulated hands and force-feedback control allow it to provide physical therapy rehabilitation assistance, patient transfer, and elderly assistance alongside traditional industrial chores."
+          title="Click to view humanoid technical blueprint">
+          <img alt="Fourier Intelligence GR-2 Blueprint" loading="lazy" src="/images/humanoids/humanoid_fourier-gr-2.webp" />
+          <div class="humanoid-type-badge">MEDICAL</div>
+          <div class="humanoid-img-overlay">
+            <svg class="zoom-indicator-icon" fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" x2="16.65" y1="21" x2="16.65"></line>
+              <line x1="11" x2="11" y1="8" y2="14"></line>
+              <line x1="8" x2="14" y1="11" y2="11"></line>
+            </svg>
+          </div>
+        </div>
+
+        <div class="humanoid-tags-row">
+          
+      <button class="humanoid-tag-pill" data-tag="fourier" title="Filter by #fourier" type="button">
+        <span class="tag-hash">#</span>fourier
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="gr-2" title="Filter by #gr-2" type="button">
+        <span class="tag-hash">#</span>gr-2
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="rehabilitation" title="Filter by #rehabilitation" type="button">
+        <span class="tag-hash">#</span>rehabilitation
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="medical" title="Filter by #medical" type="button">
+        <span class="tag-hash">#</span>medical
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="53-dof" title="Filter by #53-dof" type="button">
+        <span class="tag-hash">#</span>53-dof
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="tactile-palms" title="Filter by #tactile-palms" type="button">
+        <span class="tag-hash">#</span>tactile-palms
+      </button>
+    
+        </div>
+      </div>
+
+      <div class="humanoid-info-col">
+        <div class="humanoid-card-header">
+          <div class="humanoid-title-group">
+            <h2 class="humanoid-name">Fourier Intelligence GR-2</h2>
+            <div class="humanoid-meta">
+              Developed by <span class="humanoid-dev-name">Fourier Intelligence</span>
+              <span class="humanoid-meta-sep">•</span>
+              Unveiled <span class="humanoid-year-badge">2024</span>
+            </div>
+          </div>
+          <div class="humanoid-status-badge status-research">
+            Commercial & Medical R&D
+          </div>
+        </div>
+
+        <p class="humanoid-desc">Building on Fourier's deep medical rehabilitation background, the GR-2 humanoid robot features an astonishing 53 degrees of freedom. Its highly articulated hands and force-feedback control allow it to provide physical therapy rehabilitation assistance, patient transfer, and elderly assistance alongside traditional industrial chores.</p>
+
+        <div class="humanoid-features-box">
+          <div class="humanoid-box-title">
+            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="16">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Core Innovations & Capabilities</span>
+          </div>
+          <ul class="humanoid-features-list">
+            <li><strong>53 Full-Body Degrees of Freedom:</strong> Unprecedented articulation with 12 DoF in each dexterous hand.</li>
+<li><strong>Rehabilitation Compliant Control:</strong> Inherits Fourier's medical exoskeleton torque-control algorithms for safe physical contact.</li>
+<li><strong>Force-Torque Palm Feedback:</strong> Detects tactile weight shifts and material slippage during human touch.</li>
+<li><strong>ROS2 & Isaac Sim Native:</strong> Fully supported in NVIDIA robotics simulation environments for rapid policy training.</li>
+          </ul>
+        </div>
+
+        <div class="humanoid-specs-grid">
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Degrees of Freedom (DoF):</span>
+            <span class="spec-value highlight-value">53 full-body degrees of freedom (12-DoF dexterous hands)</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Physical Dimensions:</span>
+            <span class="spec-value">175 cm (5 ft 9 in) • 63 kg (139 lbs)</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Payload & Speed:</span>
+            <span class="spec-value">15 kg • 5 km/h</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Onboard Brain / AI Stack:</span>
+            <span class="spec-value code-value">Dual Edge AI compute modules with ROS2 and ISAAC Sim support</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Actuation Architecture:</span>
+            <span class="spec-value">FSA high-performance integrated smart actuators</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Perception & Sensory Suite:</span>
+            <span class="spec-value">6 RGB cameras, 2 depth sensors, and dual tactile array palms</span>
+          </div>
+        </div>
+
+        <div class="humanoid-usecases-box">
+          <span class="usecases-label">Primary Target Applications:</span>
+          <ul class="humanoid-usecases-list">
+            <li>Physical therapy rehabilitation assistance and mobility training</li>
+<li>Elderly home care support and patient assistance</li>
+<li>Educational robotics and university collaborative research</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    
+
+    <article class="humanoid-card" id="humanoid-honda-asimo-tribute"
+      data-name="honda asimo tribute"
+      data-developer="honda motor co."
+      data-year="2000"
+      data-category="research"
+      data-status="historical milestone (retired 2022)"
+      data-height="130 cm (4 ft 3 in)"
+      data-weight="48 kg (106 lbs)"
+      data-dof="57 degrees of freedom (final 2011 version)"
+      data-compute="honda autonomous behavior control system with posture stabilization"
+      data-actuation="precision harmonic drive servo motors with ground reaction sensors"
+      data-vision="dual stereo optical camera eyes, ultrasonic sensors, and floor laser"
+      data-description="the legendary pioneer that proved humanoid walking was possible. launched in 2000 after decades of secret research (e-series and p-series), asimo was the world's first humanoid capable of smooth dynamic walking (zmp control), stair climbing, hopping on one leg, opening thermos bottles, and serving tea, paving the path for the entire modern humanoid revolution."
+      data-keywords="honda asimo pioneer zmp-control legend history running">
+
+      <div class="humanoid-media-col">
+        <div class="humanoid-img-wrapper gallery-zoomable"
+          data-zoom-src="/images/humanoids/humanoid_honda-asimo-tribute.webp"
+          data-zoom-title="Honda ASIMO (Pioneer Tribute)"
+          data-zoom-meta="Developed by Honda Motor Co. • Unveiled: 2000 • Category: RESEARCH"
+          data-zoom-caption="The legendary pioneer that proved humanoid walking was possible. Launched in 2000 after decades of secret research (E-series and P-series), ASIMO was the world's first humanoid capable of smooth dynamic walking (ZMP control), stair climbing, hopping on one leg, opening thermos bottles, and serving tea, paving the path for the entire modern humanoid revolution."
+          title="Click to view humanoid technical blueprint">
+          <img alt="Honda ASIMO (Pioneer Tribute) Blueprint" loading="lazy" src="/images/humanoids/humanoid_honda-asimo-tribute.webp" />
+          <div class="humanoid-type-badge">RESEARCH</div>
+          <div class="humanoid-img-overlay">
+            <svg class="zoom-indicator-icon" fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" x2="16.65" y1="21" x2="16.65"></line>
+              <line x1="11" x2="11" y1="8" y2="14"></line>
+              <line x1="8" x2="14" y1="11" y2="11"></line>
+            </svg>
+          </div>
+        </div>
+
+        <div class="humanoid-tags-row">
+          
+      <button class="humanoid-tag-pill" data-tag="honda" title="Filter by #honda" type="button">
+        <span class="tag-hash">#</span>honda
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="asimo" title="Filter by #asimo" type="button">
+        <span class="tag-hash">#</span>asimo
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="pioneer" title="Filter by #pioneer" type="button">
+        <span class="tag-hash">#</span>pioneer
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="zmp-control" title="Filter by #zmp-control" type="button">
+        <span class="tag-hash">#</span>zmp-control
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="legend" title="Filter by #legend" type="button">
+        <span class="tag-hash">#</span>legend
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="history" title="Filter by #history" type="button">
+        <span class="tag-hash">#</span>history
+      </button>
+    
+
+      <button class="humanoid-tag-pill" data-tag="running" title="Filter by #running" type="button">
+        <span class="tag-hash">#</span>running
+      </button>
+    
+        </div>
+      </div>
+
+      <div class="humanoid-info-col">
+        <div class="humanoid-card-header">
+          <div class="humanoid-title-group">
+            <h2 class="humanoid-name">Honda ASIMO (Pioneer Tribute)</h2>
+            <div class="humanoid-meta">
+              Developed by <span class="humanoid-dev-name">Honda Motor Co.</span>
+              <span class="humanoid-meta-sep">•</span>
+              Unveiled <span class="humanoid-year-badge">2000</span>
+            </div>
+          </div>
+          <div class="humanoid-status-badge status-research">
+            Historical Milestone (Retired 2022)
+          </div>
+        </div>
+
+        <p class="humanoid-desc">The legendary pioneer that proved humanoid walking was possible. Launched in 2000 after decades of secret research (E-series and P-series), ASIMO was the world's first humanoid capable of smooth dynamic walking (ZMP control), stair climbing, hopping on one leg, opening thermos bottles, and serving tea, paving the path for the entire modern humanoid revolution.</p>
+
+        <div class="humanoid-features-box">
+          <div class="humanoid-box-title">
+            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="16">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Core Innovations & Capabilities</span>
+          </div>
+          <ul class="humanoid-features-list">
+            <li><strong>Zero Moment Point (ZMP) Gait Control:</strong> Groundbreaking dynamic walking mathematics developed by Honda engineers.</li>
+<li><strong>Bipedal Running & Hopping:</strong> Could run at 9 km/h with both feet temporarily airborne in mid-stride.</li>
+<li><strong>Five-Fingered Mechanical Hands:</strong> Actuators in palm allowed opening screw-caps and pouring tea into cups.</li>
+<li><strong>Pedestrian Path Prediction:</strong> Detected approaching humans and proactively adjusted walking trajectory to avoid collisions.</li>
+          </ul>
+        </div>
+
+        <div class="humanoid-specs-grid">
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Degrees of Freedom (DoF):</span>
+            <span class="spec-value highlight-value">57 degrees of freedom (Final 2011 Version)</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Physical Dimensions:</span>
+            <span class="spec-value">130 cm (4 ft 3 in) • 48 kg (106 lbs)</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Payload & Speed:</span>
+            <span class="spec-value">0.5 kg per hand • 9 km/h (5.6 mph) running</span>
+          </div>
+          <div class="humanoid-spec-item">
+            <span class="spec-label">Onboard Brain / AI Stack:</span>
+            <span class="spec-value code-value">Honda Autonomous Behavior Control System with posture stabilization</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Actuation Architecture:</span>
+            <span class="spec-value">Precision harmonic drive servo motors with ground reaction sensors</span>
+          </div>
+          <div class="humanoid-spec-item full-width">
+            <span class="spec-label">Perception & Sensory Suite:</span>
+            <span class="spec-value">Dual stereo optical camera eyes, ultrasonic sensors, and floor laser</span>
+          </div>
+        </div>
+
+        <div class="humanoid-usecases-box">
+          <span class="usecases-label">Primary Target Applications:</span>
+          <ul class="humanoid-usecases-list">
+            <li>Pioneered all foundational humanoid balance, gait, and ZMP control theory</li>
+<li>Global scientific ambassadorship and STEM education inspiration</li>
+<li>Foundational research that directly catalyzed modern autonomous walking robotics</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    
+</div>
+
+<div class="humanoids-empty-state" id="noResultsMsg" style="display:none">
+  <div class="empty-icon-wrap">
+    <svg fill="none" height="36" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" width="36">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" x2="16.65" y1="21" x2="16.65"></line>
+    </svg>
+  </div>
+  <h3>No Humanoid Robots Found</h3>
+  <p>No robots matched your search term or category filters. Try searching for different actuators, perception systems, or clear your filters.</p>
+  <button class="humanoid-reset-btn" id="resetFiltersBtn" type="button">Reset All Filters</button>
+</div>
+
+<!-- Lightbox Modal -->
+<div aria-hidden="true" class="gallery-lightbox" id="galleryLightbox" role="dialog">
+  <div class="lightbox-backdrop"></div>
+  <div class="lightbox-dialog">
+    <button aria-label="Close focused view" class="lightbox-close" type="button">×</button>
+    <div class="lightbox-image-container">
+      <img alt="" id="lightboxImg" src=""/>
+    </div>
+    <div class="lightbox-details">
+      <h3 id="lightboxTitle"></h3>
+      <div class="lightbox-meta" id="lightboxMeta"></div>
+      <p id="lightboxCaption"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const searchInput = document.getElementById("humanoidSearch");
+  const clearBtn = document.getElementById("clearHumanoidSearch");
+  const sortSelect = document.getElementById("humanoidSort");
+  const categoryChips = document.querySelectorAll(".humanoid-chip");
+  const tagPills = document.querySelectorAll(".humanoid-tag-pill");
+  const gridContainer = document.getElementById("humanoidsGrid");
+  const visibleCount = document.getElementById("visibleCount");
+  const noResultsMsg = document.getElementById("noResultsMsg");
+  const resetFiltersBtn = document.getElementById("resetFiltersBtn");
+  const randomBtn = document.getElementById("randomHumanoidBtn");
+  const activeTagBanner = document.getElementById("activeTagFilterBanner");
+  const activeFilterName = document.getElementById("activeFilterName");
+  const clearActiveFilterBtn = document.getElementById("clearActiveFilterBtn");
+
+  const lightbox = document.getElementById("galleryLightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
+  const lightboxTitle = document.getElementById("lightboxTitle");
+  const lightboxMeta = document.getElementById("lightboxMeta");
+  const lightboxCaption = document.getElementById("lightboxCaption");
+  const closeBtn = document.querySelector(".lightbox-close");
+  const backdrop = document.querySelector(".lightbox-backdrop");
+
+  let activeCategory = "ALL";
+  let activeTag = "";
+
+  function openLightbox(src, title, meta, caption) {
+    if (!lightbox || !lightboxImg) return;
+    lightboxImg.src = src;
+    lightboxImg.alt = title;
+    if (lightboxTitle) lightboxTitle.textContent = title;
+    if (lightboxMeta) lightboxMeta.innerHTML = meta || "";
+    if (lightboxCaption) lightboxCaption.textContent = caption || "";
+    lightbox.classList.add("active");
+    document.body.classList.add("modal-open");
+  }
+
+  function closeLightbox() {
+    if (!lightbox || !lightboxImg) return;
+    lightbox.classList.remove("active");
+    document.body.classList.remove("modal-open");
+    setTimeout(() => { lightboxImg.src = ""; }, 250);
+  }
+
+  if (closeBtn) closeBtn.addEventListener("click", closeLightbox);
+  if (backdrop) backdrop.addEventListener("click", closeLightbox);
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape" && lightbox && lightbox.classList.contains("active")) {
+      closeLightbox();
+    }
+  });
+
+  // Attach zoom to pre-rendered cards
+  gridContainer.querySelectorAll(".gallery-zoomable").forEach(zoom => {
+    zoom.addEventListener("click", function() {
+      openLightbox(this.dataset.zoomSrc, this.dataset.zoomTitle, this.dataset.zoomMeta, this.dataset.zoomCaption);
+    });
+  });
+
+  // Attach tag filtering
+  document.querySelectorAll(".humanoid-tag-pill").forEach(pill => {
+    pill.addEventListener("click", function(e) {
+      e.stopPropagation();
+      activeTag = this.dataset.tag || "";
+      filterCards();
+      gridContainer.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  function filterCards() {
+    const q = (searchInput ? searchInput.value.trim().toLowerCase() : "");
+    if (clearBtn) clearBtn.style.display = q ? "block" : "none";
+
+    if (activeTag) {
+      if (activeTagBanner) activeTagBanner.style.display = "flex";
+      if (activeFilterName) activeFilterName.textContent = "#" + activeTag;
+    } else {
+      if (activeTagBanner) activeTagBanner.style.display = "none";
+    }
+
+    const cards = Array.from(gridContainer.querySelectorAll(".humanoid-card"));
+    let count = 0;
+
+    cards.forEach(card => {
+      const name = card.dataset.name || "";
+      const dev = card.dataset.developer || "";
+      const year = card.dataset.year || "";
+      const cat = card.dataset.category || "";
+      const status = card.dataset.status || "";
+      const dof = card.dataset.dof || "";
+      const compute = card.dataset.compute || "";
+      const actuation = card.dataset.actuation || "";
+      const vision = card.dataset.vision || "";
+      const desc = card.dataset.description || "";
+      const keywords = card.dataset.keywords || "";
+
+      const textMatch = !q || name.includes(q) || dev.includes(q) || year.includes(q) ||
+        status.includes(q) || dof.includes(q) || compute.includes(q) || actuation.includes(q) ||
+        vision.includes(q) || desc.includes(q) || keywords.includes(q);
+
+      const catMatch = (activeCategory === "ALL") || (cat === activeCategory);
+      const tagMatch = !activeTag || keywords.includes(activeTag.toLowerCase());
+
+      if (textMatch && catMatch && tagMatch) {
+        card.style.display = "";
+        count++;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    if (visibleCount) visibleCount.textContent = count;
+    if (noResultsMsg) noResultsMsg.style.display = count === 0 ? "block" : "none";
+  }
+
+  function sortCards() {
+    const mode = sortSelect ? sortSelect.value : "relevance";
+    const cards = Array.from(gridContainer.querySelectorAll(".humanoid-card"));
+
+    cards.sort((a, b) => {
+      const yearA = parseInt(a.dataset.year) || 0;
+      const yearB = parseInt(b.dataset.year) || 0;
+      const nameA = (a.dataset.name || "");
+      const nameB = (b.dataset.name || "");
+
+      switch (mode) {
+        case "year-desc":
+          return yearB - yearA || nameA.localeCompare(nameB);
+        case "year-asc":
+          return yearA - yearB || nameA.localeCompare(nameB);
+        case "name-asc":
+          return nameA.localeCompare(nameB);
+        case "name-desc":
+          return nameB.localeCompare(nameA);
+        case "relevance":
+        default:
+          return 0; // Natural pre-sorted order
+      }
+    });
+
+    cards.forEach(c => gridContainer.appendChild(c));
+  }
+
+  if (searchInput) searchInput.addEventListener("input", filterCards);
+  if (clearBtn) {
+    clearBtn.addEventListener("click", function() {
+      searchInput.value = "";
+      filterCards();
+      searchInput.focus();
+    });
+  }
+
+  if (sortSelect) {
+    sortSelect.addEventListener("change", function() {
+      sortCards();
+      filterCards();
+    });
+  }
+
+  categoryChips.forEach(chip => {
+    chip.addEventListener("click", function() {
+      categoryChips.forEach(c => c.classList.remove("active"));
+      this.classList.add("active");
+      activeCategory = this.dataset.category || "ALL";
+      activeTag = "";
+      filterCards();
+    });
+  });
+
+  if (clearActiveFilterBtn) {
+    clearActiveFilterBtn.addEventListener("click", function() {
+      activeTag = "";
+      filterCards();
+    });
+  }
+
+  if (resetFiltersBtn) {
+    resetFiltersBtn.addEventListener("click", function() {
+      if (searchInput) searchInput.value = "";
+      activeCategory = "ALL";
+      activeTag = "";
+      categoryChips.forEach(c => c.classList.toggle("active", c.dataset.category === "ALL"));
+      if (sortSelect) sortSelect.value = "relevance";
+      sortCards();
+      filterCards();
+    });
+  }
+
+  if (randomBtn) {
+    randomBtn.addEventListener("click", function() {
+      const visible = Array.from(gridContainer.querySelectorAll(".humanoid-card")).filter(c => c.style.display !== "none");
+      if (visible.length === 0) return;
+      const target = visible[Math.floor(Math.random() * visible.length)];
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+      target.classList.remove("gadget-highlight-pulse");
+      void target.offsetWidth;
+      target.classList.add("gadget-highlight-pulse");
+      setTimeout(() => target.classList.remove("gadget-highlight-pulse"), 2500);
+    });
+  }
+
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "/" && document.activeElement !== searchInput && !["input", "textarea"].includes((document.activeElement.tagName || "").toLowerCase())) {
+      e.preventDefault();
+      searchInput.focus();
+      searchInput.select();
+    }
+  });
+});
+</script>
+</main>

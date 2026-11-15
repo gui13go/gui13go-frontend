@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+  <defs>
+    <linearGradient id="bgGrad_ATLAS" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e17"/>
+      <stop offset="50%" stop-color="#D97706" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <radialGradient id="mesh_ATLAS" cx="20%" cy="15%" r="75%">
+      <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad_ATLAS)"/>
+  <rect width="100%" height="100%" fill="url(#mesh_ATLAS)"/>
+
+  <!-- Top Status Bar -->
+  <rect x="36" y="28" width="728" height="36" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+  <circle cx="56" cy="46" r="6" fill="#FBBF24"/>
+  <text x="72" y="50" font-family="monospace" font-size="12" font-weight="700" fill="#FBBF24" letter-spacing="1">HUMANOID BLUEPRINT ARCHITECTURE // ATLAS</text>
+  <text x="744" y="50" text-anchor="end" font-family="monospace" font-size="12" fill="#94A3B8">BOSTON DYNAMICS</text>
+
+  <!-- Left Column: Title & Key Stats -->
+  <text x="44" y="112" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="800" fill="#F8FAFC">All-Electric Atlas</text>
+  <text x="44" y="136" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#94A3B8">DEVELOPER: Boston Dynamics</text>
+
+  <!-- Spec Box 1 -->
+  <rect x="44" y="162" width="330" height="64" rx="8" fill="rgba(15,23,42,0.6)" stroke="rgba(255,255,255,0.08)"/>
+  <text x="58" y="184" font-family="monospace" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="0.5">FREEDOM DEGREES &amp; ARTICULATION</text>
+  <text x="58" y="208" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#FBBF24">360° Continuous Rotational Joints</text>
+
+  <!-- Spec Box 2 -->
+  <rect x="44" y="236" width="330" height="64" rx="8" fill="rgba(15,23,42,0.6)" stroke="rgba(255,255,255,0.08)"/>
+  <text x="58" y="258" font-family="monospace" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="0.5">PERCEPTION &amp; SENSORS</text>
+  <text x="58" y="282" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#E2E8F0">Head-ring Depth Sensors & RGB Stereo</text>
+
+  <!-- Spec Box 3 -->
+  <rect x="44" y="310" width="330" height="64" rx="8" fill="rgba(15,23,42,0.6)" stroke="rgba(255,255,255,0.08)"/>
+  <text x="58" y="332" font-family="monospace" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="0.5">ACTUATION &amp; MOTOR UNITS</text>
+  <text x="58" y="356" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#E2E8F0">High-torque Electric Rotary Actuators</text>
+
+  <!-- Spec Box 4 (Height & Weight) -->
+  <rect x="44" y="384" width="330" height="54" rx="8" fill="rgba(15,23,42,0.6)" stroke="rgba(255,255,255,0.08)"/>
+  <text x="58" y="404" font-family="monospace" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="0.5">HEIGHT &amp; WEIGHT SPEC</text>
+  <text x="58" y="424" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#F1F5F9">150 cm (4 ft 11 in)  •  89 kg (196 lbs)</text>
+
+  <!-- Right Column: Schematic Wireframe & Diagram -->
+  <rect x="398" y="100" width="366" height="338" rx="12" fill="rgba(15,23,42,0.75)" stroke="#D97706" stroke-opacity="0.35"/>
+  <path d="M 414 116 L 430 116 M 414 116 L 414 132" fill="none" stroke="#FBBF24" stroke-width="2"/>
+  <path d="M 748 116 L 732 116 M 748 116 L 748 132" fill="none" stroke="#FBBF24" stroke-width="2"/>
+  <path d="M 414 422 L 430 422 M 414 422 L 414 406" fill="none" stroke="#FBBF24" stroke-width="2"/>
+  <path d="M 748 422 L 732 422 M 748 422 L 748 406" fill="none" stroke="#FBBF24" stroke-width="2"/>
+
+  <!-- Humanoid Silhouette / Technical Vector Figure -->
+  <g transform="translate(581, 145)" stroke="#FBBF24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Head -->
+    <rect x="-18" y="0" width="36" height="42" rx="10" fill="rgba(255,255,255,0.05)" stroke="#FBBF24"/>
+    <!-- Visor -->
+    <line x1="-12" y1="16" x2="12" y2="16" stroke="#D97706" stroke-width="3"/>
+    <!-- Neck -->
+    <line x1="0" y1="42" x2="0" y2="52"/>
+    <!-- Torso / Chest -->
+    <polygon points="-38,52 38,52 30,126 -30,126" fill="rgba(255,255,255,0.04)" stroke="#FBBF24"/>
+    <circle cx="0" cy="85" r="12" stroke="#D97706" stroke-width="1.5"/>
+    <!-- Shoulders & Arms -->
+    <circle cx="-44" cy="62" r="7"/>
+    <circle cx="44" cy="62" r="7"/>
+    <line x1="-44" y1="69" x2="-52" y2="120"/>
+    <circle cx="-52" cy="120" r="5"/>
+    <line x1="-52" y1="125" x2="-56" y2="165"/>
+    <!-- Right Arm -->
+    <line x1="44" y1="69" x2="52" y2="120"/>
+    <circle cx="52" cy="120" r="5"/>
+    <line x1="52" y1="125" x2="56" y2="165"/>
+    <!-- Pelvis -->
+    <rect x="-24" y="126" width="48" height="22" rx="6" fill="rgba(255,255,255,0.03)"/>
+    <!-- Legs -->
+    <circle cx="-16" cy="154" r="6"/>
+    <circle cx="16" cy="154" r="6"/>
+    <line x1="-16" y1="160" x2="-20" y2="210"/>
+    <circle cx="-20" cy="210" r="5"/>
+    <line x1="-20" y1="215" x2="-22" y2="258"/>
+    <!-- Foot L -->
+    <path d="M -22 258 L -34 262 L -12 262 Z" fill="rgba(255,255,255,0.08)"/>
+    <!-- Leg R -->
+    <line x1="16" y1="160" x2="20" y2="210"/>
+    <circle cx="20" cy="210" r="5"/>
+    <line x1="20" y1="215" x2="22" y2="258"/>
+    <!-- Foot R -->
+    <path d="M 22 258 L 10 262 L 32 262 Z" fill="rgba(255,255,255,0.08)"/>
+  </g>
+
+  <!-- Technical Overlay Labels -->
+  <text x="418" y="140" font-family="monospace" font-size="10" fill="#FBBF24">RADIAL COMPLIANCE: OK</text>
+  <text x="418" y="156" font-family="monospace" font-size="10" fill="#64748B">KINEMATICS: BIPEDAL CLOSED-LOOP</text>
+  <text x="418" y="172" font-family="monospace" font-size="10" fill="#64748B">BRAIN: HIGH-RATE REAL-TIME MOTION ENGINE</text>
+  <text x="748" y="416" text-anchor="end" font-family="monospace" font-size="10" fill="#FBBF24">EMBODIED AI STACK</text>
+</svg>
