@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowUp, Trash2, Users } from 'lucide-react'
+import { ArrowUp, Trash2, Users, Sparkles } from 'lucide-react'
 import { API_BASE_URL, DEFAULT_MODEL } from '../config/api'
 import { useDocumentMeta } from '../hooks/useDocumentMeta'
 import { AuthModal } from '../components/AuthModal'
@@ -42,6 +42,109 @@ const DEFAULT_PHILOSOPHER_IDS = ['camus', 'diogenes', 'immanuel-kant']
 const NEXUS_NAME = 'The Oracle'
 const NEXUS_ICON = 'Ω'
 const MAX_SESSION_TOKENS = 50000
+
+const QUICK_TOPICS = [
+  'Is free will an illusion in a deterministic universe?',
+  'Can artificial intelligence possess authentic consciousness?',
+  'Does morality exist independently of human convention?',
+  'What is the relationship between suffering and a meaningful life?',
+]
+
+function parseInlineFormatting(str: string): React.ReactNode[] {
+  const parts: React.ReactNode[] = []
+  const tokenRegex = /(\*\*[^*]+\*\*|`[^`]+`|\*[^*]+\*)/g
+  let lastIndex = 0
+  let match: RegExpExecArray | null
+
+  while ((match = tokenRegex.exec(str)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(str.substring(lastIndex, match.index))
+    }
+    const token = match[0]
+    if (token.startsWith('**') && token.endsWith('**')) {
+      parts.push(
+        <strong key={match.index} style={{ color: '#ffffff', fontWeight: 700 }}>
+          {token.slice(2, -2)}
+        </strong>
+      )
+    } else if (token.startsWith('`') && token.endsWith('`')) {
+      parts.push(
+        <code
+          key={match.index}
+          style={{
+            background: 'rgba(255,255,255,0.1)',
+            padding: '2px 6px',
+            borderRadius: '4px',
+            fontFamily: 'monospace',
+            fontSize: '0.85em',
+            color: '#e2d49e',
+          }}
+        >
+          {token.slice(1, -1)}
+        </code>
+      )
+    } else if (token.startsWith('*') && token.endsWith('*')) {
+      parts.push(
+        <em key={match.index} style={{ fontStyle: 'italic', color: '#cbd5e1' }}>
+          {token.slice(1, -1)}
+        </em>
+      )
+    }
+    lastIndex = match.index + token.length
+  }
+
+  if (lastIndex < str.length) {
+    parts.push(str.substring(lastIndex))
+  }
+
+  return parts
+}
+
+function renderFormattedContent(text: string): React.ReactNode {
+  if (!text) return null
+  const paragraphs = text.split(/\n\n+/)
+  return paragraphs.map((para, pIdx) => {
+    if (para.startsWith('> ')) {
+      return (
+        <blockquote
+          key={pIdx}
+          style={{
+            borderLeft: '3px solid #c5b358',
+            paddingLeft: '12px',
+            margin: '8px 0',
+            color: '#e2d49e',
+            fontStyle: 'italic',
+          }}
+        >
+          {parseInlineFormatting(para.slice(2))}
+        </blockquote>
+      )
+    }
+
+    if (para.split('\n').every((line) => line.trim().startsWith('- ') || line.trim().startsWith('* '))) {
+      return (
+        <ul key={pIdx} style={{ margin: '6px 0', paddingLeft: '20px' }}>
+          {para.split('\n').map((line, lIdx) => (
+            <li key={lIdx} style={{ margin: '4px 0' }}>
+              {parseInlineFormatting(line.replace(/^[-*]\s+/, ''))}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+
+    return (
+      <p key={pIdx} style={{ margin: pIdx > 0 ? '8px 0 0' : 0 }}>
+        {para.split('\n').map((line, lIdx, arr) => (
+          <React.Fragment key={lIdx}>
+            {parseInlineFormatting(line)}
+            {lIdx < arr.length - 1 && <br />}
+          </React.Fragment>
+        ))}
+      </p>
+    )
+  })
+}
 
 export const SwarmRoom: React.FC = () => {
   useDocumentMeta({
@@ -468,6 +571,13 @@ You MUST respond strictly with a valid JSON object matching this schema:
             >
               {allAgents.map((agent) => {
                 const isSelected = selectedAgentIds.includes(agent.id)
+                const isSpeaking = Boolean(
+                  activeSpeaker &&
+                    (agent.title.toLowerCase().includes(activeSpeaker.toLowerCase()) ||
+                      activeSpeaker.toLowerCase().includes(agent.title.toLowerCase()) ||
+                      agent.name.toLowerCase().includes(activeSpeaker.toLowerCase()) ||
+                      activeSpeaker.toLowerCase().includes(agent.name.toLowerCase()))
+                )
                 return (
                   <button
                     key={agent.id}
@@ -479,8 +589,17 @@ You MUST respond strictly with a valid JSON object matching this schema:
                       gap: '8px',
                       padding: '12px 8px',
                       borderRadius: '14px',
-                      border: isSelected ? '2px solid #c5b358' : '1px solid rgba(255,255,255,0.08)',
-                      background: isSelected ? 'rgba(197, 179, 88, 0.15)' : 'rgba(0,0,0,0.25)',
+                      border: isSpeaking
+                        ? '2px solid #fbbf24'
+                        : isSelected
+                        ? '2px solid #c5b358'
+                        : '1px solid rgba(255,255,255,0.08)',
+                      background: isSpeaking
+                        ? 'rgba(251, 191, 36, 0.25)'
+                        : isSelected
+                        ? 'rgba(197, 179, 88, 0.15)'
+                        : 'rgba(0,0,0,0.25)',
+                      boxShadow: isSpeaking ? '0 0 16px rgba(251, 191, 36, 0.4)' : 'none',
                       cursor: 'pointer',
                       transition: 'all 0.15s ease',
                       textAlign: 'center',
@@ -544,27 +663,46 @@ You MUST respond strictly with a valid JSON object matching this schema:
             <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--secondary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               Forum Chamber:
             </span>
-            {activeAgents.map((a) => (
-              <span
-                key={a.id}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  padding: '4px 10px',
-                  borderRadius: '12px',
-                  background: 'rgba(197, 179, 88, 0.12)',
-                  border: '1px solid rgba(197, 179, 88, 0.25)',
-                  fontSize: '0.75rem',
-                  fontWeight: 600,
-                  color: '#e2d49e',
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#10b981' }} />
-                {a.title.split(',')[0]}
-              </span>
-            ))}
+            {activeAgents.map((a) => {
+              const isSpeaking = Boolean(
+                activeSpeaker &&
+                  (a.title.toLowerCase().includes(activeSpeaker.toLowerCase()) ||
+                    activeSpeaker.toLowerCase().includes(a.title.toLowerCase()) ||
+                    a.name.toLowerCase().includes(activeSpeaker.toLowerCase()) ||
+                    activeSpeaker.toLowerCase().includes(a.name.toLowerCase()))
+              )
+              return (
+                <span
+                  key={a.id}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    padding: '4px 12px',
+                    borderRadius: '12px',
+                    background: isSpeaking ? 'rgba(197, 179, 88, 0.35)' : 'rgba(197, 179, 88, 0.12)',
+                    border: isSpeaking ? '1px solid #fbbf24' : '1px solid rgba(197, 179, 88, 0.25)',
+                    boxShadow: isSpeaking ? '0 0 12px rgba(251, 191, 36, 0.5)' : 'none',
+                    fontSize: '0.75rem',
+                    fontWeight: isSpeaking ? 700 : 600,
+                    color: isSpeaking ? '#ffffff' : '#e2d49e',
+                    whiteSpace: 'nowrap',
+                    transition: 'all 0.2s ease',
+                  }}
+                >
+                  <span
+                    style={{
+                      width: '7px',
+                      height: '7px',
+                      borderRadius: '50%',
+                      background: isSpeaking ? '#fbbf24' : '#10b981',
+                      boxShadow: isSpeaking ? '0 0 8px #fbbf24' : 'none',
+                    }}
+                  />
+                  {a.title.split(',')[0]}
+                </span>
+              )
+            })}
             {detectedLanguage && (
               <span
                 style={{
@@ -681,10 +819,9 @@ You MUST respond strictly with a valid JSON object matching this schema:
                         fontSize: '0.92rem',
                         lineHeight: 1.6,
                         boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
-                        whiteSpace: 'pre-wrap',
                       }}
                     >
-                      {msg.content}
+                      {isUser ? msg.content : renderFormattedContent(msg.content)}
                     </div>
                   </div>
                 </div>
@@ -718,11 +855,77 @@ You MUST respond strictly with a valid JSON object matching this schema:
             <div ref={messagesEndRef} />
           </div>
 
+          {/* Quick Philosophical Inquiry Starters */}
+          <div
+            style={{
+              padding: '10px 24px 0',
+              background: 'rgba(0,0,0,0.18)',
+              borderTop: '1px solid var(--border, rgba(255,255,255,0.06))',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              overflowX: 'auto',
+              scrollbarWidth: 'none',
+            }}
+          >
+            <span
+              style={{
+                fontSize: '0.72rem',
+                fontWeight: 700,
+                color: '#c5b358',
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '5px',
+                flexShrink: 0,
+              }}
+            >
+              <Sparkles size={13} />
+              Inquiry Starters:
+            </span>
+            <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '8px' }}>
+              {QUICK_TOPICS.map((topic, tIdx) => (
+                <button
+                  key={tIdx}
+                  type="button"
+                  disabled={loading}
+                  onClick={() => setInput(topic)}
+                  style={{
+                    whiteSpace: 'nowrap',
+                    padding: '5px 13px',
+                    borderRadius: '20px',
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    border: '1px solid rgba(255, 255, 255, 0.12)',
+                    color: '#cbd5e1',
+                    fontSize: '0.78rem',
+                    cursor: loading ? 'not-allowed' : 'pointer',
+                    transition: 'all 0.15s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!loading) {
+                      e.currentTarget.style.background = 'rgba(197, 179, 88, 0.2)'
+                      e.currentTarget.style.borderColor = 'rgba(197, 179, 88, 0.45)'
+                      e.currentTarget.style.color = '#ffffff'
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)'
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.12)'
+                    e.currentTarget.style.color = '#cbd5e1'
+                  }}
+                >
+                  {topic}
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Input Console */}
           <div
             style={{
-              padding: '18px 24px',
-              borderTop: '1px solid var(--border, rgba(255,255,255,0.08))',
+              padding: '16px 24px 18px',
+              borderTop: '1px solid var(--border, rgba(255,255,255,0.06))',
               background: 'rgba(0,0,0,0.25)',
             }}
           >
@@ -792,8 +995,7 @@ You MUST respond strictly with a valid JSON object matching this schema:
       <AuthModal
         isOpen={authModalOpen}
         onClose={() => setAuthModalOpen(false)}
-        agentName="Agora Swarm Chamber"
-        agentStatus="locked"
+        agentName="Agora"
       />
     </main>
   )

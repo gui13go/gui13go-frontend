@@ -101,7 +101,7 @@
     "type": "Simple Agent"
   },
   {
-    "availability": "public",
+    "availability": "available",
     "category": "Swarm & Chambers",
     "description": "The convergence of classical wisdom and autonomous intelligence. Propose a subject and watch the swarm's philosophers engage in real-time, self-orchestrated debate.",
     "id": "agora",

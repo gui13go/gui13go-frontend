@@ -42,6 +42,18 @@ const HUB_META = {
       'Autonomous AI agents, multi-agent frameworks, telemetry models, and intelligent workflows.',
     image: '/favicon.svg',
   },
+  '/agents/agora/': {
+    title: 'Agora | Autonomous Philosophical Debate Forum',
+    description:
+      'Autonomous multi-agent philosophical debate coordinated by the Oracle. Classical thinkers challenge, synthesize, and converse on any inquiry in real time.',
+    image: '/images/agents/chamber_agora_1767720684747.png',
+  },
+  '/agents/agora-swarm/': {
+    title: 'Agora | Autonomous Philosophical Debate Forum',
+    description:
+      'Autonomous multi-agent philosophical debate coordinated by the Oracle. Classical thinkers challenge, synthesize, and converse on any inquiry in real time.',
+    image: '/images/agents/chamber_agora_1767720684747.png',
+  },
   '/publications/': {
     title: 'Publications & Research | Gui13go',
     description:
@@ -101,6 +113,11 @@ const ALIASES = {
   'eva-test': 'turing-eva-test',
   'turing-eva': 'turing-eva-test',
   'revolution-os-timeline': 'revolution-os',
+  'j4ck3s0n': 'j4ck3s0n-the-hacker',
+  'j4ck3s0n-hacker': 'j4ck3s0n-the-hacker',
+  'jack-the-hacker': 'j4ck3s0n-the-hacker',
+  'jack': 'j4ck3s0n-the-hacker',
+  'j4ck': 'j4ck3s0n-the-hacker',
 }
 
 function escapeHtml(str) {
@@ -474,6 +491,7 @@ export async function prerenderAll() {
       { prefix: '/geolayers/', dir: 'rendered_geolayers' },
       { prefix: '/blogs/', dir: 'rendered_blogs' },
       { prefix: '/gallery/timelines/', dir: 'rendered_timelines' },
+      { prefix: '/agents/', dir: 'rendered_agents' },
     ]
     for (const { prefix, dir } of candidateSections) {
       const targetFile = path.join(PUBLIC_DIR, dir, `${targetSlug}.html`)
@@ -512,6 +530,33 @@ export async function prerenderAll() {
     `,
     outPath: path.join(DIST_DIR, 'status', 'index.html'),
   })
+
+  // 6. Agora Swarm Chamber routes (/agents/agora/ and /agents/agora-swarm/)
+  for (const agoraRoute of ['/agents/agora/', '/agents/agora-swarm/']) {
+    const parts = agoraRoute.replace(/^\/|\/$/g, '').split('/')
+    tasks.push({
+      route: agoraRoute,
+      content: `
+        <main class="main" style="max-width: 1040px; margin: 0 auto; padding: 24px 20px 80px;">
+          <header class="gallery-header" style="margin-bottom: 28px;">
+            <div class="gallery-breadcrumbs">
+              <a href="/">Home</a> <span>/</span> <a href="/agents/">Agents</a> <span>/</span> <span>Agora</span>
+            </div>
+            <h1 class="gallery-title" style="display: flex; align-items: center; gap: 10px;">
+              Agora
+            </h1>
+            <p class="gallery-subtitle">
+              Autonomous multi-agent philosophical debate coordinated by the Oracle. Classical thinkers challenge, synthesize, and converse on any inquiry in real time.
+            </p>
+          </header>
+          <div style="padding: 40px; text-align: center; color: var(--secondary);">
+            <span class="loading-spinner"></span> Initializing Agora Council...
+          </div>
+        </main>
+      `,
+      outPath: path.join(DIST_DIR, parts[0], parts[1], 'index.html'),
+    })
+  }
 
   console.log(`📦 Pre-rendering ${tasks.length} pages...`)
 

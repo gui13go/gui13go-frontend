@@ -36,6 +36,11 @@ const ALIASES: Record<string, string> = {
   'lech-walesa': 'lech-wa-esa',
   'lech-waesa': 'lech-wa-esa',
   'revolution-os-timeline': 'revolution-os',
+  'j4ck3s0n': 'j4ck3s0n-the-hacker',
+  'j4ck3s0n-hacker': 'j4ck3s0n-the-hacker',
+  'jack-the-hacker': 'j4ck3s0n-the-hacker',
+  'jack': 'j4ck3s0n-the-hacker',
+  'j4ck': 'j4ck3s0n-the-hacker',
 }
 
 export const DynamicItemPage: React.FC<DynamicItemProps> = ({ section }) => {
