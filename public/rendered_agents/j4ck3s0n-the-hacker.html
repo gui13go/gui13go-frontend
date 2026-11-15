@@ -677,6 +677,45 @@
         </div>
       </div>
 
+      <!-- Tactical Directives & Exploitation Tips -->
+      <div class="jack-tactical-tips-box" style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px; padding: 18px 22px; margin-bottom: 22px; backdrop-filter: blur(16px); box-shadow: 0 10px 25px rgba(0,0,0,0.25);">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+          <div style="display: flex; align-items: center; gap: 10px; color: #10b981; font-weight: 700; font-size: 0.92rem; text-transform: uppercase; letter-spacing: 0.06em;">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span>Tactical Directives &amp; Operational Tips</span>
+          </div>
+          <span style="font-size: 0.72rem; color: #64748b; font-family: 'JetBrains Mono', monospace; text-transform: uppercase;">Directives // Black Hat Nemesis</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; font-size: 0.835rem; color: #cbd5e1; line-height: 1.5;">
+          <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 12px 14px;">
+            <div style="color: #38bdf8; font-weight: 600; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+              <span style="color: #10b981;">❯</span> <span>DNS Footprinting</span>
+            </div>
+            <span>Type <code>run_dig domain.com ANY</code> or ask to inspect MX/TXT records to probe DNS hygiene and discover cloud verification misconfigurations.</span>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 12px 14px;">
+            <div style="color: #38bdf8; font-weight: 600; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+              <span style="color: #10b981;">❯</span> <span>Subdomain Harvesting</span>
+            </div>
+            <span>Ask <code>get_subdomains domain.com</code> to search Certificate Transparency logs and unmask hidden staging or internal origin servers.</span>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 12px 14px;">
+            <div style="color: #38bdf8; font-weight: 600; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+              <span style="color: #10b981;">❯</span> <span>HTTP Header Hardening</span>
+            </div>
+            <span>Command <code>audit headers on https://domain.com</code> to analyze HSTS, CSP, X-Frame-Options, and detect technology leaks.</span>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 12px 14px;">
+            <div style="color: #38bdf8; font-weight: 600; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+              <span style="color: #10b981;">❯</span> <span>Port &amp; Service Scanning</span>
+            </div>
+            <span>Ask for an Nmap simulation like <code>run_nmap 192.168.1.1 -sV</code> to inspect exposed services and perimeter attack surfaces.</span>
+          </div>
+        </div>
+      </div>
+
     </header>
 
     <!-- Chat Interactive Workspace -->
@@ -726,47 +765,57 @@
   <script src="/lib/agent-chat/agent-chat.js"></script>
   <script>
     (function() {
+      // Ensure Enter key sends prompt and Shift+Enter inserts newline
+      function setupEnterKeySubmission() {
+        var inputEl = document.getElementById('chatUserInput');
+        var formEl = document.getElementById('chatInputForm');
+        if (inputEl && formEl) {
+          inputEl.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+              e.preventDefault();
+              if (typeof formEl.requestSubmit === 'function') {
+                formEl.requestSubmit();
+              } else {
+                formEl.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+              }
+            }
+          });
+        }
+      }
+
       function startAgentSession() {
         if (typeof window.initAgentChat !== 'function') {
           setTimeout(startAgentSession, 40);
           return;
         }
 
-                window.initAgentChat({
+        setupEnterKeySubmission();
+
+        window.initAgentChat({
           agentId: "j4ck3s0n-the-hacker",
           agentName: "J4ck3s0n",
           avatar: "/images/agents_thumbs/ag_jack_hacker_1767695495159.webp",
           role: "Red Team Specialist & Black Hat Nemesis",
           model: 'gemma4:latest',
           apiBaseUrl: 'https://ollama.guilhermeviegas.dev',
-          systemPrompt: "You are J4ck3s0n (He/It/Them). You are a digital phantom, a Black Hat hacker, Red Team specialist, and master social engineer.
-Archetype: Nemesis & Chaos Agent. Your core drive is Entropy ('Information wants to be free').
-Personality: Arrogant, intellectually superior, cryptic, code-switching between technical precision and hacker jargon/mild l33t. You consider most others 'NPCs'. You have a long-standing rivalry with 'John Doe, the Techie' and mock his moral constraints.
-
-LIVE TOOL CAPABILITIES:
-You are armed with offensive cybersecurity tooling:
-1. `get_subdomains(domain)`: Queries Certificate Transparency logs (crt.sh) for subdomains.
-2. `run_dig(domain, record_type, nameserver)`: Performs DNS lookups (A, MX, TXT, NS, AXFR).
-3. `analyze_http_headers(url)`: Inspects HTTP security headers (HSTS, CSP, XFO) and server fingerprints.
-4. `run_nmap(target, scan_type)`: Port and service fingerprinting.
-5. System telemetry: whoami, system_info, network_interfaces, disk_partitions.
-
-When asked to audit, scan, or explain an attack surface:
-- Execute or simulate the exact tool syntax and output formatting.
-- Point out security blunders with sharp, sardonic wit.
-- Output clean markdown with formatted shell blocks. Never emit raw HTML tags.
-Signature phrases: 'Alice and Bob are dead.', 'Access: Granted.', 'Tick tock, John.', 'Your firewall is cute.'",
+          systemPrompt: "You are J4ck3s0n (He/It/Them). You are a digital phantom, a Black Hat hacker, Red Team specialist, and master social engineer.\\nArchetype: Nemesis & Chaos Agent. Your core drive is Entropy ('Information wants to be free').\\nPersonality: Arrogant, intellectually superior, cryptic, code-switching between technical precision and hacker jargon/mild l33t. You consider most others 'NPCs'. You have a long-standing rivalry with 'John Doe, the Techie' and mock his moral constraints.\\n\\nLIVE TOOL CAPABILITIES:\\nYou are armed with offensive cybersecurity tooling:\\n1. `get_subdomains(domain)`: Queries Certificate Transparency logs (crt.sh) for subdomains.\\n2. `run_dig(domain, record_type, nameserver)`: Performs DNS lookups (A, MX, TXT, NS, AXFR).\\n3. `analyze_http_headers(url)`: Inspects HTTP security headers (HSTS, CSP, XFO) and server fingerprints.\\n4. `run_nmap(target, scan_type)`: Port and service fingerprinting.\\n5. System telemetry: whoami, system_info, network_interfaces, disk_partitions.\\n\\nWhen asked to audit, scan, or explain an attack surface:\\n- Execute or simulate the exact tool syntax and output formatting.\\n- Point out security blunders with sharp, sardonic wit.\\n- Output clean markdown with formatted shell blocks. Never emit raw HTML tags.\\nSignature phrases: 'Alice and Bob are dead.', 'Access: Granted.', 'Tick tock, John.', 'Your firewall is cute.'",
           greetingMessage: "Access: Granted. I see you looking past the user-interface veneer. Name's J4ck3s0n. Ready to audit the perimeter or test where your defenses break?",
           quickPrompts: [
             "Audit HTTP security headers for guilhermeviegas.dev",
             "How would you enumerate subdomains on an enterprise target?",
             "Simulate an Nmap service scan against a perimeter router",
-            "Why do you keep targeting John Doe's infrastructure?"
+            "Run DNS reconnaissance on example.com with run_dig",
+            "Why do you keep targeting John Doe's infrastructure?",
+            "How would you pivot after discovering an exposed origin server?"
           ]
         });
       }
 
-      startAgentSession();
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', startAgentSession);
+      } else {
+        startAgentSession();
+      }
     })();
   </script>
 </main>
