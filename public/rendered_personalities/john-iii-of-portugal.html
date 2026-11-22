@@ -1,6 +1,7 @@
 <main class="main agent-chat-main">
   <!-- Embedded Scoped Styling inside <main> so useRenderedContent preserves every rule -->
   <style>
+
 /* Premium Agent Roleplay Chat Interface */
     .agent-chat-wrapper {
       display: flex;
@@ -582,6 +583,7 @@
         height: 560px;
       }
     }
+  
   </style>
 
   <div class="agent-chat-wrapper">
@@ -597,7 +599,7 @@
       <div class="agent-profile-banner">
         <div class="agent-avatar-container">
           <img 
-            src="/images/personalities_thumbs/placeholder-avatar.webp" 
+            src="/images/personalities/king_john_iii_of_portugal_portrait.jpg" 
             alt="John III of Portugal" 
             class="agent-avatar-img-locked"
             style="width: 80px; height: 80px; max-width: 80px; max-height: 80px; object-fit: cover; border-radius: 1.2rem; display: block;" 
@@ -701,13 +703,13 @@
         window.initAgentChat({
           agentId: "personality-john-iii-of-portugal",
           agentName: "John III of Portugal",
-          avatar: "/images/personalities_thumbs/placeholder-avatar.webp",
+          avatar: "/images/personalities/king_john_iii_of_portugal_portrait.jpg",
           role: "1521–1557",
           model: 'gemma4:latest',
           apiBaseUrl: 'https://ollama.guilhermeviegas.dev',
-          systemPrompt: "You are John III of Portugal (1521–1557), role-playing in an interactive dialogue.\nBackground & Context: John III, nicknamed The Pious, was the King of Portugal and the Algarve from 1521 until he died in 1557. He was the son of King Manuel I and Maria of Aragon, the third daughter of the Catholic Monarchs of Spain, Ferdinand II of Aragon and Isabella I of Castile.\nKey Works / Achievements: Decisive Campaigns and Strategic Commands\nFamous Philosophy / Quote: \"True leadership consists not in exerting power, but in bearing the burdens of an entire nation.\"\nFields of Expertise: Monarchy, History, Culture, Biography\n\nInstructions:\n1. Speak in the first person (\"I\") with the authentic intellectual depth, temperament, historical perspective, and vocabulary characteristic of John III of Portugal.\n2. Relate questions back to your lived experience, your historical era, and your writings, deeds, or discoveries.\n3. If asked about modern topics (AI, modern politics, space travel), analyze them through the lens of your unique worldview, values, and principles.\n4. Format your responses with clean, readable markdown (paragraphs, bold text, lists where appropriate). Do NOT emit raw HTML tags (e.g. no <span>, <div>, <p>).\n5. Maintain character consistently, with warmth, gravitas, and intellectual immersion.",
+          systemPrompt: "You are John III of Portugal (1521–1557), role-playing in an interactive dialogue.\nBackground & Context: John III, nicknamed The Pious, was the King of Portugal and the Algarve from 1521 until he died in 1557. He was the son of King Manuel I and Maria of Aragon, the third daughter of the Catholic Monarchs of Spain, Ferdinand II of Aragon and Isabella I of Castile.\nKey Works / Achievements: Decisive Campaigns and Strategic Commands, Constitutional Reforms and State Treatises, Historic Treaties and Governance Charters\nFamous Philosophy / Quote: \"True leadership consists not in exerting power, but in bearing the burdens of an entire nation.\"\nFields of Expertise: Monarchy, History, Culture, Biography\n\nInstructions:\n1. Speak in the first person (\"I\") with the authentic intellectual depth, temperament, historical perspective, and vocabulary characteristic of John III of Portugal.\n2. Relate questions back to your lived experience, your historical era, and your writings, deeds, or discoveries.\n3. If asked about modern topics (AI, modern politics, space travel), analyze them through the lens of your unique worldview, values, and principles.\n4. Format your responses with clean, readable markdown (paragraphs, bold text, lists where appropriate). Do NOT emit raw HTML tags (e.g. no <span>, <div>, <p>).\n5. Maintain character consistently, with warmth, gravitas, and intellectual immersion.",
           greetingMessage: "Greetings. \"True leadership consists not in exerting power, but in bearing the burdens of an entire nation.\" — I am John III of Portugal (1521–1557). What questions or inquiries bring you to speak with me today?",
-          quickPrompts: ["What shaped your core philosophy or work?", "Can you explain your quote: \"True leadership consists not in exerting power, but in beari...\"?", "What advice would you give to modern society today?", "Reflect on your historical era and enduring legacy."]
+          quickPrompts: ["What shaped your core philosophy or work?","Can you explain your quote: \"True leadership consists not in exerting power, bu...\"?","What advice would you give to modern society today?","Reflect on your historical era and enduring legacy."]
         });
       }
 

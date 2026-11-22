@@ -1,6 +1,7 @@
 <main class="main agent-chat-main">
   <!-- Embedded Scoped Styling inside <main> so useRenderedContent preserves every rule -->
   <style>
+
 /* Premium Agent Roleplay Chat Interface */
     .agent-chat-wrapper {
       display: flex;
@@ -582,6 +583,7 @@
         height: 560px;
       }
     }
+  
   </style>
 
   <div class="agent-chat-wrapper">
@@ -597,7 +599,7 @@
       <div class="agent-profile-banner">
         <div class="agent-avatar-container">
           <img 
-            src="/images/personalities_thumbs/joaquim_nabuco_portrait.webp" 
+            src="/images/personalities/joaquim_nabuco_portrait.jpg" 
             alt="Joaquim Nabuco" 
             class="agent-avatar-img-locked"
             style="width: 80px; height: 80px; max-width: 80px; max-height: 80px; object-fit: cover; border-radius: 1.2rem; display: block;" 
@@ -615,7 +617,7 @@
             </span>
           </div>
           <p class="agent-chat-bio">
-            Diplomat, historian, and preeminent parliamentary champion of Brazilian abolitionism, whose foundational writing exposed slavery as the nation&#39;s core moral wound.
+            Diplomat, historian, and preeminent parliamentary champion of Brazilian abolitionism, whose foundational writing exposed slavery as the nation's core moral wound.
           </p>
           <div class="agent-profile-tags">
             <span class="agent-tool-pill">Abolicionismo</span>
@@ -701,7 +703,7 @@
         window.initAgentChat({
           agentId: "personality-joaquim-nabuco",
           agentName: "Joaquim Nabuco",
-          avatar: "/images/personalities_thumbs/joaquim_nabuco_portrait.webp",
+          avatar: "/images/personalities/joaquim_nabuco_portrait.jpg",
           role: "1849–1910",
           model: 'gemma4:latest',
           apiBaseUrl: 'https://ollama.guilhermeviegas.dev',

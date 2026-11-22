@@ -442,10 +442,9 @@
         <div class="map-control-group">
           <label for="basemapSelect" class="sr-only">Basemap Style</label>
           <select id="basemapSelect" class="map-select-input" aria-label="Select Basemap">
+            <option value="esri-dark">🌙 Dark Gray (Esri)</option>
             <option value="satellite" selected>🛰️ Satellite (Esri)</option>
             <option value="osm">🗺️ OpenStreetMap</option>
-            <option value="esri-dark">🌙 Dark Gray (Esri)</option>
-            <option value="carto-dark">🌌 CartoDB Dark</option>
             <option value="esri-light">☀️ Minimal Light (Esri)</option>
             <option value="topo">⛰️ Topographic (OpenTopoMap)</option>
           </select>
@@ -508,3 +507,340 @@
         </div>
       </div>
     </main>
+
+
+
+<script src="/lib/leaflet/leaflet.js"></script>
+<script>
+(function() {
+  function initHiroshimaNagasakiMap() {
+    if (typeof L === "undefined") {
+      setTimeout(initHiroshimaNagasakiMap, 100);
+      return;
+    }
+
+    var mapEl = document.getElementById("hiroshimaNagasakiMap");
+    if (!mapEl || mapEl._leaflet_id) return;
+
+    var basemapLayers = {
+      "satellite": L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
+        attribution: "Tiles &copy; Esri",
+        maxZoom: 19
+      }),
+      "esri-dark": L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+        attribution: "Tiles &copy; Esri",
+        maxZoom: 16
+      }),
+      "osm": L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors",
+        maxZoom: 19
+      }),
+      "esri-light": L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+        attribution: "Tiles &copy; Esri",
+        maxZoom: 16
+      }),
+      "topo": L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenTopoMap contributors",
+        maxZoom: 17
+      })
+    };
+
+    var currentBasemapKey = "satellite";
+
+    var basemapSelect = document.getElementById("basemapSelect");
+    if (basemapSelect) basemapSelect.value = currentBasemapKey;
+
+    var map = L.map("hiroshimaNagasakiMap", {
+      center: [33.6, 131.2],
+      zoom: 7,
+      zoomControl: false,
+      attributionControl: false,
+      layers: [basemapLayers[currentBasemapKey] || basemapLayers["satellite"]]
+    });
+
+    L.control.zoom({ position: "bottomright" }).addTo(map);
+
+    if (basemapSelect) {
+      basemapSelect.addEventListener("change", function(e) {
+        var selected = e.target.value;
+        if (basemapLayers[selected]) {
+          map.removeLayer(basemapLayers[currentBasemapKey]);
+          map.addLayer(basemapLayers[selected]);
+          currentBasemapKey = selected;
+        }
+      });
+    }
+
+    var targets = [
+      {
+        id: "hiroshima-little-boy",
+        name: "Hiroshima • Little Boy",
+        subtitle: "Shima Surgical Hospital (Ground Zero)",
+        color: "#ef4444",
+        lat: 34.394594,
+        lon: 132.454797,
+        yieldMT: "15 Kilotons",
+        date: "August 6, 1945 • 08:15 JST",
+        zones: [
+          { radius: 1200, color: "#ef4444", label: "Zone A: Total Destruction (0–1.2 km)" },
+          { radius: 2200, color: "#f97316", label: "Zone B: Heavy Blast & Firestorm (1.2–2.2 km)" },
+          { radius: 3200, color: "#eab308", label: "Zone C: Thermal Radiation & Blast (2.2–3.2 km)" }
+        ],
+        desc: "Detonated at altitude of 580 m directly above Shima Hospital. Temperature at hypocenter reached 3,000–4,000°C."
+      },
+      {
+        id: "nagasaki-fat-man",
+        name: "Nagasaki • Fat Man",
+        subtitle: "Matsuyama-machi Tennis Courts",
+        color: "#ef4444",
+        lat: 32.773611,
+        lon: 129.863333,
+        yieldMT: "21 Kilotons",
+        date: "August 9, 1945 • 11:02 JST",
+        zones: [
+          { radius: 1000, color: "#ef4444", label: "Zone A: Total Obliteration (0–1.0 km)" },
+          { radius: 2000, color: "#f97316", label: "Zone B: Severe Blast Shockwave (1.0–2.0 km)" },
+          { radius: 3000, color: "#eab308", label: "Zone C: Thermal Burns & Radiation (2.0–3.0 km)" }
+        ],
+        desc: "Detonated at altitude of 503 m over the Urakami Valley. Mountain ridges shielded adjoining districts from lateral firestorm blast."
+      },
+      {
+        id: "hiroshima-dome",
+        name: "Hiroshima Peace Memorial (Genbaku Dome)",
+        subtitle: "Aioi Bridge / Peace Memorial Park",
+        color: "#06b6d4",
+        lat: 34.3928,
+        lon: 132.4526,
+        yieldMT: "UNESCO World Heritage Site",
+        date: "Designated December 1996",
+        zones: [],
+        desc: "Only structure near the hypocenter to survive the downward airburst blast vertically without complete pancake collapse."
+      },
+      {
+        id: "nagasaki-peace-park",
+        name: "Nagasaki Peace Park & Cenotaph",
+        subtitle: "Urakami Basin Memorial Area",
+        color: "#06b6d4",
+        lat: 32.7738,
+        lon: 129.8631,
+        yieldMT: "Peace Statue & Ground Zero Pillar",
+        date: "Established 1955",
+        zones: [],
+        desc: "Black stone monolith marks the exact epicenter; adjacent 10-meter bronze Peace Statue points right hand to atomic threat."
+      }
+    ];
+
+    var showZones = true;
+    var showLabels = false;
+    var markersMap = new Map();
+    var blastCircles = [];
+    var allLatLngs = [];
+
+    function makeCustomIcon(color) {
+      return L.divIcon({
+        className: "custom-map-pin-container",
+        html: "<div style='background-color:" + color + "; width:16px; height:16px; border-radius:50%; border:2px solid #ffffff; box-shadow:0 0 10px " + color + "; transition:transform .2s ease;'></div>",
+        iconSize: [16, 16],
+        iconAnchor: [8, 8]
+      });
+    }
+
+    targets.forEach(function(t) {
+      var latlng = [t.lat, t.lon];
+      allLatLngs.push(latlng);
+
+      var marker = L.marker(latlng, { icon: makeCustomIcon(t.color) }).addTo(map);
+
+      marker.bindTooltip("<strong>" + t.name + "</strong><br><span style='opacity:0.8; font-size:0.75rem;'>" + t.subtitle + "</span>", {
+        permanent: false,
+        direction: "top",
+        offset: [0, -10],
+        className: "city-hover-tooltip"
+      });
+
+      marker.bindPopup(
+        "<div style='font-family:inherit; font-size:0.88rem; line-height:1.45;'>" +
+          "<div style='display:flex; align-items:center; gap:8px; margin-bottom:4px;'>" +
+            "<span style='width:10px; height:10px; border-radius:50%; background:" + t.color + "; display:inline-block;'></span>" +
+            "<h4 style='margin:0; font-size:1rem; font-weight:700; color:var(--primary);'>" + t.name + "</h4>" +
+          "</div>" +
+          "<div style='font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; color:" + t.color + "; margin-bottom:6px;'>" + t.date + "</div>" +
+          "<p style='margin:0 0 8px; color:var(--secondary);'>" + t.desc + "</p>" +
+          "<div style='font-size:0.75rem; color:var(--secondary); border-top:1px solid var(--theme-border); padding-top:6px;'>📍 <strong>Coords:</strong> " + t.lat.toFixed(5) + "&deg;N, " + t.lon.toFixed(5) + "&deg;E</div>" +
+        "</div>",
+        { className: "custom-leaflet-popup", maxWidth: 300 }
+      );
+
+      marker.on("click", function() {
+        selectTarget(t.id, true);
+      });
+
+      markersMap.set(t.id, marker);
+
+      if (t.zones && t.zones.length > 0) {
+        t.zones.forEach(function(z) {
+          var circle = L.circle(latlng, {
+            radius: z.radius,
+            color: z.color,
+            weight: 1.5,
+            fillColor: z.color,
+            fillOpacity: 0.15,
+            dashArray: "3, 6"
+          }).addTo(map);
+          blastCircles.push(circle);
+        });
+      }
+    });
+
+    var activeBombCard = document.getElementById("activeBombCard");
+    var activeBombName = document.getElementById("activeBombName");
+    var activeBombStatus = document.getElementById("activeBombStatus");
+    var bombJumpSelect = document.getElementById("bombJumpSelect");
+
+    function selectTarget(targetId, fly) {
+      if (bombJumpSelect) bombJumpSelect.value = targetId;
+
+      document.querySelectorAll(".nuke-bomb-card").forEach(function(c) {
+        if (c.getAttribute("data-bomb-id") === targetId) {
+          c.classList.add("active");
+          c.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        } else {
+          c.classList.remove("active");
+        }
+      });
+
+      var t = targets.find(function(x) { return x.id === targetId; });
+      if (t) {
+        if (activeBombCard) {
+          activeBombCard.style.display = "flex";
+          if (activeBombName) activeBombName.textContent = t.name;
+          if (activeBombStatus) activeBombStatus.textContent = t.subtitle;
+        }
+
+        var marker = markersMap.get(targetId);
+        if (marker && fly) {
+          map.flyTo([t.lat, t.lon], 14, { duration: 1.2 });
+          setTimeout(function() { marker.openPopup(); }, 600);
+        }
+      }
+    }
+
+    if (bombJumpSelect) {
+      bombJumpSelect.addEventListener("change", function(e) {
+        var val = e.target.value;
+        if (val === "all") {
+          map.fitBounds(L.latLngBounds(allLatLngs), { padding: [50, 50] });
+          if (activeBombCard) activeBombCard.style.display = "none";
+        } else {
+          selectTarget(val, true);
+        }
+      });
+    }
+
+    document.querySelectorAll(".nuke-fly-btn, .nuke-card-action-btn").forEach(function(btn) {
+      btn.addEventListener("click", function(e) {
+        e.stopPropagation();
+        var id = btn.getAttribute("data-id") || btn.closest(".nuke-bomb-card")?.getAttribute("data-bomb-id");
+        if (id) selectTarget(id, true);
+      });
+    });
+
+    var pills = document.querySelectorAll(".country-pill[data-city]");
+    pills.forEach(function(pill) {
+      pill.addEventListener("click", function() {
+        pills.forEach(function(p) { p.classList.remove("active"); });
+        pill.classList.add("active");
+        var city = pill.getAttribute("data-city");
+        document.querySelectorAll(".nuke-bomb-card").forEach(function(c) {
+          var cCity = c.getAttribute("data-city");
+          c.style.display = (city === "all" || cCity === city) ? "" : "none";
+        });
+        if (city === "hiroshima") {
+          map.flyTo([34.394594, 132.454797], 13);
+        } else if (city === "nagasaki") {
+          map.flyTo([32.773611, 129.863333], 13);
+        } else {
+          map.fitBounds(L.latLngBounds(allLatLngs), { padding: [50, 50] });
+        }
+      });
+    });
+
+    var searchInput = document.getElementById("bombSearchInput");
+    var clearSearch = document.getElementById("clearBombSearch");
+    if (searchInput) {
+      searchInput.addEventListener("input", function(e) {
+        var q = e.target.value.toLowerCase().trim();
+        if (clearSearch) clearSearch.style.display = q ? "block" : "none";
+        document.querySelectorAll(".nuke-bomb-card").forEach(function(c) {
+          var text = (c.textContent || "").toLowerCase();
+          c.style.display = text.includes(q) ? "" : "none";
+        });
+      });
+    }
+    if (clearSearch) {
+      clearSearch.addEventListener("click", function() {
+        if (searchInput) searchInput.value = "";
+        clearSearch.style.display = "none";
+        document.querySelectorAll(".nuke-bomb-card").forEach(function(c) { c.style.display = ""; });
+      });
+    }
+
+    var toggleZonesBtn = document.getElementById("toggleZonesBtn");
+    if (toggleZonesBtn) {
+      toggleZonesBtn.addEventListener("click", function() {
+        showZones = !showZones;
+        toggleZonesBtn.classList.toggle("active", showZones);
+        blastCircles.forEach(function(c) {
+          if (showZones) map.addLayer(c);
+          else map.removeLayer(c);
+        });
+      });
+    }
+
+    var toggleLabelsBtn = document.getElementById("toggleLabelsBtn");
+    if (toggleLabelsBtn) {
+      toggleLabelsBtn.classList.remove("active");
+      toggleLabelsBtn.addEventListener("click", function() {
+        showLabels = !showLabels;
+        toggleLabelsBtn.classList.toggle("active", showLabels);
+        markersMap.forEach(function(m) {
+          if (showLabels) m.openTooltip();
+          else m.closeTooltip();
+        });
+      });
+    }
+
+    var resetMapBoundsBtn = document.getElementById("resetMapBoundsBtn");
+    if (resetMapBoundsBtn) {
+      resetMapBoundsBtn.addEventListener("click", function() {
+        map.fitBounds(L.latLngBounds(allLatLngs), { padding: [50, 50] });
+        if (activeBombCard) activeBombCard.style.display = "none";
+        if (bombJumpSelect) bombJumpSelect.value = "all";
+      });
+    }
+
+    var toggleBriefingBtn = document.getElementById("toggleBriefingBtn");
+    var briefingContent = document.getElementById("historicalBriefingContent");
+    var closeBriefingBtn = document.getElementById("closeBriefingBtn");
+    if (toggleBriefingBtn && briefingContent) {
+      toggleBriefingBtn.addEventListener("click", function() {
+        briefingContent.style.display = briefingContent.style.display === "none" ? "block" : "none";
+      });
+    }
+    if (closeBriefingBtn && briefingContent) {
+      closeBriefingBtn.addEventListener("click", function() {
+        briefingContent.style.display = "none";
+      });
+    }
+
+    map.fitBounds(L.latLngBounds(allLatLngs), { padding: [50, 50] });
+    setTimeout(function() { map.invalidateSize(); }, 200);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initHiroshimaNagasakiMap);
+  } else {
+    setTimeout(initHiroshimaNagasakiMap, 20);
+  }
+})();
+</script>

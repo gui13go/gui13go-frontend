@@ -44,30 +44,58 @@ export const ContentRenderer: React.FC<ContentRendererProps> = ({
     const container = containerRef.current
     if (!container || !processedHtml || loading || error) return
 
+    let isCancelled = false
     const scripts = Array.from(container.querySelectorAll('script'))
-    scripts.forEach((oldScript) => {
-      // Ignore JSON data payloads (e.g. data configs)
-      if (oldScript.type && oldScript.type.includes('json')) {
-        return
+
+    // Filter out JSON data configurations
+    const executableScripts = scripts.filter(
+      (s) => !(s.type && s.type.includes('json'))
+    )
+
+    // Execute scripts sequentially so external libraries (Leaflet, OpenLayers, D3)
+    // finish loading before dependent inline scripts run.
+    const executeScriptsSequentially = async () => {
+      for (const oldScript of executableScripts) {
+        if (isCancelled) return
+
+        await new Promise<void>((resolve) => {
+          const newScript = document.createElement('script')
+          Array.from(oldScript.attributes).forEach((attr) => {
+            newScript.setAttribute(attr.name, attr.value)
+          })
+
+          if (oldScript.src) {
+            newScript.async = false
+            newScript.onload = () => resolve()
+            newScript.onerror = () => {
+              console.warn(`[ContentRenderer] Failed to load external script: ${oldScript.src}`)
+              resolve()
+            }
+            newScript.src = oldScript.src
+            oldScript.parentNode?.replaceChild(newScript, oldScript)
+          } else {
+            let code = oldScript.textContent || ''
+            code = code.replace(
+              /document\.addEventListener\(\s*["']DOMContentLoaded["']\s*,\s*(function|\()/g,
+              '(function(cb){ if(document.readyState !== "loading") { setTimeout(cb, 10); } else { document.addEventListener("DOMContentLoaded", cb); } })($1'
+            )
+            newScript.textContent = code
+            oldScript.parentNode?.replaceChild(newScript, oldScript)
+            resolve()
+          }
+        })
       }
 
-      const newScript = document.createElement('script')
-      Array.from(oldScript.attributes).forEach((attr) => {
-        newScript.setAttribute(attr.name, attr.value)
-      })
-      if (oldScript.src) {
-        newScript.src = oldScript.src
-      } else {
-        let code = oldScript.textContent || ''
-        // Ensure DOMContentLoaded listeners execute properly in React SPA
-        code = code.replace(
-          /document\.addEventListener\(\s*["']DOMContentLoaded["']\s*,\s*(function|\()/g,
-          '(function(cb){ if(document.readyState !== "loading") { setTimeout(cb, 10); } else { document.addEventListener("DOMContentLoaded", cb); } })($1'
-        )
-        newScript.textContent = code
-      }
-      oldScript.parentNode?.replaceChild(newScript, oldScript)
-    })
+      if (isCancelled) return
+
+      // Dispatch lifecycle events to trigger listeners and force layout calculations
+      document.dispatchEvent(new Event('DOMContentLoaded'))
+      window.dispatchEvent(new Event('DOMContentLoaded'))
+      window.dispatchEvent(new Event('load'))
+      window.dispatchEvent(new Event('resize'))
+    }
+
+    executeScriptsSequentially()
 
     // Inject code copy buttons on code blocks
     const preBlocks = container.querySelectorAll('pre')
@@ -91,15 +119,9 @@ export const ContentRenderer: React.FC<ContentRendererProps> = ({
       pre.appendChild(button)
     })
 
-    // Dispatch lifecycle events to trigger listeners
-    const timer = setTimeout(() => {
-      document.dispatchEvent(new Event('DOMContentLoaded'))
-      window.dispatchEvent(new Event('DOMContentLoaded'))
-      window.dispatchEvent(new Event('load'))
-      window.dispatchEvent(new Event('resize'))
-    }, 30)
-
-    return () => clearTimeout(timer)
+    return () => {
+      isCancelled = true
+    }
   }, [processedHtml, loading, error])
 
   // Intercept internal navigation to keep SPA navigation smooth

@@ -1,6 +1,7 @@
 <main class="main agent-chat-main">
   <!-- Embedded Scoped Styling inside <main> so useRenderedContent preserves every rule -->
   <style>
+
 /* Premium Agent Roleplay Chat Interface */
     .agent-chat-wrapper {
       display: flex;
@@ -582,6 +583,7 @@
         height: 560px;
       }
     }
+  
   </style>
 
   <div class="agent-chat-wrapper">
@@ -597,7 +599,7 @@
       <div class="agent-profile-banner">
         <div class="agent-avatar-container">
           <img 
-            src="/images/personalities_thumbs/rui_barbosa_portrait.webp" 
+            src="/images/personalities/rui_barbosa_portrait.jpg" 
             alt="Rui Barbosa" 
             class="agent-avatar-img-locked"
             style="width: 80px; height: 80px; max-width: 80px; max-height: 80px; object-fit: cover; border-radius: 1.2rem; display: block;" 
@@ -615,7 +617,7 @@
             </span>
           </div>
           <p class="agent-chat-bio">
-            Jurist, orator, writer, and &#39;Eagle of The Hague&#39; who co-authored the 1891 Republican Constitution and defended the sovereign equality of nations at the 1907 Hague Conference.
+            Jurist, orator, writer, and 'Eagle of The Hague' who co-authored the 1891 Republican Constitution and defended the sovereign equality of nations at the 1907 Hague Conference.
           </p>
           <div class="agent-profile-tags">
             <span class="agent-tool-pill">Direito</span>
@@ -701,7 +703,7 @@
         window.initAgentChat({
           agentId: "personality-rui-barbosa",
           agentName: "Rui Barbosa",
-          avatar: "/images/personalities_thumbs/rui_barbosa_portrait.webp",
+          avatar: "/images/personalities/rui_barbosa_portrait.jpg",
           role: "1849–1923",
           model: 'gemma4:latest',
           apiBaseUrl: 'https://ollama.guilhermeviegas.dev',

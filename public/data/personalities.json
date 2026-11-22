@@ -11137,8 +11137,8 @@
     "dates": "1521–1557",
     "birthYear": 1521,
     "summary": "John III, nicknamed The Pious, was the King of Portugal and the Algarve from 1521 until he died in 1557. He was the son of King Manuel I and Maria of Aragon, the third daughter of the Catholic Monarchs of Spain, Ferdinand II of Aragon and Isabella I of Castile.",
-    "image": "/images/personalities/john-iii-of-portugal_portrait.jpg",
-    "zoomSrc": "/images/personalities/john-iii-of-portugal_portrait.jpg",
+    "image": "/images/personalities/king_john_iii_of_portugal_portrait.jpg",
+    "zoomSrc": "/images/personalities/king_john_iii_of_portugal_portrait.jpg",
     "zoomTitle": "John III of Portugal",
     "zoomCaption": "1521–1557 • John III, nicknamed The Pious, was the King of Portugal and the Algarve from 1521 until he died in 1557. He was the son of King Manuel I and Maria of Aragon, the third daughter of the Catholic Monarchs of Spain, Ferdinand II of Aragon and Isabella I of Castile.",
     "quote": {
@@ -11610,8 +11610,8 @@
     "dates": "1534–1597",
     "birthYear": 1534,
     "summary": "Canary Islands-born Jesuit missionary, linguist, poet, and canonized saint known as the 'Apostle of Brazil'; co-founded the city of São Paulo (1554) and Rio de Janeiro (1565), codified the first comprehensive grammar of the indigenous Old Tupi language, authored religious plays, and composed sacred Latin poetry in the sands of Ubatuba during peace negotiations.",
-    "image": "/images/personalities/jose_de_anchieta_portrait.jpg",
-    "zoomSrc": "/images/personalities/jose_de_anchieta_portrait.jpg",
+    "image": "/images/personalities/father_jose_de_anchieta_portrait.jpg",
+    "zoomSrc": "/images/personalities/father_jose_de_anchieta_portrait.jpg",
     "zoomTitle": "Father José de Anchieta",
     "zoomCaption": "1534–1597 • 'Apostle of Brazil', co-founder of São Paulo and Rio de Janeiro, pioneer of Old Tupi linguistics and theatre.",
     "quote": {
@@ -55340,5 +55340,727 @@
       }
     ],
     "slug": "jocelyn-bell-burnell"
+  },
+  {
+    "name": "Wang Huning",
+    "dates": "1955–Present",
+    "birthYear": 1955,
+    "summary": "Influential Chinese political theorist, academic, and statesman, widely recognized as the primary ideological architect behind three consecutive Chinese administrations (Jiang Zemin, Hu Jintao, and Xi Jinping). Former Fudan University professor whose writings on neo-authoritarianism, cultural sovereignty, and institutional stability—most famously in his 1991 critique \"America Against America\"—have deeply shaped contemporary Chinese governance and political doctrine.",
+    "image": "/images/personalities/wang_huning_portrait.jpg",
+    "zoomSrc": "/images/personalities/wang_huning_portrait.jpg",
+    "zoomTitle": "Wang Huning (王沪宁)",
+    "zoomCaption": "1955–Present • Chinese political philosopher and senior leader; principal architect of the Three Represents, Scientific Outlook on Development, and Xi Jinping Thought.",
+    "quote": {
+      "text": "“If a society lacks a unified core value system, its political institutions cannot maintain long-term stability amid modern pressures.”",
+      "cite": "— America Against America (1991)"
+    },
+    "keyWorks": [
+      "America Against America (美国反对美国, 1991)",
+      "Political Logic: Principles of Marxist Political Science (1994)",
+      "Analysis of Modern Western Politics (1987)",
+      "Ideological drafting of the Three Represents, Scientific Outlook on Development, and Xi Jinping Thought"
+    ],
+    "tags": [
+      "Political Philosophy",
+      "Chinese Politics",
+      "Neo-Authoritarianism",
+      "Ideology",
+      "International Relations"
+    ],
+    "quotes": [
+      {
+        "text": "“The real crisis of modern Western civilization does not stem from its economic or technological shortcomings, but from the fragmentation of its moral fabric and the commodification of the human spirit.”",
+        "cite": "— America Against America"
+      }
+    ],
+    "slug": "wang-huning",
+    "keywords": "wang huning wang hu ning chinese politics political philosophy ideology neo-authoritarianism america against america xi jinping thought three represents fudan university cppcc"
+  },
+  {
+    "name": "Irving John Good",
+    "dates": "1916–2009",
+    "birthYear": 1916,
+    "summary": "British mathematician, statistician, and cryptanalyst who worked as Alan Turing’s lead statistical assistant on the Enigma machine at Bletchley Park and later on the Colossus computer. Renowned for formalizing Bayesian methods (Good-Turing frequency estimation) and proposing the foundational concept of the \"intelligence explosion\" in 1965, anticipating the technological singularity.",
+    "image": "/images/personalities/irving_john_good_portrait.jpg",
+    "zoomSrc": "/images/personalities/irving_john_good_portrait.jpg",
+    "zoomTitle": "Irving John Good (I. J. Good)",
+    "zoomCaption": "1916–2009 • British mathematician and Bletchley Park cryptanalyst who worked with Alan Turing and coined the concept of the \"intelligence explosion\".",
+    "quote": {
+      "text": "“Let an ultraintelligent machine be defined as a machine that can far surpass all the intellectual activities of any man however clever. Since the design of machines is one of these intellectual activities, an ultraintelligent machine could design even better machines; there would then unquestionably be an 'intelligence explosion', and the intelligence of man would be left far behind.”",
+      "cite": "— Speculations Concerning the First Ultraintelligent Machine (1965)"
+    },
+    "keyWorks": [
+      "Speculations Concerning the First Ultraintelligent Machine (1965)",
+      "Good–Turing frequency estimation formula",
+      "Cryptanalysis work at Bletchley Park on Enigma and Banburismus",
+      "Probability and the Weighing of Evidence (1950)"
+    ],
+    "tags": [
+      "Mathematics",
+      "Artificial Intelligence",
+      "Cryptanalysis",
+      "Statistics",
+      "Bletchley Park",
+      "Computer Science"
+    ],
+    "quotes": [
+      {
+        "text": "“The first ultraintelligent machine is the last invention that man need ever make, provided that the machine is docile enough to tell us how to keep it under control.”",
+        "cite": "— Speculations Concerning the First Ultraintelligent Machine"
+      }
+    ],
+    "slug": "irving-john-good",
+    "keywords": "irving john good i j good alan turing bletchley park artificial intelligence singularity intelligence explosion bayesian statistics enigma"
+  },
+  {
+    "name": "Mozi",
+    "dates": "c. 470–c. 391 BCE",
+    "birthYear": -470,
+    "summary": "Ancient Chinese philosopher, polymath, military engineer, and founder of the Mohist school of thought during the Hundred Schools of Thought period. Renowned for promoting Jian'ai (universal impartial love), anti-offensive warfare (Feigong), early scientific studies in optics and mechanics, and a meritocratic, frugal approach to governance.",
+    "image": "/images/personalities/mozi_portrait.jpg",
+    "zoomSrc": "/images/personalities/mozi_portrait.jpg",
+    "zoomTitle": "Mozi (Mo Di / 墨子)",
+    "zoomCaption": "c. 470–c. 391 BCE • Chinese philosopher and engineer who founded Mohism, advocating universal impartial care, anti-offensive warfare, and meritocracy.",
+    "quote": {
+      "text": "“Regard other states as you regard your own; regard other families as your own; regard other people as yourself.”",
+      "cite": "— The Mozi (Universal Love / 兼爱)"
+    },
+    "keyWorks": [
+      "The Mozi (墨子) text corpus",
+      "Doctrine of Universal Impartial Love (兼爱, Jian'ai)",
+      "Doctrine of Condemning Aggressive War (非攻, Feigong)",
+      "Mohist Canon on logic, optics (camera obscura), and mechanics"
+    ],
+    "tags": [
+      "Ancient Philosophy",
+      "Mohism",
+      "Chinese Philosophy",
+      "Engineering",
+      "Ethics",
+      "Pacifism"
+    ],
+    "quotes": [
+      {
+        "text": "“Whoever criticizes others must have something to replace what they criticize. If you criticize without having an alternative, it is like trying to put out water with water.”",
+        "cite": "— The Mozi"
+      }
+    ],
+    "slug": "mozi",
+    "keywords": "mozi mo di mohism ancient chinese philosophy jianai universal love feigong hundred schools of thought optics mechanics"
+  },
+  {
+    "name": "Jose Maria Canlas Sison",
+    "dates": "1939–2022",
+    "birthYear": 1939,
+    "summary": "Filipino writer, poet, university lecturer, and political activist who re-established the Communist Party of the Philippines (CPP) in 1968 based on Marxism-Leninism-Maoism. Author of \"Philippine Society and Revolution\", his ideological writings exerted a major influence on the protracted revolutionary movement and political debates in the Philippines for over five decades.",
+    "image": "/images/personalities/jose_maria_sison_portrait.jpg",
+    "zoomSrc": "/images/personalities/jose_maria_sison_portrait.jpg",
+    "zoomTitle": "Jose Maria Sison (Joma Sison)",
+    "zoomCaption": "1939–2022 • Filipino political theorist, writer, and professor who founded the Communist Party of the Philippines.",
+    "quote": {
+      "text": "“The people, and the people alone, are the motive force in the making of world history and their own liberation.”",
+      "cite": "— Philippine Society and Revolution (1971)"
+    },
+    "keyWorks": [
+      "Philippine Society and Revolution (1971, under pseudonym Amado Guerrero)",
+      "Struggle for National Democracy (1967)",
+      "Prison & Beyond: Selected Poems (1984)"
+    ],
+    "tags": [
+      "Political Theory",
+      "Philippine History",
+      "Revolutionary",
+      "Poetry",
+      "Marxism"
+    ],
+    "quotes": [
+      {
+        "text": "“The struggle for genuine independence and social justice must root itself deeply in the needs and will of the working masses.”",
+        "cite": "— Political Essays of Jose Maria Sison"
+      }
+    ],
+    "slug": "jose-maria-canlas-sison",
+    "keywords": "jose maria canlas sison joma sison philippine society and revolution cpp npa political theory philippines amado guerrero"
+  },
+  {
+    "name": "Robert Greene",
+    "dates": "1959–Present",
+    "birthYear": 1959,
+    "summary": "American author renowned for his best-selling explorations of strategy, power dynamics, seduction, human psychology, and mastery. Drawing on classical and Renaissance history—most notably Machiavelli, Sun Tzu, and Gracián—his books analyze the unwritten rules of human behavior and institutional power.",
+    "image": "/images/personalities/robert_greene_portrait.jpg",
+    "zoomSrc": "/images/personalities/robert_greene_portrait.jpg",
+    "zoomTitle": "Robert Greene",
+    "zoomCaption": "1959–Present • American author and strategist famous for \"The 48 Laws of Power\", \"The 33 Strategies of War\", and \"Mastery\".",
+    "quote": {
+      "text": "“Never appear too perfect. It is often smart to display defects on occasion, to defuse envy and appear more human and more approachable.”",
+      "cite": "— The 48 Laws of Power (Law 46)"
+    },
+    "keyWorks": [
+      "The 48 Laws of Power (1998)",
+      "Mastery (2012)",
+      "The 33 Strategies of War (2006)",
+      "The Laws of Human Nature (2018)",
+      "The Art of Seduction (2001)"
+    ],
+    "tags": [
+      "Strategy",
+      "Psychology",
+      "Literature",
+      "Power Dynamics",
+      "Philosophy"
+    ],
+    "quotes": [
+      {
+        "text": "“When you show yourself to the world and display your talents, you naturally stir all kinds of resentment, envy, and other manifestations of insecurity... you cannot spend your life worrying about the petty feelings of others, but with envy, you must be different.”",
+        "cite": "— The 48 Laws of Power"
+      }
+    ],
+    "slug": "robert-greene",
+    "keywords": "robert greene 48 laws of power mastery 33 strategies of war laws of human nature strategy psychology machiavelli"
+  },
+  {
+    "name": "Andrew the Apostle",
+    "dates": "c. 6 BCE–c. 60 CE",
+    "birthYear": -6,
+    "summary": "Christian apostle and elder brother of Simon Peter, recognized as the Protocletos (the First-Called) disciple of Jesus. Former Galilean fisherman from Bethsaida who preached throughout Scythia, Thrace, and Greece, traditionally martyred by crucifixion in Patras on an X-shaped cross (St. Andrew’s Cross).",
+    "image": "/images/personalities/andrew_the_apostle_portrait.jpg",
+    "zoomSrc": "/images/personalities/andrew_the_apostle_portrait.jpg",
+    "zoomTitle": "Saint Andrew the Apostle (Protocletos)",
+    "zoomCaption": "c. 6 BCE–c. 60 CE • First-called Apostle of Jesus, brother of Simon Peter, and missionary to Scythia and Greece.",
+    "quote": {
+      "text": "“We have found the Messiah (which is translated, the Christ).”",
+      "cite": "— Gospel of John 1:41"
+    },
+    "keyWorks": [
+      "Calling of Simon Peter to Christ",
+      "Feeding of the five thousand (identifying the boy with five barley loaves and two fish)",
+      "Early apostolic missionary journeys across Scythia and Greece"
+    ],
+    "tags": [
+      "Apostles",
+      "Biblical Figures",
+      "Early Christianity",
+      "First-Called",
+      "New Testament"
+    ],
+    "quotes": [
+      {
+        "text": "“There is a boy here who has five barley loaves and two fish, but what are they among so many?”",
+        "cite": "— Gospel of John 6:9"
+      }
+    ],
+    "slug": "andrew-the-apostle",
+    "keywords": "andrew the apostle saint andrew protocletos simon peter brother apostles biblical figures christianity first called"
+  },
+  {
+    "name": "James the Greater",
+    "dates": "c. 3 BCE–44 CE",
+    "birthYear": -3,
+    "summary": "Galilean fisherman, son of Zebedee, and elder brother of John the Apostle; one of the inner circle of three disciples who witnessed the Transfiguration, the raising of Jairus's daughter, and the Agony in Gethsemane. The first of the Twelve Apostles to suffer martyrdom, executed by the sword under King Herod Agrippa I.",
+    "image": "/images/personalities/james_the_greater_portrait.jpg",
+    "zoomSrc": "/images/personalities/james_the_greater_portrait.jpg",
+    "zoomTitle": "Saint James the Greater (Boanerges)",
+    "zoomCaption": "c. 3 BCE–44 CE • Apostle of Jesus, Son of Thunder, first apostle martyred, and patron saint of pilgrims on the Camino de Santiago.",
+    "quote": {
+      "text": "“We are able.”",
+      "cite": "— Gospel of Matthew 20:22 (Response to Christ's cup of suffering)"
+    },
+    "keyWorks": [
+      "Witness to the Transfiguration and the Agony in Gethsemane",
+      "First apostolic martyrdom under Herod Agrippa I (Acts 12:2)",
+      "Apostolic mission to the Iberian Peninsula (Camino de Santiago tradition)"
+    ],
+    "tags": [
+      "Apostles",
+      "Biblical Figures",
+      "Martyr",
+      "Inner Circle",
+      "Camino de Santiago"
+    ],
+    "quotes": [
+      {
+        "text": "“He killed James the brother of John with the sword.”",
+        "cite": "— Acts of the Apostles 12:2"
+      }
+    ],
+    "slug": "james-the-greater",
+    "keywords": "james the greater saint james apostle boanerges son of thunder zebedee camino de santiago first martyr apostle"
+  },
+  {
+    "name": "John the Apostle",
+    "dates": "c. 6–c. 100 CE",
+    "birthYear": 6,
+    "summary": "The \"Disciple Whom Jesus Loved\", younger son of Zebedee, and leader of the early church in Jerusalem and Ephesus. Traditional author of the Gospel of John, three Johannine Epistles, and the prophetic Book of Revelation, written during his exile on the isle of Patmos. The only apostle traditionally held to have died of natural longevity.",
+    "image": "/images/personalities/john_the_apostle_portrait.jpg",
+    "zoomSrc": "/images/personalities/john_the_apostle_portrait.jpg",
+    "zoomTitle": "Saint John the Evangelist (The Beloved Disciple)",
+    "zoomCaption": "c. 6–c. 100 CE • Apostle, Evangelist, and author of the Fourth Gospel and Revelation on Patmos.",
+    "quote": {
+      "text": "“In the beginning was the Word, and the Word was with God, and the Word was God.”",
+      "cite": "— Gospel of John 1:1"
+    },
+    "keyWorks": [
+      "The Gospel According to John",
+      "First, Second, and Third Epistles of John",
+      "The Book of Revelation (Apocalypse of John on Patmos)",
+      "Pillar of the Church in Jerusalem and Ephesus"
+    ],
+    "tags": [
+      "Apostles",
+      "Evangelists",
+      "Biblical Figures",
+      "Theologian",
+      "New Testament"
+    ],
+    "quotes": [
+      {
+        "text": "“Beloved, let us love one another, for love is from God, and whoever loves has been born of God and knows God. Anyone who does not love does not know God, because God is love.”",
+        "cite": "— 1 John 4:7-8"
+      }
+    ],
+    "slug": "john-the-apostle",
+    "keywords": "john the apostle john the evangelist saint john beloved disciple gospel of john book of revelation patmos ephesus"
+  },
+  {
+    "name": "Philip the Apostle",
+    "dates": "c. 5 BCE–c. 81 CE",
+    "birthYear": -5,
+    "summary": "One of the Twelve Apostles from Bethsaida in Galilee who directly introduced Nathanael (Bartholomew) to Jesus. Prominent during the feeding of the five thousand and the Greek delegation inquiry at Passover; traditionally preached the gospel in Greece, Phrygia, and Syria before his martyrdom in Hierapolis.",
+    "image": "/images/personalities/philip_the_apostle_portrait.jpg",
+    "zoomSrc": "/images/personalities/philip_the_apostle_portrait.jpg",
+    "zoomTitle": "Saint Philip the Apostle",
+    "zoomCaption": "c. 5 BCE–c. 81 CE • Apostle of Bethsaida who brought Nathanael to Christ and preached across Phrygia and Hierapolis.",
+    "quote": {
+      "text": "“Lord, show us the Father, and it is enough for us.”",
+      "cite": "— Gospel of John 14:8"
+    },
+    "keyWorks": [
+      "Calling of Nathanael with the invitation: \"Come and see\"",
+      "Calculation of bread at the feeding of the five thousand",
+      "Missions across Phrygia and martyrdom at Hierapolis"
+    ],
+    "tags": [
+      "Apostles",
+      "Biblical Figures",
+      "Bethsaida",
+      "Hierapolis",
+      "Early Church"
+    ],
+    "quotes": [
+      {
+        "text": "“We have found him of whom Moses in the Law and also the prophets wrote, Jesus of Nazareth, the son of Joseph.”",
+        "cite": "— Gospel of John 1:45"
+      }
+    ],
+    "slug": "philip-the-apostle",
+    "keywords": "philip the apostle saint philip apostles bethsaida hierapolis new testament come and see"
+  },
+  {
+    "name": "Bartholomew the Apostle",
+    "dates": "1st Century CE",
+    "birthYear": 1,
+    "summary": "One of the Twelve Apostles, widely identified with Nathanael of Cana in Galilee, whom Christ praised as an \"Israelite indeed, in whom there is no deceit.\" Tradition records his far-reaching apostolic journeys through Mesopotamia, Persia, western India, and Armenia, where he suffered flaying and martyrdom.",
+    "image": "/images/personalities/bartholomew_the_apostle_portrait.jpg",
+    "zoomSrc": "/images/personalities/bartholomew_the_apostle_portrait.jpg",
+    "zoomTitle": "Saint Bartholomew (Nathanael)",
+    "zoomCaption": "1st Century CE • Apostle commended for his honesty, patron saint of Armenia, and missionary to India and Mesopotamia.",
+    "quote": {
+      "text": "“Rabbi, you are the Son of God! You are the King of Israel!”",
+      "cite": "— Gospel of John 1:49"
+    },
+    "keyWorks": [
+      "Encounter beneath the fig tree in Cana of Galilee",
+      "Apostolic mission to the Kingdom of Armenia (co-founder of the Armenian Apostolic Church)",
+      "Translation and transmission of Hebrew Gospel materials in India"
+    ],
+    "tags": [
+      "Apostles",
+      "Biblical Figures",
+      "Armenian Church",
+      "Martyr",
+      "Nathanael"
+    ],
+    "quotes": [
+      {
+        "text": "“Can anything good come out of Nazareth?”",
+        "cite": "— Gospel of John 1:46"
+      }
+    ],
+    "slug": "bartholomew-the-apostle",
+    "keywords": "bartholomew the apostle saint bartholomew nathanael cana armenia apostle martyr fig tree"
+  },
+  {
+    "name": "Thomas the Apostle",
+    "dates": "1st Century CE",
+    "birthYear": 1,
+    "summary": "Apostle also known as Didymus (\"the Twin\"), remembered for demanding empirical proof of Christ's resurrection before professing the definitive Christological declaration: \"My Lord and my God!\". Traditional founder of the Saint Thomas Christian communities in southwestern India (Malabar coast / Kerala).",
+    "image": "/images/personalities/thomas_the_apostle_portrait.jpg",
+    "zoomSrc": "/images/personalities/thomas_the_apostle_portrait.jpg",
+    "zoomTitle": "Saint Thomas the Apostle (Didymus)",
+    "zoomCaption": "1st Century CE • Apostle famous for his honest inquiry, pioneer missionary to Mesopotamia and the Malabar coast of India.",
+    "quote": {
+      "text": "“My Lord and my God!”",
+      "cite": "— Gospel of John 20:28"
+    },
+    "keyWorks": [
+      "Confession of faith upon witnessing the risen Christ",
+      "Founding of the Saint Thomas Christian churches across Kerala and Tamil Nadu (India)",
+      "Missionary journey across the Parthian Empire"
+    ],
+    "tags": [
+      "Apostles",
+      "Biblical Figures",
+      "India Missions",
+      "Faith and Evidence",
+      "Didymus"
+    ],
+    "quotes": [
+      {
+        "text": "“Unless I see in his hands the mark of the nails, and place my finger into the mark of the nails, and place my hand into his side, I will never believe.”",
+        "cite": "— Gospel of John 20:25"
+      }
+    ],
+    "slug": "thomas-the-apostle",
+    "keywords": "thomas the apostle saint thomas doubting thomas didymus my lord and my god india kerala st thomas christians"
+  },
+  {
+    "name": "Matthew the Apostle",
+    "dates": "1st Century CE",
+    "birthYear": 1,
+    "summary": "Also known as Levi, a Jewish tax collector (publican) at Capernaum who abandoned his toll booth upon hearing Christ's call \"Follow me\". Traditional author and apostolic source of the Gospel of Matthew, which emphasized the fulfillment of Old Testament Messianic prophecies.",
+    "image": "/images/personalities/matthew_the_apostle_portrait.jpg",
+    "zoomSrc": "/images/personalities/matthew_the_apostle_portrait.jpg",
+    "zoomTitle": "Saint Matthew the Apostle (Levi the Evangelist)",
+    "zoomCaption": "1st Century CE • Tax collector of Capernaum called to the apostolate, traditionally credited as the evangelist of the First Gospel.",
+    "quote": {
+      "text": "“Blessed are the poor in spirit, for theirs is the kingdom of heaven.”",
+      "cite": "— Gospel of Matthew 5:3 (The Beatitudes)"
+    },
+    "keyWorks": [
+      "The Gospel According to Matthew",
+      "Recording of the Sermon on the Mount and the Great Commission",
+      "Apostolic mission to Judea, Ethiopia, and Persia"
+    ],
+    "tags": [
+      "Apostles",
+      "Evangelists",
+      "Biblical Figures",
+      "Gospel of Matthew",
+      "Capernaum"
+    ],
+    "quotes": [
+      {
+        "text": "“Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit.”",
+        "cite": "— Gospel of Matthew 28:19"
+      }
+    ],
+    "slug": "matthew-the-apostle",
+    "keywords": "matthew the apostle saint matthew levi evangelist tax collector sermon on the mount beatitudes gospel of matthew"
+  },
+  {
+    "name": "James the Less",
+    "dates": "1st Century CE",
+    "birthYear": 5,
+    "summary": "Son of Alphaeus and one of the Twelve Apostles, distinguished as \"the Less\" or \"the Younger\" to differentiate him from James son of Zebedee. A respected elder and pillar in the Jerusalem apostolic community noted for ascetic piety and steadfast leadership.",
+    "image": "/images/personalities/james_the_less_portrait.jpg",
+    "zoomSrc": "/images/personalities/james_the_less_portrait.jpg",
+    "zoomTitle": "Saint James the Less (Son of Alphaeus)",
+    "zoomCaption": "1st Century CE • One of the Twelve Apostles, son of Alphaeus, and revered pillar of the early Jerusalem Church.",
+    "quote": {
+      "text": "“Religion that is pure and undefiled before God the Father is this: to visit orphans and widows in their affliction, and to keep oneself unstained from the world.”",
+      "cite": "— Epistle of James 1:27"
+    },
+    "keyWorks": [
+      "Apostolic leadership among the Twelve in Jerusalem",
+      "Defense of early Christian community integrity in Judea",
+      "Martyrdom in Jerusalem"
+    ],
+    "tags": [
+      "Apostles",
+      "Biblical Figures",
+      "Jerusalem Church",
+      "Early Christianity",
+      "Ascetic"
+    ],
+    "quotes": [
+      {
+        "text": "“Faith by itself, if it does not have works, is dead.”",
+        "cite": "— Epistle of James 2:17"
+      }
+    ],
+    "slug": "james-the-less",
+    "keywords": "james the less saint james the younger son of alphaeus apostles jerusalem church biblical figures"
+  },
+  {
+    "name": "Jude Thaddaeus",
+    "dates": "1st Century CE",
+    "birthYear": 5,
+    "summary": "Apostle also known as Thaddaeus or Judas son of James, traditional author of the Epistle of Jude. Preached the gospel across Judea, Samaria, Idumaea, Syria, Mesopotamia, and Libya; venerated worldwide in Christian tradition as the patron saint of lost causes, hopeless situations, and desperate trials.",
+    "image": "/images/personalities/jude_thaddaeus_portrait.jpg",
+    "zoomSrc": "/images/personalities/jude_thaddaeus_portrait.jpg",
+    "zoomTitle": "Saint Jude Thaddaeus",
+    "zoomCaption": "1st Century CE • Apostle, author of the Epistle of Jude, and universal patron saint of desperate and lost causes.",
+    "quote": {
+      "text": "“Contend earnestly for the faith which was once for all delivered to the saints.”",
+      "cite": "— Epistle of Jude 1:3"
+    },
+    "keyWorks": [
+      "The Epistle of Jude",
+      "Apostolic mission to Mesopotamia, Edessa, and Persia",
+      "Martyrdom alongside Simon the Zealot in Beirut/Persia"
+    ],
+    "tags": [
+      "Apostles",
+      "Biblical Figures",
+      "Patron Saint",
+      "Lost Causes",
+      "New Testament"
+    ],
+    "quotes": [
+      {
+        "text": "“Keep yourselves in the love of God, waiting for the mercy of our Lord Jesus Christ that leads to eternal life.”",
+        "cite": "— Epistle of Jude 1:21"
+      }
+    ],
+    "slug": "jude-thaddaeus",
+    "keywords": "jude thaddaeus saint jude apostle thaddaeus lost causes desperate situations epistle of jude"
+  },
+  {
+    "name": "Simon the Zealot",
+    "dates": "1st Century CE",
+    "birthYear": 5,
+    "summary": "One of the Twelve Apostles, referred to as the Zealot or Canaanite to signify his prior allegiance to the Jewish patriotic Zealot party resisting Roman rule. His inclusion alongside Matthew (a former Roman tax collector) embodied the unifying, reconciliatory power of Christ's call. Preached in Egypt and Persia.",
+    "image": "/images/personalities/simon_the_zealot_portrait.jpg",
+    "zoomSrc": "/images/personalities/simon_the_zealot_portrait.jpg",
+    "zoomTitle": "Saint Simon the Zealot",
+    "zoomCaption": "1st Century CE • One of the Twelve Apostles, former Zealot patriot whose calling symbolized cross-factional reconciliation.",
+    "quote": {
+      "text": "“For what does it profit a man to gain the whole world and forfeit his soul?”",
+      "cite": "— Gospel of Mark 8:36"
+    },
+    "keyWorks": [
+      "Unification of divergent political factions within the apostolic Twelve",
+      "Missionary preaching across Egypt, North Africa, and Persia",
+      "Joint martyrdom with Jude Thaddaeus"
+    ],
+    "tags": [
+      "Apostles",
+      "Biblical Figures",
+      "Zealots",
+      "Reconciliation",
+      "Early Church"
+    ],
+    "quotes": [
+      {
+        "text": "“Blessed are the peacemakers, for they shall be called sons of God.”",
+        "cite": "— Gospel of Matthew 5:9"
+      }
+    ],
+    "slug": "simon-the-zealot",
+    "keywords": "simon the zealot saint simon the canaanite apostles biblical figures zealot early church"
+  },
+  {
+    "name": "Matthias the Apostle",
+    "dates": "1st Century CE",
+    "birthYear": 1,
+    "summary": "The disciple chosen by the assembled 120 believers in Jerusalem by prayer and lots to take the apostolic place vacated by Judas Iscariot. Having followed Jesus from his baptism by John until the Ascension, he restored the symbolic Twelve and preached across Judea, Cappadocia, and Colchis.",
+    "image": "/images/personalities/matthias_the_apostle_portrait.jpg",
+    "zoomSrc": "/images/personalities/matthias_the_apostle_portrait.jpg",
+    "zoomTitle": "Saint Matthias the Apostle",
+    "zoomCaption": "1st Century CE • The disciple chosen by lot in the Book of Acts to succeed Judas Iscariot and restore the Twelve.",
+    "quote": {
+      "text": "“One of these must become a witness with us to his resurrection.”",
+      "cite": "— Acts of the Apostles 1:22"
+    },
+    "keyWorks": [
+      "Election into the Twelve Apostles in Acts 1",
+      "Witness to the Resurrection from the Jordan Baptism to the Ascension",
+      "Missions across Cappadocia, Colchis, and Judea"
+    ],
+    "tags": [
+      "Apostles",
+      "Biblical Figures",
+      "Acts of the Apostles",
+      "Twelve Apostles",
+      "Early Church"
+    ],
+    "quotes": [
+      {
+        "text": "“And they cast lots for them, and the lot fell on Matthias, and he was numbered with the eleven apostles.”",
+        "cite": "— Acts of the Apostles 1:26"
+      }
+    ],
+    "slug": "matthias-the-apostle",
+    "keywords": "matthias the apostle saint matthias acts of the apostles casting lots apostolic succession twelfth apostle"
+  },
+  {
+    "name": "Barnabas",
+    "dates": "c. 1 BCE–61 CE",
+    "birthYear": -1,
+    "summary": "Hellenistic Jewish Levite from Cyprus, born Joseph, named Barnabas (\"Son of Encouragement\") by the apostles. He sold his estate to support the poor in Jerusalem, vouched for the newly converted Saul of Tarsus (Paul) before a skeptical church, and co-led the first major Gentile missionary journey.",
+    "image": "/images/personalities/barnabas_portrait.jpg",
+    "zoomSrc": "/images/personalities/barnabas_portrait.jpg",
+    "zoomTitle": "Saint Barnabas (Son of Encouragement)",
+    "zoomCaption": "c. 1 BCE–61 CE • Cypriot Levite apostle, patron and partner of Saint Paul, and founder of the Church of Cyprus.",
+    "quote": {
+      "text": "“He was a good man, full of the Holy Spirit and of faith.”",
+      "cite": "— Acts of the Apostles 11:24"
+    },
+    "keyWorks": [
+      "Sponsorship of Paul before the Jerusalem Apostles",
+      "Leadership of the Gentile mission in Antioch",
+      "First Missionary Journey to Cyprus and Galatia with Paul and John Mark"
+    ],
+    "tags": [
+      "Apostles",
+      "Biblical Figures",
+      "Son of Encouragement",
+      "Antioch",
+      "Cyprus"
+    ],
+    "quotes": [
+      {
+        "text": "“When he arrived and saw the grace of God, he was glad and encouraged them all to remain true to the Lord with all their hearts.”",
+        "cite": "— Acts of the Apostles 11:23"
+      }
+    ],
+    "slug": "barnabas",
+    "keywords": "barnabas saint barnabas son of encouragement paul the apostle antioch cyprus acts of the apostles"
+  },
+  {
+    "name": "Stephen the Protomartyr",
+    "dates": "c. 5–c. 34 CE",
+    "birthYear": 5,
+    "summary": "First of the Seven Deacons chosen by the apostles in Jerusalem to administer charity, renowned for rhetorical wisdom and faith. His profound defense of the Christian faith before the Sanhedrin culminated in his execution by stoning, making him the first recorded martyr of Christianity.",
+    "image": "/images/personalities/stephen_the_protomartyr_portrait.jpg",
+    "zoomSrc": "/images/personalities/stephen_the_protomartyr_portrait.jpg",
+    "zoomTitle": "Saint Stephen (The Protomartyr)",
+    "zoomCaption": "c. 5–c. 34 CE • First Christian deacon and protomartyr who forgave his stoners outside Jerusalem as he saw heaven opened.",
+    "quote": {
+      "text": "“Lord, do not hold this sin against them.”",
+      "cite": "— Acts of the Apostles 7:60"
+    },
+    "keyWorks": [
+      "Appointment as primary deacon for widows and Greek-speaking Hellenists",
+      "Grand historical apologetic speech before the Sanhedrin (Acts 7)",
+      "First martyrdom in Christian history"
+    ],
+    "tags": [
+      "Biblical Figures",
+      "Protomartyr",
+      "Deacon",
+      "Jerusalem Church",
+      "Acts of the Apostles"
+    ],
+    "quotes": [
+      {
+        "text": "“Look! I see the heavens opened and the Son of Man standing at the right hand of God.”",
+        "cite": "— Acts of the Apostles 7:56"
+      }
+    ],
+    "slug": "stephen-the-protomartyr",
+    "keywords": "stephen the protomartyr saint stephen first martyr sanhedrin deacon acts of the apostles jerusalem"
+  },
+  {
+    "name": "Luke the Evangelist",
+    "dates": "c. 1–84 CE",
+    "birthYear": 1,
+    "summary": "Gentile Greek physician of Antioch, loyal traveling companion and physician to Saint Paul, and author of both the Gospel of Luke and the Acts of the Apostles (comprising over a quarter of the New Testament). His writings emphasize compassion, social outcasts, women, prayer, and historical precision.",
+    "image": "/images/personalities/luke_the_evangelist_portrait.jpg",
+    "zoomSrc": "/images/personalities/luke_the_evangelist_portrait.jpg",
+    "zoomTitle": "Saint Luke the Evangelist",
+    "zoomCaption": "c. 1–84 CE • Greek physician, historian, and author of the Third Gospel and the Acts of the Apostles.",
+    "quote": {
+      "text": "“For the Son of Man came to seek and to save the lost.”",
+      "cite": "— Gospel of Luke 19:10"
+    },
+    "keyWorks": [
+      "The Gospel According to Luke (The Good Samaritan, The Prodigal Son)",
+      "The Acts of the Apostles (History of the Early Church)",
+      "Medical and missionary companion to the Apostle Paul"
+    ],
+    "tags": [
+      "Evangelists",
+      "Biblical Figures",
+      "Physician",
+      "Historian",
+      "Acts of the Apostles"
+    ],
+    "quotes": [
+      {
+        "text": "“It seemed good to me also, having followed all things closely for some time past, to write an orderly account for you, most excellent Theophilus.”",
+        "cite": "— Gospel of Luke 1:3"
+      }
+    ],
+    "slug": "luke-the-evangelist",
+    "keywords": "luke the evangelist saint luke beloved physician gospel of luke acts of the apostles prodigal son good samaritan"
+  },
+  {
+    "name": "Mark the Evangelist",
+    "dates": "c. 5–68 CE",
+    "birthYear": 5,
+    "summary": "Also known as John Mark of Jerusalem; cousin of Barnabas and disciple-scribe of the Apostle Peter. Author of the Gospel of Mark, the earliest and most direct canonical gospel, and traditional founder and first bishop of the Patriarchate of Alexandria.",
+    "image": "/images/personalities/mark_the_evangelist_portrait.jpg",
+    "zoomSrc": "/images/personalities/mark_the_evangelist_portrait.jpg",
+    "zoomTitle": "Saint Mark the Evangelist (John Mark)",
+    "zoomCaption": "c. 5–68 CE • Author of the earliest Gospel, disciple of Saint Peter, and founder of the Church of Alexandria.",
+    "quote": {
+      "text": "“The time is fulfilled, and the kingdom of God is at hand; repent and believe in the gospel.”",
+      "cite": "— Gospel of Mark 1:15"
+    },
+    "keyWorks": [
+      "The Gospel According to Mark",
+      "Recording the eyewitness testimony and memories of Simon Peter",
+      "Establishment of the Christian Church in Alexandria and North Africa"
+    ],
+    "tags": [
+      "Evangelists",
+      "Biblical Figures",
+      "Gospel of Mark",
+      "Alexandria",
+      "New Testament"
+    ],
+    "quotes": [
+      {
+        "text": "“Truly this man was the Son of God!”",
+        "cite": "— Gospel of Mark 15:39"
+      }
+    ],
+    "slug": "mark-the-evangelist",
+    "keywords": "mark the evangelist saint mark john mark gospel of mark alexandria coptic church simon peter scribe"
+  },
+  {
+    "name": "Timothy",
+    "dates": "c. 17–97 CE",
+    "birthYear": 17,
+    "summary": "Early Christian evangelist and bishop of Ephesus, born in Lystra to a Greek father and Jewish mother (Eunice). Selected by Saint Paul as his most trusted protégé, envoy, and spiritual son (\"true son in the faith\"), serving as the recipient of two canonical Pauline epistles (1 and 2 Timothy).",
+    "image": "/images/personalities/timothy_portrait.jpg",
+    "zoomSrc": "/images/personalities/timothy_portrait.jpg",
+    "zoomTitle": "Saint Timothy",
+    "zoomCaption": "c. 17–97 CE • Apostle Paul's closest protégé and bishop of Ephesus; recipient of the pastoral epistles 1 & 2 Timothy.",
+    "quote": {
+      "text": "“Let no one despise you for your youth, but set the believers an example in speech, in conduct, in love, in faith, in purity.”",
+      "cite": "— 1 Timothy 4:12"
+    },
+    "keyWorks": [
+      "Apostolic oversight of the Church of Ephesus",
+      "Pauline diplomatic missions to Thessalonica, Corinth, and Philippi",
+      "Recipient of First and Second Timothy"
+    ],
+    "tags": [
+      "Biblical Figures",
+      "Early Church",
+      "Ephesus",
+      "Pauline Epistles",
+      "Bishop"
+    ],
+    "quotes": [
+      {
+        "text": "“I am reminded of your sincere faith, a faith that dwelt first in your grandmother Lois and your mother Eunice and now, I am sure, dwells in you as well.”",
+        "cite": "— 2 Timothy 1:5"
+      }
+    ],
+    "slug": "timothy",
+    "keywords": "timothy saint timothy bishop of ephesus paul the apostle 1 timothy 2 timothy lystra pastoral epistles"
   }
 ]

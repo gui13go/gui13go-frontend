@@ -381,10 +381,9 @@
         <div class="map-control-group">
           <label for="basemapSelect" class="sr-only">Basemap Style</label>
           <select id="basemapSelect" class="map-select-input" aria-label="Select Basemap">
-            <option value="osm" selected>🗺️ OpenStreetMap</option>
+            <option value="esri-dark" selected>🌙 Dark Gray (Esri)</option>
             <option value="satellite">🛰️ Satellite (Esri)</option>
-            <option value="esri-dark">🌙 Dark Gray (Esri)</option>
-            <option value="carto-dark">🌌 CartoDB Dark</option>
+            <option value="osm">🗺️ OpenStreetMap</option>
             <option value="esri-light">☀️ Minimal Light (Esri)</option>
             <option value="topo">⛰️ Topographic (OpenTopoMap)</option>
           </select>
@@ -442,3 +441,338 @@
         </div>
       </div>
     </main>
+
+
+
+<script src="/lib/leaflet/leaflet.js"></script>
+<script>
+(function() {
+  function initSpainNukesMap() {
+    if (typeof L === "undefined") {
+      setTimeout(initSpainNukesMap, 100);
+      return;
+    }
+
+    var mapEl = document.getElementById("palomaresMap");
+    if (!mapEl || mapEl._leaflet_id) return;
+
+    var basemapLayers = {
+      "esri-dark": L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+        attribution: "Tiles &copy; Esri",
+        maxZoom: 16
+      }),
+      "satellite": L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
+        attribution: "Tiles &copy; Esri",
+        maxZoom: 19
+      }),
+      "osm": L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors",
+        maxZoom: 19
+      }),
+      "esri-light": L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+        attribution: "Tiles &copy; Esri",
+        maxZoom: 16
+      }),
+      "topo": L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenTopoMap contributors",
+        maxZoom: 17
+      })
+    };
+
+    var isDarkMode = document.body.classList.contains("dark") || document.documentElement.classList.contains("dark");
+    var currentBasemapKey = isDarkMode ? "esri-dark" : "osm";
+
+    var basemapSelect = document.getElementById("basemapSelect");
+    if (basemapSelect) basemapSelect.value = currentBasemapKey;
+
+    var map = L.map("palomaresMap", {
+      center: [37.23, -1.77],
+      zoom: 12,
+      zoomControl: false,
+      attributionControl: false,
+      layers: [basemapLayers[currentBasemapKey] || basemapLayers["esri-dark"]]
+    });
+
+    L.control.zoom({ position: "bottomright" }).addTo(map);
+
+    if (basemapSelect) {
+      basemapSelect.addEventListener("change", function(e) {
+        var selected = e.target.value;
+        if (basemapLayers[selected]) {
+          map.removeLayer(basemapLayers[currentBasemapKey]);
+          map.addLayer(basemapLayers[selected]);
+          currentBasemapKey = selected;
+        }
+      });
+    }
+
+    var themeObserver = new MutationObserver(function() {
+      var isDarkNow = document.body.classList.contains("dark") || document.documentElement.classList.contains("dark");
+      if (currentBasemapKey === "esri-dark" || currentBasemapKey === "osm") {
+        var targetKey = isDarkNow ? "esri-dark" : "osm";
+        if (targetKey !== currentBasemapKey) {
+          map.removeLayer(basemapLayers[currentBasemapKey]);
+          map.addLayer(basemapLayers[targetKey]);
+          currentBasemapKey = targetKey;
+          if (basemapSelect) basemapSelect.value = targetKey;
+        }
+      }
+    });
+    themeObserver.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+
+    var bombs = [
+      {
+        id: "bomb-1",
+        name: "Bomb No. 1",
+        subtitle: "Rio Almanzora Estuary",
+        status: "intact",
+        statusText: "Recovered Intact",
+        color: "#10b981",
+        lat: 37.254167,
+        lon: -1.803056,
+        zoneRadius: 0,
+        desc: "Found intact in the dried riverbed of the Almanzora River. 16-foot parachute deployed correctly. No plutonium release."
+      },
+      {
+        id: "bomb-2",
+        name: "Bomb No. 2",
+        subtitle: "Village (Tomato Patch)",
+        status: "detonated",
+        statusText: "Non-nuclear Detonation",
+        color: "#f97316",
+        lat: 37.246944,
+        lon: -1.795,
+        zoneRadius: 750,
+        desc: "Detonated conventional high-explosive lens upon ground impact. Aerosolized plutonium-239/241 into local houses and agricultural fields."
+      },
+      {
+        id: "bomb-3",
+        name: "Bomb No. 3",
+        subtitle: "Village Outskirts",
+        status: "detonated",
+        statusText: "Non-nuclear Detonation",
+        color: "#ef4444",
+        lat: 37.251389,
+        lon: -1.796944,
+        zoneRadius: 850,
+        desc: "Conventional explosives cratered ground and blew radioactive dust eastward toward the Mediterranean coastline."
+      },
+      {
+        id: "bomb-4",
+        name: "Bomb No. 4",
+        subtitle: "Mediterranean Sea",
+        status: "sea",
+        statusText: "Lost at Sea (Alvin Recovery)",
+        color: "#3b82f6",
+        lat: 37.168611,
+        lon: -1.681389,
+        zoneRadius: 0,
+        desc: "Drifted into the Mediterranean; located 80 days later by deep-submergence vehicle Alvin at a depth of 880 meters (2,890 ft)."
+      }
+    ];
+
+    var showZones = true;
+    var showLabels = false;
+    var markersMap = new Map();
+    var zoneCircles = [];
+    var allLatLngs = [];
+
+    function makeCustomIcon(color) {
+      return L.divIcon({
+        className: "custom-map-pin-container",
+        html: "<div style='background-color:" + color + "; width:16px; height:16px; border-radius:50%; border:2px solid #ffffff; box-shadow:0 0 10px " + color + "; transition:transform .2s ease;'></div>",
+        iconSize: [16, 16],
+        iconAnchor: [8, 8]
+      });
+    }
+
+    bombs.forEach(function(b) {
+      var latlng = [b.lat, b.lon];
+      allLatLngs.push(latlng);
+
+      var marker = L.marker(latlng, { icon: makeCustomIcon(b.color) }).addTo(map);
+
+      marker.bindTooltip("<strong>" + b.name + "</strong><br><span style='opacity:0.8; font-size:0.75rem;'>" + b.subtitle + "</span>", {
+        permanent: false,
+        direction: "top",
+        offset: [0, -10],
+        className: "city-hover-tooltip"
+      });
+
+      marker.bindPopup(
+        "<div style='font-family:inherit; font-size:0.88rem; line-height:1.45;'>" +
+          "<div style='display:flex; align-items:center; gap:8px; margin-bottom:4px;'>" +
+            "<span style='width:10px; height:10px; border-radius:50%; background:" + b.color + "; display:inline-block;'></span>" +
+            "<h4 style='margin:0; font-size:1rem; font-weight:700; color:var(--primary);'>" + b.name + "</h4>" +
+          "</div>" +
+          "<div style='font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; color:" + b.color + "; margin-bottom:6px;'>" + b.statusText + "</div>" +
+          "<p style='margin:0 0 8px; color:var(--secondary);'>" + b.desc + "</p>" +
+          "<div style='font-size:0.75rem; color:var(--secondary); border-top:1px solid var(--theme-border); padding-top:6px;'>📍 <strong>Coords:</strong> " + b.lat.toFixed(5) + "&deg;N, " + Math.abs(b.lon).toFixed(5) + "&deg;W</div>" +
+        "</div>",
+        { className: "custom-leaflet-popup", maxWidth: 300 }
+      );
+
+      marker.on("click", function() {
+        selectBomb(b.id, true);
+      });
+
+      markersMap.set(b.id, marker);
+
+      if (b.zoneRadius > 0) {
+        var circle = L.circle(latlng, {
+          radius: b.zoneRadius,
+          color: b.color,
+          weight: 1.5,
+          fillColor: b.color,
+          fillOpacity: 0.16,
+          dashArray: "4, 6"
+        }).addTo(map);
+        zoneCircles.push(circle);
+      }
+    });
+
+    var activeBombCard = document.getElementById("activeBombCard");
+    var activeBombName = document.getElementById("activeBombName");
+    var activeBombStatus = document.getElementById("activeBombStatus");
+    var bombJumpSelect = document.getElementById("bombJumpSelect");
+
+    function selectBomb(bombId, fly) {
+      if (bombJumpSelect) bombJumpSelect.value = bombId;
+
+      document.querySelectorAll(".nuke-bomb-card").forEach(function(c) {
+        if (c.getAttribute("data-bomb-id") === bombId) {
+          c.classList.add("active");
+          c.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        } else {
+          c.classList.remove("active");
+        }
+      });
+
+      var b = bombs.find(function(x) { return x.id === bombId; });
+      if (b) {
+        if (activeBombCard) {
+          activeBombCard.style.display = "flex";
+          if (activeBombName) activeBombName.textContent = b.name;
+          if (activeBombStatus) activeBombStatus.textContent = b.subtitle;
+        }
+
+        var marker = markersMap.get(bombId);
+        if (marker && fly) {
+          map.flyTo([b.lat, b.lon], 14, { duration: 1.2 });
+          setTimeout(function() { marker.openPopup(); }, 600);
+        }
+      }
+    }
+
+    if (bombJumpSelect) {
+      bombJumpSelect.addEventListener("change", function(e) {
+        var val = e.target.value;
+        if (val === "all") {
+          map.fitBounds(L.latLngBounds(allLatLngs), { padding: [50, 50] });
+          if (activeBombCard) activeBombCard.style.display = "none";
+        } else {
+          selectBomb(val, true);
+        }
+      });
+    }
+
+    document.querySelectorAll(".nuke-fly-btn, .nuke-card-action-btn").forEach(function(btn) {
+      btn.addEventListener("click", function(e) {
+        e.stopPropagation();
+        var id = btn.getAttribute("data-id") || btn.closest(".nuke-bomb-card")?.getAttribute("data-bomb-id");
+        if (id) selectBomb(id, true);
+      });
+    });
+
+    var pills = document.querySelectorAll(".country-pill[data-status]");
+    pills.forEach(function(pill) {
+      pill.addEventListener("click", function() {
+        pills.forEach(function(p) { p.classList.remove("active"); });
+        pill.classList.add("active");
+        var st = pill.getAttribute("data-status");
+        document.querySelectorAll(".nuke-bomb-card").forEach(function(c) {
+          var cStatus = c.getAttribute("data-status");
+          c.style.display = (st === "all" || cStatus === st) ? "" : "none";
+        });
+      });
+    });
+
+    var searchInput = document.getElementById("bombSearchInput");
+    var clearSearch = document.getElementById("clearBombSearch");
+    if (searchInput) {
+      searchInput.addEventListener("input", function(e) {
+        var q = e.target.value.toLowerCase().trim();
+        if (clearSearch) clearSearch.style.display = q ? "block" : "none";
+        document.querySelectorAll(".nuke-bomb-card").forEach(function(c) {
+          var text = (c.textContent || "").toLowerCase();
+          c.style.display = text.includes(q) ? "" : "none";
+        });
+      });
+    }
+    if (clearSearch) {
+      clearSearch.addEventListener("click", function() {
+        if (searchInput) searchInput.value = "";
+        clearSearch.style.display = "none";
+        document.querySelectorAll(".nuke-bomb-card").forEach(function(c) { c.style.display = ""; });
+      });
+    }
+
+    var toggleZonesBtn = document.getElementById("toggleZonesBtn");
+    if (toggleZonesBtn) {
+      toggleZonesBtn.addEventListener("click", function() {
+        showZones = !showZones;
+        toggleZonesBtn.classList.toggle("active", showZones);
+        zoneCircles.forEach(function(c) {
+          if (showZones) map.addLayer(c);
+          else map.removeLayer(c);
+        });
+      });
+    }
+
+    var toggleLabelsBtn = document.getElementById("toggleLabelsBtn");
+    if (toggleLabelsBtn) {
+      toggleLabelsBtn.classList.remove("active"); // default off so clean
+      toggleLabelsBtn.addEventListener("click", function() {
+        showLabels = !showLabels;
+        toggleLabelsBtn.classList.toggle("active", showLabels);
+        markersMap.forEach(function(m) {
+          if (showLabels) m.openTooltip();
+          else m.closeTooltip();
+        });
+      });
+    }
+
+    var resetMapBoundsBtn = document.getElementById("resetMapBoundsBtn");
+    if (resetMapBoundsBtn) {
+      resetMapBoundsBtn.addEventListener("click", function() {
+        map.fitBounds(L.latLngBounds(allLatLngs), { padding: [50, 50] });
+        if (activeBombCard) activeBombCard.style.display = "none";
+        if (bombJumpSelect) bombJumpSelect.value = "all";
+      });
+    }
+
+    var toggleBriefingBtn = document.getElementById("toggleBriefingBtn");
+    var briefingContent = document.getElementById("historicalBriefingContent");
+    var closeBriefingBtn = document.getElementById("closeBriefingBtn");
+    if (toggleBriefingBtn && briefingContent) {
+      toggleBriefingBtn.addEventListener("click", function() {
+        briefingContent.style.display = briefingContent.style.display === "none" ? "block" : "none";
+      });
+    }
+    if (closeBriefingBtn && briefingContent) {
+      closeBriefingBtn.addEventListener("click", function() {
+        briefingContent.style.display = "none";
+      });
+    }
+
+    map.fitBounds(L.latLngBounds(allLatLngs), { padding: [50, 50] });
+    setTimeout(function() { map.invalidateSize(); }, 200);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSpainNukesMap);
+  } else {
+    setTimeout(initSpainNukesMap, 20);
+  }
+})();
+</script>
